@@ -1,0 +1,25 @@
+Uxvt.geometry:      80x24
+URxvt.saveLines:    4096
+URxvt.scrollStyle:  rxvt
+URxvt.scrollBar:    false
+
+URxvt.termName:     rxvt
+
+URxvt.allow_bold:   true
+!URxvt*font:         xft:m+ 2m:style=regular:size=12:antialias=true
+URxvt.font:         xft:Ricty Diminished:style=regular:size=13.5:antialias=true
+URxvt.letterSpace:  -1
+URxvt.lineSpace:    1
+
+URxvt.depth:        32
+URxvt.foreground:   #d0d0d0
+URxvt.background:   #1c1c1c
+URxvt.transparent:  false
+URxvt.fading: 50
+
+! CIRSOR
+URxvt.cursorBlink:  true
+URxvt.cursorColor:  #d0d0d0
+
+! POINTER
+URxvt.pointerBlank: true
