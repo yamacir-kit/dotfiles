@@ -1,6 +1,3 @@
-" -------------------------------------
-"  Colorscheme initialization
-" -------------------------------------
   set background=dark
   hi clear
   if exists("syntax_on")
@@ -8,10 +5,6 @@
   endif
   let colors_name = "autumn_flavors"
 
-
-" -------------------------------------
-"  Basic highlighting
-" -------------------------------------
 " ---- Normal -------------------------------------------------
   hi Normal          ctermfg=252 ctermbg=234
 
@@ -69,17 +62,13 @@
 " --- Error -----------------------------------------------
   hi Error           ctermfg=161 ctermbg=234 cterm=bold
 
-
-" -------------------------------------
-"  Basic highlighting
-" -------------------------------------
 " --- Cursor and Line -------------------------------------
   hi Cursor          ctermfg=16  ctermbg=252
   hi CursorLine                  ctermbg=235 cterm=none
   hi CursorLineNr    ctermfg=221 ctermbg=235 cterm=bold
 
   hi LineNr          ctermfg=59  ctermbg=234
-  hi MatchParen      ctermfg=81  ctermbg=234 cterm=bold
+  hi MatchParen      ctermfg=161 ctermbg=234 cterm=bold
 
   hi Folded          ctermfg=67  ctermbg=234 cterm=none
 
