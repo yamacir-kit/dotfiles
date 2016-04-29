@@ -112,8 +112,8 @@ fi
 eval `dircolors ~/.dircolors`
 
 # ROS
-source /opt/ros/indigo/setup.bash
-source ~/work/catkin/devel/setup.bash
+#source /opt/ros/indigo/setup.bash
+#source ~/work/catkin/devel/setup.bash
 
 # Language
 export locale=en_US.UTF-8
