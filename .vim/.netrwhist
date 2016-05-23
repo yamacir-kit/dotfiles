@@ -1,10 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =8
-let g:netrw_dirhist_1='/home/yamacir-kit/work/devdrv/ServoKrsDriver/src'
-let g:netrw_dirhist_2='/home/yamacir-kit/Documents'
-let g:netrw_dirhist_3='/home/yamacir-kit/Config/home.d/.vim'
-let g:netrw_dirhist_4='/home/yamacir-kit/Config/sh.d'
-let g:netrw_dirhist_5='/home/yamacir-kit/.vim'
-let g:netrw_dirhist_6='/home/yamacir-kit/Config/home/.vim'
-let g:netrw_dirhist_7='/home/yamacir-kit/.vim/autoload/quickrun'
-let g:netrw_dirhist_8='/home/yamasa/dotfiles/.vim/.vim'
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/yamasa/Documents/expt'
+let g:netrw_dirhist_2='/home/yamasa/Documents'
+let g:netrw_dirhist_3='/home/yamasa'
+let g:netrw_dirhist_4='/home/yamasa/works'
+let g:netrw_dirhist_5='/home/yamasa/works/tmp'

@@ -68,7 +68,7 @@
   hi CursorLineNr    ctermfg=221 ctermbg=235 cterm=bold
 
   hi LineNr          ctermfg=59  ctermbg=234
-  hi MatchParen      ctermfg=161 ctermbg=234 cterm=bold
+  hi MatchParen      ctermfg=81  ctermbg=234 cterm=bold
 
   hi Folded          ctermfg=67  ctermbg=234 cterm=none
 

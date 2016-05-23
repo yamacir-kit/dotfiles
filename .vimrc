@@ -19,7 +19,7 @@ imap [] []<left>
 imap () ()<left>
 imap "" ""<left>
 imap '' ''<left>
-imap /* /*  */3<left>
+imap /* /*  */<left><left><left>
 
 set number 
 set title

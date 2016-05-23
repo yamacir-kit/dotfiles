@@ -17,4 +17,3 @@ if [ ! -e /etc/X11/xorg.conf.d ]; then
 fi
 
 ln -sf ~/dotfiles/50-synaptics.conf /etc/X11/xorg.conf.d/50-synaptics.conf
-
