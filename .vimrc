@@ -19,6 +19,7 @@ imap [] []<left>
 imap () ()<left>
 imap "" ""<left>
 imap '' ''<left>
+imap $$ $$<left>
 imap /* /*  */<left><left><left>
 
 set number 
