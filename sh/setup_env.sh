@@ -15,8 +15,7 @@ apt-get install git
 apt-get install rxvt-unicode-256color
 apt-get install tmux
 
-apt-get install texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra
-apt-get install latexmk
+apt-get install texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra latexmk
 
 # -- Theme and icons ------------------
 #  theme: Numix
