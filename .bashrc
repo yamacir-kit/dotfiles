@@ -1,4 +1,4 @@
-#force_color_prompt=yes
+force_color_prompt=yes
 
 # If not running interactively, don't do anything
 case $- in
