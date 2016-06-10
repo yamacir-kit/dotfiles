@@ -33,7 +33,7 @@ set matchtime=1
 set splitbelow
 set splitright
 
-syntax on
+syntax enable
 set t_Co=256
 set background=dark
 colorscheme autumn_flavors
