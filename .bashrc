@@ -73,7 +73,6 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    #alias ls='ls --color=auto'
 
     alias grep='grep --color=auto'
     alias fgrep='fgrep --color=auto'
@@ -113,3 +112,5 @@ export locale=en_US.UTF-8
 # aliases
 alias ls='ls -avF --color=auto'
 alias tmux='tmux -2'
+alias ps='ps --sort=start_time'
+alias gitrm='git rm $(git ls-files --deleted)'
