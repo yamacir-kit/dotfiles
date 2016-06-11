@@ -12,34 +12,34 @@ endif
 let colors_name = "autumn_flavors"
 
 " ---- Normal -------------------------------------------------
-hi Normal          ctermfg=252 ctermbg=234 cterm=none
+hi Normal          ctermfg=252 ctermbg=234 cterm=none      " ok
 
 " --- Comment -------------------------------------------------
-hi Comment         ctermfg=59  ctermbg=234 cterm=none
+hi Comment         ctermfg=59  ctermbg=234 cterm=none      " ok
 
 " --- Constant ------------------------------------------------
-hi Constant        ctermfg=44  ctermbg=234 cterm=none
+hi Constant        ctermfg=44  ctermbg=234 cterm=none      " ok
 hi String          ctermfg=221 ctermbg=234 cterm=none
 hi Character       ctermfg=221 ctermbg=234 cterm=none
-hi Number          ctermfg=44  ctermbg=234 cterm=none
-hi Float           ctermfg=81  ctermbg=234 cterm=none
+hi Number          ctermfg=44  ctermbg=234 cterm=none      " ok
+hi Float           ctermfg=44  ctermbg=234 cterm=none
 hi Boolean         ctermfg=44  ctermbg=234 cterm=none
 
 " --- Identifier ----------------------------------------------
-hi Identifier      ctermfg=44  ctermbg=234 cterm=none
-hi Function        ctermfg=44  ctermbg=234 cterm=none
+hi Identifier      ctermfg=44  ctermbg=234 cterm=none      " ok
+hi Function        ctermfg=81  ctermbg=234 cterm=none
 
 " -- Statement ------------------------------------------------
 hi Statement       ctermfg=161 ctermbg=234 cterm=none
 hi Conditional     ctermfg=161 ctermbg=234 cterm=none
 hi Repeat          ctermfg=161 ctermbg=234 cterm=none
-hi Label           ctermfg=161 ctermbg=234 cterm=none
+hi Label           ctermfg=161 ctermbg=234 cterm=bold
 hi Operator        ctermfg=161 ctermbg=234 cterm=none
 hi keyword         ctermfg=161 ctermbg=234 cterm=none
 hi Exception       ctermfg=161 ctermbg=234 cterm=none
 
 " --- PreProc -------------------------------------------------
-hi PreProc         ctermfg=141 ctermbg=234 cterm=none
+hi PreProc         ctermfg=141 ctermbg=234 cterm=none      " ok
 hi Include         ctermfg=67  ctermbg=234 cterm=none
 hi Define          ctermfg=141 ctermbg=234 cterm=none
 hi Macro           ctermfg=141 ctermbg=234 cterm=none
@@ -66,17 +66,18 @@ hi Underlined      ctermfg=81  ctermbg=234 cterm=none
 hi Ignore          ctermfg=252 ctermbg=234 cterm=none
 
 " --- Error ---------------------------------------------------
-hi Error           ctermfg=161 ctermbg=234 cterm=bold
+hi Error           ctermfg=161 ctermbg=234 cterm=underline
 
 " --- Cursor and Line -----------------------------------------
 hi Cursor          ctermfg=16  ctermbg=252 cterm=none
+hi CursorIM        ctermfg=221 ctermbg=252 cterm=bold
 hi CursorLine                  ctermbg=236 cterm=none
 hi CursorLineNr    ctermfg=221 ctermbg=236 cterm=bold
 
 hi LineNr          ctermfg=59  ctermbg=234 cterm=none
-hi MatchParen      ctermfg=81  ctermbg=234 cterm=bold
+hi MatchParen      ctermfg=161 ctermbg=236 cterm=none      " ok
 
-hi Folded          ctermfg=67  ctermbg=234 cterm=none
+hi Folded          ctermfg=67  ctermbg=234 cterm=none      " ok
 
 " --- Others --------------------------------------------------
 hi Title           ctermfg=166
