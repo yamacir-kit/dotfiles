@@ -20,7 +20,9 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set smarttab
-set smartindent
+
+set cindent
+set cinoptions=g0
 
 set confirm
 set hidden

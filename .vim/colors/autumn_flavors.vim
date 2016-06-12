@@ -70,13 +70,11 @@ hi Error           ctermfg=161 ctermbg=234 cterm=underline
 
 " --- Cursor and Line -----------------------------------------
 hi Cursor          ctermfg=16  ctermbg=252 cterm=none
-hi CursorIM        ctermfg=221 ctermbg=252 cterm=bold
+hi CursorIM        ctermfg=221 ctermbg=252 cterm=bold      " isn't work
 hi CursorLine                  ctermbg=236 cterm=none
 hi CursorLineNr    ctermfg=221 ctermbg=236 cterm=bold
-
 hi LineNr          ctermfg=59  ctermbg=234 cterm=none
-hi MatchParen      ctermfg=161 ctermbg=236 cterm=none      " ok
-
+hi MatchParen      ctermfg=252 ctermbg=236 cterm=bold      " ok
 hi Folded          ctermfg=67  ctermbg=234 cterm=none      " ok
 
 " --- Others --------------------------------------------------
@@ -89,5 +87,5 @@ hi Visual          ctermfg=234 ctermbg=246
 hi NonText         ctermfg=59
 hi SpecialKey      ctermfg=59
 
-
+" because of ctermbg=234 bug
 set background=dark
