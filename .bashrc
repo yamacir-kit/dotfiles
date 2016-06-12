@@ -81,5 +81,5 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ps='ps --sort=start_time'
 
-alias gitrm='git rm $(git ls-files --deleted)'
+alias grm='git rm $(git ls-files --deleted)'
 alias tmux='tmux -2'
