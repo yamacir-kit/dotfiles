@@ -26,30 +26,25 @@ imap () ()<left>
 imap "" ""<left>
 imap '' ''<left>
 imap $$ $$<left>
-imap /* /*<space><space>*/<left><left><left>
-
+imap /* /*<space><space>*/<esc>2hi
 
 " -------------------------------------------------------------------
 "  VERY VERY UGLY CODE BUT SIMPLE AND USEFUL
 " -------------------------------------------------------------------
 imap ;in  #include<space><>
-imap ;de  #define<space>
+inoremap ;de  #define<space>
 
-imap ;mv  int<space>main()void<right><space>{}<cr><cr><esc>Oreturn<space>0;<esc>kO
-imap ;ma  int<space>main()int<space>argc,<space>char**<space>argv<right><space>{}<cr><cr><esc>Oreturn<space>0;<esc>kO
+inoremap ;mv  int<space>main(void)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
+inoremap ;ma  int<space>main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
 
-imap ;na  using<space>namespace<space>;<left>
-imap ;st  struct<space><space>{}<cr><right>;<esc>k2whi
-imap ;ty  typedef<space>
+inoremap ;na  using<space>namespace<space>;<left>
+inoremap ;st  struct<space><space>{<cr>};<esc>k$hi
+inoremap ;ty  typedef<space>
+inoremap ;cl  class<space><space>{<cr>public:<cr>private:<cr>};<esc>h%hi
 
-imap ;{   <right><space>{}<cr><esc>%2hi
-imap ;(   ();{
+inoremap ;if  if<space>()<space>{<cr>}<esc>%2hi
+inoremap ;wh  while<space>()<space>{<cr>}<esc>%2hi
+inoremap ;sw  switch<space>()<space>{<cr>}<esc>%2hi
+inoremap ;fo  for<space>(int<space>i=0;<space>;<space>i++)<esc>5hi
 
-imap ;if  if<space>();{
-imap ;wh  while<space>();{
-imap ;sw  switch<space>();{
-
-"imap ;fr for<space>();{
-imap ;fr  for<space>()int<space>i=0;<space>;<space>i++<esc>4hi
-
-imap ;pf  printf()""\n<esc>A;<esc>4hi
+inoremap ;pf printf("\n");<esc>4hi

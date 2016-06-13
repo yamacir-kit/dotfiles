@@ -33,16 +33,6 @@ function parse_git_branch {
   fi
 }
 
-#function parse_git_branch {
-#  if git status &> /dev/null; then
-#    if git status -s &> /dev/null; then
-#      echo [$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')+];
-#    else
-#      echo [$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')];
-#    fi
-#  fi
-#}
-
 export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\][\!] \u@\H:\[\e[0;00m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;37m\]\$ \[\e[0;00m\]"
 
 # If this is an xterm set the title to user@host:dir
