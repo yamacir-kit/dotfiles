@@ -48,3 +48,9 @@ inoremap ;sw  switch<space>()<space>{<cr>}<esc>%2hi
 inoremap ;fo  for<space>(int<space>i=0;<space>;<space>i++)<esc>5hi
 
 inoremap ;pf printf("\n");<esc>4hi
+
+
+
+inoremap ;fig \begin{figure}[b]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
+inoremap ;equ \begin{equation}<cr>\end{equation}<esc>O
+inoremap ;eqn \begin{eqnarray}<cr>\end{eqnarray}<esc>O
