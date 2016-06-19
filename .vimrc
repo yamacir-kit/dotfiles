@@ -5,24 +5,23 @@ endif
 source ~/.vim/maps.vim
 source ~/.vim/quickrun_conf.vim
 
-set noswapfile
-set clipboard+=unnamed
+set noswapfile nobackup
+set clipboard=unnamed
 
 set ttyfast
 
-set number 
+set number cursorline laststatus=0
 set title
-set cursorline
 
 set ambiwidth=double
 
-set expandtab
-set tabstop=2
-set shiftwidth=2
-set smarttab
+set expandtab smarttab tabstop=2 shiftwidth=2 
+set nowrap
 
-set cindent
-set cinoptions=g0
+set list
+set listchars=tab:>-,trail:_
+
+set cindent cinoptions=g0
 
 set confirm
 set hidden
@@ -32,8 +31,7 @@ set showmatch
 set showmode
 set matchtime=1
 
-set splitbelow
-set splitright
+set splitbelow splitright
 
 syntax enable
 set t_Co=256
@@ -43,7 +41,6 @@ colorscheme autumn_flavors
 filetype plugin indent on
 
 set encoding=utf-8
-set nobackup
 
 set foldmethod=indent
 

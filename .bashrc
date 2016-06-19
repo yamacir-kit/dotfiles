@@ -73,3 +73,5 @@ alias ps='ps --sort=start_time'
 
 alias grm='git rm $(git ls-files --deleted)'
 alias tmux='tmux -2'
+
+source /opt/ros/indigo/setup.bash
