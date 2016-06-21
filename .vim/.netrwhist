@@ -1,5 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/yamasa/Documents/expt'
 let g:netrw_dirhist_2='/home/yamasa/Documents'
 let g:netrw_dirhist_3='/home/yamasa'
@@ -7,3 +7,5 @@ let g:netrw_dirhist_4='/home/yamasa/works'
 let g:netrw_dirhist_5='/home/yamasa/works/tmp'
 let g:netrw_dirhist_6='/home/yamasa/Dropbox/dotfiles/.vim'
 let g:netrw_dirhist_7='/home/yamasa/works/utilib/include'
+let g:netrw_dirhist_8='/home/yamasa/Dropbox/expt/expt2-6_re'
+let g:netrw_dirhist_9='/home/yamasa/Dropbox/expt/expt2-6_re2/tab'

@@ -13,6 +13,7 @@ imap () ()<left>
 imap "" ""<left>
 imap '' ''<left>
 imap $$ $$<left>
+imap && &&<left>
 imap /* /*<space><space>*/<esc>2hi
 
 
@@ -42,3 +43,4 @@ inoremap <C-a>fig \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=
 inoremap <C-a>equ \begin{equation}<cr>\end{equation}<esc>O
 inoremap <C-a>eqn \begin{eqnarray}<cr>\end{eqnarray}<esc>O
 inoremap <C-a>sec \section{}<cr>\setcounter{equation}{0}<cr>\setcounter{figure}{0}<cr>\setcounter{table}{0}<esc>3kA<left>
+inoremap <C-a>beg \begin{<cr>\end{}<esc>x<C-v>k$A

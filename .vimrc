@@ -15,11 +15,11 @@ set title
 
 set ambiwidth=double
 
-set expandtab smarttab tabstop=2 shiftwidth=2 
-set nowrap
+set expandtab smarttab tabstop=2 shiftwidth=2
+set wrap
 
 set list
-set listchars=tab:>-,trail:_
+set listchars=tab:»_,trail:_
 
 set cindent cinoptions=g0
 
