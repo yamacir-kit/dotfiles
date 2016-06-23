@@ -19,7 +19,7 @@ set expandtab smarttab tabstop=2 shiftwidth=2
 set wrap
 
 set list
-set listchars=tab:»_,trail:_
+set listchars=trail:_,tab:›-
 
 set cindent cinoptions=g0
 

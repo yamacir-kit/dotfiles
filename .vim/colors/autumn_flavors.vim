@@ -29,15 +29,15 @@ hi Comment         ctermfg=59  ctermbg=234 cterm=none
 hi Constant        ctermfg=141 ctermbg=234 cterm=none
 hi String          ctermfg=221 ctermbg=234 cterm=none
 hi Character       ctermfg=221 ctermbg=234 cterm=none
-hi Number          ctermfg=44  ctermbg=234 cterm=none
-hi Float           ctermfg=44  ctermbg=234 cterm=none
-hi Boolean         ctermfg=141 ctermbg=234 cterm=bold
+hi Number          ctermfg=44 ctermbg=234 cterm=none
+hi Float           ctermfg=44 ctermbg=234 cterm=none
+hi Boolean         ctermfg=141 ctermbg=234 cterm=none
 
 " -------------------------------------------------------------
 "  Identifier
 " -------------------------------------------------------------
 hi Identifier      ctermfg=44  ctermbg=234 cterm=none
-hi Function        ctermfg=252 ctermbg=234 cterm=none
+hi Function        ctermfg=195 ctermbg=234 cterm=none
 
 " -------------------------------------------------------------
 "  Statement
