@@ -29,15 +29,15 @@ hi Comment         ctermfg=59  ctermbg=234 cterm=none
 hi Constant        ctermfg=141 ctermbg=234 cterm=none
 hi String          ctermfg=221 ctermbg=234 cterm=none
 hi Character       ctermfg=221 ctermbg=234 cterm=none
-hi Number          ctermfg=44 ctermbg=234 cterm=none
-hi Float           ctermfg=44 ctermbg=234 cterm=none
+hi Number          ctermfg=44  ctermbg=234 cterm=none
+hi Float           ctermfg=44  ctermbg=234 cterm=none
 hi Boolean         ctermfg=141 ctermbg=234 cterm=none
 
 " -------------------------------------------------------------
 "  Identifier
 " -------------------------------------------------------------
 hi Identifier      ctermfg=44  ctermbg=234 cterm=none
-hi Function        ctermfg=195 ctermbg=234 cterm=none
+hi Function        ctermfg=231 ctermbg=234 cterm=none
 
 " -------------------------------------------------------------
 "  Statement
@@ -45,8 +45,8 @@ hi Function        ctermfg=195 ctermbg=234 cterm=none
 hi Statement       ctermfg=198 ctermbg=234 cterm=none " goto break return continue asm
 hi Conditional     ctermfg=198 ctermbg=234 cterm=none " if else switch
 hi Repeat          ctermfg=198 ctermbg=234 cterm=none " while for do
-hi Label           ctermfg=198 ctermbg=234 cterm=bold " case default
-hi Tag             ctermfg=198 ctermbg=234 cterm=bold
+hi Label           ctermfg=198 ctermbg=234 cterm=none " case default
+hi Tag             ctermfg=198 ctermbg=234 cterm=none
 hi Operator        ctermfg=198 ctermbg=234 cterm=none
 hi keyword         ctermfg=198 ctermbg=234 cterm=none
 hi Exception       ctermfg=198 ctermbg=234 cterm=none
