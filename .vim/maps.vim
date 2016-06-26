@@ -18,7 +18,7 @@ imap /* /*<space><space>*/<esc>2hi
 
 
 " -------------------------------------------------------------------
-"  Automatic Input of AutoText fot C++
+"  Automatic Input of AutoText fot C/C++
 " -------------------------------------------------------------------
 inoremap <C-a>inc  #include<space><><left>
 inoremap <C-a>def  #define<space>
@@ -33,14 +33,20 @@ inoremap <C-a>wh   while<space>()<space>{<cr>}<esc>%2hi
 inoremap <C-a>sw   switch<space>()<space>{<cr>}<esc>%2hi
 inoremap <C-a>for  for<space>(i=0;<space>;<space>i++)<esc>5hi
 
-inoremap <C-a>pf printf("\n");<esc>4hi
+inoremap <C-a>pf   printf("\n");<esc>4hi
+inoremap <C-a>out  std::cout<space><<<space><space><<<space>std::endl;<esc>13hi
 
 
 " -------------------------------------------------------------------
 "  Automatic Input of AutoText fot LaTeX
 " -------------------------------------------------------------------
-inoremap <C-a>fig \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
-inoremap <C-a>equ \begin{equation}<cr>\end{equation}<esc>O
-inoremap <C-a>eqn \begin{eqnarray}<cr>\end{eqnarray}<esc>O
-inoremap <C-a>sec \section{}<cr>\setcounter{equation}{0}<cr>\setcounter{figure}{0}<cr>\setcounter{table}{0}<esc>3kA<left>
-inoremap <C-a>beg \begin{<cr>\end{}<esc>x<C-v>k$A
+inoremap <C-a>big  \biggl(<space><space>\biggr)<esc>7hi
+
+inoremap <C-a>beg  \begin{<cr>\end{}<esc>x<C-v>k$A
+inoremap <C-a>equ  \begin{equation}<cr>\end{equation}<esc>O
+inoremap <C-a>eqn  \begin{eqnarray}<cr>\end{eqnarray}<esc>O
+
+inoremap <C-a>fig  \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
+inoremap <C-a>tab  \begin{table}[h]<cr>\begin{center}<cr>\caption{}<cr>\begin{tabular}{}<space>\hline<cr>\end{tabular}<cr>\label{tab:}<cr>\end{center}<cr>\end{table}
+
+inoremap <C-a>sec  \section{}<cr>\setcounter{equation}{0}<cr>\setcounter{figure}{0}<cr>\setcounter{table}{0}<esc>3kA<left>
