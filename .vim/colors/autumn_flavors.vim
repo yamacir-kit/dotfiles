@@ -116,6 +116,9 @@ hi Visual          ctermfg=234 ctermbg=246
 hi NonText         ctermfg=59
 hi SpecialKey      ctermfg=59
 
+hi Search          ctermfg=none ctermbg=none cterm=reverse
+hi IncSearch       ctermfg=none ctermbg=none cterm=reverse
+
 
 " 58
 

@@ -16,10 +16,9 @@ set title
 set ambiwidth=double
 
 set expandtab smarttab tabstop=2 shiftwidth=2
-set wrap
+set nowrap
 
-set list
-set listchars=trail:_,tab:›-
+set list listchars=trail:_,tab:›-
 
 set cindent cinoptions=g0
 
@@ -30,6 +29,8 @@ set autoread
 set showmatch
 set showmode
 set matchtime=1
+
+set nohlsearch incsearch ignorecase smartcase wrapscan
 
 set splitbelow splitright
 
@@ -45,4 +46,3 @@ set encoding=utf-8
 set foldmethod=indent
 
 set virtualedit=block
-set ignorecase
