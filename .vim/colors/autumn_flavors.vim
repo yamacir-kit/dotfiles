@@ -91,18 +91,17 @@ hi Ignore          ctermfg=252 ctermbg=234 cterm=none
 "  Error
 " -------------------------------------------------------------
 hi Error           ctermfg=161 ctermbg=234 cterm=underline
+hi ErrorMsg        ctermfg=161 ctermbg=234 cterm=bold
 
 " -------------------------------------------------------------
 "  Cutsor and Line
 " -------------------------------------------------------------
-hi Cursor          ctermfg=16  ctermbg=252 cterm=none
-hi CursorIM        ctermfg=221 ctermbg=252 cterm=bold " isn't work
-hi CursorLine                  ctermbg=236 cterm=none
-hi CursorLineNr    ctermfg=221 ctermbg=236 cterm=bold
-hi CursorColumn                ctermbg=236 cterm=none
-hi LineNr          ctermfg=59  ctermbg=234 cterm=none
-hi MatchParen      ctermfg=252 ctermbg=236 cterm=bold
-hi Folded          ctermfg=67  ctermbg=234 cterm=none
+hi Cursor          ctermfg=233  ctermbg=252  cterm=none
+hi CursorLine                   ctermbg=236  cterm=none
+hi LineNr          ctermfg=59   ctermbg=234  cterm=none " :set number
+hi CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold " :set number
+hi MatchParen      ctermfg=252  ctermbg=none cterm=bold
+hi Folded          ctermfg=67   ctermbg=234  cterm=none
 
 " -------------------------------------------------------------
 "  Others

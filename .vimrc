@@ -5,44 +5,75 @@ endif
 source ~/.vim/maps.vim
 source ~/.vim/quickrun_conf.vim
 
-set noswapfile nobackup
-set clipboard=unnamed
-
-set ttyfast
-
-set number cursorline laststatus=0
-set title
-
+" -------------------------------------------------------------
+"  ENCODING
+" -------------------------------------------------------------
+set encoding=utf-8
 set ambiwidth=double
 
-set expandtab smarttab tabstop=2 shiftwidth=2
+" -------------------------------------------------------------
+"  FILE
+" -------------------------------------------------------------
+set confirm hidden
+set autoread autowrite
+set noswapfile nobackup
+
+set fileformat=unix
+
+" -------------------------------------------------------------
+"  EXTERNAL COOPERATION
+" -------------------------------------------------------------
+set ttyfast
+set clipboard=unnamed
+
+" -------------------------------------------------------------
+"  DISPLAY
+" -------------------------------------------------------------
+set title
+set number cursorline laststatus=0
+set showmode showcmd
+
+" -------------------------------------------------------------
+"  INPUT SUPPORT
+" -------------------------------------------------------------
+set expandtab smarttab tabstop=4 shiftwidth=2
 set nowrap
 
-set list listchars=trail:_,tab:›-
+set list listchars=tab:›\ ,trail:_
 
 set cindent cinoptions=g0
+set foldmethod=indent
 
-set confirm
-set hidden
-set autoread
+set scrolloff=8 sidescroll=1
 
-set showmatch
-set showmode
-set matchtime=1
+set showmatch matchtime=1
 
-set nohlsearch incsearch ignorecase smartcase wrapscan
+" -------------------------------------------------------------
+"  VISUAL
+" -------------------------------------------------------------
+set virtualedit=block
 
+" -------------------------------------------------------------
+"  SEARCH
+" -------------------------------------------------------------
+set incsearch ignorecase smartcase wrapscan
+
+" -------------------------------------------------------------
+"  WINDOW SPLIT
+" -------------------------------------------------------------
 set splitbelow splitright
 
+" -------------------------------------------------------------
+"  COMMAND LINE
+" -------------------------------------------------------------
+set wildmenu
+
+" -------------------------------------------------------------
+"  SYNTAX HIGHLIGHT
+" -------------------------------------------------------------
 syntax enable
 set t_Co=256
 set background=dark
 colorscheme autumn_flavors
 
 filetype plugin indent on
-
-set encoding=utf-8
-
-set foldmethod=indent
-
-set virtualedit=block

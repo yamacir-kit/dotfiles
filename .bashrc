@@ -62,16 +62,29 @@ fi
 # dircolors
 eval `dircolors ~/.dircolors`
 
+
 # Language
 export locale=en_US.UTF-8
 
 alias ls='ls -avF --color=auto'
 alias grep='grep --color=auto'
-alias fgrep='fgrep --color=auto'
-alias egrep='egrep --color=auto'
 alias ps='ps --sort=start_time'
 
 alias grm='git rm $(git ls-files --deleted)'
 alias tmux='tmux -2'
 
-source /opt/ros/indigo/setup.bash
+
+# ROS
+CATKIN_WS="${HOME}/works/catkin"
+
+if echo ${ROS_DISTRO} &> /dev/null; then
+  source /opt/ros/${ROS_DISTRO}/setup.bash;
+  source ${CATKIN_WS}/devel/setup.bash;
+fi
+
+function catkin_auto {
+  cd ${CATKIN_WS};
+  source ${CATKIN_WS}/devel/setup.bash;
+  catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo;
+  cd -;
+}
