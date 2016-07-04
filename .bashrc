@@ -27,7 +27,7 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-function parse_git_branch {
+function parse_git_branch() {
   if git status &> /dev/null; then
     echo [$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/'),$(git status -s | wc -l)];
   fi
@@ -35,18 +35,6 @@ function parse_git_branch {
 
 export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\][\!] \u@\H:\[\e[0;00m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;37m\]\$ \[\e[0;00m\]"
 
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-  xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
-  *)
-    ;;
-esac
-
-# Add an "alert" alias for long running commands.  Use like so:
-#   sleep 10; alert
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -66,25 +54,27 @@ eval `dircolors ~/.dircolors`
 # Language
 export locale=en_US.UTF-8
 
+
+# Alias
 alias ls='ls -avF --color=auto'
 alias grep='grep --color=auto'
-alias ps='ps --sort=start_time'
+alias ps='ps aux --sort=start_time'
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias grm='git rm $(git ls-files --deleted)'
 alias tmux='tmux -2'
 
 
-# ROS
-CATKIN_WS="${HOME}/works/catkin"
+# -------------------------------------------------------------
+#  ROS
+# -------------------------------------------------------------
+source /opt/ros/indigo/setup.bash;
 
-if echo ${ROS_DISTRO} &> /dev/null; then
-  source /opt/ros/${ROS_DISTRO}/setup.bash;
-  source ${CATKIN_WS}/devel/setup.bash;
-fi
+CATKIN_WS="$HOME/works/catkin"
+alias catkin_auto='cd $CATKIN_WS && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo && cd -'
 
-function catkin_auto {
-  cd ${CATKIN_WS};
-  source ${CATKIN_WS}/devel/setup.bash;
-  catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo;
-  cd -;
-}
+
+# -------------------------------------------------------------
+#  TEST
+# -------------------------------------------------------------
+alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
