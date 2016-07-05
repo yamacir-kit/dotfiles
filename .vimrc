@@ -2,7 +2,7 @@ if &compatible
   set nocompatible
 endif
 
-source ~/.vim/maps.vim
+source ~/.vim/keymaps.vim
 source ~/.vim/quickrun_conf.vim
 
 " -------------------------------------------------------------
@@ -34,8 +34,9 @@ set number cursorline laststatus=0
 set showmode showcmd
 
 " -------------------------------------------------------------
-"  INPUT SUPPORT
+"  INPUT
 " -------------------------------------------------------------
+set timeout timeoutlen=1000 ttimeoutlen=100
 set expandtab smarttab tabstop=4 shiftwidth=2
 set nowrap
 
@@ -66,7 +67,7 @@ set splitbelow splitright
 " -------------------------------------------------------------
 "  COMMAND LINE
 " -------------------------------------------------------------
-set wildmenu
+set wildmenu wildmode=longest,full
 
 " -------------------------------------------------------------
 "  SYNTAX HIGHLIGHT
@@ -74,6 +75,6 @@ set wildmenu
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme autumn_flavors
+colorscheme hogehoge
 
 filetype plugin indent on

@@ -108,18 +108,21 @@ hi Folded          ctermfg=67   ctermbg=234  cterm=none
 " -------------------------------------------------------------
 hi Title           ctermfg=166
 
-hi VertSplit       ctermfg=244 ctermbg=234 cterm=bold
-hi VisualNOS                   ctermbg=238
-hi Visual          ctermfg=234 ctermbg=246
+hi VertSplit       ctermfg=244  ctermbg=234  cterm=bold
+hi VisualNOS                    ctermbg=238
+hi Visual          ctermfg=234  ctermbg=246
 
-hi NonText         ctermfg=59
-hi SpecialKey      ctermfg=59
+hi NonText         ctermfg=59   ctermbg=234  cterm=none
+hi SpecialKey      ctermfg=59   ctermbg=234  cterm=none
 
 hi Search          ctermfg=none ctermbg=none cterm=reverse
 hi IncSearch       ctermfg=none ctermbg=none cterm=reverse
 
+hi WildMenu        ctermfg=221  ctermbg=236  cterm=bold
+hi StatusLine      ctermfg=59   ctermbg=236  cterm=bold
 
-" 58
+hi Menu            ctermfg=252  ctermbg=none cterm=none
+
 
 " because of ctermbg=234 bug
 set background=dark
