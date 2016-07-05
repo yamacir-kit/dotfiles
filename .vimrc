@@ -44,7 +44,7 @@ set list listchars=tab:›\ ,trail:_
 set cindent cinoptions=g0
 set foldmethod=indent
 
-set scrolloff=8 sidescroll=1
+set sidescroll=2 "scrolloff=8
 
 set showmatch matchtime=1
 
