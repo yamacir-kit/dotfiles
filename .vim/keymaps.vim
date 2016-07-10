@@ -87,7 +87,7 @@ function! s:InputLatexBegin(...)
     let str_end = "\\end{".a:1."}"
     execute "normal I".str_begin."  \n".str_end."\<esc>k"
   else
-    echo "error: no arguments"
+    echo "warn: no arguments"
     let str_begin = "\\begin{}\n"
     let str_end = "\\end{}"
     execute "normal I".str_begin."  \n".str_end."\<esc>k"
@@ -95,9 +95,6 @@ function! s:InputLatexBegin(...)
 endfunction
 
 command! -nargs=? LatexBegin call s:InputLatexBegin(<f-args>)
-
-"inoremap <c-a>beg  \begin{<cr>\end{}<esc>x<C-v>k$A
-"inoremap <c-a>eqn  \begin{eqnarray}<cr>\end{eqnarray}<esc>O
 
 inoremap <c-a>big  \biggl(<space><space>\biggr)<esc>7hi
 inoremap <c-a>fig  \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
