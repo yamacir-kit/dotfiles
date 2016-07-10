@@ -30,6 +30,7 @@ inoremap <c-l> <end>
 
 inoremap <c-o> <c-o>:<c-u>
 
+
 " -------------------------------------------------------------------
 "  Visual
 " -------------------------------------------------------------------
@@ -37,6 +38,7 @@ vnoremap ; :s/
 
 vmap # <c-v>0I#<space><esc>
 vmap / <c-v>0I//<space><esc>
+vmap % <c-v>0I%<space><esc>
 
 
 " -------------------------------------------------------------------
@@ -59,7 +61,7 @@ inoremap <c-a>inc  #include<space><><left>
 
 inoremap <c-a>def  #define<space>
 
-inoremap <c-a>mav  int<space>main(void)<space>{<cr><cr>}<esc>Ocr<space>0;<esc>kO
+inoremap <c-a>mav  int<space>main(void)<space>{<cr><cr>}<esc>Ocr<space>1;<esc>kO
 inoremap <c-a>mai  int<space>main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
 
 inoremap <c-a>nam  using<space>namespace<space>;<left>
@@ -79,12 +81,25 @@ inoremap <c-a>out  std::cout<space><<<space><space><<<space>std::endl;<esc>13hi
 " -------------------------------------------------------------------
 "  Automatic Input of AutoText fot LaTeX
 " -------------------------------------------------------------------
+function! s:InputLatexBegin(...)
+  if a:0 > 0
+    let str_begin = "\\begin{".a:1."}\n"
+    let str_end = "\\end{".a:1."}"
+    execute "normal I".str_begin."  \n".str_end."\<esc>k"
+  else
+    echo "error: no arguments"
+    let str_begin = "\\begin{}\n"
+    let str_end = "\\end{}"
+    execute "normal I".str_begin."  \n".str_end."\<esc>k"
+  end
+endfunction
+
+command! -nargs=? LatexBegin call s:InputLatexBegin(<f-args>)
+
+"inoremap <c-a>beg  \begin{<cr>\end{}<esc>x<C-v>k$A
+"inoremap <c-a>eqn  \begin{eqnarray}<cr>\end{eqnarray}<esc>O
+
 inoremap <c-a>big  \biggl(<space><space>\biggr)<esc>7hi
-
-inoremap <c-a>beg  \begin{<cr>\end{}<esc>x<C-v>k$A
-inoremap <c-a>equ  \begin{equation}<cr>\end{equation}<esc>O
-inoremap <c-a>eqn  \begin{eqnarray}<cr>\end{eqnarray}<esc>O
-
 inoremap <c-a>fig  \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
 inoremap <c-a>tab  \begin{table}[h]<cr>\begin{center}<cr>\caption{}<cr>\begin{tabular}{}<space>\hline<cr>\end{tabular}<cr>\label{tab:}<cr>\end{center}<cr>\end{table}
 inoremap <c-a>des  \begin{description}<cr>\item[]<space>\mbox{}<space>\\<cr>\item[]<space>\mbox{}<space>\\<cr>\end{description}
