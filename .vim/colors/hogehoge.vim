@@ -10,7 +10,7 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "autumn_flavors"
+let colors_name = "hogehoge"
 
 
 " -------------------------------------------------------------
@@ -119,10 +119,7 @@ hi Search          ctermfg=none ctermbg=none cterm=reverse
 hi IncSearch       ctermfg=none ctermbg=none cterm=reverse
 
 hi WildMenu        ctermfg=221  ctermbg=236  cterm=bold
-hi StatusLine      ctermfg=59   ctermbg=236  cterm=bold
-
-hi Menu            ctermfg=252  ctermbg=none cterm=none
+hi StatusLine      ctermfg=246  ctermbg=236  cterm=bold
 
 
-" because of ctermbg=234 bug
-set background=dark
+set background=dark " because of ctermbg=234 bug

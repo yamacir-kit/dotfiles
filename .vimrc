@@ -67,7 +67,7 @@ set splitbelow splitright
 " -------------------------------------------------------------
 "  COMMAND LINE
 " -------------------------------------------------------------
-set wildmenu wildmode=longest,full
+set wildmenu wildmode=longest:full,full
 
 " -------------------------------------------------------------
 "  SYNTAX HIGHLIGHT
