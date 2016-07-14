@@ -53,7 +53,7 @@ nnoremap # :<c-u>set<space>hlsearch<cr>#
 
 
 " -------------------------------------------------------------------
-"  Automatic Input of AutoText fot C/C++
+"  AutoText fot C/C++
 " -------------------------------------------------------------------
 inoremap <c-a> <nop>
 
@@ -77,35 +77,47 @@ inoremap <c-a>pf   printf("\n");<esc>4hi
 
 inoremap <c-a>out  std::cout<space><<<space><space><<<space>std::endl;<esc>13hi
 
+"function! s:InputCppInclude(...)
+"  let str_include = "#include <"
+"  if a:0 == 0
+"    execute "normal i".str_include.">\<esc>"
+"  else
+"    for i in sort(a:000)
+"      execute "normal o".str_include.i.">\<esc>"
+"    endfor
+"  endif
+"endfunction
+"
+"command! -nargs=? CppInclude call s:InputCppInclude(<f-args>)
+
 
 " -------------------------------------------------------------------
-"  Automatic Input of AutoText fot LaTeX
+"  AutoText fot LaTeX
 " -------------------------------------------------------------------
 function! s:InputLatexBegin(...)
   if a:0 > 0
     let str_begin = "\\begin{".a:1."}\n"
     let str_end = "\\end{".a:1."}"
-    execute "normal I".str_begin."  \n".str_end."\<esc>k"
+    execute "normal I".str_begin.str_end."\<esc>"
   else
     echo "warn: no arguments"
     let str_begin = "\\begin{}\n"
     let str_end = "\\end{}"
-    execute "normal I".str_begin."  \n".str_end."\<esc>k"
+    execute "normal I".str_begin.str_end."\<esc>"
   end
 endfunction
 
 command! -nargs=? LatexBegin call s:InputLatexBegin(<f-args>)
 
 inoremap <c-a>big  \biggl(<space><space>\biggr)<esc>7hi
-inoremap <c-a>fig  \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=1.0\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
+inoremap <c-a>fig  \begin{figure}[h]<cr>\begin{center}<cr>\includegraphics[width=0.8\hsize]{.eps}<cr>\end{center}<cr>\caption{}<cr>\label{fig:}<cr>\end{figure}
 inoremap <c-a>tab  \begin{table}[h]<cr>\begin{center}<cr>\caption{}<cr>\begin{tabular}{}<space>\hline<cr>\end{tabular}<cr>\label{tab:}<cr>\end{center}<cr>\end{table}
 inoremap <c-a>des  \begin{description}<cr>\item[]<space>\mbox{}<space>\\<cr>\item[]<space>\mbox{}<space>\\<cr>\end{description}
 inoremap <c-a>enu  \begin{enumerate}<cr>\item<space><cr>\item<space><cr>\end{enumerate}
 
-inoremap <c-a>sec  \section{}<cr>\setcounter{equation}{1}<cr>\setcounter{figure}{0}<cr>\setcounter{table}{0}<esc>3kA<left>
+inoremap <c-a>sec  \section{}<cr>\setcounter{equation}{0}<cr>\setcounter{figure}{0}<cr>\setcounter{table}{0}<esc>3kA<left>
 
 
 " -------------------------------------------------------------------
 "  Test
 " -------------------------------------------------------------------
-

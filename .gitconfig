@@ -3,3 +3,7 @@
   email = httperror@404-notfound.jp
 [core]
   editor = vi
+[push]
+  default = simple
+[merge]
+  ff = false
