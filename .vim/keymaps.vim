@@ -6,8 +6,11 @@ nnoremap Y y$
 nnoremap + <c-a>
 nnoremap - <c-x>
 
-nnoremap j jzz
-nnoremap k kzz
+nnoremap j gjzz
+nnoremap k gkzz
+
+nnoremap <down> gjzz
+nnoremap <up> gkzz
 
 
 " -------------------------------------------------------------------
@@ -29,6 +32,9 @@ inoremap <c-k> <esc>O
 inoremap <c-l> <end>
 
 inoremap <c-o> <c-o>:<c-u>
+
+"inoremap <down> gjzz
+"inoremap <up> gkzz
 
 
 " -------------------------------------------------------------------
