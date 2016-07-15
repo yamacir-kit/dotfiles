@@ -33,7 +33,8 @@ function parse_git_branch() {
   fi
 }
 
-export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;00m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
+#export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;00m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
+export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;00m\]\W\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
 
 
 # enable programmable completion features (you don't need to enable
@@ -59,6 +60,7 @@ alias ps='ps aux --sort=start_time'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias grm='git rm $(git ls-files --deleted)'
+
 alias tmux='tmux -2'
 
 

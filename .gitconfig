@@ -7,3 +7,5 @@
   default = simple
 [merge]
   ff = false
+[alias]
+  ch = checkout
