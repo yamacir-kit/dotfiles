@@ -1,11 +1,16 @@
 [user]
   name = YamaCIR-KIT
   email = httperror@404-notfound.jp
-[core]
-  editor = vi
-[push]
-  default = simple
-[merge]
-  ff = false
+
 [alias]
   ch = checkout
+[core]
+  editor = vi
+[color]
+  ui = auto
+[merge]
+  ff = false
+[push]
+  default = simple
+[pull]
+  rebase = true
