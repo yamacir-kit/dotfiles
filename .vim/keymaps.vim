@@ -3,6 +3,8 @@
 " -------------------------------------------------------------------
 nnoremap ; :
 nnoremap Y y$
+nnoremap dw bdw
+nnoremap dW bdW
 nnoremap + <c-a>
 nnoremap - <c-x>
 
