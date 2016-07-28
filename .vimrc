@@ -48,6 +48,7 @@ set foldmethod=indent
 set sidescroll=2 "scrolloff=8
 
 set showmatch matchtime=1
+set nf="hex"
 
 " -------------------------------------------------------------
 "  VISUAL
