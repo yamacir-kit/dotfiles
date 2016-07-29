@@ -33,8 +33,8 @@ function parse_git_branch() {
   fi
 }
 
-export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
-#export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u: \[\e[0;00m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
+# export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;36m\]\$(parse_git_branch)\[\e[0;00m\]\$ "
+export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
 # enable programmable completion features (you don't need to enable
