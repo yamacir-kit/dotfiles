@@ -1,11 +1,14 @@
 " -------------------------------------------------------------------
-"  General
+"  Prefix Key
 " -------------------------------------------------------------------
-"let mapleader = "\<space>"
+let mapleader = "\\"
+
+inoremap [PreProc] <nop>
+imap # [PreProc]
 
 
 " -------------------------------------------------------------------
-"  Normal
+"  Normal Mode
 " -------------------------------------------------------------------
 nnoremap ; :
 nnoremap Y y$
@@ -22,7 +25,7 @@ nnoremap <c-k> O<esc>
 
 
 " -------------------------------------------------------------------
-"  Insert
+"  Insert Mode
 " -------------------------------------------------------------------
 inoremap <> <><left>
 inoremap {} {}<left>
@@ -47,7 +50,7 @@ inoremap <up> <c-o>:<c-u>normal<space>gkzz<cr>
 
 
 " -------------------------------------------------------------------
-"  Visual
+"  Visual Mode
 " -------------------------------------------------------------------
 vnoremap ; :s/
 
@@ -57,7 +60,7 @@ vmap % <c-v>0I%<space><esc>
 
 
 " -------------------------------------------------------------------
-"  Command
+"  Command Mode
 " -------------------------------------------------------------------
 nnoremap <esc><esc> :<c-u>noh<cr>
 
@@ -112,7 +115,7 @@ inoremap <leader>ref  \ref{}<left>
 " -------------------------------------------------------------------
 "  NEW AutoText fot C/C++
 " -------------------------------------------------------------------
-inoremap <leader>inc  #include<space><><left>
-inoremap <leader>def  #define<space>
+inoremap [PreProc]inc  #include<space><><left>
+inoremap [PreProc]def  #define<space>
 inoremap <leader>main int<space>main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
 inoremap <leader>out  std::cout<space><<<space><space><<<space>std::endl;<esc>13hi
