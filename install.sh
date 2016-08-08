@@ -7,4 +7,9 @@ do
   ln -sf "$f" "$HOME"
 done
 
+cd .vim/extern/
+git clone https://github.com/tomasr/molokai
+git clone https://github.com/thinca/vim-quickrun
+cd -
+
 exit 0
