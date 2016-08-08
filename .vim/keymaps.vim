@@ -17,8 +17,9 @@ nnoremap - <c-x>
 
 nnoremap j gjzz
 nnoremap k gkzz
+
 nnoremap <down> gjzz
-nnoremap <up> gkzz
+nnoremap <up>   gkzz
 
 nnoremap <c-j> o<esc>
 nnoremap <c-k> O<esc>
@@ -39,8 +40,8 @@ inoremap /* /*<space><space>*/<esc>2hi
 inoremap （） （）<left>
 
 inoremap <c-h> <esc>I
-inoremap <c-j> <esc>o
-inoremap <c-k> <esc>O
+"inoremap <c-j> <esc>o
+"inoremap <c-k> <esc>O
 inoremap <c-l> <end>
 
 inoremap <c-o> <c-o>:<c-u>
@@ -117,5 +118,5 @@ inoremap <leader>ref  \ref{}<left>
 " -------------------------------------------------------------------
 inoremap [PreProc]inc  #include<space><><left>
 inoremap [PreProc]def  #define<space>
-inoremap <leader>main int<space>main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
-inoremap <leader>out  std::cout<space><<<space><space><<<space>std::endl;<esc>13hi
+inoremap main(         main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
+inoremap cout          cout<space><<<space><space><<<space>std::endl;<esc>13hi
