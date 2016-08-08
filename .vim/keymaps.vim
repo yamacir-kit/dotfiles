@@ -62,7 +62,7 @@ vmap % <c-v>0I%<space><esc>
 " -------------------------------------------------------------------
 "  Command Mode
 " -------------------------------------------------------------------
-nnoremap <esc><esc> :<c-u>noh<cr>
+"nnoremap <esc><esc> :<c-u>noh<cr>
 
 nnoremap / :<c-u>set<space>hlsearch<cr>/
 nnoremap ? :<c-u>set<space>hlsearch<cr>?
