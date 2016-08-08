@@ -9,7 +9,7 @@ source ~/.vim/quickrun_conf.vim
 "  ENCODING
 " -------------------------------------------------------------
 set encoding=utf-8
-" set fileencoding=utf-8
+set fileencoding=utf-8
 set ambiwidth=double
 
 " -------------------------------------------------------------
