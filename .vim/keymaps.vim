@@ -37,7 +37,6 @@ inoremap '' ''<left>
 inoremap $$ $$<left>
 inoremap && &&<left>
 inoremap /* /*<space><space>*/<esc>2hi
-inoremap （） （）<left>
 
 inoremap <c-h> <esc>I
 "inoremap <c-j> <esc>o
@@ -74,18 +73,18 @@ nnoremap # :<c-u>set<space>hlsearch<cr>#
 " -------------------------------------------------------------------
 "  AutoText fot C/C++
 " -------------------------------------------------------------------
-command! -nargs=? CppClass call s:InputCppClass(<f-args>)
-function! s:InputCppClass(...)
-  let str_name = "class ".a:1." {\n"
-  let str_ctor = a:1."()\n{\n}\n"
-  let str_dtor = "~".a:1."()\n{\n}\n"
-
-  if a:0 > 0
-    execute "normal I".str_name."public:\n".str_ctor."\n".str_dtor."\nprivate:\n};"."\<esc>"
-  else
-    echo "function InputCppClass needs an argument"
-  endif
-endfunction
+"command! -nargs=? CppClass call s:InputCppClass(<f-args>)
+"function! s:InputCppClass(...)
+"  let str_name = "class ".a:1." {\n"
+"  let str_ctor = a:1."()\n{\n}\n"
+"  let str_dtor = "~".a:1."()\n{\n}\n"
+"
+"  if a:0 > 0
+"    execute "normal I".str_name."public:\n".str_ctor."\n".str_dtor."\nprivate:\n};"."\<esc>"
+"  else
+"    echo "function InputCppClass needs an argument"
+"  endif
+"endfunction
 
 
 " -------------------------------------------------------------------
