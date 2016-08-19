@@ -118,5 +118,5 @@ inoremap <leader>ref  \ref{}<left>
 " -------------------------------------------------------------------
 inoremap <leader>inc   #include<space><><left>
 inoremap <leader>def   #define<space>
-inoremap <leader>main  main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
+inoremap <leader>main  int<space>main(int<space>argc,<space>char**<space>argv)<space>{<cr><cr>}<esc>Oreturn<space>0;<esc>kO
 inoremap <leader>cout  cout<space><<<space><space><<<space>std::endl;<esc>13hi
