@@ -90,7 +90,8 @@ hi Ignore          ctermfg=252 ctermbg=234 cterm=none
 " -------------------------------------------------------------
 "  Error
 " -------------------------------------------------------------
-hi Error           ctermfg=161 ctermbg=234 cterm=underline
+"hi Error           ctermfg=161 ctermbg=234 cterm=underline
+hi Error           ctermfg=252 ctermbg=234 cterm=none
 hi ErrorMsg        ctermfg=161 ctermbg=234 cterm=bold
 
 " -------------------------------------------------------------
