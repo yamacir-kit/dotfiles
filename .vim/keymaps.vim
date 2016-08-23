@@ -18,8 +18,10 @@ nnoremap - <c-x>
 nnoremap j gjzz
 nnoremap k gkzz
 
-nnoremap <down> gjzz
-nnoremap <up>   gkzz
+nnoremap <down>     gjzz
+nnoremap <up>       gkzz
+nnoremap <pagedown> <pagedown>zz
+nnoremap <pageup>   <pageup>zz
 
 nnoremap <c-j> o<esc>
 nnoremap <c-k> O<esc>
@@ -39,14 +41,14 @@ inoremap && &&<left>
 inoremap /* /*<space><space>*/<esc>2hi
 
 inoremap <c-h> <esc>I
-"inoremap <c-j> <esc>o
-"inoremap <c-k> <esc>O
 inoremap <c-l> <end>
 
 inoremap <c-o> <c-o>:<c-u>
 
-inoremap <down> <c-o>:<c-u>normal<space>gjzz<cr>
-inoremap <up> <c-o>:<c-u>normal<space>gkzz<cr>
+inoremap <down>     <c-o>:<c-u>normal<space>gjzz<cr>
+inoremap <up>       <c-o>:<c-u>normal<space>gkzz<cr>
+inoremap <pagedown> <pagedown><c-o>:<c-u>normal<space>zz<cr>
+inoremap <pageup>   <pageup><c-o>:<c-u>normal<space>zz<cr>
 
 
 " -------------------------------------------------------------------
@@ -68,23 +70,6 @@ nnoremap / :<c-u>set<space>hlsearch<cr>/
 nnoremap ? :<c-u>set<space>hlsearch<cr>?
 nnoremap * :<c-u>set<space>hlsearch<cr>*
 nnoremap # :<c-u>set<space>hlsearch<cr>#
-
-
-" -------------------------------------------------------------------
-"  AutoText fot C/C++
-" -------------------------------------------------------------------
-"command! -nargs=? CppClass call s:InputCppClass(<f-args>)
-"function! s:InputCppClass(...)
-"  let str_name = "class ".a:1." {\n"
-"  let str_ctor = a:1."()\n{\n}\n"
-"  let str_dtor = "~".a:1."()\n{\n}\n"
-"
-"  if a:0 > 0
-"    execute "normal I".str_name."public:\n".str_ctor."\n".str_dtor."\nprivate:\n};"."\<esc>"
-"  else
-"    echo "function InputCppClass needs an argument"
-"  endif
-"endfunction
 
 
 " -------------------------------------------------------------------
