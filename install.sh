@@ -12,4 +12,6 @@ git clone https://github.com/tomasr/molokai
 git clone https://github.com/thinca/vim-quickrun
 cd -
 
+git clone https://github.com/edihbrandon/RictyDiminished .fonts
+
 exit 0
