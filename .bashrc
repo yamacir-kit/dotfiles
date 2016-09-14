@@ -48,7 +48,6 @@ export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
 
-
 # Alias
 alias ls='ls -avF --color=auto'
 alias grep='grep --color=auto'
