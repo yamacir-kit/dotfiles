@@ -61,7 +61,7 @@ alias tmux='tmux -2u'
 # -------------------------------------------------------------
 #  ROS
 # -------------------------------------------------------------
-CATKIN_WS="$HOME/works/arcsys2"
+CATKIN_WS="$HOME/works/tutorials/rosik"
 
 source /opt/ros/indigo/setup.bash
 source $CATKIN_WS/devel/setup.bash
