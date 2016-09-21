@@ -50,6 +50,9 @@ export LC_MESSAGE=C
 
 # Alias
 alias ls='ls -avF --color=auto'
+alias sl='ls -avF --color=auto'
+alias ks='ls -avF --color=auto'
+
 alias grep='grep --color=auto'
 alias ps='ps aux --sort=start_time'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -64,9 +67,10 @@ alias tmux='tmux -2u'
 CATKIN_WS="$HOME/works/tutorials/rosik"
 
 source /opt/ros/indigo/setup.bash
-source $CATKIN_WS/devel/setup.bash
+source ${CATKIN_WS}/devel/setup.bash
 
-alias catkin_auto='cd $CATKIN_WS && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo && cd -'
+alias catkin_auto='cd ${CATKIN_WS} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo && cd -'
+alias cdw='cd ${CATKIN_WS}'
 
 
 # -------------------------------------------------------------
