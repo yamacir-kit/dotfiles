@@ -51,7 +51,7 @@ set sidescroll=2 "scrolloff=8
 set showmatch matchtime=1
 set nf="hex"
 
-set iskeyword-=_
+" set iskeyword-=_
 
 " -------------------------------------------------------------
 "  VISUAL
