@@ -69,7 +69,7 @@ CATKIN_WS="$HOME/works/tutorials/rosik"
 source /opt/ros/indigo/setup.bash
 source ${CATKIN_WS}/devel/setup.bash
 
-alias catkin_auto='cd ${CATKIN_WS} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo && cd -'
+alias catkin_auto='cd ${CATKIN_WS} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
 alias cdw='cd ${CATKIN_WS}'
 
 
