@@ -81,4 +81,7 @@ set t_Co=256
 set background=dark
 colorscheme hogehoge
 
+set syntax=markdown
+au BufRead,BufNewFile *.md set filetype=markdown
+
 filetype plugin indent on
