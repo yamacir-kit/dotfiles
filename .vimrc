@@ -81,6 +81,8 @@ set t_Co=256
 set background=dark
 colorscheme hogehoge
 
+"hi Normal ctermbg=none
+
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
