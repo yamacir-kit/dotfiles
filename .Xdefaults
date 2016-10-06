@@ -1,25 +1,27 @@
-URxvt.geometry:     80x24
-URxvt.saveLines:    4096
-URxvt.scrollStyle:  rxvt
-URxvt.scrollBar:    false
+urxvt.geometry:       80x24
+urxvt.saveLines:      4096
+urxvt.scrollStyle:    rxvt
+urxvt.scrollBar:      false
 
-URxvt.termName:     rxvt
-urxvt.iconFile:     /usr/share/icons/Humanity/apps/128/gnome-terminal.svg
+urxvt.termName:       rxvt
+urxvt.iconFile:       /usr/share/icons/Humanity/apps/128/gnome-terminal.svg
 
-URxvt.allow_bold:   true
-URxvt.font:         xft:Ricty Diminished:style=regular:size=13.5:antialias=true
-URxvt.letterSpace:  -1
-URxvt.lineSpace:    1
+urxvt.allow_bold:     true
+urxvt.font:           xft:Ricty Diminished:style=regular:size=13.5:antialias=true
+urxvt.letterSpace:    -1
+urxvt.lineSpace:      1
 
-URxvt.depth:        32
-URxvt.foreground:   #d0d0d0
-URxvt.background:   #1c1c1c
-URxvt.transparent:  false
-URxvt.fading:       50
+! COLOR
+urxvt.depth:          32
+urxvt.fading:         50
+urxvt.foreground:     #d0d0d0
+urxvt.background:     [70]#1c1c1c
+urxvt.transparent:    true
+urxvt.inheritPixmap:  false
 
 ! CIRSOR
-URxvt.cursorBlink:  true
-URxvt.cursorColor:  #d0d0d0
+urxvt.cursorBlink:    true
+urxvt.cursorColor:    #d0d0d0
 
 ! POINTER
-URxvt.pointerBlank: true
+urxvt.pointerBlank:   true
