@@ -2,7 +2,7 @@
 " My original Vim color scheme
 "
 " Author: Tatsuya Yamasaki <httperror@404-notfound.jp>
-" https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/autumn_flavors.vim
+" https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/transparent.vim
 " -------------------------------------------------------------
 
 
@@ -10,13 +10,13 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "hogehoge"
+let colors_name = "transparent"
 
 
 " -------------------------------------------------------------
 "  Normal
 " -------------------------------------------------------------
-hi Normal          ctermfg=252 ctermbg=234  cterm=none
+hi Normal          ctermfg=252 ctermbg=none  cterm=none
 
 " -------------------------------------------------------------
 "  Comment
@@ -98,10 +98,10 @@ hi ErrorMsg        ctermfg=161 ctermbg=none cterm=bold
 " -------------------------------------------------------------
 hi Cursor          ctermfg=233  ctermbg=252  cterm=none
 hi CursorLine                   ctermbg=236  cterm=none
-hi LineNr          ctermfg=59   ctermbg=none  cterm=none " :set number
+hi LineNr          ctermfg=59   ctermbg=none cterm=none " :set number
 hi CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold " :set number
 hi MatchParen      ctermfg=252  ctermbg=none cterm=bold
-hi Folded          ctermfg=67   ctermbg=none  cterm=none
+hi Folded          ctermfg=67   ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Others

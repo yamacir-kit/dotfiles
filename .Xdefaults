@@ -15,10 +15,13 @@ urxvt.lineSpace:      1
 urxvt.depth:          32
 urxvt.fading:         0
 urxvt.foreground:     #d0d0d0
-!urxvt.background:     [70]#1c1c1c
-urxvt.background:     #1c1c1c
-!urxvt.transparent:    true
-!urxvt.inheritPixmap:  false
+!urxvt.background:     #1c1c1c
+
+! TRANSPARENT SETTINGS
+urxvt.background:     [80]#1c1c1c
+urxvt.transparent:    true
+urxvt.inheritPixmap:  false
+
 
 ! CIRSOR
 urxvt.cursorBlink:    true

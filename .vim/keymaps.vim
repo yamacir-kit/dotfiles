@@ -23,8 +23,8 @@ nnoremap <up>       gkzz
 nnoremap <pagedown> <pagedown>zz
 nnoremap <pageup>   <pageup>zz
 
-nnoremap <c-j> o<esc>
-nnoremap <c-k> O<esc>
+" nnoremap <leader>t  <c-o>:<c-u>colorscheme<space>transparent<cr>
+" nnoremap <leader>n  <c-o>:<c-u>colorscheme<space>normal<cr>
 
 
 " -------------------------------------------------------------------
@@ -41,7 +41,6 @@ inoremap && &&<left>
 inoremap /* /*<space><space>*/<esc>2hi
 
 inoremap <c-h> <esc>I
-inoremap <c-l> <end>
 
 inoremap <c-o> <c-o>:<c-u>
 
