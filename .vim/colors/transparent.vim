@@ -97,9 +97,9 @@ hi ErrorMsg        ctermfg=161 ctermbg=none cterm=bold
 "  Cutsor and Line
 " -------------------------------------------------------------
 hi Cursor          ctermfg=233  ctermbg=252  cterm=none
-hi CursorLine                   ctermbg=236  cterm=none
-hi LineNr          ctermfg=59   ctermbg=none cterm=none " :set number
-hi CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold " :set number
+hi CursorLine                   ctermbg=none cterm=none
+hi LineNr          ctermfg=059  ctermbg=none cterm=none " :set number
+hi CursorLineNr    ctermfg=221  ctermbg=none cterm=bold " :set number
 hi MatchParen      ctermfg=252  ctermbg=none cterm=bold
 hi Folded          ctermfg=67   ctermbg=none cterm=none
 
@@ -115,8 +115,8 @@ hi Visual          ctermfg=234  ctermbg=246
 hi NonText         ctermfg=59   ctermbg=none  cterm=none
 hi SpecialKey      ctermfg=59   ctermbg=none  cterm=none
 
-hi Search          ctermfg=none ctermbg=none cterm=reverse
-hi IncSearch       ctermfg=none ctermbg=none cterm=reverse
+hi Search          ctermfg=none ctermbg=none cterm=bold
+hi IncSearch       ctermfg=none ctermbg=none cterm=bold
 
 hi WildMenu        ctermfg=221  ctermbg=236  cterm=bold
 hi StatusLine      ctermfg=246  ctermbg=236  cterm=bold
