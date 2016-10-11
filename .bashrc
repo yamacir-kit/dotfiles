@@ -81,6 +81,5 @@ alias cdw='cd ${CATKIN_WS}'
 alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
 
 cd() {
-  builtin cd "$@"
-  ls -avF --color=auto
+  builtin cd "$@" && ls -avF --color=auto
 }
