@@ -79,7 +79,7 @@ set wildmenu wildmode=longest:full,full
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme transparent
+colorscheme normal
 
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown

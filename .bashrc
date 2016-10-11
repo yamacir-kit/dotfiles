@@ -53,6 +53,8 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
+alias cdd='cd ~/dotfiles'
+
 alias grep='grep --color=auto'
 alias ps='ps aux --sort=start_time'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
@@ -77,3 +79,8 @@ alias cdw='cd ${CATKIN_WS}'
 #  TEST
 # -------------------------------------------------------------
 alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
+
+cd() {
+  builtin cd "$@"
+  ls -avF --color=auto
+}

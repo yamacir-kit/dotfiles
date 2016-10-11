@@ -16,7 +16,8 @@ let colors_name = "normal"
 " -------------------------------------------------------------
 "  Normal
 " -------------------------------------------------------------
-hi Normal          ctermfg=252 ctermbg=234  cterm=none
+"hi Normal          ctermfg=252 ctermbg=234  cterm=none
+hi Normal          ctermfg=252 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Comment
