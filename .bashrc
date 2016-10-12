@@ -53,7 +53,8 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-alias cdd='cd ~/dotfiles'
+export DOTFILES_DIR="$HOME/dotfiles"
+alias cdd='cd ${DOTFILES_DIR}'
 
 alias grep='grep --color=auto'
 alias ps='ps aux --sort=start_time'
@@ -66,13 +67,9 @@ alias tmux='tmux -2u'
 # -------------------------------------------------------------
 #  ROS
 # -------------------------------------------------------------
-source ~/.catkin_ws.bash
-
-source /opt/ros/indigo/setup.bash
-source ${CATKIN_WS}/devel/setup.bash
-
-alias catkin_auto='cd ${CATKIN_WS} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
-alias cdw='cd ${CATKIN_WS}'
+if [ -e ${DOTFILES_DIR}/.rosconfig ]; then
+  source ${DOTFILES_DIR}/.rosconfig
+fi
 
 
 # -------------------------------------------------------------

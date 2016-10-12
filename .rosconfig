@@ -1,0 +1,14 @@
+#!/bin/bash
+
+export ROS_VERSION="indigo"
+source /opt/ros/${ROS_VERSION}/setup.bash
+
+export CATKIN_WORKSPACE="$HOME/works/pubsub"
+alias cdc='cd ${CATKIN_WORKSPACE}'
+
+if [ ! -e ${CATKIN_WORKSPACE}/devel/setup.bash ]; then
+  cd ${CATKIN_WORKSPACE} && catkin_make
+fi
+source ${CATKIN_WORKSPACE}/devel/setup.bash
+
+alias catkin_auto='cd ${CATKIN_WORKSPACE} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
