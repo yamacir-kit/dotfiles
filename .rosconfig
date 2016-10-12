@@ -6,9 +6,8 @@ source /opt/ros/${ROS_VERSION}/setup.bash
 export CATKIN_WORKSPACE="$HOME/works/pubsub"
 alias cdc='cd ${CATKIN_WORKSPACE}'
 
-if [ ! -e ${CATKIN_WORKSPACE}/devel/setup.bash ]; then
-  cd ${CATKIN_WORKSPACE} && catkin_make
-fi
-source ${CATKIN_WORKSPACE}/devel/setup.bash
+#alias catkin_make='cd ${CATKIN_WORKSPACE} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
 
-alias catkin_auto='cd ${CATKIN_WORKSPACE} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
+function catkin_make() {
+  (cd ${CATKIN_WORKSPACE} && command catkin_make $@) && source devel/setup.bash && cd -;
+}

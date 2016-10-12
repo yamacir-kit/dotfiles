@@ -48,13 +48,15 @@ export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
 
+export DOTFILES_DIR="$HOME/dotfiles"
+
 # Alias
 alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-export DOTFILES_DIR="$HOME/dotfiles"
 alias cdd='cd ${DOTFILES_DIR}'
+alias cdw='cd ~/works'
 
 alias grep='grep --color=auto'
 alias ps='ps aux --sort=start_time'
