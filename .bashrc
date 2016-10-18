@@ -47,6 +47,7 @@ eval `dircolors ~/.dircolors`
 export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
+export LESSCHARSET=utf-8
 
 export DOTFILES_DIR="$HOME/dotfiles"
 
@@ -63,6 +64,7 @@ alias ps='ps aux --sort=start_time'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias grm='git rm $(git ls-files --deleted)'
+
 alias tmux='tmux -2u'
 
 
