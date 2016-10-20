@@ -1,14 +1,13 @@
 #!/bin/bash
 
-export ROS_VERSION="indigo"
-source /opt/ros/${ROS_VERSION}/setup.bash
+ros_version="indigo"
+source /opt/ros/$ros_version/setup.bash
 
-export CATKIN_WORKSPACE="$HOME/works/arcsys2"
-#export CATKIN_WORKSPACE="$HOME/works/pubsub"
-alias cdc='cd ${CATKIN_WORKSPACE}'
+catkin_ws="$HOME/works/kv2_colored_shape_tracker"
+#catkin_ws="$HOME/works/pubsub"
 
-#alias catkin_make='cd ${CATKIN_WORKSPACE} && source devel/setup.bash && catkin_make -DCMAKE_BUILD_TYPE=RelWithDebInfo; cd -'
+alias cdc='cd $catkin_ws'
 
 function catkin_make() {
-  (cd ${CATKIN_WORKSPACE} && command catkin_make $@) && source ${CATKIN_WORKSPACE}/devel/setup.bash && cd -;
+  (cd $catkin_ws && command catkin_make $@) && source $catkin_ws/devel/setup.bash;
 }
