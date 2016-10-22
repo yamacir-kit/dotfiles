@@ -6,6 +6,7 @@ dotfiles="$scripts/.."
 devpkgs="git build-essentiali python-dev python3-dev clang"
 devenvs="vim-gnome rxvt-unicode-256colorl tmux"
 texpkgs="texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra latexmk"
+others="skype dropbox"
 
 sudo apt-get update && sudo apt-get dist-upgrade
 
