@@ -1,14 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-# -- install manually ------------------
-# skype, dropbox
-# --------------------------------------
+sudo apt-get update && sudo apt-get dist-upgrade
 
-apt-get update
-apt-get dist-upgrade
-
-apt-get remove vim-tiny
-apt-get install vim-nox
+sudo apt-get remove vim-tiny
+sudo apt-get install vim-nox
 
 apt-get install git
 

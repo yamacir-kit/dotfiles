@@ -1,18 +1,34 @@
 #!/bin/bash
 
-for f in $(pwd)/.??*
+dotfiles=$(cd "$(dirname $0)"; pwd)
+cd $dotfiles
+
+if [ ! -e $dotfiles/.fonts ]; then
+  git clone https://github.com/edihbrandon/RictyDiminished $dotfiles/.fonts
+fi
+
+for f in $dotfiles/.??*
 do
-  test "$f" = "$(pwd)/.git" && continue
-  test "$f" = "$(pwd)/.gitignore" && continue
+  test $f = $dotfiles/.git && continue
+  test $f = $dotfiles/.gitignore && continue
   ln -sf "$f" "$HOME"
 done
 
-mkdir -p .vim/extern
-cd .vim/extern
-git clone https://github.com/tomasr/molokai
-git clone https://github.com/thinca/vim-quickrun
-cd -
+extern="$dotfiles/.vim/extern"
+mkdir -p $extern && cd $extern
 
-git clone https://github.com/edihbrandon/RictyDiminished .fonts
+if [ ! -e $extern/vim-quickrun ]; then
+  git clone https://github.com/thinca/vim-quickrun.git $extern/vim-quickrun
+fi
+
+ycmdir="$extern/YouCompleteMe"
+if [ ! -e $ycmdir ]; then
+  git clone https://github.com/Valloric/YouCompleteMe.git $ycmdir
+  cd $ycmdir
+  git submodule update --init --recursive
+  # sudo apt-get -y install python-dev python3-dev clang
+  ./install.py --clang-completer
+fi
+
 
 exit 0
