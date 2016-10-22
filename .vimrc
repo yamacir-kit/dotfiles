@@ -35,7 +35,7 @@ set number cursorline laststatus=0
 set showmode showcmd
 
 " -------------------------------------------------------------
-"  INPUT
+"  EDIT
 " -------------------------------------------------------------
 set timeout timeoutlen=1000 ttimeoutlen=100
 set expandtab smarttab tabstop=4 shiftwidth=2
@@ -51,7 +51,7 @@ set sidescroll=2 "scrolloff=8
 set showmatch matchtime=1
 set nf="hex"
 
-" set iskeyword-=_
+let g:ycm_global_ycm_extra_conf = '~/.vim/extern/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " -------------------------------------------------------------
 "  VISUAL
