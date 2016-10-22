@@ -5,6 +5,8 @@ endif
 source ~/.vim/keymaps.vim
 source ~/.vim/quickrun_conf.vim
 
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/extern/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+
 " -------------------------------------------------------------
 "  ENCODING
 " -------------------------------------------------------------
@@ -50,8 +52,6 @@ set sidescroll=2 "scrolloff=8
 
 set showmatch matchtime=1
 set nf="hex"
-
-let g:ycm_global_ycm_extra_conf = '~/.vim/extern/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 
 " -------------------------------------------------------------
 "  VISUAL
