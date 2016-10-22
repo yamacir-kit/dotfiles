@@ -26,9 +26,7 @@ if [ ! -e $ycmdir ]; then
   git clone https://github.com/Valloric/YouCompleteMe.git $ycmdir
   cd $ycmdir
   git submodule update --init --recursive
-  # sudo apt-get -y install python-dev python3-dev clang
   ./install.py --clang-completer
 fi
-
 
 exit 0
