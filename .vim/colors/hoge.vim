@@ -136,7 +136,7 @@ highlight PmenuSel        ctermfg=221  ctermbg=236  cterm=bold
 
 " -- Completion ------------------------------------------------
 " highlight SyntasticErrorSign
-
+highlight SpellBad        ctermfg=161  ctermbg=none cterm=bold,underline
 
 
 " -- Background ------------------------------------------------

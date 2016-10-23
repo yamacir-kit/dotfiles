@@ -9,6 +9,8 @@ source ~/.vim/config/quickrun_conf.vim
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-x>'
+let g:ycm_key_list_select_completion = ['<tab>']
+let g:ycm_key_list_previous_completion = ['<S-tab>']
 
 
 " -- Vundle ----------------------------------------------------
@@ -80,9 +82,8 @@ set virtualedit=block
 " -------------------------------------------------------------
 set incsearch ignorecase smartcase wrapscan
 
-" -------------------------------------------------------------
-"  WINDOW SPLIT
-" -------------------------------------------------------------
+
+" -- Window Split ----------------------------------------------
 set splitbelow splitright
 
 
