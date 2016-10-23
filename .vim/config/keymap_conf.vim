@@ -20,7 +20,7 @@ nnoremap <leader>gg  :<c-u>GitGutterToggle<cr>
 nnoremap <leader>ga  :<c-u>GitGutterStageHunk<cr>
 
 " git revert "
-nnoremap <leader>gr  :<c-u>GitGutterRevertHunk<cr>
+nnoremap <leader>gr  :<c-u>GitGutterUndoHunk<cr>
 
 
 " -- Insert ----------------------------------------------------

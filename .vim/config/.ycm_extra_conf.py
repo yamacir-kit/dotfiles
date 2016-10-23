@@ -35,7 +35,11 @@ flags = [
         '-DUSE_CLANG_COMPLETER', # ONLY THE YCM SOURCE CODE NEEDS IT
         '-Wall',
         '-std=c++11',
+        '-stdlib=libc++',
         '-x', 'c++',
+        '-isystem', '/usr/include',
+        '-isystem', '/usr/local/include',
+        '-isystem', '/usr/include/c++/4.8'
 ]
 
 

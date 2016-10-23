@@ -21,16 +21,25 @@ filetype plugin indent on
 " -- Config files ----------------------------------------------
 source ~/.vim/config/keymap_conf.vim
 source ~/.vim/config/quickrun_conf.vim
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 
 
 "-- YouCompleteMe Plugin Configs -------------------------------
 let g:ycm_min_num_of_chars_for_completion = 1
+
 let g:ycm_enable_diagnostic_signs = 0
+let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_echo_current_diagnostic = 1
+
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
 
 let g:ycm_key_invoke_completion = '<C-c>'
-let g:ycm_key_list_select_completion = ['<tab>']
-let g:ycm_key_list_previous_completion = ['<S-tab>']
+let g:ycm_key_list_select_completion = ['<Tab>']
+let g:ycm_key_list_previous_completion = ['<S-Tab>']
+
+let g:ycm_use_ultisnips_completer = 0
+
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 
 
 " -------------------------------------------------------------
