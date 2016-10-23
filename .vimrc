@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'honza/vim-snippets'
+Plugin 'SirVer/UltiSnips'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -37,9 +39,15 @@ let g:ycm_key_invoke_completion = '<C-c>'
 let g:ycm_key_list_select_completion = ['<Tab>']
 let g:ycm_key_list_previous_completion = ['<S-Tab>']
 
-let g:ycm_use_ultisnips_completer = 0
+let g:ycm_use_ultisnips_completer = 1
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
+
+
+" -- UltiSnips Plugin Configs ----------------------------------
+let g:UltiSnipsExpandTrigger = '<space>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
 
 
 " -------------------------------------------------------------
