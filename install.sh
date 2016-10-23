@@ -23,18 +23,4 @@ echo "[info] Finished."
 echo "[next] 1) Run ex command :PluginInstall on Vim."
 echo "       2) Run shell script dotfiles/scripts/install_vimycm.sh"
 
-
-# ycmdir="$extern/YouCompleteMe"
-# if [ ! -e $ycmdir ]
-# then
-#   git clone https://github.com/Valloric/YouCompleteMe.git $ycmdir
-# 
-#   cd $ycmdir
-#   git submodule update --init --recursive
-#   python2 ./install.py --clang-completer --system-libclang
-# 
-#   cd $ycmdir/third_party/ycmd/cpp/ycm
-#   ln -sf $dotfiles/.vim/config/.ycm_extra_conf.py
-# fi
-
 exit 0
