@@ -20,6 +20,9 @@ if [ ! -e $dotfiles/.vim/bundle/vundle ]; then
 fi
 
 command vi -c PluginInstall -c qa
-source $dotfiles/scripts/install_vimycm.sh
+
+if [ ! -e $dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
+  source $dotfiles/scripts/install_vimycm.sh
+fi
 
 exit 0
