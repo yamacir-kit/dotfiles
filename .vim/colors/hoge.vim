@@ -1,8 +1,8 @@
 " -------------------------------------------------------------
-" My original Vim color scheme
+"  My original Vim color scheme
 "
-" Author: Tatsuya Yamasaki <httperror@404-notfound.jp>
-" https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/normal.vim
+"  Author: Tatsuya Yamasaki <httperror@404-notfound.jp>
+"  https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/hoge.vim
 " -------------------------------------------------------------
 
 
@@ -10,29 +10,21 @@ hi clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "normal"
+let colors_name = "hoge"
 
 
-" -------------------------------------------------------------
-"  Normal
-" -------------------------------------------------------------
-"hi Normal          ctermfg=252 ctermbg=234  cterm=none
-hi Normal          ctermfg=252 ctermbg=none cterm=none
+" -- General ---------------------------------------------------
+hi Normal          ctermfg=252  ctermbg=none cterm=none
+hi Comment         ctermfg=59   ctermbg=none cterm=none
 
-" -------------------------------------------------------------
-"  Comment
-" -------------------------------------------------------------
-hi Comment         ctermfg=59  ctermbg=none cterm=none
 
-" -------------------------------------------------------------
-"  Constant
-" -------------------------------------------------------------
-hi Constant        ctermfg=141 ctermbg=none cterm=none
-hi String          ctermfg=221 ctermbg=none cterm=none
-hi Character       ctermfg=221 ctermbg=none cterm=none
-hi Number          ctermfg=44  ctermbg=none cterm=none
-hi Float           ctermfg=44  ctermbg=none cterm=none
-hi Boolean         ctermfg=141 ctermbg=none cterm=none
+" -- Constants -------------------------------------------------
+hi Constant        ctermfg=141  ctermbg=none cterm=none
+hi String          ctermfg=221  ctermbg=none cterm=none
+hi Character       ctermfg=221  ctermbg=none cterm=none
+hi Number          ctermfg=044  ctermbg=none cterm=none
+hi Float           ctermfg=044  ctermbg=none cterm=none
+hi Boolean         ctermfg=141  ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Identifier

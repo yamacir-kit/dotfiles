@@ -2,12 +2,13 @@ if &compatible
   set nocompatible
 endif
 
+
 " -- Config files ----------------------------------------------
 source ~/.vim/config/keymap_conf.vim
 source ~/.vim/config/quickrun_conf.vim
 
-" let g:ycm_path_to_python_interpreter = '/usr/bin/python3'
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_key_invoke_completion = '<C-x>'
 
 
 " -- Vundle ----------------------------------------------------
@@ -84,20 +85,18 @@ set incsearch ignorecase smartcase wrapscan
 " -------------------------------------------------------------
 set splitbelow splitright
 
-" -------------------------------------------------------------
-"  COMMAND LINE
-" -------------------------------------------------------------
+
+" -- Wildmenu --------------------------------------------------
 set wildmenu wildmode=longest:full,full
 
-" -------------------------------------------------------------
-"  SYNTAX HIGHLIGHT
-" -------------------------------------------------------------
+
+" -- Syntax Highlighting ---------------------------------------
 syntax enable
 set t_Co=256
 set background=dark
-colorscheme normal
+colorscheme hoge
 
+
+" -- Filetype --------------------------------------------------
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
-
-" filetype plugin indent on
