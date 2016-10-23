@@ -46,8 +46,8 @@ let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 
 " -- UltiSnips Plugin Configs ----------------------------------
 let g:UltiSnipsExpandTrigger = '<space>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = "<S-Tab>"
+let g:UltiSnipsJumpForwardTrigger = '<C-j>'
+let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
 
 
 " -------------------------------------------------------------
