@@ -1,10 +1,8 @@
 #!/bin/bash
 
 dotfiles=$(cd "$(dirname $0)"; pwd)
-cd $dotfiles
 
-if [ ! -e $dotfiles/.fonts ]
-then
+if [ ! -e $dotfiles/.fonts ]; then
   git clone https://github.com/edihbrandon/RictyDiminished $dotfiles/.fonts
 fi
 
@@ -15,21 +13,11 @@ do
   ln -sf $f $HOME
 done
 
-bundle="$dotfiles/.vim/bundle"
-mkdir -p $bundle || exit
+mkdir -p $dotfiles/bundle || exit
 
-if [ ! -e $bundle/vundle ]
-then
-  git clone https://github.com/gmarik/vundle.git $bundle/vundle
+if [ ! -e $dotfiles/bundle/vundle ]; then
+  git clone https://github.com/gmarik/vundle.git $dotfiles/bundle/vundle
 fi
-
-# extern="$dotfiles/.vim/extern"
-# mkdir -p $extern && cd $extern
-# 
-# if [ ! -e $extern/vim-quickrun ]
-# then
-#   git clone https://github.com/thinca/vim-quickrun.git $extern/vim-quickrun
-# fi
 
 # ycmdir="$extern/YouCompleteMe"
 # if [ ! -e $ycmdir ]
