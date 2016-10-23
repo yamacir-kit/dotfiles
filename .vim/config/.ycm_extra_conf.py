@@ -36,11 +36,11 @@ import ycm_core
 # CHANGE THIS LIST OF FLAGS. YES, THIS IS THE DROID YOU HAVE BEEN LOOKING FOR.
 flags = [
 '-Wall',
-'-Wextra',
-'-Werror',
+# '-Wextra',
+# '-Werror',
 '-Wc++98-compat',
-'-Wno-long-long',
-'-Wno-variadic-macros',
+# '-Wno-long-long',
+# '-Wno-variadic-macros',
 '-fexceptions',
 '-DNDEBUG',
 # You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM

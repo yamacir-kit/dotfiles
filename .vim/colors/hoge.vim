@@ -1,118 +1,143 @@
-" -------------------------------------------------------------
+" --------------------------------------------------------------
 "  My original Vim color scheme
 "
 "  Author: Tatsuya Yamasaki <httperror@404-notfound.jp>
 "  https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/hoge.vim
-" -------------------------------------------------------------
+" --------------------------------------------------------------
 
 
-hi clear
+highlight clear
 if exists("syntax_on")
   syntax reset
 endif
-let colors_name = "hoge"
+let g:colors_name = "hoge"
 
 
 " -- General ---------------------------------------------------
-hi Normal          ctermfg=252  ctermbg=none cterm=none
-hi Comment         ctermfg=59   ctermbg=none cterm=none
+highlight Normal          ctermfg=252  ctermbg=none cterm=none
+
+highlight Comment         ctermfg=059  ctermbg=none cterm=none
+highlight Normal          ctermfg=252  ctermbg=none cterm=none
+
+highlight Cursor          ctermfg=233  ctermbg=none term=none cterm=none
+highlight CursorLine      ctermfg=none ctermbg=236  term=none cterm=none
+highlight CursorLineNr    ctermfg=221  ctermbg=236  term=bold cterm=bold
+highlight LineNr          ctermfg=059  ctermbg=none term=none cterm=none
+
+
+
+
+
+
+
+
+
+
 
 
 " -- Constants -------------------------------------------------
-hi Constant        ctermfg=141  ctermbg=none cterm=none
-hi String          ctermfg=221  ctermbg=none cterm=none
-hi Character       ctermfg=221  ctermbg=none cterm=none
-hi Number          ctermfg=044  ctermbg=none cterm=none
-hi Float           ctermfg=044  ctermbg=none cterm=none
-hi Boolean         ctermfg=141  ctermbg=none cterm=none
+highlight Constant        ctermfg=141  ctermbg=none cterm=none
+highlight String          ctermfg=221  ctermbg=none cterm=none
+highlight Character       ctermfg=221  ctermbg=none cterm=none
+highlight Number          ctermfg=044  ctermbg=none cterm=none
+highlight Float           ctermfg=044  ctermbg=none cterm=none
+highlight Boolean         ctermfg=141  ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Identifier
 " -------------------------------------------------------------
-hi Identifier      ctermfg=44  ctermbg=none cterm=none
-hi Function        ctermfg=231 ctermbg=none cterm=none
+highlight Identifier      ctermfg=44  ctermbg=none cterm=none
+highlight Function        ctermfg=231 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Statement
 " -------------------------------------------------------------
-hi Statement       ctermfg=198 ctermbg=none cterm=none " goto break return continue asm
-hi Conditional     ctermfg=198 ctermbg=none cterm=none " if else switch
-hi Repeat          ctermfg=198 ctermbg=none cterm=none " while for do
-hi Label           ctermfg=198 ctermbg=none cterm=none " case default
-hi Tag             ctermfg=198 ctermbg=none cterm=none
-hi Operator        ctermfg=198 ctermbg=none cterm=none
-hi keyword         ctermfg=198 ctermbg=none cterm=none
-hi Exception       ctermfg=198 ctermbg=none cterm=none
+highlight Statement       ctermfg=198 ctermbg=none cterm=none " goto break return continue asm
+highlight Conditional     ctermfg=198 ctermbg=none cterm=none " if else switch
+highlight Repeat          ctermfg=198 ctermbg=none cterm=none " whighlightle for do
+highlight Label           ctermfg=198 ctermbg=none cterm=none " case default
+highlight Tag             ctermfg=198 ctermbg=none cterm=none
+highlight Operator        ctermfg=198 ctermbg=none cterm=none
+highlight keyword         ctermfg=198 ctermbg=none cterm=none
+highlight Exception       ctermfg=198 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  PreProc
 " -------------------------------------------------------------
-hi PreProc         ctermfg=141 ctermbg=none cterm=none
-hi Include         ctermfg=67  ctermbg=none cterm=none
-hi Define          ctermfg=141 ctermbg=none cterm=none
-hi Macro           ctermfg=141 ctermbg=none cterm=none
-hi PreCondit       ctermfg=141 ctermbg=none cterm=none
+highlight PreProc         ctermfg=141 ctermbg=none cterm=none
+highlight Include         ctermfg=67  ctermbg=none cterm=none
+highlight Define          ctermfg=141 ctermbg=none cterm=none
+highlight Macro           ctermfg=141 ctermbg=none cterm=none
+highlight PreCondit       ctermfg=141 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Type
 " -------------------------------------------------------------
-hi Type            ctermfg=113 ctermbg=none cterm=none
-hi StorageClass    ctermfg=208 ctermbg=none cterm=none
-hi Structure       ctermfg=198 ctermbg=none cterm=none " struct, class
-hi Typedef         ctermfg=113 ctermbg=none cterm=none
+highlight Type            ctermfg=113 ctermbg=none cterm=none
+highlight StorageClass    ctermfg=208 ctermbg=none cterm=none
+highlight Structure       ctermfg=198 ctermbg=none cterm=none " struct, class
+highlight Typedef         ctermfg=113 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Special
 " -------------------------------------------------------------
-hi Special         ctermfg=44  ctermbg=none cterm=none
-hi SpecialChar     ctermfg=202 ctermbg=none cterm=none
-hi Delimiter       ctermfg=198 ctermbg=none cterm=none
-hi SpecialComment  ctermfg=202 ctermbg=none cterm=none
-hi Debug           ctermfg=198 ctermbg=none cterm=bold
+highlight Special         ctermfg=44  ctermbg=none cterm=none
+highlight SpecialChar     ctermfg=202 ctermbg=none cterm=none
+highlight Delimiter       ctermfg=198 ctermbg=none cterm=none
+highlight SpecialComment  ctermfg=202 ctermbg=none cterm=none
+highlight Debug           ctermfg=198 ctermbg=none cterm=bold
 
 " -------------------------------------------------------------
 "  Underlined
 " -------------------------------------------------------------
-hi Underlined      ctermfg=161 ctermbg=none cterm=underline
+highlight Underlined      ctermfg=161 ctermbg=none cterm=underline
 
 " -------------------------------------------------------------
 "  Ignore
 " -------------------------------------------------------------
-hi Ignore          ctermfg=252 ctermbg=none cterm=none
+highlight Ignore          ctermfg=252 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Error
 " -------------------------------------------------------------
-hi Error           ctermfg=252 ctermbg=none cterm=none
-hi ErrorMsg        ctermfg=161 ctermbg=none cterm=bold
+highlight Error           ctermfg=252  ctermbg=none cterm=none
+highlight ErrorMsg        ctermfg=161  ctermbg=none cterm=bold
+" highlight WorningMsg
 
 " -------------------------------------------------------------
 "  Cutsor and Line
 " -------------------------------------------------------------
-hi Cursor          ctermfg=233  ctermbg=252  cterm=none
-hi CursorLine                   ctermbg=236  cterm=none
-hi LineNr          ctermfg=59   ctermbg=none cterm=none " :set number
-hi CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold " :set number
-hi MatchParen      ctermfg=252  ctermbg=none cterm=bold
-hi Folded          ctermfg=67   ctermbg=none cterm=none
+highlight MatchParen      ctermfg=252  ctermbg=none cterm=bold
+highlight Folded          ctermfg=67   ctermbg=none cterm=none
 
 " -------------------------------------------------------------
 "  Others
 " -------------------------------------------------------------
-hi Title           ctermfg=166
+highlight Title           ctermfg=166
 
-hi VertSplit       ctermfg=244  ctermbg=none  cterm=bold
-hi VisualNOS                    ctermbg=238
-hi Visual          ctermfg=234  ctermbg=246
+highlight VertSplit       ctermfg=244  ctermbg=none  cterm=bold
+highlight VisualNOS                    ctermbg=238
+highlight Visual          ctermfg=234  ctermbg=246
 
-hi NonText         ctermfg=59   ctermbg=none  cterm=none
-hi SpecialKey      ctermfg=59   ctermbg=none  cterm=none
+highlight NonText         ctermfg=59   ctermbg=none  cterm=none
+highlight SpecialKey      ctermfg=59   ctermbg=none  cterm=none
 
-hi Search          ctermfg=none ctermbg=none cterm=reverse
-hi IncSearch       ctermfg=none ctermbg=none cterm=reverse
+highlight Search          ctermfg=none ctermbg=none cterm=reverse
+highlight IncSearch       ctermfg=none ctermbg=none cterm=reverse
 
-hi WildMenu        ctermfg=221  ctermbg=236  cterm=bold
-hi StatusLine      ctermfg=246  ctermbg=236  cterm=bold
+highlight WildMenu        ctermfg=221  ctermbg=236  cterm=bold
+highlight StatusLine      ctermfg=246  ctermbg=236  cterm=bold
 
 
+" -- Pull-down Manu --------------------------------------------
+highlight Pmenu           ctermfg=059  ctermbg=236  cterm=none
+highlight PmenuSel        ctermfg=221  ctermbg=236  cterm=bold
+
+
+" -- Completion ------------------------------------------------
+" highlight SyntasticErrorSign
+
+
+
+" -- Background ------------------------------------------------
 set background=dark " because of ctermbg=234 bug
