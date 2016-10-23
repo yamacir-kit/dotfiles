@@ -13,11 +13,14 @@ do
   ln -sf $f $HOME
 done
 
-mkdir -p $dotfiles/bundle || exit
+mkdir -p $dotfiles/.vim/bundle || exit
 
-if [ ! -e $dotfiles/bundle/vundle ]; then
-  git clone https://github.com/gmarik/vundle.git $dotfiles/bundle/vundle
+if [ ! -e $dotfiles/.vim/bundle/vundle ]; then
+  git clone https://github.com/gmarik/vundle.git $dotfiles/.vim/bundle/vundle
 fi
+
+echo "[info] Already to run ex command :PluginInstall on Vim"
+
 
 # ycmdir="$extern/YouCompleteMe"
 # if [ ! -e $ycmdir ]
