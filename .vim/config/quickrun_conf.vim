@@ -1,6 +1,6 @@
 let g:quickrun_config = {
 \   "cpp/g++" : {
-\       "cmdopt" : "-std=c++0x -Wall",
+\       "cmdopt" : "-std=c++11 -Wall",
 \       "hook/time/enable" : 1
 \   },
 \
