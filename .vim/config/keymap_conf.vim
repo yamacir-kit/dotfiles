@@ -13,6 +13,15 @@ nnoremap <up>       gkzz
 nnoremap <pagedown> <pagedown>zz
 nnoremap <pageup>   <pageup>zz
 
+" toggle "
+nnoremap <leader>gg  :<c-u>GitGutterToggle<cr>
+
+" git add "
+nnoremap <leader>ga  :<c-u>GitGutterStageHunk<cr>
+
+" git revert "
+nnoremap <leader>gr  :<c-u>GitGutterRevertHunk<cr>
+
 
 " -- Insert ----------------------------------------------------
 inoremap <>  <><left>

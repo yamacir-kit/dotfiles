@@ -3,27 +3,33 @@ if &compatible
 endif
 
 
-" -- Config files ----------------------------------------------
-source ~/.vim/config/keymap_conf.vim
-source ~/.vim/config/quickrun_conf.vim
-
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
-let g:ycm_key_invoke_completion = '<C-x>'
-let g:ycm_key_list_select_completion = ['<tab>']
-let g:ycm_key_list_previous_completion = ['<S-tab>']
-
-
 " -- Vundle ----------------------------------------------------
 filetype off
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 Plugin 'gmarik/vundle'
+
+Plugin 'airblade/vim-gitgutter'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
 filetype plugin indent on
+
+
+" -- Config files ----------------------------------------------
+source ~/.vim/config/keymap_conf.vim
+source ~/.vim/config/quickrun_conf.vim
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
+
+"-- YouCompleteMe Plugin Configs -------------------------------
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_enable_diagnostic_signs = 0
+
+let g:ycm_key_invoke_completion = '<C-c>'
+let g:ycm_key_list_select_completion = ['<tab>']
+let g:ycm_key_list_previous_completion = ['<S-tab>']
 
 
 " -------------------------------------------------------------
@@ -94,7 +100,7 @@ set wildmenu wildmode=longest:full,full
 " -- Syntax Highlighting ---------------------------------------
 syntax enable
 set t_Co=256
-set background=dark
+" set background=dark
 colorscheme hoge
 
 
