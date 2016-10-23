@@ -25,11 +25,9 @@ nnoremap <leader>gr  :<c-u>GitGutterRevertHunk<cr>
 
 " -- Insert ----------------------------------------------------
 inoremap <>  <><left>
-inoremap <<  <<<space>
-
-inoremap {   {}<left>
-inoremap [   []<left>
-inoremap (   ()<left>
+inoremap {}  {}<left>
+inoremap []  []<left>
+inoremap ()  ()<left>
 
 inoremap ""  ""<left>
 inoremap ''  ''<left>

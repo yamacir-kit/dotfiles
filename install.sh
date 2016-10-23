@@ -19,8 +19,7 @@ if [ ! -e $dotfiles/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git $dotfiles/.vim/bundle/vundle
 fi
 
-echo "[info] Finished."
-echo "[next] 1) Run ex command :PluginInstall on Vim."
-echo "       2) Run shell script dotfiles/scripts/install_vimycm.sh"
+command vi -c PluginInstall -c qa
+source $dotfiles/scripts/install_vimycm.sh
 
 exit 0

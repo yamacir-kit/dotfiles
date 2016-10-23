@@ -23,6 +23,7 @@ source ~/.vim/config/keymap_conf.vim
 source ~/.vim/config/quickrun_conf.vim
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 
+
 "-- YouCompleteMe Plugin Configs -------------------------------
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_enable_diagnostic_signs = 0
@@ -54,12 +55,13 @@ set fileformat=unix
 set ttyfast
 set clipboard=unnamed
 
-" -------------------------------------------------------------
-"  DISPLAY
-" -------------------------------------------------------------
+" -- Display Information ---------------------------------------
 set title
 set number cursorline laststatus=0
 set showmode showcmd
+
+set list listchars=tab:›\ ,trail:_
+
 
 " -------------------------------------------------------------
 "  EDIT
@@ -67,8 +69,6 @@ set showmode showcmd
 set timeout timeoutlen=1000 ttimeoutlen=100
 set expandtab smarttab tabstop=2 shiftwidth=2
 set nowrap
-
-set list listchars=tab:›\ ,trail:_
 
 set cindent cinoptions=g0
 set foldmethod=indent
