@@ -1,1 +1,0 @@
-../extern/YouCompleteMe/doc/youcompleteme.txt

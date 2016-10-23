@@ -2,10 +2,27 @@ if &compatible
   set nocompatible
 endif
 
-source ~/.vim/keymaps.vim
-source ~/.vim/quickrun_conf.vim
+" -- Config files ----------------------------------------------
+source ~/.vim/config/keymap_conf.vim
+source ~/.vim/config/quickrun_conf.vim
 
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/extern/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
+" let g:ycm_path_to_python_interpreter = "/usr/bin/python3"
+" let g:ycm_global_ycm_extra_conf = "~/dotfiles/.vim/extern/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py"
+
+
+" -- Vundle ----------------------------------------------------
+filetype off
+
+set rtp+=~/.vim/bundle/vundle
+call vundle#begin()
+
+Plugin 'gmarik/vundle'
+
+Plugin 'thinca/vim-quickrun'
+
+call vundle#end()
+filetype plugin indent on
+
 
 " -------------------------------------------------------------
 "  ENCODING
@@ -84,4 +101,4 @@ colorscheme normal
 set syntax=markdown
 au BufRead,BufNewFile *.md set filetype=markdown
 
-filetype plugin indent on
+" filetype plugin indent on

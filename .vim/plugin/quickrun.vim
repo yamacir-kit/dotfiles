@@ -1,1 +1,0 @@
-../extern/vim-quickrun/plugin/quickrun.vim

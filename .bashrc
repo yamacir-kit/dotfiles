@@ -59,8 +59,10 @@ alias ks='ls -avF --color=auto'
 alias cdd='cd ${DOTFILES_DIR}'
 alias cdw='cd ~/works'
 
-alias grep='grep --color=auto'
+alias grep='grep --color=auto --exclude-dir=.git'
+
 alias ps='ps aux --sort=start_time'
+
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias grm='git rm $(git ls-files --deleted)'

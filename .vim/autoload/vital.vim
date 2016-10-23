@@ -1,1 +1,0 @@
-../extern/vim-quickrun/autoload/vital.vim
