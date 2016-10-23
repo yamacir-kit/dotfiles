@@ -19,7 +19,9 @@ if [ ! -e $dotfiles/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git $dotfiles/.vim/bundle/vundle
 fi
 
-echo "[info] Already to run ex command :PluginInstall on Vim"
+echo "[info] Finished."
+echo "[next] 1) Run ex command :PluginInstall on Vim."
+echo "       2) Run shell script dotfiles/scripts/install_vimycm.sh"
 
 
 # ycmdir="$extern/YouCompleteMe"
