@@ -59,7 +59,7 @@ set showmode showcmd
 "  EDIT
 " -------------------------------------------------------------
 set timeout timeoutlen=1000 ttimeoutlen=100
-set expandtab smarttab tabstop=4 shiftwidth=2
+set expandtab smarttab tabstop=2 shiftwidth=2
 set nowrap
 
 set list listchars=tab:›\ ,trail:_
