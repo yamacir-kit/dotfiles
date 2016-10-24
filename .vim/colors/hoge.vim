@@ -19,10 +19,10 @@ highlight Normal          ctermfg=252  ctermbg=none cterm=none
 highlight Comment         ctermfg=059  ctermbg=none cterm=none
 highlight Normal          ctermfg=252  ctermbg=none cterm=none
 
-highlight Cursor          ctermfg=233  ctermbg=none term=none cterm=none
-highlight CursorLine      ctermfg=none ctermbg=236  term=none cterm=none
-highlight CursorLineNr    ctermfg=221  ctermbg=236  term=bold cterm=bold
-highlight LineNr          ctermfg=059  ctermbg=none term=none cterm=none
+highlight Cursor          ctermfg=233  ctermbg=none cterm=none
+highlight CursorLine      ctermfg=none ctermbg=236  cterm=none
+highlight CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold
+highlight LineNr          ctermfg=059  ctermbg=none cterm=none
 
 
 
@@ -52,10 +52,10 @@ highlight Function        ctermfg=231 ctermbg=none cterm=none
 " -------------------------------------------------------------
 "  Statement
 " -------------------------------------------------------------
-highlight Statement       ctermfg=198 ctermbg=none cterm=none " goto break return continue asm
-highlight Conditional     ctermfg=198 ctermbg=none cterm=none " if else switch
-highlight Repeat          ctermfg=198 ctermbg=none cterm=none " whighlightle for do
-highlight Label           ctermfg=198 ctermbg=none cterm=none " case default
+highlight Statement       ctermfg=198 ctermbg=none cterm=none
+highlight Conditional     ctermfg=198 ctermbg=none cterm=none
+highlight Repeat          ctermfg=198 ctermbg=none cterm=none
+highlight Label           ctermfg=198 ctermbg=none cterm=none
 highlight Tag             ctermfg=198 ctermbg=none cterm=none
 highlight Operator        ctermfg=198 ctermbg=none cterm=none
 highlight keyword         ctermfg=198 ctermbg=none cterm=none
@@ -75,7 +75,7 @@ highlight PreCondit       ctermfg=141 ctermbg=none cterm=none
 " -------------------------------------------------------------
 highlight Type            ctermfg=113 ctermbg=none cterm=none
 highlight StorageClass    ctermfg=208 ctermbg=none cterm=none
-highlight Structure       ctermfg=198 ctermbg=none cterm=none " struct, class
+highlight Structure       ctermfg=198 ctermbg=none cterm=none
 highlight Typedef         ctermfg=113 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
@@ -115,7 +115,7 @@ highlight Folded          ctermfg=67   ctermbg=none cterm=none
 " -------------------------------------------------------------
 highlight Title           ctermfg=166
 
-highlight VertSplit       ctermfg=244  ctermbg=none  cterm=bold
+highlight VertSplit       ctermfg=244  ctermbg=none cterm=bold
 highlight VisualNOS                    ctermbg=238
 highlight Visual          ctermfg=234  ctermbg=246
 
@@ -126,16 +126,15 @@ highlight Search          ctermfg=none ctermbg=none cterm=reverse
 highlight IncSearch       ctermfg=none ctermbg=none cterm=reverse
 
 highlight WildMenu        ctermfg=221  ctermbg=236  cterm=bold
-highlight StatusLine      ctermfg=246  ctermbg=236  cterm=bold
+highlight StatusLine      ctermfg=245  ctermbg=236  cterm=bold
 
 
 " -- Pull-down Manu --------------------------------------------
 highlight Pmenu           ctermfg=059  ctermbg=236  cterm=none
-highlight PmenuSel        ctermfg=221  ctermbg=236  cterm=bold
+highlight PmenuSel        ctermfg=220  ctermbg=236  cterm=bold
 
 
 " -- Completion ------------------------------------------------
-" highlight SyntasticErrorSign
 highlight SpellBad        ctermfg=161  ctermbg=none cterm=bold,underline
 
 

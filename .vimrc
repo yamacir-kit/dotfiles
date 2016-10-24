@@ -11,7 +11,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'honza/vim-snippets'
 Plugin 'SirVer/UltiSnips'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Valloric/YouCompleteMe'
@@ -36,8 +35,8 @@ let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 
 let g:ycm_key_invoke_completion = '<C-c>'
-let g:ycm_key_list_select_completion = ['<Tab>']
-let g:ycm_key_list_previous_completion = ['<S-Tab>']
+let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>']
+let g:ycm_key_list_previous_completion = ['<S-Tab>', '<C-k>']
 
 let g:ycm_use_ultisnips_completer = 1
 
@@ -45,9 +44,11 @@ let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 
 
 " -- UltiSnips Plugin Configs ----------------------------------
-let g:UltiSnipsExpandTrigger = '<space>'
+let g:UltiSnipsExpandTrigger = '<C-l>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-let g:UltiSnipsJumpBackwardTrigger = "<C-k>"
+let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
+
+let g:UltiSnipsSnippetDirectories = ['~/.vim/snippets']
 
 
 " -------------------------------------------------------------
@@ -117,7 +118,7 @@ set wildmenu wildmode=longest:full,full
 " -- Syntax Highlighting ---------------------------------------
 syntax enable
 set t_Co=256
-" set background=dark
+set background=dark
 colorscheme hoge
 
 
