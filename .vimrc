@@ -11,7 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'SirVer/UltiSnips'
+" Plugin 'honza/vim-snippets'
+" Plugin 'SirVer/UltiSnips'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -47,8 +48,6 @@ let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 let g:UltiSnipsExpandTrigger = '<C-l>'
 let g:UltiSnipsJumpForwardTrigger = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
-let g:UltiSnipsSnippetDirectories = ['~/.vim/snippets']
 
 
 " -------------------------------------------------------------
