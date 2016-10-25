@@ -37,6 +37,7 @@ flags = [
         '-std=c++11',
         '-stdlib=libc++',
         '-x', 'c++',
+        '-I', '.',
         '-isystem', '/usr/include',
         '-isystem', '/usr/local/include',
         '-isystem', '/usr/include/c++/4.8'

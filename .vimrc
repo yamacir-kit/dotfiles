@@ -29,7 +29,7 @@ source ~/.vim/config/quickrun_conf.vim
 let g:ycm_min_num_of_chars_for_completion = 1
 
 let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_enable_diagnostic_highlighting = 1
+let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_echo_current_diagnostic = 0
 
 let g:ycm_complete_in_comments = 0
