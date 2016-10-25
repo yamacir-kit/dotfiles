@@ -33,7 +33,7 @@ inoremap ""  ""<left>
 inoremap ''  ''<left>
 
 inoremap $$  $$<left>
-inoremap /*  /*<space><space>*/<esc>2hi
+" inoremap /*  /*<space><space>*/<esc>2hi
 
 inoremap <c-o> <c-o>:<c-u>
 

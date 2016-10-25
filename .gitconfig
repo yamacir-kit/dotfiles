@@ -5,6 +5,15 @@
 [alias]
   graph = log --graph --date=short --decorate=short --pretty=format:'%Cgreen%h %Creset%cd %Cblue%cn %Cred%d %Creset%s'
 
+  stage = add -A
+  unstage = reset -q HEAD --
+
+# editing
+  discard = checkout --
+
+# commit
+  uncommit = reset --mixed HEAD~
+
 [core]
   editor = vi
   quotepath = false
