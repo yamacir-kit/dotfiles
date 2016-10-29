@@ -28,7 +28,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
 fi
 
 # export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
-# export PS1="\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^o^) <\"; else echo \"\[\e[0;31m\]( ^q^) <\"; fi) \[\e[0;37m\]\$(if git status &> /dev/null; then echo -e \"\$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')\[\e[0;37m\](\$(git status -s | wc -l))\"; else echo \"norepo\"; fi) \[\e[0;00m\]\$ \[\e[0;00m\]"
 function parse_git_info() {
   if git status &> /dev/null; then
     echo -e "$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')[$(git status -s | wc -l)]";
@@ -36,7 +35,7 @@ function parse_git_info() {
     echo "norepo";
   fi
 }
-export PS1="\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^o^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi) \[\e[0;00m\]\$ \[\e[0;00m\]"
+export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^o^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
