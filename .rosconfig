@@ -3,8 +3,10 @@
 ros_version="indigo"
 source /opt/ros/$ros_version/setup.bash
 
-catkin_ws="$HOME/works/kv2_colored_shape_tracker"
-#catkin_ws="$HOME/works/pubsub"
+# catkin_ws="$HOME/works/kv2_colored_shape_tracker"
+# catkin_ws="$HOME/works/pubsub"
+catkin_ws="$HOME/works/arcsys2"
+# catkin_ws="$HOME/works/tutorials/rosik"
 
 alias cdc='cd $catkin_ws'
 
