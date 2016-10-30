@@ -38,7 +38,7 @@ function parse_git_info() {
 }
 
 # export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
-export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^o^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
+export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -59,14 +59,21 @@ export LANG=C
 export LC_MESSAGE=C
 export LESSCHARSET=utf-8
 
-export DOTFILES_DIR="$HOME/dotfiles"
 
-# Alias
+# -- Dotfiles --------------------------------------------------
+export DOTFILES="$HOME/dotfiles"
+
+if [ -e ${DOTFILES}/.rosconfig ]; then
+  source ${DOTFILES}/.rosconfig
+fi
+
+
+# -- Standard Command Alias ------------------------------------
 alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-alias cdd='cd ${DOTFILES_DIR}'
+alias cdd='cd ${DOTFILES}'
 alias cdw='cd ~/works'
 
 alias grep='grep --color=auto --exclude-dir=.git'
@@ -80,17 +87,7 @@ alias grm='git rm $(git ls-files --deleted)'
 alias tmux='tmux -2u'
 
 
-# -------------------------------------------------------------
-#  ROS
-# -------------------------------------------------------------
-if [ -e ${DOTFILES_DIR}/.rosconfig ]; then
-  source ${DOTFILES_DIR}/.rosconfig
-fi
-
-
-# -------------------------------------------------------------
-#  TEST
-# -------------------------------------------------------------
+# -- Test Area -------------------------------------------------
 alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
 
 cd() {
