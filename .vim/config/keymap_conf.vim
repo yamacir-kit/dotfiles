@@ -17,7 +17,7 @@ nnoremap <pageup>   <pageup>zz
 nnoremap <silent> <leader>gg  :<C-u>GitGutterToggle<cr>
 
 " git stage "
-nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>:!<space>git<space>commit<cr>:read<space>!{git<space>diff<space>--stat}
+nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>:!<space>git<space>commit<cr>
 
 " git revert "
 nnoremap <silent> <leader>gr  :<C-u>GitGutterUndoHunk<cr>
