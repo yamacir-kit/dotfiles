@@ -16,8 +16,8 @@ nnoremap <pageup>   <pageup>zz
 " toggle "
 nnoremap <leader>gg  :<c-u>GitGutterToggle<cr>
 
-" git add "
-nnoremap <leader>ga  :<c-u>GitGutterStageHunk<cr>
+" git stage "
+nnoremap <leader>gs  :<c-u>GitGutterStageHunk<cr>
 
 " git revert "
 nnoremap <leader>gr  :<c-u>GitGutterUndoHunk<cr>
