@@ -17,6 +17,8 @@
 # commit
   uncommit = reset --mixed HEAD~
 
+  merge = merge --no-ff --
+
 [core]
   editor = vi
   quotepath = false
