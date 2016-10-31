@@ -23,7 +23,7 @@ nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>
 nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>
 
 " git commit "
-nnoremap <silent> <leader>c   :!git<space>commit<cr>
+nnoremap <silent> <leader>c   :!git<space>commit<space>-v<cr>
 
 
 " -- Insert ----------------------------------------------------
