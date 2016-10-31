@@ -17,10 +17,13 @@ nnoremap <pageup>   <pageup>zz
 nnoremap <silent> <leader>gg  :<c-u>GitGutterToggle<cr>
 
 " git stage "
-nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>:!<space>git<space>commit<cr>
+nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>
 
 " git revert "
 nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>
+
+" git commit "
+nnoremap <silent> <leader>gc  :!<space>git<space>commit<cr>
 
 
 " -- Insert ----------------------------------------------------
