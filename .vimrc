@@ -13,6 +13,7 @@ Plugin 'gmarik/vundle'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
+Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
