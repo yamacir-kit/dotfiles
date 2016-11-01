@@ -11,7 +11,9 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'airblade/vim-gitgutter'
+Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
+Plugin 'tomasr/molokai'
 Plugin 'Valloric/YouCompleteMe'
 
 call vundle#end()
@@ -36,7 +38,7 @@ let g:ycm_complete_in_strings = 1
 
 let g:ycm_key_invoke_completion = '<C-c>'
 let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>']
-let g:ycm_key_list_previous_completion = ['<S-Tab>', '<C-k>']
+let g:ycm_key_list_previous_completion = ['<C-Tab>', '<C-k>']
 
 let g:ycm_use_ultisnips_completer = 0
 
