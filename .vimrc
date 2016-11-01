@@ -11,8 +11,6 @@ call vundle#begin()
 Plugin 'gmarik/vundle'
 
 Plugin 'airblade/vim-gitgutter'
-" Plugin 'honza/vim-snippets'
-" Plugin 'SirVer/UltiSnips'
 Plugin 'thinca/vim-quickrun'
 Plugin 'Valloric/YouCompleteMe'
 
