@@ -6,7 +6,7 @@
   graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 
   mkbr = checkout -b
-  rmbr = "!local() {\
+  rmbr = "!func() {\
             git branch -D "$1" && git push origin :"$1";\
           }; func"
 
