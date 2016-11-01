@@ -56,6 +56,9 @@ vnoremap #  <c-v>0I#<space><esc>
 vnoremap /  <c-v>0I//<space><esc>
 vnoremap %  <c-v>0I%<space><esc>
 
+vmap v      <Plug>(expand_region_expand)
+vmap <c-v>  <Plug>(expand_region_shrink)
+
 
 " -- Command ---------------------------------------------------
 nnoremap /  :<c-u>set<space>hlsearch<cr>/
