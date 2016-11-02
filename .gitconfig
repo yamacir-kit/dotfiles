@@ -7,7 +7,7 @@
 
   mkbr = checkout -b
   rmbr = "!func() {\
-            git branch -D "$1" && git push origin :"$1";\
+            git branch -D "$1" && git push origin null:"$1";\
           }; func"
 
   stage = add
