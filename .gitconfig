@@ -17,7 +17,7 @@
   discard = checkout --
 
 # commit
-  uncommit = reset --mixed HEAD~
+  unco = reset --hard HEAD^
 
   merge = merge --no-ff --
 
