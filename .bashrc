@@ -1,7 +1,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
+
+
+# -- Startup Execution -----------------------------------------
 [[ -z "$TMUX" ]] && exec tmux -2u && ls -avF --color=auto
 
+
+# -- Ubuntu Default Configs ------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -25,19 +30,6 @@ if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-function parse_git_info() {
-  if git status &> /dev/null; then
-    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
-    git_status=$(git status -s | wc -l);
-    echo -e "$git_branch[$git_status]";
-  else
-    echo "norepo";
-  fi
-}
-
-# export PS1="${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
-export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -48,6 +40,21 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+
+# -- Prompt ----------------------------------------------------
+function parse_git_info() {
+  if git status &> /dev/null; then
+    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
+    git_status=$(git status -s | wc -l);
+    echo -e "$git_branch[$git_status]";
+  else
+    echo "norepo";
+  fi
+}
+
+export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
+
 
 
 eval `dircolors ~/.dircolors`
@@ -71,6 +78,7 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
+cd() { builtin cd "$@" && ls -avF --color=auto }
 alias cdw='cd ~/works'
 alias cdd='cd ${DOTFILES}'
 alias cdm='echo "marked directory: ${MARKED}"; cd ${MARKED}'
@@ -79,21 +87,16 @@ alias grep='grep --color=auto --exclude-dir=.git'
 
 alias ps='ps aux --sort=start_time'
 
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 alias grm='git rm $(git ls-files --deleted)'
 
-alias tmux='tmux -2u'
+
+# -- Shell Arts ------------------------------------------------
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias rank='sort | uniq -c | sort -nr'
 
 
 # -- Test Area -------------------------------------------------
-alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
-
-cd() {
-  builtin cd "$@" && ls -avF --color=auto
-}
-
-
 mark() {
   export MARKED="$(pwd)";
   echo "marked path: ${MARKED}";

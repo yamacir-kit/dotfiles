@@ -25,7 +25,7 @@ source ~/.vim/config/keymap_conf.vim
 source ~/.vim/config/quickrun_conf.vim
 
 
-"-- YouCompleteMe Plugin Configs -------------------------------
+" -- YouCompleteMe Plugin Configs ------------------------------
 let g:ycm_min_num_of_chars_for_completion = 1
 
 let g:ycm_show_diagnostic_ui = 0
