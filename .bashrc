@@ -1,8 +1,6 @@
 # If not running interactively, don't do anything
-case $- in
-  *i*) ;;
-*) return;;
-esac
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux -2u && ls -avF --color=auto
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -73,8 +71,9 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-alias cdd='cd ${DOTFILES}'
 alias cdw='cd ~/works'
+alias cdd='cd ${DOTFILES}'
+alias cdm='echo "marked directory: ${MARKED}"; cd ${MARKED}'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
@@ -92,4 +91,10 @@ alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
 
 cd() {
   builtin cd "$@" && ls -avF --color=auto
+}
+
+
+mark() {
+  export MARKED="$(pwd)";
+  echo "marked path: ${MARKED}";
 }
