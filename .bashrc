@@ -73,8 +73,9 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-alias cdd='cd ${DOTFILES}'
 alias cdw='cd ~/works'
+alias cdd='cd ${DOTFILES}'
+alias cdm='echo "marked directory: ${MARKED}"; cd ${MARKED}'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
@@ -92,4 +93,10 @@ alias rank='sort | uniq -c | sort -nr' # usage: cmd | rank
 
 cd() {
   builtin cd "$@" && ls -avF --color=auto
+}
+
+
+mark() {
+  export MARKED="$(pwd)";
+  echo "marked path: ${MARKED}";
 }
