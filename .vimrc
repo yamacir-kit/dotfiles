@@ -123,5 +123,5 @@ colorscheme hoge
 
 
 " -- Filetype --------------------------------------------------
-au BufRead,BufNewFile *.md set filetype=markdown
-au BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
