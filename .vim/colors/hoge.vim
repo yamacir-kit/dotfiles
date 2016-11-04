@@ -46,7 +46,7 @@ highlight Boolean         ctermfg=141  ctermbg=none cterm=none
 " -------------------------------------------------------------
 "  Identifier
 " -------------------------------------------------------------
-highlight Identifier      ctermfg=44  ctermbg=none cterm=none
+highlight Identifier      ctermfg=252 ctermbg=none cterm=none
 highlight Function        ctermfg=231 ctermbg=none cterm=none
 
 " -------------------------------------------------------------
@@ -81,7 +81,7 @@ highlight Typedef         ctermfg=113 ctermbg=none cterm=none
 " -------------------------------------------------------------
 "  Special
 " -------------------------------------------------------------
-highlight Special         ctermfg=44  ctermbg=none cterm=none
+highlight Special         ctermfg=252 ctermbg=none cterm=none
 highlight SpecialChar     ctermfg=202 ctermbg=none cterm=none
 highlight Delimiter       ctermfg=198 ctermbg=none cterm=none
 highlight SpecialComment  ctermfg=202 ctermbg=none cterm=none
@@ -90,7 +90,7 @@ highlight Debug           ctermfg=198 ctermbg=none cterm=bold
 " -------------------------------------------------------------
 "  Underlined
 " -------------------------------------------------------------
-highlight Underlined      ctermfg=161 ctermbg=none cterm=underline
+highlight Underlined      ctermfg=none ctermbg=none cterm=underline
 
 " -------------------------------------------------------------
 "  Ignore
