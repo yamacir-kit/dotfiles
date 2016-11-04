@@ -78,7 +78,10 @@ alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
 alias ks='ls -avF --color=auto'
 
-cd() { builtin cd "$@" && ls -avF --color=auto }
+cd() {
+  builtin cd "$@" && ls -avF --color=auto
+}
+
 alias cdw='cd ~/works'
 alias cdd='cd ${DOTFILES}'
 alias cdm='echo "marked directory: ${MARKED}"; cd ${MARKED}'
