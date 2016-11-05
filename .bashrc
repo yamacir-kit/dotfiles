@@ -53,8 +53,7 @@ function parse_git_info() {
   fi
 }
 
-export PS1="\n\$(if [[ \$? == 0 ]]; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ \[\e[0;00m\]"
-
+export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
 eval `dircolors ~/.dircolors`
