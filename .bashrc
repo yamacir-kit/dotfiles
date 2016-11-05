@@ -66,7 +66,7 @@ export LESSCHARSET=utf-8
 
 # -- Dotfiles --------------------------------------------------
 export DOTFILES="$HOME/dotfiles"
-if export | grep -e "ros" &> /dev/null; then source ${DOTFILES}/.rosconfig; fi
+if test -e /opt/ros; then source ${DOTFILES}/.rosconfig; fi
 
 
 # -- Standard Command Alias ------------------------------------
