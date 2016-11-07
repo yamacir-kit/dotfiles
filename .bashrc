@@ -5,6 +5,8 @@
 # -- Startup Execution -----------------------------------------
 [[ -z "$TMUX" ]] && exec tmux -2u && ls -avF --color=auto
 
+eval `dircolors ~/.dircolors`
+
 
 # -- Ubuntu Default Configs ------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
@@ -56,8 +58,7 @@ function parse_git_info() {
 export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
-eval `dircolors ~/.dircolors`
-
+# -- Locale and Character --------------------------------------
 export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
@@ -80,7 +81,7 @@ cd() {
 
 alias cdw='cd ~/works'
 alias cdd='cd ${DOTFILES}'
-alias cdm='echo "marked directory: $(cat ${DOTFILES}/marked)"; cd $(cat ${DOTFILES}/marked)'
+alias cdm='echo "marked path: $(cat ${DOTFILES}/marked)"; cd $(cat ${DOTFILES}/marked)'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
@@ -98,5 +99,5 @@ alias rank='sort | uniq -c | sort -nr'
 # -- Test Area -------------------------------------------------
 mark() {
   pwd > ~/dotfiles/marked
-  echo "marked path: $(cat ~/dotfiles/marked)";
+  echo "the path marked: $(cat ~/dotfiles/marked)";
 }
