@@ -43,6 +43,7 @@ let g:ycm_key_list_previous_completion = ['<C-Tab>', '<C-k>']
 let g:ycm_use_ultisnips_completer = 0
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
+let g:ycm_filetype_blacklist = { 'markdown':1, 'tex':1 }
 
 
 " -- UltiSnips Plugin Configs ----------------------------------
