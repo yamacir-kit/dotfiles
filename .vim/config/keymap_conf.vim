@@ -48,6 +48,7 @@ inoremap <pageup>    <pageup><c-o>:<c-u>normal<space>zz<cr>
 
 " -- Visual ----------------------------------------------------
 vnoremap ;  :s/
+vnoremap \! :!
 vnoremap >  >gv
 vnoremap <  <gv
 
