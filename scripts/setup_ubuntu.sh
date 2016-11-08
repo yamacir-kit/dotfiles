@@ -6,7 +6,7 @@ dotfiles="$scripts/.."
 libpkgs="libclang-3.8-dev"
 devpkgs="git build-essentiali python-dev python3-dev python-flake8 llvm clang"
 devenvs="rxvt-unicode-256colorl tmux"
-texpkgs="texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra latexmk"
+texpkgs="texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra latexmk pstoedit"
 others="skype dropbox"
 
 sudo apt-get update && sudo apt-get dist-upgrade
