@@ -1,5 +1,6 @@
 " -- Normal ----------------------------------------------------
 nnoremap ;  :
+nnoremap \! :<c-u>!
 nnoremap Y  y$
 nnoremap x  "_x
 nnoremap +  <c-a>
