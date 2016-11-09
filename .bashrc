@@ -81,7 +81,7 @@ cd() {
 
 alias cdw='cd ~/works'
 alias cdd='cd ${DOTFILES}'
-alias cdm='echo "marked path: $(cat ${DOTFILES}/marked)"; cd $(cat ${DOTFILES}/marked)'
+alias cdm='echo "marked path: $(cat ${DOTFILES}/etc/marked)"; cd $(cat ${DOTFILES}/etc/marked)'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
@@ -98,6 +98,6 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  pwd > ~/dotfiles/marked
-  echo "the path marked: $(cat ~/dotfiles/marked)";
+  pwd > ~/dotfiles/etc/marked
+  echo "the path marked: $(cat ~/dotfiles/etc/marked)";
 }
