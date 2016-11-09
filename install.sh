@@ -19,7 +19,7 @@ if [ ! -e $dotfiles/.vim/bundle/vundle ]; then
   git clone https://github.com/gmarik/vundle.git $dotfiles/.vim/bundle/vundle
 fi
 
-command vi -c PluginInstall -c qa
+vi -c PluginInstall -c qa
 
 if [ ! -e $dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ]; then
   source $dotfiles/scripts/install_vimycm.sh
