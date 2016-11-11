@@ -45,7 +45,7 @@ fi
 
 
 # -- Prompt ----------------------------------------------------
-function parse_git_info() {
+gitinfo() {
   if git status &> /dev/null; then
     git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
     git_status=$(git status -s | wc -l);
@@ -55,7 +55,7 @@ function parse_git_info() {
   fi
 }
 
-export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(parse_git_info) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
+export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gitinfo) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(gitinfo) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
 # -- Locale and Character --------------------------------------
