@@ -101,3 +101,10 @@ mark() {
   pwd > ~/dotfiles/etc/marked
   echo "the path marked: $(cat ~/dotfiles/etc/marked)";
 }
+
+cdn() {
+  for n in $(seq 1 $1)
+  do
+    builtin cd "../"
+  done
+}
