@@ -67,7 +67,8 @@ set fileformat=unix
 "  EXTERNAL COOPERATION
 " -------------------------------------------------------------
 set ttyfast
-set clipboard=unnamed,autoselect
+" set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 
 " -- Display Information ---------------------------------------
 set title
