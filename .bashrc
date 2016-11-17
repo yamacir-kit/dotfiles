@@ -104,8 +104,18 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  pwd > ~/dotfiles/etc/marked
-  echo "the path marked: $(cat ~/dotfiles/etc/marked)";
+  markdir="$DOTFILES/etc"
+  markfile="marked"
+
+  for opt in "$@"
+  do
+    case "$@" in
+      "-c" | "--catkin" ) markfile="catkin_ws" ;;
+    esac
+  done
+
+  pwd > "$markdir/$markfile"
+  echo "the path marked: $(cat "$markdir/$markfile")";
 }
 
 cdn() {
