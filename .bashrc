@@ -88,7 +88,7 @@ cd() {
 
 alias cdw='cd ~/works'
 alias cdd='cd $DOTFILES'
-alias cdm='echo "marked path: $(cat ${DOTFILES}/etc/marked)"; cd $(cat ${DOTFILES}/etc/marked)'
+alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
