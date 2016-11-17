@@ -104,8 +104,8 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  markdir="$DOTFILES/etc"
-  markfile="marked"
+  markdir="$DOTFILES/etc/marked"
+  markfile="path"
   message="next path marked"
 
   for opt in "$@"
