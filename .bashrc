@@ -106,16 +106,20 @@ alias rank='sort | uniq -c | sort -nr'
 mark() {
   markdir="$DOTFILES/etc"
   markfile="marked"
+  message="next path marked"
 
   for opt in "$@"
   do
     case "$@" in
-      "-c" | "--catkin" ) markfile="catkin_ws" ;;
+      "-c" | "--catkin" )
+        markfile="catkin_ws"
+        message="next path marked as catkin workspace"
+        ;;
     esac
   done
 
   pwd > "$markdir/$markfile"
-  echo "the path marked: $(cat "$markdir/$markfile")";
+  echo "$message: $(cat "$markdir/$markfile")";
 }
 
 cdn() {
