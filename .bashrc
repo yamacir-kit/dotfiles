@@ -73,7 +73,8 @@ export LESSCHARSET=utf-8
 
 # -- Dotfiles --------------------------------------------------
 export DOTFILES="$HOME/dotfiles"
-if test -e /opt/ros; then source ${DOTFILES}/.rosconfig; fi
+export MARKED="$DOTFILES/etc/marked"
+if test -e /opt/ros; then source $DOTFILES/.rosconfig; fi
 
 
 # -- Standard Command Alias ------------------------------------
@@ -86,7 +87,7 @@ cd() {
 }
 
 alias cdw='cd ~/works'
-alias cdd='cd ${DOTFILES}'
+alias cdd='cd $DOTFILES'
 alias cdm='echo "marked path: $(cat ${DOTFILES}/etc/marked)"; cd $(cat ${DOTFILES}/etc/marked)'
 
 alias grep='grep --color=auto --exclude-dir=.git'
@@ -104,9 +105,10 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  markdir="$DOTFILES/etc"
-  markfile="marked"
+  markfile="path"
   message="next path marked"
+
+  mkdir -p $MARKED || exit 1
 
   for opt in "$@"
   do
@@ -118,8 +120,8 @@ mark() {
     esac
   done
 
-  pwd > "$markdir/$markfile"
-  echo "$message: $(cat "$markdir/$markfile")";
+  pwd > "$MARKED/$markfile"
+  echo "$message: $(cat "$MARKED/$markfile")";
 }
 
 cdn() {
