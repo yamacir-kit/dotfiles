@@ -108,6 +108,8 @@ mark() {
   markfile="path"
   message="next path marked"
 
+  mkdir -p $markdir || exit 1
+
   for opt in "$@"
   do
     case "$@" in
