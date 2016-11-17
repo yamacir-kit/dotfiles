@@ -11,5 +11,5 @@ catkin_ws="$HOME/works/arcsys2"
 alias cdc='cd $catkin_ws'
 
 function catkin_make() {
-  (cd $catkin_ws && command catkin_make $@) && source $catkin_ws/devel/setup.bash;
+  (cd $catkin_ws && command catkin_make $@) && source $catkin_ws/devel/setup.bash && rospack profile
 }
