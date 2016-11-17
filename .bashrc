@@ -74,7 +74,7 @@ export LESSCHARSET=utf-8
 # -- Dotfiles --------------------------------------------------
 export DOTFILES="$HOME/dotfiles"
 export MARKED="$DOTFILES/etc/marked"
-if test -e /opt/ros; then source ${DOTFILES}/.rosconfig; fi
+if test -e /opt/ros; then source $DOTFILES/.rosconfig; fi
 
 
 # -- Standard Command Alias ------------------------------------
@@ -87,7 +87,7 @@ cd() {
 }
 
 alias cdw='cd ~/works'
-alias cdd='cd ${DOTFILES}'
+alias cdd='cd $DOTFILES'
 alias cdm='echo "marked path: $(cat ${DOTFILES}/etc/marked)"; cd $(cat ${DOTFILES}/etc/marked)'
 
 alias grep='grep --color=auto --exclude-dir=.git'
