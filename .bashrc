@@ -73,6 +73,7 @@ export LESSCHARSET=utf-8
 
 # -- Dotfiles --------------------------------------------------
 export DOTFILES="$HOME/dotfiles"
+export MARKED="$DOTFILES/etc/marked"
 if test -e /opt/ros; then source ${DOTFILES}/.rosconfig; fi
 
 
@@ -104,11 +105,10 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  markdir="$DOTFILES/etc/marked"
   markfile="path"
   message="next path marked"
 
-  mkdir -p $markdir || exit 1
+  mkdir -p $MARKED || exit 1
 
   for opt in "$@"
   do
@@ -120,8 +120,8 @@ mark() {
     esac
   done
 
-  pwd > "$markdir/$markfile"
-  echo "$message: $(cat "$markdir/$markfile")";
+  pwd > "$MARKED/$markfile"
+  echo "$message: $(cat "$MARKED/$markfile")";
 }
 
 cdn() {
