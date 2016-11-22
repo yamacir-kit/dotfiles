@@ -5,6 +5,7 @@ source /opt/ros/$ros_version/setup.bash
 source $(cat $MARKED/catkin_ws)/devel/setup.bash
 
 alias cdc='cd $(cat $MARKED/catkin_ws)'
+alias cds='cd $(cat $MARKED/catkin_ws)/src'
 
 function catkin_make() {
   (cd $(cat $MARKED/catkin_ws) && command catkin_make $@) && source $(cat $MARKED/catkin_ws)/devel/setup.bash && rospack profile
