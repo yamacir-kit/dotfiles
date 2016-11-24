@@ -10,11 +10,12 @@ call vundle#begin()
 
 Plugin 'gmarik/vundle'
 
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tomasr/molokai'
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'tyru/caw.vim'
 
 call vundle#end()
 filetype plugin indent on
