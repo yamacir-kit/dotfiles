@@ -50,30 +50,20 @@ let g:ycm_use_ultisnips_completer = 0
 " let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
 
 
-" -------------------------------------------------------------
-"  ENCODING
-" -------------------------------------------------------------
+" -- Settings --------------------------------------------------
 set encoding=utf-8
 set fileencoding=utf-8
 set ambiwidth=double
 
-" -------------------------------------------------------------
-"  FILE
-" -------------------------------------------------------------
 set confirm hidden
 set autoread autowrite
 set noswapfile nobackup
 
 set fileformat=unix
 
-" -------------------------------------------------------------
-"  EXTERNAL COOPERATION
-" -------------------------------------------------------------
 set ttyfast
-" set clipboard=unnamed,autoselect
 set clipboard=unnamedplus
 
-" -- Display Information ---------------------------------------
 set title
 set number cursorline laststatus=0
 set showmode showcmd
@@ -81,9 +71,6 @@ set showmode showcmd
 set list listchars=tab:›\ ,trail:_
 
 
-" -------------------------------------------------------------
-"  EDIT
-" -------------------------------------------------------------
 set timeout timeoutlen=1000 ttimeoutlen=100
 set expandtab smarttab tabstop=2 shiftwidth=2
 set nowrap
@@ -96,22 +83,12 @@ set sidescroll=2 "scrolloff=8
 set showmatch matchtime=1
 set nf="hex"
 
-" -------------------------------------------------------------
-"  VISUAL
-" -------------------------------------------------------------
 set virtualedit=block
 
-" -------------------------------------------------------------
-"  SEARCH
-" -------------------------------------------------------------
 set incsearch ignorecase smartcase wrapscan
 
-
-" -- Window Split ----------------------------------------------
 set splitbelow splitright
 
-
-" -- Wildmenu --------------------------------------------------
 set wildmenu wildmode=longest:full,full
 
 
@@ -122,7 +99,11 @@ set background=dark
 colorscheme hoge
 
 
-" -- Filetype --------------------------------------------------
+" -- Auto Command BufRead --------------------------------------
 autocmd BufRead,BufNewFile *.md set filetype=markdown
 autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 autocmd BufRead,BufNewFile *.launch set filetype=xml
+
+
+" -- Auto Command BufWrite -------------------------------------
+autocmd BufWritePre * :%s/\s\+$//ge
