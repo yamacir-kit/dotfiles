@@ -14,17 +14,10 @@ nnoremap <up>       gkzz
 nnoremap <pagedown> <pagedown>zz
 nnoremap <pageup>   <pageup>zz
 
-" toggle "
-nnoremap <silent> <leader>gg  :<c-u>GitGutterToggle<cr>
-
-" git stage "
-nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>
-
-" git revert "
-nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>
-
-" git commit "
-nnoremap <silent> <leader>c   :!git<space>commit<space>-v<cr>
+nnoremap <silent> <leader>gt  :<c-u>GitGutterToggle<cr>        " toggle
+nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>     " stage
+nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>      " revert
+nnoremap <silent> <leader>gc   :!git<space>commit<space>-v<cr> " commit
 
 
 " -- Insert ----------------------------------------------------
