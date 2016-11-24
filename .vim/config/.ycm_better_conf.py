@@ -7,18 +7,22 @@ import logging
 import ycm_core
 
 BASE_FLAGS = [
-    '-Wall',
-    '-Wextra',
-    '-Werror',
-    '-Wno-long-long',
-    '-Wno-variadic-macros',
+    '-Wall', '-Wextra', '-Werror', '-Wno-long-long', '-Wno-variadic-macros',
     '-fexceptions',
     '-ferror-limit=10000',
     '-DNDEBUG',
+    '-DUSE_CLANG_COMPLETER',
     '-std=c++11',
     '-xc++',
-    '-I/usr/lib/'
-    '-I/usr/include/'
+    '-isystem', '/opt/ros/indigo/include',
+    '-isystem', '/usr/include',
+    '-isystem', '/usr/include/c++/4.8',
+    '-isystem', '/usr/include/c++/4.8/backward',
+    '-isystem', '/usr/include/x86_64-linux-gnu/4.8/include',
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/4.8'
+    '-isystem', '/usr/lib/clang/3.4/include',
+    '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
+    '-isystem', '/usr/local/include'
 ]
 
 SOURCE_EXTENSIONS = [
