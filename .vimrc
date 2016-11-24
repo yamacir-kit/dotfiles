@@ -15,6 +15,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tomasr/molokai'
+Plugin 'tpope/vim-surround'
 Plugin 'tyru/caw.vim'
 
 call vundle#end()
