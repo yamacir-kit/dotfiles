@@ -32,11 +32,13 @@ let g:ycm_echo_current_diagnostic = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_filetype_blacklist = { 'markdown':1, 'latex':1 }
+let g:ycm_filetype_whitelist = { 'c':1, 'cpp':1 }
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_extra_conf.py'
 let g:ycm_key_invoke_completion = '<C-c>'
 let g:ycm_key_list_previous_completion = ['<C-Tab>', '<C-k>']
 let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>']
 let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_show_diagnostic_ui = 0
 let g:ycm_use_ultisnips_completer = 0
 
