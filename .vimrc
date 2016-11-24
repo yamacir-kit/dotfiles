@@ -28,6 +28,7 @@ source ~/.vim/config/quickrun_conf.vim
 
 
 " -- YouCompleteMe Plugin Configs ------------------------------
+let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_complete_in_comments = 0
 let g:ycm_complete_in_strings = 1
 let g:ycm_echo_current_diagnostic = 0
