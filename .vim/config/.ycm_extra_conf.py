@@ -31,6 +31,8 @@
 import os
 import ycm_core
 
+# echo | clang -v -E -x c++ - #include <...>
+# this command helps you to set follow flags
 flags = [
         '-DUSE_CLANG_COMPLETER', # ONLY THE YCM SOURCE CODE NEEDS IT
         '-Wall',
@@ -39,8 +41,13 @@ flags = [
         '-x', 'c++',
         '-I', '.',
         '-isystem', '/usr/include',
+        '-isystem', '/usr/include/c++/4.8',
+        '-isystem', '/usr/include/c++/4.8/backward',
+        '-isystem', '/usr/include/x86_64-linux-gnu/4.8/include',
+        '-isystem', '/usr/include/x86_64-linux-gnu/c++/4.8'
+        '-isystem', '/usr/lib/clang/3.4/include',
+        '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
         '-isystem', '/usr/local/include',
-        '-isystem', '/usr/include/c++/4.8'
 ]
 
 
