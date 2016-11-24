@@ -19,6 +19,8 @@ nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>    " stage
 nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>     " revert
 nnoremap <silent> <leader>gc  :!git<space>commit<space>-v<cr> " commit
 
+nnoremap <silent> <leader>go  :YcmCompleter<space>GoTo<cr>
+
 
 " -- Insert ----------------------------------------------------
 inoremap <>  <><left>
