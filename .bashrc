@@ -86,9 +86,10 @@ cd() {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-alias cdw='cd ~/works'
 alias cdd='cd $DOTFILES'
 alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
+alias cdr='cd ~/Dropbox'
+alias cdw='cd ~/works'
 
 alias grep='grep --color=auto --exclude-dir=.git'
 
