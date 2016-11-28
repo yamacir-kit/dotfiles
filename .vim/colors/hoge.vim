@@ -46,8 +46,8 @@ highlight Boolean         ctermfg=141  ctermbg=none cterm=none
 " -------------------------------------------------------------
 "  Identifier
 " -------------------------------------------------------------
-highlight Identifier      ctermfg=252 ctermbg=none cterm=none
-highlight Function        ctermfg=231 ctermbg=none cterm=none
+highlight Identifier      ctermfg=252  ctermbg=none cterm=bold
+highlight Function        ctermfg=252  ctermbg=none cterm=bold
 
 " -------------------------------------------------------------
 "  Statement
@@ -107,7 +107,7 @@ highlight ErrorMsg        ctermfg=161  ctermbg=none cterm=bold
 " -------------------------------------------------------------
 "  Cutsor and Line
 " -------------------------------------------------------------
-highlight MatchParen      ctermfg=252  ctermbg=none cterm=bold
+highlight MatchParen      ctermfg=161  ctermbg=none cterm=bold
 highlight Folded          ctermfg=67   ctermbg=none cterm=none
 
 " -------------------------------------------------------------
