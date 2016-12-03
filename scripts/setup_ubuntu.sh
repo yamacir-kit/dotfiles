@@ -4,10 +4,10 @@ scripts=$(cd "$(dirname $0)"; pwd)
 dotfiles="$scripts/.."
 
 libpkgs="libclang-3.8-dev"
-devpkgs="git build-essential cmake python-dev python3-dev python-flake8 llvm clang"
+devpkgs="build-essential clang cmake git llvm python-dev python-flake8 python3-dev"
 devenvs="rxvt-unicode-256color tmux"
-texpkgs="texlive texlive-lang-cjk xdvik-ja dvipsk-ja gv texlive-fonts-recommended texlive-fonts-extra latexmk pstoedit"
-others="skype dropbox"
+texpkgs="dvipsk-ja gv latexmk pstoedit texlive texlive-fonts-extra texlive-fonts-recommended texlive-lang-cjk xdvik-ja"
+others="dropbox skype "
 
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get -y install $libpkgs $devpkgs $devenvs $texpkgs $others
