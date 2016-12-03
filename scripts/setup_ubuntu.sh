@@ -12,7 +12,7 @@ others="skype dropbox"
 sudo apt-get update && sudo apt-get dist-upgrade
 sudo apt-get -y install $libpkgs $devpkgs $devenvs $texpkgs $others
 
-source $dotfiles/install.sh
+# source $dotfiles/install.sh
 
 
 # -- Theme and icons -------------------------------------------
