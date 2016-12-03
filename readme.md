@@ -1,4 +1,6 @@
 ## dotfiles
 
 `./scripts/setup_ubuntu.sh` <br>
-`./install.sh`
+`./scripts/install_dropbox.sh` <br>
+`./scripts/setup_workspace.sh` <br>
+`./install.sh` <br>
