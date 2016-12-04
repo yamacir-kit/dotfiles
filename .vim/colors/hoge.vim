@@ -24,7 +24,7 @@ highlight CursorLine      ctermfg=none ctermbg=236  cterm=none
 highlight CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold
 highlight LineNr          ctermfg=059  ctermbg=none cterm=none
 
-
+highlight Todo            ctermfg=221  ctermbg=none cterm=bold,underline
 
 
 
