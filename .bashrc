@@ -130,4 +130,5 @@ cdn() {
   do
     builtin cd "../"
   done
+  ls -avF --color=auto
 }
