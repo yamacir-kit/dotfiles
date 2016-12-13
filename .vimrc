@@ -13,10 +13,7 @@ Plugin 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
-Plugin 'tomasr/molokai'
-Plugin 'tpope/vim-surround'
 Plugin 'tyru/caw.vim'
 
 call vundle#end()
@@ -81,7 +78,7 @@ set nowrap
 set cindent cinoptions=g0
 set foldmethod=indent
 
-set sidescroll=2 "scrolloff=8
+set sidescroll=1 "scrolloff=8
 
 set showmatch matchtime=1
 set nf="hex"
