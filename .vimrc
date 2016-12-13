@@ -12,6 +12,7 @@ Plugin 'gmarik/vundle'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tomasr/molokai'
