@@ -107,7 +107,7 @@ highlight ErrorMsg        ctermfg=161  ctermbg=none cterm=bold
 " -------------------------------------------------------------
 "  Cutsor and Line
 " -------------------------------------------------------------
-highlight MatchParen      ctermfg=161  ctermbg=none cterm=bold
+highlight MatchParen      ctermfg=198  ctermbg=none cterm=bold
 highlight Folded          ctermfg=67   ctermbg=none cterm=none
 
 " -------------------------------------------------------------
