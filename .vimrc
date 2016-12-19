@@ -32,7 +32,7 @@ let g:ycm_complete_in_strings = 1
 let g:ycm_echo_current_diagnostic = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_filetype_blacklist = { 'markdown':1, 'latex':1 }
+let g:ycm_filetype_blacklist = { 'markdown':1, 'tex':1, 'latex':1 }
 let g:ycm_filetype_whitelist = { 'c':1, 'cpp':1 }
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_better_conf.py'
 let g:ycm_key_invoke_completion = '<C-c>'
@@ -72,7 +72,7 @@ set nowrap
 set cindent cinoptions=g0
 set foldmethod=indent
 
-set sidescroll=1 "scrolloff=8
+set sidescroll=1 scrolloff=8
 
 set showmatch matchtime=1
 set nf="hex"
@@ -94,9 +94,10 @@ colorscheme hoge
 
 
 " -- Auto Command BufRead --------------------------------------
-autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 autocmd BufRead,BufNewFile *.launch set filetype=xml
+autocmd BufRead,BufNewFile *.md set filetype=markdown
+autocmd BufRead,BufNewFile *.tex set nocursorline
+autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 
 
 " -- Auto Command BufWrite -------------------------------------
