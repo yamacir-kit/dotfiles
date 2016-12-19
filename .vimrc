@@ -44,12 +44,6 @@ let g:ycm_show_diagnostic_ui = 0
 let g:ycm_use_ultisnips_completer = 0
 
 
-" -- UltiSnips Plugin Configs ----------------------------------
-" let g:UltiSnipsExpandTrigger = '<C-l>'
-" let g:UltiSnipsJumpForwardTrigger = '<C-j>'
-" let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
-
-
 " -- Settings --------------------------------------------------
 set encoding=utf-8
 set fileencoding=utf-8
