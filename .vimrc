@@ -59,7 +59,7 @@ set ttyfast
 set clipboard=unnamedplus
 
 set title
-set number cursorline laststatus=0
+set number nocursorline laststatus=0
 set showmode showcmd
 
 set list listchars=tab:›\ ,trail:_
@@ -101,4 +101,4 @@ autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 
 
 " -- Auto Command BufWrite -------------------------------------
-autocmd BufWritePre * :%s/\s\+$//ge
+" autocmd BufWritePre * :%s/\s\+$//ge
