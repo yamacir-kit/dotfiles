@@ -96,9 +96,9 @@ colorscheme hoge
 " -- Auto Command BufRead --------------------------------------
 autocmd BufRead,BufNewFile *.launch set filetype=xml
 autocmd BufRead,BufNewFile *.md set filetype=markdown
-autocmd BufRead,BufNewFile *.tex set nocursorline
+" autocmd BufRead,BufNewFile *.tex set nocursorline
 autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 
 
 " -- Auto Command BufWrite -------------------------------------
-" autocmd BufWritePre * :%s/\s\+$//ge
+autocmd BufWritePre * :%s/\s\+$//ge
