@@ -18,8 +18,9 @@ sudo apt-get -y install $libpkgs $devpkgs $devenvs $texpkgs
 #  theme: Numix
 #  icons: Numix-circle
 # --------------------------------------------------------------
-sudo apt-add-repository -y ppa:numix/ppa && apt-get update
-sudo apt-get -y install numix-gtk-theme numix-icon-theme-circle unity-tweak-tool
+sudo apt-add-repository -y ppa:numix/ppa
+sudo apt-get update && sudo apt-get -y install numix-gtk-theme numix-icon-theme-circle
+sudo apt-get -y install unity-tweak-tool
 
 
 # -- Google Chrome ---------------------------------------------
