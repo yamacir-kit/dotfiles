@@ -9,7 +9,12 @@ devenvs="rxvt-unicode-256color tmux"
 texpkgs="dvipsk-ja gv latexmk pstoedit texlive texlive-fonts-extra texlive-fonts-recommended texlive-lang-cjk xdvik-ja"
 
 sudo apt-get update && sudo apt-get dist-upgrade
-sudo apt-get -y install $libpkgs $devpkgs $devenvs $texpkgs
+sudo apt-get -y install $libpkgs
+sudo apt-get -y install $devpkgs
+sudo apt-get -y install $devenvs
+sudo apt-get -y install $texpkgs
+
+sudo apt-get -y install inkscape
 
 # source $dotfiles/install.sh
 
