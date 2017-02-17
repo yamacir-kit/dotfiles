@@ -16,12 +16,12 @@ BASE_FLAGS = [
     '-xc++',
     '-isystem', '/opt/ros/indigo/include',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/include/c++/4.8',
-    '-isystem', '/usr/include/c++/4.8/backward',
-    '-isystem', '/usr/include/x86_64-linux-gnu/4.8/include',
-    '-isystem', '/usr/include/x86_64-linux-gnu/c++/4.8'
-    '-isystem', '/usr/lib/clang/3.4/include',
-    '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/4.8/include',
+    '-isystem', '/usr/include/c++/5.4.0',
+    '-isystem', '/usr/include/c++/5.4.0/backward',
+    '-isystem', '/usr/include/x86_64-linux-gnu/5.4.0/include',
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/5.4.0'
+    '-isystem', '/usr/lib/clang/3.8.0/include',
+    '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/5.4.0/include',
     '-isystem', '/usr/local/include'
 ]
 
