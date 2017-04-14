@@ -126,10 +126,3 @@ mark() {
   echo "${message}: $(cat "${marked}/${marked_path}")";
 }
 
-cdn() {
-  for n in $(seq 1 $1)
-  do
-    builtin cd "../"
-  done
-  ls -avF --color=auto
-}
