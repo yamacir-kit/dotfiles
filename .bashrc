@@ -107,7 +107,7 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  markfile="path"
+  marked_path="path"
   message="next path marked"
 
   mkdir -p ${marked} || exit 1
@@ -116,14 +116,14 @@ mark() {
   do
     case "$@" in
       "-c" | "--catkin" )
-        markfile="catkin_ws"
+        marked_path="catkin_ws"
         message="next path marked as catkin workspace"
         ;;
     esac
   done
 
-  pwd > "${marked}/${markfile}"
-  echo "${message}: $(cat "${marked}/${markfile}")";
+  pwd > "${marked}/${marked_path}"
+  echo "${message}: $(cat "${marked}/${marked_path}")";
 }
 
 cdn() {
