@@ -5,14 +5,6 @@
 [alias]
   graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
 
-  # mkbr = checkout -b
-
-  # rmbr = "!func() {\
-  #           git branch -d "$1" && git push origin :"$1";\
-  #         }; func"
-
-  # rmbr = branch -d
-
   stage = add
   unstage = reset -q HEAD --
 
