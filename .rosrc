@@ -2,18 +2,18 @@
 
 ros_version="kinetic"
 
-if [ -e /opt/ros/$ros_version/setup.bash ]; then
-  source /opt/ros/$ros_version/setup.bash
+if [ -e /opt/ros/${ros_version}/setup.bash ]; then
+  source /opt/ros/${ros_version}/setup.bash
 fi
 
-if [ -e $MARKED/catkin_ws ]; then
-  source $(cat $MARKED/catkin_ws)/devel/setup.bash
+if [ -e ${marked}/catkin_ws ]; then
+  source $(cat ${marked}/catkin_ws)/devel/setup.bash
 fi
 
-alias cdc='cd $(cat $MARKED/catkin_ws)'
-alias cds='cd $(cat $MARKED/catkin_ws)/src'
+alias cdc='cd $(cat ${marked}/catkin_ws)'
+alias cds='cd $(cat ${marked}/catkin_ws)/src'
 
 function catkin_make() {
-  (cd $(cat $MARKED/catkin_ws) && command catkin_make $@) && source $(cat $MARKED/catkin_ws)/devel/setup.bash && rospack profile
+  (cd $(cat ${marked}/catkin_ws) && command catkin_make $@) && source $(cat ${marked}/catkin_ws)/devel/setup.bash && rospack profile
 }
 
