@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2048
-HISTFILESIZE=2048
+HISTSIZE=4096
+HISTFILESIZE=4096
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -65,17 +65,20 @@ export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gi
 
 
 # -- Locale and Character --------------------------------------
-export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
 export LC_TIME=en_US.UTF-8
 export LESSCHARSET=utf-8
+export locale=en_US.UTF-8
 
 
 # -- Dotfiles --------------------------------------------------
-export DOTFILES="$HOME/dotfiles"
-export MARKED="$DOTFILES/etc/marked"
-if test -e /opt/ros; then source $DOTFILES/.rosconfig; fi
+export dotfiles="${HOME}/dotfiles"
+export marked="${dotfiles}/etc/marked"
+
+if test -e /opt/ros; then
+  source ${dotfiles}/.rosrc;
+fi
 
 
 # -- Standard Command Alias ------------------------------------
@@ -87,12 +90,12 @@ cd() {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-alias cdd='cd $DOTFILES'
-alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
+alias cdd='cd ${dotfiles}'
+alias cdm='echo "marked path: $(cat ${marked}/path)"; cd $(cat ${marked}/path)'
 alias cdr='cd ~/Dropbox'
 alias cdw='cd ~/works'
 
-alias grep='grep --color=auto --exclude-dir=.git'
+alias grep='grep --color=always --exclude-dir=.git'
 
 alias ps='ps aux --sort=start_time'
 
@@ -107,29 +110,22 @@ alias rank='sort | uniq -c | sort -nr'
 
 # -- Test Area -------------------------------------------------
 mark() {
-  markfile="path"
+  marked_path="path"
   message="next path marked"
 
-  mkdir -p $MARKED || exit 1
+  mkdir -p ${marked} || exit 1
 
   for opt in "$@"
   do
     case "$@" in
       "-c" | "--catkin" )
-        markfile="catkin_ws"
+        marked_path="catkin_ws"
         message="next path marked as catkin workspace"
         ;;
     esac
   done
 
-  pwd > "$MARKED/$markfile"
-  echo "$message: $(cat "$MARKED/$markfile")";
+  pwd > "${marked}/${marked_path}"
+  echo "${message}: $(cat "${marked}/${marked_path}")";
 }
 
-cdn() {
-  for n in $(seq 1 $1)
-  do
-    builtin cd "../"
-  done
-  ls -avF --color=auto
-}
