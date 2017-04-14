@@ -74,7 +74,7 @@ export locale=en_US.UTF-8
 
 # -- Dotfiles --------------------------------------------------
 export dotfiles="${HOME}/dotfiles"
-export MARKED="${dotfiles}/etc/marked"
+export marked="${dotfiles}/etc/marked"
 if test -e /opt/ros; then source ${dotfiles}/.rosconfig; fi
 
 
@@ -88,7 +88,7 @@ cd() {
 }
 
 alias cdd='cd ${dotfiles}'
-alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
+alias cdm='echo "marked path: $(cat ${marked}/path)"; cd $(cat ${marked}/path)'
 alias cdr='cd ~/Dropbox'
 alias cdw='cd ~/works'
 
@@ -110,7 +110,7 @@ mark() {
   markfile="path"
   message="next path marked"
 
-  mkdir -p $MARKED || exit 1
+  mkdir -p ${marked} || exit 1
 
   for opt in "$@"
   do
@@ -122,8 +122,8 @@ mark() {
     esac
   done
 
-  pwd > "$MARKED/$markfile"
-  echo "$message: $(cat "$MARKED/$markfile")";
+  pwd > "${marked}/${markfile}"
+  echo "${message}: $(cat "${marked}/${markfile}")";
 }
 
 cdn() {
