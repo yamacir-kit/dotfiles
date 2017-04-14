@@ -75,7 +75,7 @@ export locale=en_US.UTF-8
 # -- Dotfiles --------------------------------------------------
 export dotfiles="${HOME}/dotfiles"
 export marked="${dotfiles}/etc/marked"
-if test -e /opt/ros; then source ${dotfiles}/.rosconfig; fi
+if test -e /opt/ros; then source ${dotfiles}/.rosrc; fi
 
 
 # -- Standard Command Alias ------------------------------------
