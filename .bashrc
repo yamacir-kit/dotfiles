@@ -65,11 +65,11 @@ export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gi
 
 
 # -- Locale and Character --------------------------------------
-export locale=en_US.UTF-8
 export LANG=C
 export LC_MESSAGE=C
 export LC_TIME=en_US.UTF-8
 export LESSCHARSET=utf-8
+export locale=en_US.UTF-8
 
 
 # -- Dotfiles --------------------------------------------------
