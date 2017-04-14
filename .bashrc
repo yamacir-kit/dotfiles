@@ -73,9 +73,9 @@ export locale=en_US.UTF-8
 
 
 # -- Dotfiles --------------------------------------------------
-export DOTFILES="$HOME/dotfiles"
-export MARKED="$DOTFILES/etc/marked"
-if test -e /opt/ros; then source $DOTFILES/.rosconfig; fi
+export dotfiles="${HOME}/dotfiles"
+export MARKED="${dotfiles}/etc/marked"
+if test -e /opt/ros; then source ${dotfiles}/.rosconfig; fi
 
 
 # -- Standard Command Alias ------------------------------------
@@ -87,7 +87,7 @@ cd() {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-alias cdd='cd $DOTFILES'
+alias cdd='cd ${dotfiles}'
 alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
 alias cdr='cd ~/Dropbox'
 alias cdw='cd ~/works'
