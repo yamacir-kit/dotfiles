@@ -92,7 +92,7 @@ alias cdm='echo "marked path: $(cat ${MARKED}/path)"; cd $(cat ${MARKED}/path)'
 alias cdr='cd ~/Dropbox'
 alias cdw='cd ~/works'
 
-alias grep='grep --color=auto --exclude-dir=.git'
+alias grep='grep --color=always --exclude-dir=.git'
 
 alias ps='ps aux --sort=start_time'
 
