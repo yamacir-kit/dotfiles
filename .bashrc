@@ -17,8 +17,8 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=2048
-HISTFILESIZE=2048
+HISTSIZE=4096
+HISTFILESIZE=4096
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -75,7 +75,10 @@ export locale=en_US.UTF-8
 # -- Dotfiles --------------------------------------------------
 export dotfiles="${HOME}/dotfiles"
 export marked="${dotfiles}/etc/marked"
-if test -e /opt/ros; then source ${dotfiles}/.rosrc; fi
+
+if test -e /opt/ros; then
+  source ${dotfiles}/.rosrc;
+fi
 
 
 # -- Standard Command Alias ------------------------------------
