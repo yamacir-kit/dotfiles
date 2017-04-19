@@ -3,7 +3,7 @@
 
 
 # -- Startup Execution -----------------------------------------
-[[ -z "$TMUX" ]] && exec tmux -2u
+# [[ -z "$TMUX" ]] && exec tmux -2u
 
 eval `dircolors ~/.dircolors`
 
