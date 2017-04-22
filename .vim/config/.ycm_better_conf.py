@@ -14,7 +14,7 @@ BASE_FLAGS = [
     '-DUSE_CLANG_COMPLETER',
     '-std=c++11',
     '-xc++',
-    '-isystem', '/opt/ros/indigo/include',
+    '-isystem', '/opt/ros/kinetic/include',
     '-isystem', '/usr/include',
     '-isystem', '/usr/include/c++/5.4.0',
     '-isystem', '/usr/include/c++/5.4.0/backward',
