@@ -14,10 +14,11 @@ nnoremap k gkzz
 " nnoremap <pagedown> <pagedown>zz
 " nnoremap <pageup>   <pageup>zz
 
-nnoremap <silent> <leader>gt  :<c-u>GitGutterToggle<cr>       " toggle
-nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>    " stage
-nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>     " revert
-nnoremap <silent> <leader>gc  :!git<space>commit<space>-v<cr> " commit
+nnoremap <silent> <leader>gt  :<c-u>GitGutterToggle<cr>            " toggle
+nnoremap <silent> <leader>gs  :<c-u>GitGutterStageHunk<cr>         " stage
+nnoremap <silent> <leader>gr  :<c-u>GitGutterUndoHunk<cr>          " revert
+nnoremap <silent> <leader>gc  :!git<space>commit<space>-v<cr>      " commit
+nnoremap <silent> <leader>ga  :!git<space>commit<space>--amend<cr> " commit
 
 nnoremap <silent> <leader>go  :YcmCompleter<space>GoTo<cr>
 
