@@ -124,7 +124,3 @@ mark() {
   echo "${message}: $(cat "${marked}/${marked_path}")";
 }
 
-if test -e ~/.Xmodmap; then
-  xmodmap ~/.Xmodmap
-fi
-
