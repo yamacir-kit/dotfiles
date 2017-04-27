@@ -1,12 +1,7 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
-
-# -- Startup Execution -----------------------------------------
-# [[ -z "$TMUX" ]] && exec tmux -2u
-
 eval `dircolors ~/.dircolors`
-
 
 # -- Ubuntu Default Configs ------------------------------------
 # don't put duplicate lines or lines starting with space in the history.
@@ -99,8 +94,6 @@ alias grep='grep --color=always --exclude-dir=.git'
 
 alias ps='ps aux --sort=start_time'
 
-alias grm='git rm $(git ls-files --deleted)'
-
 alias tmux='tmux -2u'
 
 
@@ -130,4 +123,8 @@ mark() {
   pwd > "${marked}/${marked_path}"
   echo "${message}: $(cat "${marked}/${marked_path}")";
 }
+
+if test -e ~/.Xmodmap; then
+  xmodmap ~/.Xmodmap
+fi
 
