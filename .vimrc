@@ -13,6 +13,7 @@ Plugin 'gmarik/vundle'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tyru/caw.vim'
 
@@ -101,3 +102,4 @@ autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* set filetype=tmux
 
 " -- Auto Command BufWrite -------------------------------------
 autocmd BufWritePre * :%s/\s\+$//ge
+

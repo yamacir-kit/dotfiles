@@ -97,6 +97,8 @@ alias ps='ps aux --sort=start_time'
 
 alias tmux='tmux -2u'
 
+# alias vi='nano --smarthome --tabstospaces --locking --ignorercfiles --morespace --smooth --tabsize=2 --unix --nowrap --nohelp --suspend'
+
 
 # -- Shell Arts ------------------------------------------------
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
