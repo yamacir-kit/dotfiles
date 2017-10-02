@@ -34,7 +34,7 @@ let g:ycm_echo_current_diagnostic = 0
 let g:ycm_enable_diagnostic_highlighting = 0
 let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_filetype_blacklist = { 'markdown':1, 'tex':1, 'latex':1 }
-let g:ycm_filetype_whitelist = { 'c':1, 'cpp':1 }
+let g:ycm_filetype_whitelist = { 'c':1, 'cpp':1, 'python':1 }
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_better_conf.py'
 let g:ycm_key_invoke_completion = '<C-c>'
 let g:ycm_key_list_previous_completion = ['<C-Tab>', '<C-k>']
@@ -70,8 +70,9 @@ set timeout timeoutlen=1000 ttimeoutlen=100
 set expandtab smarttab tabstop=2 shiftwidth=2
 set nowrap
 
-set cindent cinoptions=g0
+set cindent cinoptions=g0,:0,N-s,(0,#0
 set foldmethod=indent
+set foldignore=
 
 set sidescroll=1 scrolloff=8
 
