@@ -41,7 +41,8 @@ fi
 
 # -- Prompt ----------------------------------------------------
 gitinfo() {
-  if git status &> /dev/null; then
+  if git status &> /dev/null;
+  then
     git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
     git_status=$(git status -s | wc -l);
     echo -e "$git_branch[$git_status]";
@@ -51,12 +52,15 @@ gitinfo() {
 }
 
 bgjobs() {
-  if [ $(jobs | wc -l) != 0 ]; then
+  if [ $(jobs | wc -l) != 0 ];
+  then
     echo ", bgjobs[$(jobs | wc -l)]";
   fi
 }
 
-export PS1="\n\$(if test \$?; then echo \"\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\"; else echo \"\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;31m\])\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
+ascii_face_success="\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])"
+ascii_face_failed="\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;31m\])"
+export PS1="\n\$(if test \$?; then echo \"$ascii_face_success\"; else echo \"$ascii_face_failed\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
 # -- Locale and Character --------------------------------------
