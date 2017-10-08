@@ -81,7 +81,7 @@ let &ttimeoutlen = 100
 set expandtab smarttab tabstop=2 shiftwidth=2
 set nowrap
 
-set cindent cinoptions=g0,:0,N-s,(0,#0
+set cindent cinoptions=g0,:0,N-s,#0
 set foldmethod=indent
 set foldignore=
 
