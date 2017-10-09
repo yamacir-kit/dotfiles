@@ -12,7 +12,7 @@ BASE_FLAGS = [
     '-ferror-limit=10000',
     '-DNDEBUG',
     '-DUSE_CLANG_COMPLETER',
-    '-std=c++11',
+    '-std=c++14',
     '-xc++',
     '-isystem', '/opt/ros/kinetic/include',
     '-isystem', '/usr/include',
@@ -30,8 +30,6 @@ SOURCE_EXTENSIONS = [
     '.cxx',
     '.cc',
     '.c',
-    '.m',
-    '.mm'
 ]
 
 HEADER_EXTENSIONS = [
