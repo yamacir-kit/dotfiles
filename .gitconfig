@@ -1,17 +1,19 @@
 [user]
-  name = YamaCIR-KIT
+  name  = yamacir-kit
   email = httperror@404-notfound.jp
 
-[alias]
-  graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+[pretty]
+  preset = format:%C(yellow reverse) %h %C(green reverse) %an %C(reset)%C(cyan) %ar%C(red)%d%n> %C(white bold)%w(0, 0, 2)%B%n
 
-  stage = add
+[alias]
+  # graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
+  graph = log --graph --all --date=relative --pretty=preset
+
+    stage = add
   unstage = reset -q HEAD --
 
-  commit = commit -v
+    commit = commit -v
   uncommit = reset --hard HEAD^
-
-  merge = merge --no-ff --
 
 [core]
   editor = vi
@@ -28,3 +30,4 @@
 
 [pull]
   rebase = true
+
