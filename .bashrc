@@ -40,21 +40,22 @@ fi
 
 
 # -- Prompt ----------------------------------------------------
-gitinfo() {
-  if git status &> /dev/null;
+gitinfo()
+{
+  if git status &> /dev/null
   then
-    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/');
-    git_status=$(git status -s | wc -l);
-    echo -e "$git_branch[$git_status]";
+    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    # git_status=$(git status -s | wc -l)
+    echo -e "$git_branch[$(git status -s | wc -l)]"
   else
-    echo "norepo";
+    echo "norepo"
   fi
 }
 
 bgjobs() {
-  if [ $(jobs | wc -l) != 0 ];
+  if test $(jobs | wc -l) != 0
   then
-    echo ", bgjobs[$(jobs | wc -l)]";
+    echo ", bgjobs[$(jobs | wc -l)]"
   fi
 }
 
@@ -79,7 +80,8 @@ if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
 
 # -- Standard Command Alias ------------------------------------
-cd() {
+cd()
+{
   builtin cd "$@" && ls -avF --color=auto
 }
 
