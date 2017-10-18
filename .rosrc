@@ -1,19 +1,20 @@
 #!/bin/bash
 
-ros_version="kinetic"
+rosdistro="kinetic"
 
-if [ -e /opt/ros/${ros_version}/setup.bash ]; then
-  source /opt/ros/${ros_version}/setup.bash
+if test -e /opt/ros/$rosdistro/setup.bash; then
+  source /opt/ros/$rosdistro/setup.bash
 fi
 
-if [ -e ${marked}/catkin_ws ]; then
-  source $(cat ${marked}/catkin_ws)/devel/setup.bash
+if test -e $marked/catkin; then
+  source $(cat $marked/catkin)/devel/setup.bash
 fi
 
-alias cdc='cd $(cat ${marked}/catkin_ws)'
-alias cds='cd $(cat ${marked}/catkin_ws)/src'
+alias cdc='cd $(cat $marked/catkin)'
+alias cds='cd $(cat $marked/catkin)/src'
 
-function catkin_make() {
-  (cd $(cat ${marked}/catkin_ws) && command catkin_make $@) && source $(cat ${marked}/catkin_ws)/devel/setup.bash && rospack profile
+function catkin_make()
+{
+  (cd $(cat $marked/catkin) && command catkin_make $@) && source $(cat $marked/catkin)/devel/setup.bash && rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
 }
 

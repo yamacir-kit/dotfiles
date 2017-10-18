@@ -72,25 +72,25 @@ export locale=en_US.UTF-8
 
 
 # -- Dotfiles --------------------------------------------------
-export dotfiles="${HOME}/dotfiles"
-export marked="${dotfiles}/etc/marked"
+export dotfiles="$HOME/dotfiles"
+export marked="$dotfiles/etc/marked"
 
-if test -e /opt/ros; then
-  source ${dotfiles}/.rosrc;
-fi
+if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
 
 # -- Standard Command Alias ------------------------------------
-alias ls='ls -avF --color=auto'
-alias sl='ls -avF --color=auto'
-alias ks='ls -avF --color=auto'
-
 cd() {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-alias cdd='cd ${dotfiles}'
-alias cdm='echo "marked path: $(cat ${marked}/path)"; cd $(cat ${marked}/path)'
+alias ls='ls -avF --color=auto'
+alias sl='ls -avF --color=auto'
+alias ks='ls -avF --color=auto'
+
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+alias cdd='cd $dotfiles'
+alias cdm='echo "marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
 alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/tmp'
 alias cdw='cd ~/works'
@@ -101,33 +101,26 @@ alias ps='ps aux --sort=start_time'
 
 alias tmux='tmux -2u'
 
-# alias vi='nano --smarthome --tabstospaces --locking --ignorercfiles --morespace --smooth --tabsize=2 --unix --nowrap --nohelp --suspend'
-
-
-# -- Shell Arts ------------------------------------------------
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
 alias rank='sort | uniq -c | sort -nr'
 
 
-# -- Test Area -------------------------------------------------
-mark() {
-  marked_path="path"
-  message="next path marked"
+mark()
+{
+  file="unnamed"
+  info="[info] following path marked"
 
-  mkdir -p ${marked} || exit 1
+  mkdir -p $marked || exit 1
 
   for opt in "$@"
   do
     case "$@" in
       "-c" | "--catkin" )
-        marked_path="catkin_ws"
-        message="next path marked as catkin workspace"
+        file="catkin"
+        info="$info as catkin workspace"
         ;;
     esac
   done
 
-  pwd > "${marked}/${marked_path}"
-  echo "${message}: $(cat "${marked}/${marked_path}")";
+  echo "$info: $(pwd | tee $marked/$file)";
 }
 
