@@ -2,11 +2,13 @@
 
 rosdistro="kinetic"
 
-if test -e /opt/ros/$rosdistro/setup.bash; then
+if test -e /opt/ros/$rosdistro/setup.bash
+then
   source /opt/ros/$rosdistro/setup.bash
 fi
 
-if test -e $marked/catkin; then
+if test -e $marked/catkin
+then
   source $(cat $marked/catkin)/devel/setup.bash
 fi
 
