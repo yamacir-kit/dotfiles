@@ -15,8 +15,15 @@ fi
 alias cdc='cd $(cat $marked/catkin)'
 alias cds='cd $(cat $marked/catkin)/src'
 
-function catkin_make()
+function make()
 {
-  (cd $(cat $marked/catkin) && command catkin_make $@) && source $(cat $marked/catkin)/devel/setup.bash && rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
+  if test -e $(pwd)/Makefile
+  then
+    command make
+  else
+    pushd $(cat $marked/catkin) && command catkin_make $@ && source devel/setup.bash
+    rospack_profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
+    popd
+  fi
 }
 
