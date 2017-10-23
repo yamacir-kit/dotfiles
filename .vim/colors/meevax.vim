@@ -1,11 +1,3 @@
-" --------------------------------------------------------------
-"  My original Vim color scheme
-"
-"  Author: Tatsuya Yamasaki <httperror@404-notfound.jp>
-"  https://github.com/YamaCIR-KIT/dotfiles/.vim/colors/hoge.vim
-" --------------------------------------------------------------
-
-
 highlight clear
 if exists("syntax_on")
   syntax reset
@@ -13,27 +5,41 @@ endif
 let g:colors_name = "hoge"
 
 
+function <sid>set_color(group, fore, back, attrib)
+  if a:fore != ""
+    execute "highlight " . a:group . " ctermfg=" . a:fore
+  endif
+
+  if a:back != ""
+    execute "highlight " . a:group . " ctermbg=" . a:back
+  endif
+
+  if a:attrib != ""
+    execute "highlight " . a:group . " cterm=" . a:attrib
+  endif
+endfunction
+
+let s:none  = "none"
+let s:white = "252"
+let s:black = "236"
+let s:gray  = "059"
+
+
 " -- General ---------------------------------------------------
-highlight Normal          ctermfg=252  ctermbg=none cterm=none
+" highlight Normal          ctermfg=252  ctermbg=none cterm=none
+call <sid>set_color("Normal", s:white, "none", "none")
 
 highlight Comment         ctermfg=059  ctermbg=none cterm=none
 highlight Normal          ctermfg=252  ctermbg=none cterm=none
 
 highlight Cursor          ctermfg=233  ctermbg=none cterm=none
-highlight CursorLine      ctermfg=none ctermbg=236  cterm=none
+" highlight CursorLine      ctermfg=none ctermbg=236  cterm=none
+call <sid>set_color("CursorLine", s:none, s:black, s:none)
+
 highlight CursorLineNr    ctermfg=221  ctermbg=236  cterm=bold
 highlight LineNr          ctermfg=059  ctermbg=none cterm=none
 
 highlight Todo            ctermfg=221  ctermbg=none cterm=bold,underline
-
-
-
-
-
-
-
-
-
 
 " -- Constants -------------------------------------------------
 highlight Constant        ctermfg=141  ctermbg=none cterm=none
@@ -140,3 +146,4 @@ highlight SpellBad        ctermfg=161  ctermbg=none cterm=bold,underline
 
 " -- Background ------------------------------------------------
 set background=dark " because of ctermbg=234 bug
+

@@ -97,18 +97,20 @@ set splitbelow
 
 set wildmenu wildmode=longest:full,full
 
+set cursorline
+
 
 " -- Syntax Highlighting ---------------------------------------
 syntax enable
 let &t_Co = 256
 set background=dark
-colorscheme hoge
+colorscheme meevax
 
 
 " -- Auto Command BufRead --------------------------------------
-autocmd BufRead,BufNewFile *.launch let &filetype = 'xml'
-autocmd BufRead,BufNewFile *.md let &filetype = 'markdown'
-autocmd BufRead,BufNewFile .tmux.conf*,tmux.conf* let &filetype = 'tmux'
+autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
+autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
+autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
 
 " -- Auto Command BufWrite -------------------------------------
