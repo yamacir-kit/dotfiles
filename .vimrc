@@ -39,20 +39,19 @@ let g:ycm_enable_diagnostic_signs = 0
 let g:ycm_filetype_blacklist = {'markdown':1, 'tex':1, 'latex':1}
 let g:ycm_filetype_whitelist = {'c':1, 'cpp':1, 'python':1}
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/config/.ycm_better_conf.py'
-let g:ycm_key_invoke_completion = '<C-c>'
-let g:ycm_key_list_previous_completion = ['<C-Tab>', '<C-k>']
-let g:ycm_key_list_select_completion = ['<Tab>', '<C-j>']
+let g:ycm_key_invoke_completion = '<c-c>'
+let g:ycm_key_list_previous_completion = [         '<c-k>']
+let g:ycm_key_list_select_completion   = ['<tab>', '<c-j>']
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_show_diagnostic_ui = 0
+let g:ycm_show_diagnostic_ui = 1
 let g:ycm_use_ultisnips_completer = 0
 
 let g:python_highlight_all = 1
 
 
 " -- Settings --------------------------------------------------
-" set encoding=utf-8
-let &encoding = 'utf-8'
+let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
 let &ambiwidth = 'double'
 
@@ -88,13 +87,13 @@ set foldignore=
 set sidescroll=1 scrolloff=8
 
 set showmatch matchtime=1
-set nf="hex"
+" set &nrformats = 'hex'
 
 set virtualedit=block
 
 set incsearch ignorecase smartcase wrapscan
 
-set splitbelow splitright
+set splitbelow
 
 set wildmenu wildmode=longest:full,full
 
