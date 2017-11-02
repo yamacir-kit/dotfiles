@@ -27,3 +27,20 @@ function make()
   fi
 }
 
+function recursive_wstool_update()
+{
+  pushd $(cat $marked/catkin)
+  wstool init src
+
+  echo "hoge" > /tmp/wstool_outputs
+
+  while test "$(cat /tmp/wstool_outputs)" !=   "Merge caused no change, no new elements found"
+  do
+    find -regextype posix-basic -regex "\./src/.*/.*\.rosinstall" | xargs -n1 wstool merge --target-workspace=src | uniq | tee /tmp/wstool_outputs
+    wstool update --target-workspace=src
+  done
+
+  rm /tmp/wstool_outputs
+  popd
+}
+
