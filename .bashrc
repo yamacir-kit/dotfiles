@@ -97,6 +97,9 @@ alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/tmp'
 alias cdw='cd ~/works'
 
+alias cxx14='clang++-4.0 -std=c++14'
+alias cxx17='clang++-4.0 -std=c++17'
+
 alias grep='grep --color=always --exclude-dir=.git'
 
 alias ps='ps aux --sort=start_time'
@@ -109,7 +112,7 @@ alias rank='sort | uniq -c | sort -nr'
 mark()
 {
   file="unnamed"
-  info="[info] following path marked"
+  info="[mark] following path marked"
 
   mkdir -p $marked || exit 1
 
