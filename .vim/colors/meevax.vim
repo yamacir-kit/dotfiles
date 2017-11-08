@@ -20,8 +20,8 @@ function <sid>set_color(group, fore, back, attrib)
 endfunction
 
 let s:none  = "none"
-let s:white = "252"
-let s:black = "236"
+let s:white = "252" " d0d0d0
+let s:black = "236" " 303030
 let s:gray  = "059"
 
 
