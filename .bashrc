@@ -64,12 +64,14 @@ ascii_face_failed="\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0
 export PS1="\n\$(if test \$?; then echo \"$ascii_face_success\"; else echo \"$ascii_face_failed\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
-# -- Locale and Character --------------------------------------
 export LANG=C
 export LC_MESSAGE=C
 export LC_TIME=en_US.UTF-8
 export LESSCHARSET=utf-8
 export locale=en_US.UTF-8
+
+export CXX='g++-7'
+export CC='gcc-7'
 
 
 # -- Dotfiles --------------------------------------------------
@@ -94,11 +96,8 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 alias cdd='cd $dotfiles'
 alias cdm='echo "marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
 alias cdr='cd ~/Dropbox'
-alias cdt='cd ~/works/tmp'
+alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
-
-alias cxx14='clang++-4.0 -std=c++14'
-alias cxx17='clang++-4.0 -std=c++17'
 
 alias grep='grep --color=always --exclude-dir=.git'
 
@@ -108,8 +107,18 @@ alias tmux='tmux -2u'
 
 alias rank='sort | uniq -c | sort -nr'
 
+function cxx17b()
+{
+  compiler="g++-7"
+  cxx_version="-std=c++17"
+  options="-Wall -Wextra -O3"
+  boost_links="-lboost_system -lboost_thread -lboost_date_time"
 
-mark()
+  $compiler $@ $cxx_version $options $boost_links
+}
+
+
+function mark()
 {
   file="unnamed"
   info="[mark] following path marked"
