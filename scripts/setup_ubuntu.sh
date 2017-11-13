@@ -38,3 +38,8 @@ sudo apt-get -y install unity-tweak-tool
 sudo apt-get -y remove vim-tiny
 sudo apt-add-repository -y ppa:jonathonf/vim
 sudo apt-get update && sudo apt-get install -y vim-gnome
+
+# -- Compilers -------------------------------------------------
+sudo add-apt-repository -y ppa:jonathonf/gcc-7.1
+sudo apt update && sudo apt install gcc-7 g++-7
+

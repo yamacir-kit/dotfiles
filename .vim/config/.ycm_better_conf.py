@@ -16,28 +16,16 @@ BASE_FLAGS = [
     '-xc++',
     '-isystem', '/opt/ros/kinetic/include',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/include/c++/5.4.0',
-    '-isystem', '/usr/include/c++/5.4.0/backward',
-    '-isystem', '/usr/include/x86_64-linux-gnu/5.4.0/include',
-    '-isystem', '/usr/include/x86_64-linux-gnu/c++/5.4.0'
-    '-isystem', '/usr/lib/clang/3.8.0/include',
-    '-isystem', '/usr/lib/gcc/x86_64-linux-gnu/5.4.0/include',
+    '-isystem', '/usr/include/c++/7.1.0',
+    '-isystem', '/usr/include/c++/7.1.0/backward',
+    '-isystem', '/usr/include/clang/4.0.0/include',
+    '-isystem', '/usr/include/x86_64-linux-gnu',
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.1.0',
     '-isystem', '/usr/local/include'
 ]
 
-SOURCE_EXTENSIONS = [
-    '.cpp',
-    '.cxx',
-    '.cc',
-    '.c',
-]
-
-HEADER_EXTENSIONS = [
-    '.h',
-    '.hxx',
-    '.hpp',
-    '.hh'
-]
+SOURCE_EXTENSIONS = ['.c', '.cpp', '.cxx', '.cc']
+HEADER_EXTENSIONS = ['.h', '.hpp', '.hxx', '.hh']
 
 def IsHeaderFile(filename):
     extension = os.path.splitext(filename)[1]
@@ -93,7 +81,6 @@ def MakeRelativePathsInFlagsAbsolute(flags, working_directory):
         if new_flag:
             new_flags.append(new_flag)
     return new_flags
-
 
 def FlagsForClangComplete(root):
     try:
