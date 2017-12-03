@@ -12,7 +12,7 @@ HISTCONTROL=ignoreboth
 shopt -s histappend
 
 # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
-HISTSIZE=4096
+    HISTSIZE=4096
 HISTFILESIZE=4096
 
 # check the window size after each command and, if necessary,
@@ -23,17 +23,21 @@ shopt -s checkwinsize
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
+if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]
+then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
-if ! shopt -oq posix; then
-  if [ -f /usr/share/bash-completion/bash_completion ]; then
+if ! shopt -oq posix
+then
+  if test -f /usr/share/bash-completion/bash_completion
+  then
     . /usr/share/bash-completion/bash_completion
-  elif [ -f /etc/bash_completion ]; then
+  elif test -f /etc/bash_completion
+  then
     . /etc/bash_completion
   fi
 fi
@@ -70,8 +74,8 @@ export LC_TIME=en_US.UTF-8
 export LESSCHARSET=utf-8
 export locale=en_US.UTF-8
 
+export  CC='gcc-7'
 export CXX='g++-7'
-export CC='gcc-7'
 
 
 # -- Dotfiles --------------------------------------------------
@@ -82,10 +86,11 @@ if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
 
 # -- Standard Command Alias ------------------------------------
-cd()
+function cd()
 {
   builtin cd "$@" && ls -avF --color=auto
 }
+
 
 alias ls='ls -avF --color=auto'
 alias sl='ls -avF --color=auto'
@@ -94,7 +99,7 @@ alias ks='ls -avF --color=auto'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 alias cdd='cd $dotfiles'
-alias cdm='echo "marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
+alias cdm='echo "move marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
 alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
@@ -106,6 +111,13 @@ alias ps='ps aux --sort=start_time'
 alias tmux='tmux -2u'
 
 alias rank='sort | uniq -c | sort -nr'
+
+
+function update()
+{
+  sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
+}
+
 
 function cxx17b()
 {

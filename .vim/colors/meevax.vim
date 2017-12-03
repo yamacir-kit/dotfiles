@@ -128,7 +128,7 @@ highlight Visual          ctermfg=234  ctermbg=246
 highlight NonText         ctermfg=59   ctermbg=none  cterm=none
 highlight SpecialKey      ctermfg=59   ctermbg=none  cterm=none
 
-highlight Search          ctermfg=none ctermbg=none cterm=reverse
+highlight    Search       ctermfg=none ctermbg=none cterm=underline
 highlight IncSearch       ctermfg=none ctermbg=none cterm=reverse
 
 highlight WildMenu        ctermfg=221  ctermbg=236  cterm=bold
