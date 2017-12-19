@@ -108,6 +108,7 @@ colorscheme meevax
 
 
 " -- Auto Command BufRead --------------------------------------
+autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
