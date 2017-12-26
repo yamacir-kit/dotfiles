@@ -112,6 +112,8 @@ alias tmux='tmux -2u'
 
 alias rank='sort | uniq -c | sort -nr'
 
+alias alpha='for each in $(echo {a..z}); do echo $each; done'
+
 
 function update()
 {
