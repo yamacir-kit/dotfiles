@@ -32,6 +32,8 @@ inoremap <>  <><left>
 inoremap []  []<left>
 inoremap {}  {}<left>
 
+" dirty hack
+inoremap /**  /**<cr><left><left><bs><right><right><cr><bs>/<up>
 
 vnoremap ;  :s/
 vnoremap \! :!
