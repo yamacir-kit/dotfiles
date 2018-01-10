@@ -70,7 +70,7 @@ set number nocursorline
 let &laststatus = 0
 set showmode showcmd
 
-set list listchars=tab:›\ ,trail:_
+set list listchars=tab:\|\ ,trail:_
 
 
 set timeout
@@ -101,10 +101,18 @@ set cursorline
 
 
 " -- Syntax Highlighting ---------------------------------------
+let g:solarized_termcolors = 16
+let g:solarized_termtrans  =  0
+let g:solarized_degrade    =  0
+let g:solarized_bold       =  1
+let g:solarized_italic     =  1
+let g:solarized_underline  =  1
+let g:solarized_contrast   = 'normal'
+let g:solarized_visibility = 'normal'
+
 syntax enable
-let &t_Co = 256
-set background=dark
-colorscheme meevax
+let &background = 'light'
+colorscheme solarized
 
 
 " -- Auto Command BufRead --------------------------------------

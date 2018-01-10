@@ -63,8 +63,8 @@ bgjobs() {
   fi
 }
 
-ascii_face_success="\[\e[0;36m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])"
-ascii_face_failed="\[\e[0;31m\]( ^q^) < \[\e[0;37m\]\$(gitinfo)\$(bgjobs) \[\e[0;31m\])"
+ascii_face_success="\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])"
+ ascii_face_failed="\[\e[0;31m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;31m\])"
 export PS1="\n\$(if test \$?; then echo \"$ascii_face_success\"; else echo \"$ascii_face_failed\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
 
 
