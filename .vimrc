@@ -21,7 +21,7 @@ endif
     " Syntax Highlight Plugins
     Plugin 'hdima/python-syntax'
     Plugin 'nickhutchinson/vim-cmake-syntax'
-    Plugin 'octol/vim-cpp-enhanced-highlight'
+    " Plugin 'octol/vim-cpp-enhanced-highlight'
 
   call vundle#end()
   filetype plugin indent on
@@ -53,16 +53,7 @@ endif
 
 " -- Other Plugin Configs --
   let g:python_highlight_all = 1
-
   let g:load_doxygen_syntax = 1
-
-  let g:cpp_class_decl_highlight = 1
-  let g:cpp_class_scope_highlight = 1
-  let g:cpp_concepts_highlight = 1
-  let g:cpp_experimental_simple_template_highlight = 1
-  let g:cpp_experimental_template_highlight = 0
-  let g:cpp_member_variable_highlight = 1
-  let g:cpp_no_function_highlight = 0
 
 
 " -- Standard Settings --
@@ -124,14 +115,17 @@ endif
   let g:solarized_bold       =  1
   let g:solarized_italic     =  1
   let g:solarized_underline  =  1
-  let g:solarized_contrast   = 'high'
+  let g:solarized_contrast   = 'normal'
   let g:solarized_visibility = 'low'
 
   syntax enable
-  let &background = 'light'
-  colorscheme solarized
+  " let &background = 'light'
+  " colorscheme solarized
+  "
+  " highlight MatchParen ctermbg=7 guibg=LightGray
 
-  highlight MatchParen ctermbg=7 guibg=LightGray
+  let &background = 'light'
+  colorscheme meevax
 
 
 " -- Auto Command BufRead --------------------------------------
