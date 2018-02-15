@@ -102,7 +102,7 @@ endif
 
   set wildmenu wildmode=longest:full,full
 
-  set cursorline
+  " set cursorline
   if (exists('+colorcolumn'))
     " let &colorcolumn = 80
   endif

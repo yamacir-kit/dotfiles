@@ -17,6 +17,7 @@
 
 [core]
   editor = vi
+  pager = less -cm
   quotepath = false
 
 [color]
