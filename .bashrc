@@ -127,8 +127,9 @@ function cxx17b()
   cxx_version="-std=c++17"
   options="-Wall -Wextra -O3"
   boost_links="-lboost_system -lboost_thread -lboost_date_time"
+  other_links="-ldl -lstdc++fs"
 
-  $compiler $@ $cxx_version $options $boost_links
+  $compiler $@ $cxx_version $options $boost_links $other_links
 }
 
 

@@ -53,7 +53,7 @@ let g:ycm_use_ultisnips_completer = 0
 
 " -- Other Plugin Configs --
 let g:python_highlight_all = 1
-let g:load_doxygen_syntax = 1
+" let g:load_doxygen_syntax = 1
 
 
 " -- Standard Settings --
@@ -133,8 +133,8 @@ autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
-autocmd BufRead,BufNewFile *.cpp      let &syntax = 'cpp.doxygen'
-autocmd BufRead,BufNewFile *.hpp      let &syntax = 'cpp.doxygen'
+" autocmd BufRead,BufNewFile *.cpp      let &syntax = 'cpp.doxygen'
+" autocmd BufRead,BufNewFile *.hpp      let &syntax = 'cpp.doxygen'
 
 
 " -- Auto Command BufWrite -------------------------------------
