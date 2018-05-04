@@ -1,36 +1,23 @@
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 eval `dircolors ~/.dircolors`
 
-# -- Ubuntu Default Configs ------------------------------------
-# don't put duplicate lines or lines starting with space in the history.
-# See bash(1) for more options
 HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
 shopt -s histappend
 
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
     HISTSIZE=4096
 HISTFILESIZE=4096
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]
+if test -z "${debian_chroot:-}" && test -r /etc/debian_chroot
 then
   debian_chroot=$(cat /etc/debian_chroot)
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
 if ! shopt -oq posix
 then
   if test -f /usr/share/bash-completion/bash_completion
@@ -42,30 +29,33 @@ then
   fi
 fi
 
-
-# -- Prompt ----------------------------------------------------
 gitinfo()
 {
   if git status &> /dev/null
   then
-    git_branch=$(git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    # git_status=$(git status -s | wc -l)
-    echo -e "$git_branch[$(git status -s | wc -l)]"
+    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
   else
     echo "norepo"
   fi
 }
 
-bgjobs() {
+bgjobs()
+{
   if test $(jobs | wc -l) != 0
   then
-    echo ", bgjobs[$(jobs | wc -l)]"
+    echo ", jobs[$(jobs | wc -l)]"
   fi
 }
 
-ascii_face_success="\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])"
- ascii_face_failed="\[\e[0;31m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;31m\])"
-export PS1="\n\$(if test \$?; then echo \"$ascii_face_success\"; else echo \"$ascii_face_failed\"; fi)\n${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0;00m\]\$ "
+
+cyan="\[\e[0;36m\]"
+green="\[\e[0;32m\]"
+yellow="\[\e[0;33m\]"
+
+face="$cyan( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) $cyan)"
+
+export PS1="\n$face\n${debian_chroot:+($debian_chroot)}$green\u@\H: $yellow\w\[\e[0m\]\$ "
 
 
 export LANG=C
@@ -78,25 +68,20 @@ export  CC='gcc-7'
 export CXX='g++-7'
 
 
-# -- Dotfiles --------------------------------------------------
 export dotfiles="$HOME/dotfiles"
 export marked="$dotfiles/etc/marked"
 
 if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
 
-# -- Standard Command Alias ------------------------------------
-function cd()
+cd()
 {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-
 alias ls='ls -avF --color=auto'
-alias sl='ls -avF --color=auto'
-alias ks='ls -avF --color=auto'
-
-alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+alias sl='ls'
+alias ks='ls'
 
 alias cdd='cd $dotfiles'
 alias cdm='echo "move marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
@@ -104,36 +89,39 @@ alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
 
+alias alpha='for each in $(echo {a..z}); do echo $each; done'
 alias grep='grep --color=always --exclude-dir=.git'
-
 alias ps='ps aux --sort=start_time'
-
+alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-alias rank='sort | uniq -c | sort -nr'
+compare()
+{
+  if which colordiff &> /dev/null
+  then
+    alias diff='colordiff'
+  fi
 
-alias alpha='for each in $(echo {a..z}); do echo $each; done'
+  diff -Bbyw $@ | less -R
+}
 
-
-function update()
+update()
 {
   sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
 }
 
-
-function cxx17b()
+cxx()
 {
   compiler="g++-7"
-  cxx_version="-std=c++17"
+  version="-std=c++17"
   options="-Wall -Wextra -O3"
   boost_links="-lboost_system -lboost_thread -lboost_date_time"
   other_links="-ldl -lstdc++fs"
 
-  $compiler $@ $cxx_version $options $boost_links $other_links
+  $compiler $@ $version $options $boost_links $other_links
 }
 
-
-function mark()
+mark()
 {
   file="unnamed"
   info="[mark] following path marked"
@@ -146,7 +134,7 @@ function mark()
       "-c" | "--catkin" )
         file="catkin"
         info="$info as catkin workspace"
-        ;;
+        break;;
     esac
   done
 
