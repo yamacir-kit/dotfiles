@@ -86,7 +86,7 @@ set expandtab smarttab
 
 set nowrap
 
-set cindent cinoptions=g0,:0,N-s,#0
+set cindent cinoptions=g0,:0,N-s,#N
 set foldmethod=indent
 set foldignore=
 
@@ -122,6 +122,7 @@ syntax enable
 let &background = 'light'
 colorscheme solarized
 highlight MatchParen ctermbg=7 guibg=LightGray
+highlight LineNr     ctermbg=none
 
 " let &background = 'light'
 " colorscheme meevax
