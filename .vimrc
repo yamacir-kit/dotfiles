@@ -115,17 +115,15 @@ let g:solarized_degrade    =  0
 let g:solarized_bold       =  1
 let g:solarized_italic     =  1
 let g:solarized_underline  =  1
-let g:solarized_contrast   = 'high'
+let g:solarized_contrast   = 'normal'
 let g:solarized_visibility = 'normal'
 
 syntax enable
-let &background = 'light'
-colorscheme solarized
-highlight MatchParen ctermbg=7 guibg=LightGray
-highlight LineNr     ctermbg=none
 
-" let &background = 'light'
-" colorscheme meevax
+let &background = 'dark'
+colorscheme solarized
+highlight MatchParen ctermbg=none
+highlight LineNr     ctermbg=none
 
 
 " -- Auto Command BufRead --------------------------------------

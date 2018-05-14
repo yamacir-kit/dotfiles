@@ -114,7 +114,7 @@ cxx()
 {
   compiler="g++-7"
   version="-std=c++17"
-  options="-Wall -Wextra -O3"
+  options="-Wall -Wextra"
   boost_links="-lboost_system -lboost_thread -lboost_date_time"
   other_links="-ldl -lstdc++fs"
 
