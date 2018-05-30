@@ -9,7 +9,16 @@ fi
 
 if test -e $marked/catkin
 then
-  source $(cat $marked/catkin)/devel/setup.bash
+  if test -e $(cat $marked/catkin)/devel/setup.bash
+  then
+    source $(cat $marked/catkin)/devel/setup.bash
+  else
+    if test -e $(cat $marked/catkin)/install_isolated/setup.bash
+    then
+      source $(cat $marked/catkin)/install_isolated/setup.bash
+    fi
+  fi
+  rospack profile &> /dev/null
 fi
 
 alias cdc='cd $(cat $marked/catkin)'

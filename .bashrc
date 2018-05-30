@@ -64,8 +64,8 @@ export LC_TIME=en_US.UTF-8
 export LESSCHARSET=utf-8
 export locale=en_US.UTF-8
 
-export  CC='gcc-7'
-export CXX='g++-7'
+export  CC='/usr/bin/gcc-7'
+export CXX='/usr/bin/g++-7'
 
 
 export dotfiles="$HOME/dotfiles"
