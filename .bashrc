@@ -60,9 +60,10 @@ export PS1="\n$face\n${debian_chroot:+($debian_chroot)}$green\u@\H: $yellow\w\[\
 
 export LANG=C
 export LC_MESSAGE=C
-export LC_TIME=en_US.UTF-8
+export LC_ALL=ja_JP.UTF-8
+export LC_TIME=ja_JP.UTF-8
 export LESSCHARSET=utf-8
-export locale=en_US.UTF-8
+export locale=ja_JP.UTF-8
 
 export  CC='/usr/bin/gcc-7'
 export CXX='/usr/bin/g++-7'
