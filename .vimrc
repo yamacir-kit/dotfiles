@@ -34,7 +34,6 @@ source ~/.vim/config/quickrun_conf.vim
 
 " -- YouCompleteMe Plugin Configs --
 " let g:loaded_youcompleteme = 1
-
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
