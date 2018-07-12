@@ -2,10 +2,10 @@
 
 dotfiles=$(cd "$(dirname $0)"; pwd)
 
-if [ ! -e $dotfiles/.fonts ];
-then
-  git clone https://github.com/edihbrandon/RictyDiminished $dotfiles/.fonts
-fi
+# if [ ! -e $dotfiles/.fonts ];
+# then
+#   git clone https://github.com/edihbrandon/RictyDiminished $dotfiles/.fonts
+# fi
 
 for f in $dotfiles/.??*
 do
@@ -15,7 +15,6 @@ do
 done
 
 mkdir -p $dotfiles/.vim/bundle
-
 if [ ! -e $dotfiles/.vim/bundle/vundle ];
 then
   git clone https://github.com/gmarik/vundle.git $dotfiles/.vim/bundle/vundle
@@ -23,8 +22,8 @@ fi
 
 vi -c PluginInstall -c qa
 
-if [ ! -e $dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ];
-then
-  source $dotfiles/scripts/install_vimycm.sh
-fi
+# if [ ! -e $dotfiles/.vim/bundle/YouCompleteMe/third_party/ycmd/ycm_core.so ];
+# then
+#   source $dotfiles/scripts/install_vimycm.sh
+# fi
 
