@@ -7,16 +7,17 @@ filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'thinca/vim-quickrun'
-Plugin 'tyru/caw.vim'
-
 Plugin 'hdima/python-syntax'
 Plugin 'nickhutchinson/vim-cmake-syntax'
+Plugin 'thinca/vim-quickrun'
+Plugin 'tyru/caw.vim'
 
 call vundle#end()
 filetype plugin indent on
