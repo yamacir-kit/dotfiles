@@ -17,8 +17,8 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'hdima/python-syntax'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'thinca/vim-quickrun'
-Plugin 'tyru/caw.vim'
 Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tyru/caw.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -56,8 +56,12 @@ let &fileencoding = &encoding
 let &ambiwidth = 'double'
 
 set confirm
-set autoread autowrite
-set noswapfile nobackup
+
+set autoread
+set autowrite
+
+set noswapfile
+set nobackup
 
 let &fileformat = 'unix'
 
@@ -66,9 +70,12 @@ let &clipboard = 'unnamedplus'
 
 set number
 let &laststatus = 0
-set showmode showcmd
 
-set list listchars=tab:\|\ ,trail:_
+set showmode
+set showcmd
+
+set list
+set listchars=tab:\|\ ,trail:_
 
 set timeout
 let  &timeoutlen = 1000
@@ -86,8 +93,8 @@ set cinoptions=g0,:0,N-s,#N
 set foldmethod=indent
 set foldignore=
 
-set sidescroll=1
-set scrolloff=8
+let &sidescroll = 1
+let &scrolloff = 8
 
 set showmatch matchtime=1
 
@@ -95,9 +102,11 @@ let &virtualedit = 'block'
 
 set incsearch ignorecase smartcase wrapscan
 
-set splitbelow splitright
+set splitbelow
+set splitright
 
-set wildmenu wildmode=longest:full,full
+set wildmenu
+set wildmode=longest:full,full
 
 " set cursorline
 if (exists('+colorcolumn'))
@@ -132,6 +141,5 @@ autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 " autocmd BufRead,BufNewFile *.hpp      let &syntax = 'cpp.doxygen'
 
 
-" -- Auto Command BufWrite -------------------------------------
 autocmd BufWritePre * :%s/\s\+$//ge
 
