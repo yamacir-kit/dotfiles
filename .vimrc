@@ -25,8 +25,8 @@ call vundle#end()
 filetype plugin indent on
 
 
-source ~/.vim/configs/keymap_conf.vim
-source ~/.vim/configs/quickrun_conf.vim
+" source ~/.vim/configs/keymap_conf.vim
+source ~/.vim/configs/quickrun.conf.vim
 
 let g:loaded_youcompleteme = 0
 source ~/.vim/configs/youcompleteme.conf.vim
@@ -95,6 +95,39 @@ set wildmode=longest:full,full
 if (exists('+colorcolumn'))
   " let &colorcolumn = 80
 endif
+
+
+nnoremap ; :
+nnoremap Y y$
+nnoremap x "_x
+nnoremap + <c-a>
+nnoremap - <c-x>
+
+nnoremap <leader>gs  :<c-u>GitGutterStageHunk<cr>
+nnoremap <leader>gr  :<c-u>GitGutterUndoHunk<cr>
+nnoremap <leader>gn  :<c-u>GitGutterNextHunk<cr>
+
+nnoremap <leader>gcv :!git<space>commit<space>--verbose<cr>
+nnoremap <leader>gca :!git<space>commit<space>--amend<cr>
+
+nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
+
+nnoremap /  :<c-u>set<space>hlsearch<cr>/
+nnoremap ?  :<c-u>set<space>hlsearch<cr>?
+
+inoremap ""  ""<left>
+inoremap $$  $$<left>
+inoremap ''  ''<left>
+inoremap ()  ()<left>
+inoremap <>  <><left>
+inoremap []  []<left>
+inoremap {}  {}<left>
+
+inoremap /**  /**<cr><left><left><bs><right><right><cr><bs>/<up>
+
+vnoremap ;  :s/
+vnoremap >  >gv
+vnoremap <  <gv
 
 
 syntax enable
