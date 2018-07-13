@@ -84,6 +84,9 @@ alias ls='ls -avF --color=auto'
 alias sl='ls'
 alias ks='ls'
 
+alias vu='vi'
+alias vo='vi'
+
 alias cdd='cd $dotfiles'
 alias cdm='echo "move marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
 alias cdr='cd ~/Dropbox'

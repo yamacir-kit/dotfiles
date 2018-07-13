@@ -13,6 +13,9 @@ nnoremap <leader>gca :!git<space>commit<space>--amend<cr>   " commit
 
 nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
 
+nnoremap /  :<c-u>set<space>hlsearch<cr>/
+nnoremap ?  :<c-u>set<space>hlsearch<cr>?
+
 
 inoremap ""  ""<left>
 inoremap $$  $$<left>
@@ -22,13 +25,11 @@ inoremap <>  <><left>
 inoremap []  []<left>
 inoremap {}  {}<left>
 
-" dirty hack
 inoremap /**  /**<cr><left><left><bs><right><right><cr><bs>/<up>
 
+
 vnoremap ;  :s/
-vnoremap \! :!
+" vnoremap \! :!
 vnoremap >  >gv
 vnoremap <  <gv
-
-nnoremap /  :<c-u>set<space>hlsearch<cr>/
 
