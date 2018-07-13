@@ -21,32 +21,15 @@ Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tyru/caw.vim'
 
 call vundle#end()
+
 filetype plugin indent on
 
 
-" -- Source --
 source ~/.vim/configs/keymap_conf.vim
 source ~/.vim/configs/quickrun_conf.vim
 
-
-" let g:loaded_youcompleteme = 1
-let g:ycm_autoclose_preview_window_after_insertion = 1
-let g:ycm_complete_in_comments = 1
-let g:ycm_complete_in_strings = 1
-let g:ycm_echo_current_diagnostic = 0
-let g:ycm_enable_diagnostic_highlighting = 0
-let g:ycm_enable_diagnostic_signs = 0
-let g:ycm_filetype_blacklist = {'markdown':1, 'tex':1, 'latex':1}
-let g:ycm_filetype_whitelist = {'c':1, 'cpp':1, 'python':1}
-let g:ycm_global_ycm_extra_conf = '~/dotfiles/.vim/configs/.ycm_better_conf.py'
-let g:ycm_key_invoke_completion = '<c-c>'
-let g:ycm_key_list_previous_completion = [         '<c-k>']
-let g:ycm_key_list_select_completion   = ['<tab>', '<c-j>']
-let g:ycm_min_num_of_chars_for_completion = 1
-let g:ycm_seed_identifiers_with_syntax = 1
-let g:ycm_show_diagnostic_ui = 1
-let g:ycm_use_ultisnips_completer = 0
-
+let g:loaded_youcompleteme = 0
+source ~/.vim/configs/youcompleteme.conf.vim
 
 let g:python_highlight_all = 1
 
@@ -114,32 +97,20 @@ if (exists('+colorcolumn'))
 endif
 
 
-let g:solarized_termcolors = 16
-let g:solarized_termtrans  =  1
-let g:solarized_degrade    =  0
-let g:solarized_bold       =  1
-let g:solarized_italic     =  1
-let g:solarized_underline  =  1
-let g:solarized_contrast   = 'normal'
-let g:solarized_visibility = 'normal'
-
 syntax enable
-
 let &background = 'light'
+
+source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
+
 highlight MatchParen ctermbg=none
 highlight LineNr     ctermbg=none
 
 
-" -- Auto Command BufRead --------------------------------------
 autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
-
-" autocmd BufRead,BufNewFile *.cpp      let &syntax = 'cpp.doxygen'
-" autocmd BufRead,BufNewFile *.hpp      let &syntax = 'cpp.doxygen'
-
 
 autocmd BufWritePre * :%s/\s\+$//ge
 
