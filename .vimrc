@@ -18,6 +18,7 @@ Plugin 'hdima/python-syntax'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tyru/caw.vim'
+Plugin 'tmux-plugins/vim-tmux'
 
 call vundle#end()
 filetype plugin indent on
