@@ -19,10 +19,10 @@ function <sid>set_color(group, fore, back, attrib)
   endif
 endfunction
 
-let s:none  = "none"
-let s:white = "252" " d0d0d0
-let s:black = "236" " 303030
-let s:gray  = "059"
+let s:none  = 'none'
+let s:white = '252' " d0d0d0
+let s:black = '236' " 303030
+let s:gray  = '059'
 
 
 " -- General ---------------------------------------------------
