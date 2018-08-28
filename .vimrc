@@ -28,7 +28,6 @@ filetype plugin indent on
 " source ~/.vim/configs/keymap_conf.vim
 source ~/.vim/configs/quickrun.conf.vim
 
-let g:loaded_youcompleteme = 0
 source ~/.vim/configs/youcompleteme.conf.vim
 
 let g:python_highlight_all = 1
@@ -138,6 +137,7 @@ colorscheme solarized
 
 highlight MatchParen ctermbg=none
 highlight LineNr     ctermbg=none
+highlight Search     cterm=underline
 
 
 autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
