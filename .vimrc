@@ -138,6 +138,7 @@ colorscheme solarized
 highlight MatchParen ctermbg=none
 highlight LineNr     ctermbg=none
 highlight Search     cterm=underline
+highlight IncSearch  cterm=underline
 
 
 autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
