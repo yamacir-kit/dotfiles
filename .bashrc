@@ -1,17 +1,13 @@
 [[ $- != *i* ]] && return
 
-eval `dircolors ~/.dircolors`
-
-HISTCONTROL=ignoreboth
-
 shopt -s histappend
-
-    HISTSIZE=4096
-HISTFILESIZE=4096
-
 shopt -s checkwinsize
 
-[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+HISTCONTROL=ignoreboth
+HISTFILESIZE=4096
+HISTSIZE=4096
+
+test -x /usr/bin/lesspipe && eval "$(SHELL=/bin/sh lesspipe)"
 
 if test -z "${debian_chroot:-}" && test -r /etc/debian_chroot
 then
@@ -29,55 +25,18 @@ then
   fi
 fi
 
-gitinfo()
-{
-  if git status &> /dev/null
-  then
-    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
-  else
-    echo "norepo"
-  fi
-}
+export LANG=ja_JP.UTF-8
+export LC_TIME=C
 
-bgjobs()
-{
-  if test $(jobs | wc -l) != 0
-  then
-    echo ", jobs[$(jobs | wc -l)]"
-  fi
-}
-
-
-cyan="\[\e[0;36m\]"
-green="\[\e[0;32m\]"
-yellow="\[\e[0;33m\]"
-
-face="$cyan( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) $cyan)"
-
-export PS1="\n$face\n${debian_chroot:+($debian_chroot)}$green\u@\H: $yellow\w\[\e[0m\]\$ "
-
-
-export LANG=C
-export LC_MESSAGE=C
-export LC_ALL=ja_JP.UTF-8
-export LC_TIME=ja_JP.UTF-8
 export LESSCHARSET=utf-8
-export locale=ja_JP.UTF-8
 
-export  CC='/usr/bin/gcc-7'
 export CXX='/usr/bin/g++-7'
 
+eval `dircolors ~/.dircolors`
 
 dotfiles="$HOME/dotfiles"
 
 if test -e /opt/ros; then source $dotfiles/.rosrc; fi
-
-
-cd()
-{
-  builtin cd "$@" && ls -avF --color=auto
-}
 
 alias ls='ls -avF --color=auto'
 alias sl='ls'
@@ -98,6 +57,16 @@ alias ps='ps aux --sort=start_time'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
+cd()
+{
+  builtin cd "$@" && ls -avF --color=auto
+}
+
+sloc()
+{
+  find -type f | xargs wc -l
+}
+
 update()
 {
   sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
@@ -105,13 +74,7 @@ update()
 
 cxx()
 {
-  compiler="g++-7"
-  version="-std=c++17"
-  options="-Wall -Wextra"
-  boost_links="-lboost_system -lboost_thread -lboost_date_time"
-  other_links="-ldl -lstdc++fs"
-
-  $compiler $@ $version $options $boost_links $other_links
+  $CXX $@ -std=c++17 -Wall -Wextra
 }
 
 mark()
@@ -131,4 +94,28 @@ mark()
 
   echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
+
+gitinfo()
+{
+  if git status &> /dev/null
+  then
+    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
+    echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
+  else
+    echo "norepo"
+  fi
+}
+
+bgjobs()
+{
+  [[ $(jobs) ]] && echo ", jobs[$(jobs | wc -l)]"
+}
+
+cyan="\[\e[0;36m\]"
+green="\[\e[0;32m\]"
+yellow="\[\e[0;33m\]"
+
+face="$cyan( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) $cyan)"
+
+export PS1="\n$face\n${debian_chroot:+($debian_chroot)}$green\u@\H: $yellow\w\[\e[0m\]\$ "
 
