@@ -99,16 +99,6 @@ alias ps='ps aux --sort=start_time'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-compare()
-{
-  if which colordiff &> /dev/null
-  then
-    alias diff='colordiff'
-  fi
-
-  diff -Bbyw $@ | less -R
-}
-
 update()
 {
   sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
