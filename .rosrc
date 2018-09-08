@@ -4,22 +4,22 @@ rosdistro="kinetic"
 
 [ -e /opt/ros/$rosdistro/setup.bash ] && source /opt/ros/$rosdistro/setup.bash
 
-if test -e $marked/catkin
+if test -e /var/tmp/mark/c
 then
-  if test -e $(cat $marked/catkin)/devel/setup.bash
+  if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
   then
-    source $(cat $marked/catkin)/devel/setup.bash
+    source $(cat /var/tmp/mark/c)/devel/setup.bash
   else
-    if test -e $(cat $marked/catkin)/install_isolated/setup.bash
+    if test -e $(cat /var/tmp/mark/c)/install_isolated/setup.bash
     then
-      source $(cat $marked/catkin)/install_isolated/setup.bash
+      source $(cat /var/tmp/mark/c)/install_isolated/setup.bash
     fi
   fi
   rospack profile &> /dev/null
 fi
 
-alias cdc='cd $(cat $marked/catkin)'
-alias cds='cd $(cat $marked/catkin)/src'
+alias cdc='cd $(cat /var/tmp/mark/c)'
+alias cds='cd $(cat /var/tmp/mark/c)/src'
 
 make()
 {
@@ -27,7 +27,7 @@ make()
   then
     command make $@
   else
-    pushd $(cat $marked/catkin) && command catkin_make $@ && source devel/setup.bash
+    pushd $(cat /var/tmp/mark/c) && command catkin_make $@ && source devel/setup.bash
     # rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
     rospack profile > /dev/null
     popd
@@ -36,7 +36,7 @@ make()
 
 recursive_wstool_update()
 {
-  pushd $(cat $marked/catkin)
+  pushd $(cat /var/tmp/mark/c)
   wstool init src
 
   echo "hoge" > /tmp/wstool_outputs
