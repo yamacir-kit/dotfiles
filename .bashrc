@@ -69,8 +69,7 @@ export  CC='/usr/bin/gcc-7'
 export CXX='/usr/bin/g++-7'
 
 
-export dotfiles="$HOME/dotfiles"
-export marked="$dotfiles/etc/marked"
+dotfiles="$HOME/dotfiles"
 
 if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
@@ -88,7 +87,7 @@ alias vu='vi'
 alias vo='vi'
 
 alias cdd='cd $dotfiles'
-alias cdm='echo "move marked path: $(cat $marked/unnamed)"; cd $(cat $marked/unnamed)'
+alias cdm='cd $(cat /var/tmp/mark/m)'
 alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
@@ -117,21 +116,19 @@ cxx()
 
 mark()
 {
-  file="unnamed"
-  info="[mark] following path marked"
+  file="m"
 
-  mkdir -p $marked || exit 1
+  mkdir -p /var/tmp/mark || exit 1
 
   for opt in "$@"
   do
     case "$@" in
       "-c" | "--catkin" )
-        file="catkin"
-        info="$info as catkin workspace"
+        file="c"
         break;;
     esac
   done
 
-  echo "$info: $(pwd | tee $marked/$file)";
+  echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
 
