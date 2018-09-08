@@ -2,10 +2,7 @@
 
 rosdistro="kinetic"
 
-if test -e /opt/ros/$rosdistro/setup.bash
-then
-  source /opt/ros/$rosdistro/setup.bash
-fi
+[ -e /opt/ros/$rosdistro/setup.bash ] && source /opt/ros/$rosdistro/setup.bash
 
 if test -e $marked/catkin
 then
@@ -24,7 +21,7 @@ fi
 alias cdc='cd $(cat $marked/catkin)'
 alias cds='cd $(cat $marked/catkin)/src'
 
-function make()
+make()
 {
   if test -e $(pwd)/Makefile
   then
@@ -37,7 +34,7 @@ function make()
   fi
 }
 
-function recursive_wstool_update()
+recursive_wstool_update()
 {
   pushd $(cat $marked/catkin)
   wstool init src
