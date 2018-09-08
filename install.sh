@@ -9,11 +9,11 @@ do
   ln -sf $f $HOME
 done
 
-if [ ! -e $dotfiles/.vim/bundle/Vundle.vim ];
-then
-  mkdir -p $dotfiles/.vim/bundle
-  git clone https://github.com/VundleVim/Vundle.vim.git $dotfiles/.vim/bundle/Vundle.vim
-fi
-
-vi -c PluginInstall -c qa
+# if [ ! -e $dotfiles/.vim/bundle/Vundle.vim ];
+# then
+#   mkdir -p $dotfiles/.vim/bundle
+#   git clone https://github.com/VundleVim/Vundle.vim.git $dotfiles/.vim/bundle/Vundle.vim
+# fi
+#
+# vi -c PluginInstall -c qa
 
