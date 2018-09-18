@@ -76,7 +76,8 @@ set foldmethod=indent
 set foldignore=
 
 let &sidescroll = 1
-let &scrolloff = 8
+" let &scrolloff = 256
+" let &sidescrolloff = 8
 
 set showmatch matchtime=1
 
@@ -101,10 +102,11 @@ nnoremap Y y$
 nnoremap x "_x
 nnoremap + <c-a>
 nnoremap - <c-x>
+" nnoremap w w!
 
-nnoremap <leader>gs  :<c-u>GitGutterStageHunk<cr>
-nnoremap <leader>gr  :<c-u>GitGutterUndoHunk<cr>
-nnoremap <leader>gn  :<c-u>GitGutterNextHunk<cr>
+nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
+nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
+nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
 
 nnoremap <leader>gcv :!git<space>commit<space>--verbose<cr>
 nnoremap <leader>gca :!git<space>commit<space>--amend<cr>
@@ -147,4 +149,6 @@ autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
 autocmd BufWritePre * :%s/\s\+$//ge
+" autocmd BufWritePost * sleep 1
+" autocmd BufWritePost * checktime
 
