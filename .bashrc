@@ -53,7 +53,7 @@ alias cdw='cd ~/works'
 
 alias alpha='for each in $(echo {a..z}); do echo $each; done'
 alias grep='grep --color=always --exclude-dir=.git'
-alias ps='ps aux --sort=start_time'
+alias ps='ps acux --sort=rss'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
@@ -111,11 +111,8 @@ bgjobs()
   [[ $(jobs) ]] && echo ", jobs[$(jobs | wc -l)]"
 }
 
-cyan="\[\e[0;36m\]"
-green="\[\e[0;32m\]"
-yellow="\[\e[0;33m\]"
-
-face="$cyan( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) $cyan)"
-
-export PS1="\n$face\n${debian_chroot:+($debian_chroot)}$green\u@\H: $yellow\w\[\e[0m\]\$ "
+export PS1="\n"
+export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
+export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
+export PS1="$PS1>> "
 
