@@ -14,24 +14,22 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'hdima/python-syntax'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tyru/caw.vim'
 
+" Plugin 'jeaye/color_coded'
+" Plugin 'hdima/python-syntax'
+
 call vundle#end()
 
 filetype plugin indent on
 
-
-" source ~/.vim/configs/keymap_conf.vim
 source ~/.vim/configs/quickrun.conf.vim
-
 source ~/.vim/configs/youcompleteme.conf.vim
 
-let g:python_highlight_all = 1
-
+" let g:python_highlight_all = 1
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
@@ -141,7 +139,6 @@ highlight MatchParen ctermbg=none
 highlight LineNr     ctermbg=none
 highlight Search     cterm=underline
 highlight IncSearch  cterm=underline
-
 
 autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
