@@ -74,8 +74,7 @@ set foldmethod=indent
 set foldignore=
 
 let &sidescroll = 1
-" let &scrolloff = 256
-" let &sidescrolloff = 8
+let &scrolloff = 4
 
 set showmatch matchtime=1
 
