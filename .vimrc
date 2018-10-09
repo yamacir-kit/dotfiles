@@ -2,7 +2,6 @@ if &compatible
   set nocompatible
 endif
 
-
 filetype off
 set runtimepath+=~/.vim/bundle/Vundle.vim
 
@@ -38,7 +37,6 @@ let &ambiwidth = 'double'
 set confirm
 
 set autoread
-set autowrite
 
 set noswapfile
 set nobackup
@@ -55,7 +53,7 @@ set showmode
 set showcmd
 
 set list
-set listchars=tab:\|\ ,trail:_
+let &listchars = 'tab:| ,trail:_'
 
 set timeout
 let  &timeoutlen = 1000
@@ -68,15 +66,17 @@ set expandtab smarttab
 set nowrap
 
 set cindent
-set cinoptions=g0,:0,N-s,#N
+let &cinoptions = 'g0,:0,N-s,#N'
 
-set foldmethod=indent
-set foldignore=
+let &foldmethod = 'indent'
+let &foldignore = ''
+let &foldlevel = 42
 
 let &sidescroll = 1
 let &scrolloff = 4
 
-set showmatch matchtime=1
+set showmatch
+let &matchtime = 1
 
 let &virtualedit = 'block'
 
@@ -93,22 +93,19 @@ if (exists('+colorcolumn'))
   " let &colorcolumn = 80
 endif
 
-
 nnoremap ; :
 nnoremap Y y$
 nnoremap x "_x
 nnoremap + <c-a>
 nnoremap - <c-x>
-" nnoremap w w!
 
 nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
 nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
 nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
 
-nnoremap <leader>gcv :!git<space>commit<space>--verbose<cr>
-nnoremap <leader>gca :!git<space>commit<space>--amend<cr>
+nnoremap <leader>gc :!git<space>commit<space>--verbose<cr>
 
-nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
+nnoremap <leader>go :YcmCompleter<space>GoTo<cr>
 
 nnoremap /  :<c-u>set<space>hlsearch<cr>/
 nnoremap ?  :<c-u>set<space>hlsearch<cr>?
@@ -121,12 +118,9 @@ inoremap <>  <><left>
 inoremap []  []<left>
 inoremap {}  {}<left>
 
-inoremap /**  /**<cr><left><left><bs><right><right><cr><bs>/<up>
-
 vnoremap ;  :s/
 vnoremap >  >gv
 vnoremap <  <gv
-
 
 syntax enable
 let &background = 'light'
@@ -142,9 +136,8 @@ highlight IncSearch  cterm=underline
 autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
+autocmd BufRead,BufNewFile *.mvx      let &filetype = 'lisp'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
 autocmd BufWritePre * :%s/\s\+$//ge
-" autocmd BufWritePost * sleep 1
-" autocmd BufWritePost * checktime
 
