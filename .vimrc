@@ -14,12 +14,10 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nickhutchinson/vim-cmake-syntax'
+Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tyru/caw.vim'
-
-" Plugin 'jeaye/color_coded'
-" Plugin 'hdima/python-syntax'
 
 call vundle#end()
 
@@ -27,8 +25,6 @@ filetype plugin indent on
 
 source ~/.vim/configs/quickrun.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
-
-" let g:python_highlight_all = 1
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
@@ -53,7 +49,7 @@ set showmode
 set showcmd
 
 set list
-let &listchars = 'tab:| ,trail:_'
+let &listchars = 'tab:> ,trail:_'
 
 set timeout
 let  &timeoutlen = 1000
@@ -83,10 +79,9 @@ let &virtualedit = 'block'
 set incsearch ignorecase smartcase wrapscan
 
 set splitbelow
-set splitright
 
 set wildmenu
-set wildmode=longest:full,full
+let &wildmode = 'longest:full,full'
 
 " set cursorline
 if (exists('+colorcolumn'))
@@ -99,13 +94,13 @@ nnoremap x "_x
 nnoremap + <c-a>
 nnoremap - <c-x>
 
-nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
-nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
-nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
+nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
 
 nnoremap <leader>gc :!git<space>commit<space>--verbose<cr>
-
-nnoremap <leader>go :YcmCompleter<space>GoTo<cr>
+nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
+nnoremap <leader>gp :<c-u>GitGutterPrevHunk<cr>
+nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
+nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
 
 nnoremap /  :<c-u>set<space>hlsearch<cr>/
 nnoremap ?  :<c-u>set<space>hlsearch<cr>?
@@ -121,6 +116,9 @@ inoremap {}  {}<left>
 vnoremap ;  :s/
 vnoremap >  >gv
 vnoremap <  <gv
+
+vmap v     <plug>(expand_region_expand)
+vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
 let &background = 'light'
