@@ -30,6 +30,8 @@ let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
 let &ambiwidth = 'double'
 
+let &updatetime = 100
+
 set confirm
 
 set autoread
