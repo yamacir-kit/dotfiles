@@ -67,6 +67,11 @@ sloc()
   find -type f | xargs wc -l
 }
 
+csloc()
+{
+  find -type f | grep -E "^*\.[c|h](pp)?$" | xargs wc -l
+}
+
 update()
 {
   sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
