@@ -39,6 +39,7 @@ dotfiles="$HOME/dotfiles"
 if test -e /opt/ros; then source $dotfiles/.rosrc; fi
 
 alias ls='ls -avF --color=auto'
+alias la='ls'
 alias sl='ls'
 alias ks='ls'
 
