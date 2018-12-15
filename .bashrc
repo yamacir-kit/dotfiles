@@ -65,12 +65,12 @@ cd()
 
 sloc()
 {
-  find -type f | xargs wc -l
+  find -type f | xargs wc $@
 }
 
 csloc()
 {
-  find -type f | grep -E "^*\.[c|h](pp)?$" | xargs wc -l
+  find -type f | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
 update()

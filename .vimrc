@@ -28,7 +28,7 @@ source ~/.vim/configs/youcompleteme.conf.vim
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
-let &ambiwidth = 'double'
+" let &ambiwidth = 'double'
 
 let &updatetime = 100
 
@@ -104,8 +104,8 @@ nnoremap <leader>gp :<c-u>GitGutterPrevHunk<cr>
 nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
 nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
 
-nnoremap /  :<c-u>set<space>hlsearch<cr>/
-nnoremap ?  :<c-u>set<space>hlsearch<cr>?
+nnoremap / :<c-u>set<space>hlsearch<cr>/
+nnoremap ? :<c-u>set<space>hlsearch<cr>?
 
 inoremap ""  ""<left>
 inoremap $$  $$<left>
