@@ -17,11 +17,11 @@ BASE_FLAGS = [
     '-xc++',
     '-isystem', '/opt/ros/kinetic/include',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/include/c++/7.3.0',
-    '-isystem', '/usr/include/c++/7.3.0/backward',
-    '-isystem', '/usr/include/clang/3.8.0/include',
+    '-isystem', '/usr/include/c++/7.4.0',
+    '-isystem', '/usr/include/c++/7.4.0/backward',
     '-isystem', '/usr/include/x86_64-linux-gnu',
-    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.3.0',
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.4.0',
+    '-isystem', '/usr/lib/llvm-3.8/lib/clang/3.8.0/include',
     '-isystem', '/usr/local/include'
 ]
 

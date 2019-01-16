@@ -16,10 +16,10 @@ mkdir -p $bundle
 
 vi -c PluginInstall -c qa
 
-python3 $bundle/YouCompleteMe/install.py --clang-completer --system-libclang
+python3 $bundle/YouCompleteMe/install.py --clang-completer # --system-libclang
 
-sudo apt install build-essential libclang-3.9-dev libncurses-dev libz-dev cmake xz-utils libpthread-workqueue-dev
-mkdir -p $bundle/color_coded/build && pushd build
-cmake ..
-make && make install
+# sudo apt install build-essential libclang-3.9-dev libncurses-dev libz-dev cmake xz-utils libpthread-workqueue-dev
+# mkdir -p $bundle/color_coded/build && pushd build
+# cmake ..
+# make && make install
 

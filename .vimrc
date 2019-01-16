@@ -107,17 +107,17 @@ nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
 nnoremap / :<c-u>set<space>hlsearch<cr>/
 nnoremap ? :<c-u>set<space>hlsearch<cr>?
 
-inoremap ""  ""<left>
-inoremap $$  $$<left>
-inoremap ''  ''<left>
-inoremap ()  ()<left>
-inoremap <>  <><left>
-inoremap []  []<left>
-inoremap {}  {}<left>
+inoremap "" ""<left>
+inoremap $$ $$<left>
+inoremap '' ''<left>
+inoremap () ()<left>
+inoremap <> <><left>
+inoremap [] []<left>
+inoremap {} {}<left>
 
-vnoremap ;  :s/
-vnoremap >  >gv
-vnoremap <  <gv
+vnoremap ; :s/
+vnoremap > >gv
+vnoremap < <gv
 
 vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
