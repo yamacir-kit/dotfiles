@@ -75,7 +75,18 @@ csloc()
 
 update()
 {
-  sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
+  set -e
+
+  sudo apt update
+  sudo apt upgrade
+  sudo apt autoremove
+  sudo apt autoclean
+
+  # sudo -H pip2 install --upgrade pip
+  # sudo -H pip2 list --outdated 2> /dev/null
+
+  # sudo -H pip3 install --upgrade pip
+  # sudo -H pip3 list --outdated
 }
 
 cxx()
