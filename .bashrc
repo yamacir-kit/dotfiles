@@ -117,7 +117,8 @@ gitinfo()
   if git status &> /dev/null
   then
     git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
+    # echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
+    echo -e "$git_branch[$(git status -s | wc -l)]"
   else
     echo "norepo"
   fi

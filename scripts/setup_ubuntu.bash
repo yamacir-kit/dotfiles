@@ -4,9 +4,9 @@ scripts=$(cd "$(dirname $0)/.."; pwd)
 
 sudo apt-add-reposotory -y ppa:ubuntu-toolchain-r/test
 
-packages="build-essential clang cmake git python-dev python-flake8 python3-dev tmux gcc-7 g++-7"
+packages="build-essential clang cmake git python-dev python3-dev tmux gcc-7 g++-7"
 packages="$packages dvipsk-ja gv latexmk pstoedit texlive texlive-fonts-extra texlive-fonts-recommended texlive-lang-cjk xdvik-ja"
-packages="$packages inkscape"
+packages="$packages inkscape indicator-cpufreq"
 
 sudo apt update && sudo apt upgrade
 sudo apt install -y $packages
