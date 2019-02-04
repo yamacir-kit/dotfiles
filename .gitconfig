@@ -6,14 +6,16 @@
   preset = format:%C(yellow reverse) %h %C(green reverse) %an %C(reset)%C(cyan) %ar%C(red)%d%n> %C(bold)%w(0, 0, 2)%B%n
 
 [alias]
-  # graph = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(blue)<%an>%Creset' --abbrev-commit --date=relative
   graph = log --graph --all --date=relative --pretty=preset
 
-    stage = add
-  unstage = reset -q HEAD --
+  # git remote rename [old-origin-name] [new-origin-name]
+  clone = clone --origin github --recurse-submodules
 
-    commit = commit -v
-  uncommit = reset --hard HEAD^
+  stage = add
+  reset = reset -q HEAD --
+
+  commit = commit -v
+  revert = reset --hard HEAD^
 
 [core]
   editor = vi
