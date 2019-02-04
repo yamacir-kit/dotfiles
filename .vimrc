@@ -71,7 +71,7 @@ let &foldignore = ''
 let &foldlevel = 42
 
 let &sidescroll = 1
-let &scrolloff = 4
+let &scrolloff = 128
 
 set showmatch
 let &matchtime = 1
@@ -80,7 +80,7 @@ let &virtualedit = 'block'
 
 set incsearch ignorecase smartcase wrapscan
 
-set splitbelow
+set splitright splitbelow
 
 set wildmenu
 let &wildmode = 'longest:full,full'
@@ -133,10 +133,10 @@ highlight LineNr     ctermbg=none
 highlight Search     cterm=underline
 highlight IncSearch  cterm=underline
 
-autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
+" autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
-autocmd BufRead,BufNewFile *.mvx      let &filetype = 'lisp'
+" autocmd BufRead,BufNewFile *.mvx      let &filetype = 'lisp'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
 autocmd BufWritePre * :%s/\s\+$//ge
