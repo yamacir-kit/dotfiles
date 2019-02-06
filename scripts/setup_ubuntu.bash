@@ -2,7 +2,7 @@
 
 scripts=$(cd "$(dirname $0)/.."; pwd)
 
-sudo apt-add-reposotory -y ppa:ubuntu-toolchain-r/test
+sudo add-apt-repository -y ppa:ubuntu-toolchain-r/test
 
 packages="build-essential clang cmake git python-dev python3-dev tmux gcc-7 g++-7"
 packages="$packages dvipsk-ja gv latexmk pstoedit texlive texlive-fonts-extra texlive-fonts-recommended texlive-lang-cjk xdvik-ja"
