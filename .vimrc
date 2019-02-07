@@ -80,7 +80,7 @@ let &virtualedit = 'block'
 
 set incsearch ignorecase smartcase wrapscan
 
-set splitright splitbelow
+set splitbelow splitright
 
 set wildmenu
 let &wildmode = 'longest:full,full'

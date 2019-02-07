@@ -31,6 +31,7 @@ export LC_TIME=C
 export LESSCHARSET=utf-8
 
 export CXX='/usr/bin/g++-7'
+export CC='/usr/bin/gcc-7'
 
 eval `dircolors ~/.dircolors`
 
