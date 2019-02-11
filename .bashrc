@@ -30,8 +30,8 @@ export LC_TIME=C
 
 export LESSCHARSET=utf-8
 
-export CXX='/usr/bin/g++-7'
-export CC='/usr/bin/gcc-7'
+# export CXX='/usr/bin/g++-7'
+# export CC='/usr/bin/gcc-7'
 
 eval `dircolors ~/.dircolors`
 
@@ -52,6 +52,7 @@ alias cdm='cd $(cat /var/tmp/mark/m)'
 alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
+alias cd_='cd ~/works_'
 
 alias alpha='for each in $(echo {a..z}); do echo $each; done'
 alias grep='grep --color=always --exclude-dir=.git'
