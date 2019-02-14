@@ -9,7 +9,7 @@
   graph = log --graph --all --date=relative --pretty=preset
 
   # git remote rename [old-origin-name] [new-origin-name]
-  clone = clone --origin github --recurse-submodules
+  # clone = clone --origin github --recurse-submodules
 
   stage = add
   reset = reset -q HEAD --
