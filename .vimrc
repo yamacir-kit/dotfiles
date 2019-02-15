@@ -139,5 +139,7 @@ autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
 " autocmd BufRead,BufNewFile *.mvx      let &filetype = 'lisp'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
+let g:is_bash = 1
+
 autocmd BufWritePre * :%s/\s\+$//ge
 

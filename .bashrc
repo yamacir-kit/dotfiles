@@ -47,35 +47,37 @@ alias ks='ls'
 alias vu='vi'
 alias vo='vi'
 
+alias cd_='cd ~/works_'
+alias cda='cd ~/.autoware'
 alias cdd='cd $dotfiles'
 alias cdm='cd $(cat /var/tmp/mark/m)'
 alias cdr='cd ~/Dropbox'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
-alias cd_='cd ~/works_'
 
 alias alpha='for each in $(echo {a..z}); do echo $each; done'
+
 alias grep='grep --color=always --exclude-dir=.git'
 alias ps='ps acux --sort=rss'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-cd()
+function cd()
 {
   builtin cd "$@" && ls -avF --color=auto
 }
 
-sloc()
+function sloc()
 {
   find -type f | xargs wc $@
 }
 
-csloc()
+function csloc()
 {
   find -type f | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
-update()
+function update()
 {
   set -e
 
@@ -91,12 +93,12 @@ update()
   # sudo -H pip3 list --outdated
 }
 
-cxx()
+function cxx()
 {
-  $CXX $@ -std=c++17 -Wall -Wextra
+  g++-7 $@ -std=c++17 -Wall -Wextra
 }
 
-mark()
+function mark()
 {
   file="m"
 
@@ -114,7 +116,7 @@ mark()
   echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
 
-gitinfo()
+function gitinfo()
 {
   if git status &> /dev/null
   then
@@ -126,7 +128,7 @@ gitinfo()
   fi
 }
 
-bgjobs()
+function bgjobs()
 {
   [[ $(jobs) ]] && echo ", jobs[$(jobs | wc -l)]"
 }
