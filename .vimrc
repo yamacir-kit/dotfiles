@@ -136,7 +136,6 @@ highlight IncSearch  cterm=underline
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
 autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
-" autocmd BufRead,BufNewFile *.mvx      let &filetype = 'lisp'
 autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
 
 let g:is_bash = 1
