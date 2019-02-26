@@ -6,16 +6,18 @@ xft.hintstyle:              hintslight
 
 urxvt.geometry:             80x24
 urxvt.transparent:          false
-urxvt.fading:               0
-urxvt.saveLines:            4096
+urxvt.fading:               40
+urxvt.saveLines:            0
 ! urxvt.internalBorder:       3
 
 !! Fonts
 urxvt.allow_bold:           true
-urxvt.font:                 xft:Fantasque Sans Mono:style=Regular:size=13.5
-urxvt.boldFont:             xft:Fantasque Sans Mono:style=Bold:size=13.5
+urxvt.font:                 xft:Fantasque Sans Mono:style=Regular:size=13.5,\
+                            xft:Noto Sans Mono CJK JP
+! urxvt.boldFont:             xft:Fantasque Sans Mono:style=Bold:size=13.5,\
+!                             xft:Noto Sans Mono CJK JP:style=Bold:size=15
 
-urxvt.lineSpace:            1
+urxvt.lineSpace:            0
 urxvt.letterSpace:          -2
 
 ! Scrollbar
@@ -24,6 +26,7 @@ urxvt.scrollBar:            false
 
 ! Cursor
 urxvt.cursorBlink:          true
+urxvt.cursorBlank:          true
 urxvt.cursorColor:          #657b83
 urxvt.cursorUnderline:      false
 
