@@ -13,6 +13,7 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'deris/vim-shot-f'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
@@ -91,6 +92,7 @@ if (exists('+colorcolumn'))
 endif
 
 nnoremap ; :
+nnoremap : ;
 nnoremap Y y$
 nnoremap x "_x
 nnoremap + <c-a>
