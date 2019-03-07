@@ -64,7 +64,7 @@ alias tmux='tmux -2u'
 
 function cd()
 {
-  builtin cd "$@" && ls -avF --color=auto
+  builtin cd "$@" && ls -Fav --color=auto
 }
 
 function sloc()
@@ -79,8 +79,6 @@ function csloc()
 
 function update()
 {
-  set -e
-
   sudo apt update
   sudo apt upgrade
   sudo apt autoremove
