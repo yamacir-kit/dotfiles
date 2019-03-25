@@ -12,7 +12,7 @@
   # clone = clone --origin github --recurse-submodules
 
   stage = add
-  reset = reset -q HEAD --
+  unstage = reset HEAD
 
   commit = commit -v
   revert = reset --hard HEAD^
