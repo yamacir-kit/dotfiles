@@ -74,7 +74,12 @@ function sloc()
 
 function csloc()
 {
-  find -type f | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
+  find -type f | grep -v "build/" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
+}
+
+function watch_csloc()
+{
+  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@'
 }
 
 function update()
