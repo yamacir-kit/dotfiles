@@ -79,7 +79,7 @@ function csloc()
 
 function watch_csloc()
 {
-  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@'
+  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | sort | grep -E "^*\.[c|h](pp)?$" | xargs wc $@'
 }
 
 function update()
