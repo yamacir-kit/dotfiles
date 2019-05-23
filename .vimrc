@@ -86,9 +86,10 @@ set splitbelow splitright
 set wildmenu
 let &wildmode = 'longest:full,full'
 
-" set cursorline
+set cursorline
 if (exists('+colorcolumn'))
-  " let &colorcolumn = 80
+  let &colorcolumn = 80
+  " let &colorcolumn = '40,80'
 endif
 
 nnoremap ; :
@@ -130,10 +131,11 @@ let &background = 'light'
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
 
-highlight MatchParen ctermbg=none
-highlight LineNr     ctermbg=none
-highlight Search     cterm=underline
-highlight IncSearch  cterm=underline
+highlight MatchParen   ctermbg=none
+highlight CursorLineNr cterm=bold
+highlight LineNr       ctermbg=none
+highlight Search       cterm=underline
+highlight IncSearch    cterm=underline
 
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
