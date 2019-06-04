@@ -64,7 +64,8 @@ set expandtab smarttab
 
 set nowrap
 
-set cindent
+autocmd FileType scheme setlocal autoindent lisp
+autocmd filetype c,cpp setlocal cindent
 let &cinoptions = 'g0,:0,N-s,#N'
 
 let &foldmethod = 'indent'
