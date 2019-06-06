@@ -64,7 +64,7 @@ set expandtab smarttab
 
 set nowrap
 
-autocmd FileType scheme setlocal autoindent lisp
+autocmd filetype scheme setlocal autoindent lisp
 autocmd filetype c,cpp setlocal cindent
 let &cinoptions = 'g0,:0,N-s,#N'
 
@@ -132,17 +132,21 @@ let &background = 'light'
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
 
-highlight MatchParen   ctermbg=none
-highlight CursorLineNr cterm=bold
-highlight LineNr       ctermbg=none
-highlight Search       cterm=underline
-highlight IncSearch    cterm=underline
+highlight matchparen   ctermbg=none
+highlight cursorlinenr cterm=bold
+highlight linenr       ctermbg=none
+highlight search       cterm=underline
+highlight incsearch    cterm=underline
 
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
-autocmd BufRead,BufNewFile *.launch   let &filetype = 'xml'
-autocmd BufRead,BufNewFile *.md       let &filetype = 'markdown'
-autocmd BufRead,BufNewFile *.plt      let &filetype = 'gnuplot'
-autocmd BufRead,BufNewFile .tmux.conf let &filetype = 'tmux'
+autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
+autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
+autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
+autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
+
+autocmd filetype scheme syntax keyword keyword λ
+autocmd filetype scheme syntax keyword macro macro
+autocmd filetype scheme set lispwords+=λ
 
 let g:is_bash = 1
 
