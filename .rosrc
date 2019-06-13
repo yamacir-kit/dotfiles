@@ -35,7 +35,7 @@ alias cds='cd $(cat /var/tmp/mark/c)/src'
 #   fi
 # }
 
-recursive_wstool_update()
+function recursive-wstool-update()
 {
   pushd $(cat /var/tmp/mark/c)
   wstool init src
@@ -52,7 +52,7 @@ recursive_wstool_update()
   popd
 }
 
-function catkin_make_autoware()
+function catkin-make-autoware()
 {
   # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
   CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
@@ -61,7 +61,7 @@ function catkin_make_autoware()
   catkin_make $CATKIN_OPTS $@
 }
 
-function colcon_make_autoware()
+function colcon-make-autoware()
 {
   # COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs"
   COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"

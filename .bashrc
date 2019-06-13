@@ -77,7 +77,7 @@ function csloc()
   find -type f | grep -v "build/" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
-function watch_csloc()
+function watch-csloc()
 {
   watch -n1 'find -type f | grep -v "build/" | grep -v "git" | sort | grep -E "^*\.[c|h](pp)?$" | xargs wc $@'
 }
