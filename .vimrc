@@ -146,7 +146,7 @@ autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
 autocmd filetype scheme syntax keyword keyword λ
 autocmd filetype scheme syntax keyword macro macro
-autocmd filetype scheme set lispwords+=λ
+autocmd filetype scheme set lispwords+=λ,macro
 
 let g:is_bash = 1
 
