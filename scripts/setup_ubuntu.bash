@@ -38,5 +38,5 @@ sudo apt update && sudo apt upgrade
 sudo apt install -y $packages
 
 sudo apt-add-repository -y ppa:numix/ppa
-sudo apt update && sudo apt install -y numix-gtk-theme numix-icon-theme-circle unity-tweak-tool
+sudo apt update && sudo apt install -y numix-gtk-theme numix-icon-theme-circle gnome-tweak-tool
 
