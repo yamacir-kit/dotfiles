@@ -4,8 +4,8 @@ shopt -s histappend
 shopt -s checkwinsize
 
 HISTCONTROL=ignoreboth
-HISTFILESIZE=4096
-HISTSIZE=4096
+HISTFILESIZE=65536
+HISTSIZE=65536
 
 test -x /usr/bin/lesspipe && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -77,9 +77,14 @@ function csloc()
   find -type f | grep -v "build/" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
+function watch-sloc()
+{
+  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | xargs wc $@ | sort -rn'
+}
+
 function watch-csloc()
 {
-  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | sort | grep -E "^*\.[c|h](pp)?$" | xargs wc $@'
+  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@ | sort -rn'
 }
 
 function update()
