@@ -66,7 +66,7 @@ set nowrap
 
 autocmd filetype scheme setlocal autoindent lisp
 autocmd filetype c,cpp setlocal cindent
-let &cinoptions = 'g0,:0,N-s,#N'
+set cinoptions+=g0,:0,N-s,#N
 
 let &foldmethod = 'indent'
 let &foldignore = ''
@@ -146,7 +146,8 @@ autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
 autocmd filetype scheme syntax keyword keyword λ
 autocmd filetype scheme syntax keyword macro macro
-autocmd filetype scheme set lispwords+=λ,macro
+autocmd filetype scheme syntax keyword macro er-macro-transformer
+autocmd filetype scheme set lispwords+=macro
 
 let g:is_bash = 1
 
