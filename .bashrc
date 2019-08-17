@@ -48,7 +48,7 @@ alias vu='vi'
 alias vo='vi'
 
 alias cd_='cd ~/works_'
-alias cda='cd ~/.autoware'
+alias cde='cd ~/Desktop'
 alias cdd='cd $dotfiles'
 alias cdm='cd $(cat /var/tmp/mark/m)'
 alias cdr='cd ~/Dropbox'
