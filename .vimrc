@@ -70,7 +70,7 @@ set cinoptions+=g0,:0,N-s,#N
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-let &foldlevel = 42
+" let &foldlevel = 42
 
 let &sidescroll = 1
 let &scrolloff = 128
