@@ -70,7 +70,7 @@ set cinoptions+=g0,:0,N-s,#N
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-" let &foldlevel = 42
+let &foldlevel = 1
 
 let &sidescroll = 1
 let &scrolloff = 128
@@ -145,9 +145,9 @@ autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
 autocmd filetype scheme syntax keyword keyword λ
-autocmd filetype scheme syntax keyword macro macro
+autocmd filetype scheme syntax keyword macro environment
 autocmd filetype scheme syntax keyword macro er-macro-transformer
-autocmd filetype scheme set lispwords+=macro
+autocmd filetype scheme set lispwords+=environment
 
 let g:is_bash = 1
 

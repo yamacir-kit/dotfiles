@@ -11,10 +11,10 @@ then
     source $(cat /var/tmp/mark/c)/devel/setup.bash
   fi
 
-  if test -e $(cat /var/tmp/mark/c)/install/setup.bash
-  then
-    source $(cat /var/tmp/mark/c)/install/setup.bash
-  fi
+  # if test -e $(cat /var/tmp/mark/c)/install/setup.bash
+  # then
+  #   source $(cat /var/tmp/mark/c)/install/setup.bash
+  # fi
 
   rospack profile &> /dev/null
 fi
@@ -63,7 +63,7 @@ function catkin-make-autoware()
 
 function colcon-build-autoware()
 {
-  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
+  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14"
 
   colcon build $COLCON_OPTS $@
 }
