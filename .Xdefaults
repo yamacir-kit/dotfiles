@@ -12,10 +12,7 @@ urxvt.saveLines:            0
 
 !! Fonts
 urxvt.allow_bold:           true
-urxvt.font:                 xft:Fantasque Sans Mono:style=Regular:size=13.5,\
-                            xft:Noto Sans Mono CJK JP
-! urxvt.boldFont:             xft:Fantasque Sans Mono:style=Bold:size=13.5,\
-!                             xft:Noto Sans Mono CJK JP:style=Bold:size=15
+urxvt.font:                 xft:IBM Plex Mono:style=Regular:size=13.5
 
 urxvt.lineSpace:            0
 urxvt.letterSpace:          -2
