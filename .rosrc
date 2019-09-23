@@ -63,7 +63,7 @@ function catkin-make-autoware()
 
 function colcon-build-autoware()
 {
-  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_STANDARD=14"
+  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
 
   colcon build $COLCON_OPTS $@
 }

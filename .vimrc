@@ -141,10 +141,12 @@ highlight incsearch    cterm=underline
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
 autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
+autocmd bufread,bufnewfile *.meevax   let &filetype = 'scheme'
 autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
 autocmd filetype scheme syntax keyword keyword λ
+autocmd filetype scheme syntax keyword keyword native
 autocmd filetype scheme syntax keyword macro environment
 autocmd filetype scheme syntax keyword macro er-macro-transformer
 autocmd filetype scheme set lispwords+=environment
