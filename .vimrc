@@ -141,14 +141,23 @@ highlight incsearch    cterm=underline
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
 autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
-autocmd bufread,bufnewfile *.meevax   let &filetype = 'scheme'
 autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
+autocmd bufread,bufnewfile *.xss      let &filetype = 'scheme'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
-autocmd filetype scheme syntax keyword keyword λ
+autocmd filetype scheme syntax keyword keyword conditional
 autocmd filetype scheme syntax keyword keyword native
+autocmd filetype scheme syntax keyword keyword λ
 autocmd filetype scheme syntax keyword macro environment
 autocmd filetype scheme syntax keyword macro er-macro-transformer
+autocmd filetype scheme syntax keyword macro explicit-renaming-macro-transformer
+autocmd filetype scheme syntax keyword macro implicit-renaming-macro-transformer
+autocmd filetype scheme syntax keyword macro ir-macro-transformer
+autocmd filetype scheme syntax keyword macro reversed-syntactic-closure-macro-transformer
+autocmd filetype scheme syntax keyword macro rsc-macro-transformer
+autocmd filetype scheme syntax keyword macro sc-macro-transformer
+autocmd filetype scheme syntax keyword macro syntactic-closure-macro-transformer
+
 autocmd filetype scheme set lispwords+=environment
 
 let g:is_bash = 1
