@@ -70,7 +70,7 @@ set cinoptions+=g0,:0,N-s,#N
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-let &foldlevel = 1
+let &foldlevel = 0
 
 let &sidescroll = 1
 let &scrolloff = 128
@@ -145,6 +145,10 @@ autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
 autocmd bufread,bufnewfile *.xss      let &filetype = 'scheme'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
+autocmd filetype scheme syntax keyword function any
+autocmd filetype scheme syntax keyword function every
+autocmd filetype scheme syntax keyword function undefined
+autocmd filetype scheme syntax keyword function unspecified
 autocmd filetype scheme syntax keyword keyword conditional
 autocmd filetype scheme syntax keyword keyword native
 autocmd filetype scheme syntax keyword keyword λ
@@ -153,6 +157,7 @@ autocmd filetype scheme syntax keyword macro er-macro-transformer
 autocmd filetype scheme syntax keyword macro explicit-renaming-macro-transformer
 autocmd filetype scheme syntax keyword macro implicit-renaming-macro-transformer
 autocmd filetype scheme syntax keyword macro ir-macro-transformer
+autocmd filetype scheme syntax keyword macro macro-transformer
 autocmd filetype scheme syntax keyword macro reversed-syntactic-closure-macro-transformer
 autocmd filetype scheme syntax keyword macro rsc-macro-transformer
 autocmd filetype scheme syntax keyword macro sc-macro-transformer
