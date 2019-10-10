@@ -127,12 +127,12 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
 
-highlight matchparen   ctermbg=none
+" highlight matchparen   cterm=underline ctermbg=none
 highlight cursorlinenr cterm=bold
 highlight linenr       ctermbg=none
 highlight search       cterm=underline
@@ -142,16 +142,18 @@ highlight incsearch    cterm=underline
 autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
 autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
 autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
-autocmd bufread,bufnewfile *.xss      let &filetype = 'scheme'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
 autocmd filetype scheme syntax keyword function any
+autocmd filetype scheme syntax keyword function evaluate
 autocmd filetype scheme syntax keyword function every
 autocmd filetype scheme syntax keyword function undefined
 autocmd filetype scheme syntax keyword function unspecified
 autocmd filetype scheme syntax keyword keyword conditional
+autocmd filetype scheme syntax keyword keyword iterate
 autocmd filetype scheme syntax keyword keyword native
 autocmd filetype scheme syntax keyword keyword λ
+autocmd filetype scheme syntax keyword macro conditionally-expand
 autocmd filetype scheme syntax keyword macro environment
 autocmd filetype scheme syntax keyword macro er-macro-transformer
 autocmd filetype scheme syntax keyword macro explicit-renaming-macro-transformer
@@ -164,6 +166,7 @@ autocmd filetype scheme syntax keyword macro sc-macro-transformer
 autocmd filetype scheme syntax keyword macro syntactic-closure-macro-transformer
 
 autocmd filetype scheme set lispwords+=environment
+autocmd filetype scheme set lispwords+=macro-transformer
 
 let g:is_bash = 1
 
