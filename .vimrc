@@ -144,15 +144,28 @@ autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
 autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
+autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
+" 33 !
+" 35-38 #$%&
+" 42-43 *+
+" 45-58 -./[0-9]:
+" 60-64 <=>?@
+" 94 ^
+" 126 ~
+
 autocmd filetype scheme syntax keyword function any
 autocmd filetype scheme syntax keyword function evaluate
 autocmd filetype scheme syntax keyword function every
+autocmd filetype scheme syntax keyword function identifier?
 autocmd filetype scheme syntax keyword function undefined
 autocmd filetype scheme syntax keyword function unspecified
+autocmd filetype scheme syntax keyword function length*
+
 autocmd filetype scheme syntax keyword keyword conditional
 autocmd filetype scheme syntax keyword keyword iterate
 autocmd filetype scheme syntax keyword keyword native
 autocmd filetype scheme syntax keyword keyword λ
+
 autocmd filetype scheme syntax keyword macro conditionally-expand
 autocmd filetype scheme syntax keyword macro environment
 autocmd filetype scheme syntax keyword macro er-macro-transformer
@@ -167,6 +180,7 @@ autocmd filetype scheme syntax keyword macro syntactic-closure-macro-transformer
 
 autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=macro-transformer
+autocmd filetype scheme set lispwords-=if
 
 let g:is_bash = 1
 
