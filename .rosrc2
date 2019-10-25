@@ -1,0 +1,77 @@
+#!/bin/bash
+
+distribution="dashing"
+
+export ROS_DISTRO=$distribution
+
+if test -e /opt/ros/$distribution/setup.bash
+then
+  echo -n "[rosrc2] sourcing /opt/ros/$distribution/setup.bash => "
+  source /opt/ros/$distribution/setup.bash
+  echo "complete"
+fi
+
+if test -e /var/tmp/mark/c
+then
+  if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
+  then
+    source $(cat /var/tmp/mark/c)/devel/setup.bash
+  fi
+
+  # if test -e $(cat /var/tmp/mark/c)/install/setup.bash
+  # then
+  #   source $(cat /var/tmp/mark/c)/install/setup.bash
+  # fi
+
+  rospack profile &> /dev/null
+fi
+
+alias cdc='cd $(cat /var/tmp/mark/c)'
+alias cds='cd $(cat /var/tmp/mark/c)/src'
+
+# make()
+# {
+#   if test -e $(pwd)/Makefile
+#   then
+#     command make $@
+#   else
+#     pushd $(cat /var/tmp/mark/c) && command catkin_make $@ && source devel/setup.bash
+#     # rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
+#     rospack profile > /dev/null
+#     popd
+#   fi
+# }
+
+function recursive-wstool-update()
+{
+  pushd $(cat /var/tmp/mark/c)
+  wstool init src
+
+  echo "hoge" > /tmp/wstool_outputs
+
+  while test "$(cat /tmp/wstool_outputs)" != "Merge caused no change, no new elements found"
+  do
+    find -regextype posix-basic -regex "\./src/.*/.*\.rosinstall" | xargs -n1 wstool merge --target-workspace=src | uniq | tee /tmp/wstool_outputs
+    wstool update --target-workspace=src
+  done
+
+  rm /tmp/wstool_outputs
+  popd
+}
+
+function catkin-make-autoware()
+{
+  # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
+  CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
+
+  export LIBRARY_PATH=/usr/lib/OpenNI2/Drivers:$LIBRARY_PATH
+  catkin_make $CATKIN_OPTS $@
+}
+
+function colcon-build-autoware()
+{
+  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
+
+  colcon build $COLCON_OPTS $@
+}
+
