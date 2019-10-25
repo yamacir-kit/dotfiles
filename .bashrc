@@ -41,8 +41,6 @@ dotfiles="$HOME/dotfiles"
 
 function rosrc()
 {
-  echo "$1"
-
   for opt in "$@"
   do
     case "$@" in
