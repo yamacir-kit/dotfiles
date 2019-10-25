@@ -44,10 +44,10 @@ function rosrc()
   for opt in "$@"
   do
     case "$@" in
-      "1")
-        source $dotfiles/.rosrc
+      1)
+        source $dotfiles/.rosrc1
         break;;
-      "2")
+      2)
         source $dotfiles/.rosrc2
         break;;
     esac

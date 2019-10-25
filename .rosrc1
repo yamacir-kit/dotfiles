@@ -1,8 +1,15 @@
 #!/bin/bash
 
-rosdistro="kinetic"
+distribution="melodic"
 
-[ -e /opt/ros/$rosdistro/setup.bash ] && source /opt/ros/$rosdistro/setup.bash
+export ROS_DISTRO=$distribution
+
+if test -e /opt/ros/$distribution/setup.bash
+then
+  echo -n "[rosrc1] sourcing /opt/ros/$distribution/setup.bash => "
+  source /opt/ros/$distribution/setup.bash
+  echo "complete"
+fi
 
 if test -e /var/tmp/mark/c
 then
