@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'bfrg/vim-cpp-modern'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nickhutchinson/vim-cmake-syntax'
 Plugin 'rhysd/clever-f.vim'
@@ -26,6 +27,16 @@ filetype plugin indent on
 
 source ~/.vim/configs/quickrun.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
+
+let c_no_curly_error = 1
+
+let g:cpp_no_function_highlight = 1
+
+" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
+let g:cpp_simple_highlight = 1
+
+" Enable highlighting of named requirements (C++20 library concepts)
+let g:cpp_named_requirements_highlight = 1
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
@@ -127,7 +138,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
