@@ -26,17 +26,8 @@ call vundle#end()
 filetype plugin indent on
 
 source ~/.vim/configs/quickrun.conf.vim
+source ~/.vim/configs/vim-cpp-modern.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
-
-let c_no_curly_error = 1
-
-let g:cpp_no_function_highlight = 1
-
-" Put all standard C and C++ keywords under Vim's highlight group 'Statement'
-let g:cpp_simple_highlight = 1
-
-" Enable highlighting of named requirements (C++20 library concepts)
-let g:cpp_named_requirements_highlight = 1
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
