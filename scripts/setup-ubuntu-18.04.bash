@@ -15,6 +15,7 @@ packages="$packages \
   build-essential \
   clang \
   cmake \
+  doxygen \
   g++ \
   gcc \
   git \
@@ -29,6 +30,8 @@ packages="$packages \
   libgmp-dev \
   libmpfr-dev \
   libx11-dev \
+  libxcb-keysyms1-dev \
+  libxcbdev \
   libxext-dev \
   libxft-dev \
 "
