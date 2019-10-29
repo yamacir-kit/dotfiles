@@ -155,30 +155,30 @@ autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
 " 94 ^
 " 126 ~
 
-autocmd filetype scheme syntax keyword function any
-autocmd filetype scheme syntax keyword function evaluate
-autocmd filetype scheme syntax keyword function every
-autocmd filetype scheme syntax keyword function identifier?
-autocmd filetype scheme syntax keyword function undefined
-autocmd filetype scheme syntax keyword function unspecified
-autocmd filetype scheme syntax keyword function length*
+autocmd filetype scheme syntax keyword function
+  \ any
+  \ evaluate
+  \ every
+  \ identifier?
+  \ length*
+  \ undefined
+  \ unspecified
+  \ identity
 
-autocmd filetype scheme syntax keyword keyword conditional
-autocmd filetype scheme syntax keyword keyword iterate
-autocmd filetype scheme syntax keyword keyword native
-autocmd filetype scheme syntax keyword keyword λ
+autocmd filetype scheme syntax keyword keyword
+  \ conditional
+  \ iterate
+  \ native
+  \ λ
 
-autocmd filetype scheme syntax keyword macro conditionally-expand
-autocmd filetype scheme syntax keyword macro environment
-autocmd filetype scheme syntax keyword macro er-macro-transformer
-autocmd filetype scheme syntax keyword macro explicit-renaming-macro-transformer
-autocmd filetype scheme syntax keyword macro implicit-renaming-macro-transformer
-autocmd filetype scheme syntax keyword macro ir-macro-transformer
-autocmd filetype scheme syntax keyword macro macro-transformer
-autocmd filetype scheme syntax keyword macro reversed-syntactic-closure-macro-transformer
-autocmd filetype scheme syntax keyword macro rsc-macro-transformer
-autocmd filetype scheme syntax keyword macro sc-macro-transformer
-autocmd filetype scheme syntax keyword macro syntactic-closure-macro-transformer
+autocmd filetype scheme syntax keyword macro
+  \ conditionally-expand
+  \ environment
+  \ er-macro-transformer explicit-renaming-macro-transformer
+  \ ir-macro-transformer implicit-renaming-macro-transformer
+  \ macro-transformer
+  \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
+  \ sc-macro-transformer syntactic-closure-macro-transformer
 
 autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=macro-transformer
