@@ -37,7 +37,22 @@ eval `dircolors ~/.dircolors`
 
 dotfiles="$HOME/dotfiles"
 
-if test -e /opt/ros; then source $dotfiles/.rosrc; fi
+# if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
+
+function rosrc()
+{
+  for opt in "$@"
+  do
+    case "$@" in
+      1)
+        source $dotfiles/.rosrc1
+        break;;
+      2)
+        source $dotfiles/.rosrc2
+        break;;
+    esac
+  done
+}
 
 alias ls='ls -avF --color=auto'
 alias la='ls'
