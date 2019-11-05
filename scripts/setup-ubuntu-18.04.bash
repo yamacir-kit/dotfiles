@@ -51,7 +51,9 @@ packages="$packages \
 
 # miscellaenous
 packages="$packages \
+  chrome-gnome-shell \
   gimp \
+  gnome-shell-extension-pixelsaver \
   indicator-cpufreq \
   inkscape \
 "

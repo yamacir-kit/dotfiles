@@ -146,7 +146,7 @@ autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
 autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
 autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
 
-autocmd filetype cpp syntax match cppSymbol "[.:!~*&%^|=,]"
+autocmd filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
 
 autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
