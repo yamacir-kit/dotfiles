@@ -129,7 +129,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'dark'
+let &background = 'light'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -163,10 +163,10 @@ autocmd filetype scheme syntax keyword function
   \ evaluate
   \ every
   \ identifier?
+  \ identity
   \ length*
   \ undefined
   \ unspecified
-  \ identity
 
 autocmd filetype scheme syntax keyword keyword
   \ conditional

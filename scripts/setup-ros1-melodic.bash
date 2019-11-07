@@ -17,6 +17,6 @@ sudo apt install ros-$distribution-desktop-full \
                  python-wstool \
                  python-catkin-tools
 
-sudo rosdep init
+rosdep init
 rosdep update
 
