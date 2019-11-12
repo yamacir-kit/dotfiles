@@ -15,13 +15,13 @@ BASE_FLAGS = [
     '-DUSE_CLANG_COMPLETER',
     '-std=c++14',
     '-xc++',
-    '-isystem', '/opt/ros/kinetic/include',
+    '-isystem', '/opt/ros/dashing/include',
     '-isystem', '/usr/include',
     '-isystem', '/usr/include/c++/7.4.0',
     '-isystem', '/usr/include/c++/7.4.0/backward',
+    '-isystem', '/usr/include/clang/6.0.0/include',
     '-isystem', '/usr/include/x86_64-linux-gnu',
     '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.4.0',
-    '-isystem', '/usr/lib/llvm-3.8/lib/clang/3.8.0/include',
     '-isystem', '/usr/local/include'
 ]
 

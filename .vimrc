@@ -47,7 +47,8 @@ let &fileformat = 'unix'
 set ttyfast
 let &clipboard = 'unnamedplus'
 
-set number
+" set number
+" set relativenumber
 let &laststatus = 0
 
 set showmode
@@ -129,7 +130,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -160,6 +161,8 @@ autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
 
 autocmd filetype scheme syntax keyword function
   \ any
+  \ call-with-current-syntactic-continuation
+  \ call/csc
   \ evaluate
   \ every
   \ identifier?
