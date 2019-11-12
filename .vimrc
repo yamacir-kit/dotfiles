@@ -185,6 +185,7 @@ autocmd filetype scheme syntax keyword macro
   \ macro-transformer
   \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
   \ sc-macro-transformer syntactic-closure-macro-transformer
+  \ unhygienic-macro-transformer
 
 autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=macro-transformer
