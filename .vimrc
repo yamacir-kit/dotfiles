@@ -69,11 +69,11 @@ set nowrap
 
 autocmd filetype scheme setlocal autoindent lisp
 autocmd filetype c,cpp setlocal cindent
-set cinoptions+=g0,:0,N-s,#N
+let &cinoptions = 'Ls,:0,=s,g0,N-s,#N,(0,us,U42,w42,Ws,m42'
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-let &foldlevel = 0
+let &foldlevel = 1
 
 let &sidescroll = 1
 let &scrolloff = 128
