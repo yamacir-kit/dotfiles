@@ -90,17 +90,24 @@ function sloc()
 
 function csloc()
 {
-  find -type f | grep -v "build/" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
+  find -type f | grep -v 'CMakeFiles' | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
 function watch-sloc()
 {
-  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | xargs wc $@ | sort -rn'
+  watch -n1 'find -type f | grep -v "CMakeFiles" | grep -v "git" | xargs wc $@ | sort -rn'
 }
 
 function watch-csloc()
 {
-  watch -n1 'find -type f | grep -v "build/" | grep -v "git" | grep -E "^*\.[c|h](pp)?$" | xargs wc $@ | sort -rn'
+  grep='grep --color=always --exclude-dir=.git'
+  watch -n1 "find -type f | $grep -v 'CMakeFiles' | $grep -E '^*\.[c|h](pp)?$' | xargs wc $@ | sort -rn"
+}
+
+function search-code()
+{
+  grep='grep --color=always --exclude-dir=.git'
+  watch --color -n1 "$grep -Irn ./ -e $@ | $grep -v 'CMakeFiles'"
 }
 
 function update()

@@ -39,6 +39,7 @@ packages="$packages \
 # documentation
 packages="$packages \
   gnuplot \
+  graphviz \
   gv \
   latexmk \
   pstoedit \
