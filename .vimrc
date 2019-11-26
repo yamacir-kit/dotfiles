@@ -138,8 +138,8 @@ colorscheme solarized
 " highlight matchparen   cterm=underline ctermbg=none
 highlight cursorlinenr cterm=bold
 highlight linenr       ctermbg=none
-highlight search       cterm=underline
-highlight incsearch    cterm=underline
+highlight search       ctermfg=1 cterm=underline
+highlight incsearch    ctermfg=1 cterm=underline
 
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
@@ -163,6 +163,8 @@ autocmd filetype scheme syntax keyword function
   \ any
   \ call-with-current-syntactic-continuation
   \ call/csc
+  \ equals?
+  \ equivalent?
   \ evaluate
   \ every
   \ identifier?
