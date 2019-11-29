@@ -130,7 +130,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -170,6 +170,7 @@ autocmd filetype scheme syntax keyword function
   \ identifier?
   \ identity
   \ length*
+  \ procedure-from
   \ undefined
   \ unspecified
 
@@ -186,11 +187,12 @@ autocmd filetype scheme syntax keyword macro
   \ ir-macro-transformer implicit-renaming-macro-transformer
   \ macro-transformer
   \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
-  \ sc-macro-transformer syntactic-closure-macro-transformer
+  \  sc-macro-transformer          syntactic-closure-macro-transformer
   \ unhygienic-macro-transformer
 
 autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=macro-transformer
+autocmd filetype scheme set lispwords+=define-library
 autocmd filetype scheme set lispwords-=if
 
 let g:is_bash = 1
