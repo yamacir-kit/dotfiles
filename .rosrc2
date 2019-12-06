@@ -75,3 +75,14 @@ function colcon-build-autoware()
   colcon build $COLCON_OPTS $@
 }
 
+function update-autoware-auto()
+{
+  git fetch origin
+  git rebase origin/master
+  git submodule update --init --recursive
+
+  rosdep install --from-paths src --ignore-src --rosdistro "$distribution"
+
+  colcon-build-autore
+}
+

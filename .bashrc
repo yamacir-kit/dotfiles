@@ -63,8 +63,8 @@ alias vu='vi'
 alias vo='vi'
 
 alias cd-='cd ~/works-'
-alias cd_='cd ~/works_'
 alias cda='cd ~/works-/Autoware.Auto'
+alias cdb='cd ~/works-/behaviors'
 alias cdd='cd $dotfiles'
 alias cde='cd ~/Desktop'
 alias cdm='cd $(cat /var/tmp/mark/m)'
@@ -118,11 +118,9 @@ function update()
   sudo apt autoremove
   sudo apt autoclean
 
-  # sudo -H pip2 install --upgrade pip
-  # sudo -H pip2 list --outdated 2> /dev/null
-
-  # sudo -H pip3 install --upgrade pip
-  # sudo -H pip3 list --outdated
+  # sudo -H python3 -m pip install --upgrade pip
+  # sudo -H python3 -m pip list --outdated /var/tmp/outdated.txt
+  # sudo -H python3 -m pip install --upgrade $(/var/tmp/outdated.txt)
 }
 
 function cxx()
