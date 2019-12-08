@@ -191,9 +191,10 @@ autocmd filetype scheme syntax keyword macro
   \ fork-with-current-syntactic-continuation
   \ fork/csc
 
-autocmd filetype scheme set lispwords+=environment
-autocmd filetype scheme set lispwords+=macro-transformer
 autocmd filetype scheme set lispwords+=define-library
+autocmd filetype scheme set lispwords+=environment
+autocmd filetype scheme set lispwords+=letrec*
+autocmd filetype scheme set lispwords+=macro-transformer
 autocmd filetype scheme set lispwords-=if
 
 let g:is_bash = 1
