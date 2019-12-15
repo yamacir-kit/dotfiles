@@ -67,6 +67,8 @@ set expandtab smarttab
 
 set nowrap
 
+set regexpengine=1
+
 autocmd filetype scheme setlocal autoindent lisp
 autocmd filetype c,cpp setlocal cindent
 let &cinoptions = 'Ls,:0,=s,g0,N-s,#N,(0,us,U42,w42,Ws,m42'
@@ -92,8 +94,8 @@ let &wildmode = 'longest:full,full'
 
 set cursorline
 if (exists('+colorcolumn'))
-  let &colorcolumn = 80
-  " let &colorcolumn = '40,80'
+  " let &colorcolumn = 80
+  let &colorcolumn = join(range(81, 65535), ',')
 endif
 
 nnoremap ; :
