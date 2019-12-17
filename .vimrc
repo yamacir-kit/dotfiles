@@ -78,7 +78,8 @@ let &foldignore = ''
 let &foldlevel = 1
 
 let &sidescroll = 1
-let &scrolloff = 128
+let     &scrolloff = 128
+let &sidescrolloff =  16
 
 set showmatch
 let &matchtime = 1
@@ -132,7 +133,9 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-let &background = 'light'
+syntax sync fromstart
+
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -169,6 +172,8 @@ autocmd filetype scheme syntax keyword function
   \ equivalent?
   \ evaluate
   \ every
+  \ find
+  \ identifier=?
   \ identifier?
   \ identity
   \ length*
@@ -197,6 +202,7 @@ autocmd filetype scheme set lispwords+=define-library
 autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=letrec*
 autocmd filetype scheme set lispwords+=macro-transformer
+autocmd filetype scheme set lispwords+=syntax-rules
 autocmd filetype scheme set lispwords-=if
 
 let g:is_bash = 1

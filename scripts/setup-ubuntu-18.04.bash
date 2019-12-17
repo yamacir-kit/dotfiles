@@ -78,3 +78,7 @@ package="$packages \
 
 sudo apt install -y $packages
 
+# sudo add-apt-repository ppa:vantuz/cool-retro-term
+# sudo apt update
+# sudo apt install cool-retro-term
+
