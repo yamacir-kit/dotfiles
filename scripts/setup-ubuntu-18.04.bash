@@ -74,6 +74,7 @@ package="$packages \
   fonts-noto-cjk-extra \
   fonts-noto-color-emoji \
   fonts-noto-mono \
+  ttf-mscorefonts-installer \
 "
 
 sudo apt install -y $packages

@@ -19,6 +19,9 @@
 
   revert = reset --hard HEAD^
 
+  diff = diff --no-index
+  apply = --git-dir= apply
+
 [core]
   editor = vi
   pager = less -cm

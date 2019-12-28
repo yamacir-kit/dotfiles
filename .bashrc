@@ -54,6 +54,11 @@ function rosrc()
   done
 }
 
+function i() # identity combinator
+{
+  cat $@
+}
+
 alias ls='ls -avF --color=auto'
 alias la='ls'
 alias sl='ls'
