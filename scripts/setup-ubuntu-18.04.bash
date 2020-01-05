@@ -59,9 +59,11 @@ packages="$packages \
   inkscape \
 "
 
-# numix
+# gnome
 packages="$packages \
+  gnome-shell-extensions \
   gnome-tweak-tool \
+  gnome-usage \
   numix-gtk-theme \
   numix-icon-theme-circle \
   numix-icon-theme-square \
