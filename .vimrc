@@ -133,9 +133,9 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-syntax sync fromstart
+" syntax sync fromstart
 
-let &background = 'dark'
+let &background = 'light'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -147,10 +147,12 @@ highlight search       ctermfg=1 cterm=underline
 highlight incsearch    ctermfg=1 cterm=underline
 
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
-autocmd bufread,bufnewfile *.launch   let &filetype = 'xml'
-autocmd bufread,bufnewfile *.md       let &filetype = 'markdown'
-autocmd bufread,bufnewfile *.plt      let &filetype = 'gnuplot'
-autocmd bufread,bufnewfile .tmux.conf let &filetype = 'tmux'
+autocmd bufread,bufnewfile *.cpp.cmake let &filetype = 'cpp'
+autocmd bufread,bufnewfile *.hpp.cmake let &filetype = 'cpp'
+autocmd bufread,bufnewfile *.launch    let &filetype = 'xml'
+autocmd bufread,bufnewfile *.md        let &filetype = 'markdown'
+autocmd bufread,bufnewfile *.plt       let &filetype = 'gnuplot'
+autocmd bufread,bufnewfile .tmux.conf  let &filetype = 'tmux'
 
 autocmd filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
@@ -166,8 +168,6 @@ autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
 
 autocmd filetype scheme syntax keyword function
   \ any
-  \ call-with-current-syntactic-continuation
-  \ call/csc
   \ equals?
   \ equivalent?
   \ evaluate
@@ -183,8 +183,6 @@ autocmd filetype scheme syntax keyword function
 
 autocmd filetype scheme syntax keyword keyword
   \ conditional
-  \ iterate
-  \ native
   \ λ
 
 autocmd filetype scheme syntax keyword macro
@@ -195,11 +193,9 @@ autocmd filetype scheme syntax keyword macro
   \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
   \  sc-macro-transformer          syntactic-closure-macro-transformer
   \ conditionally-expand
-  \ fork-with-current-syntactic-continuation
-  \ fork/csc
+  \ fork
 
 autocmd filetype scheme set lispwords+=define-library
-autocmd filetype scheme set lispwords+=environment
 autocmd filetype scheme set lispwords+=letrec*
 autocmd filetype scheme set lispwords+=macro-transformer
 autocmd filetype scheme set lispwords+=syntax-rules
