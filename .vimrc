@@ -183,7 +183,6 @@ autocmd filetype scheme syntax keyword function
 
 autocmd filetype scheme syntax keyword keyword
   \ conditional
-  \ λ
 
 autocmd filetype scheme syntax keyword macro
   \ unhygienic-macro-transformer
