@@ -171,7 +171,8 @@ if has('conceal')
   " syntax keyword SchemeConceal cons conceal cchar=∷
 
   " syntax match SchemeConceal /)\{2,}/ conceal cchar=~
-  syntax match SchemeConcealAsComment /\s\()\+\)\@>$/ oneline conceal cchar=~
+  " syntax match SchemeConcealAsComment /\s\()\+\)\@>$/ oneline conceal cchar=~
+  syntax match SchemeConcealAsComment /\s)\+$/ oneline conceal cchar=‥
 
   syntax keyword SchemeConceal <= conceal cchar=≤
   syntax keyword SchemeConceal >= conceal cchar=≥
