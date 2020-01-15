@@ -27,6 +27,33 @@ if has('conceal')
   " syntax keyword SchemeConceal Y conceal cchar=𝑌
   " syntax keyword SchemeConceal Z conceal cchar=𝑍
 
+  " syntax keyword SchemeConceal A conceal cchar=𝑨
+  " syntax keyword SchemeConceal B conceal cchar=𝑩
+  " syntax keyword SchemeConceal C conceal cchar=𝑪
+  " syntax keyword SchemeConceal D conceal cchar=𝑫
+  " syntax keyword SchemeConceal E conceal cchar=𝑬
+  " syntax keyword SchemeConceal F conceal cchar=𝑭
+  " syntax keyword SchemeConceal G conceal cchar=𝑮
+  " syntax keyword SchemeConceal H conceal cchar=𝑯
+  " syntax keyword SchemeConceal I conceal cchar=𝑰
+  " syntax keyword SchemeConceal J conceal cchar=𝑱
+  " syntax keyword SchemeConceal K conceal cchar=𝑲
+  " syntax keyword SchemeConceal L conceal cchar=𝑳
+  " syntax keyword SchemeConceal M conceal cchar=𝑴
+  " syntax keyword SchemeConceal N conceal cchar=𝑵
+  " syntax keyword SchemeConceal O conceal cchar=𝑶
+  " syntax keyword SchemeConceal P conceal cchar=𝑷
+  " syntax keyword SchemeConceal Q conceal cchar=𝑸
+  " syntax keyword SchemeConceal R conceal cchar=𝑹
+  " syntax keyword SchemeConceal S conceal cchar=𝑺
+  " syntax keyword SchemeConceal T conceal cchar=𝑻
+  " syntax keyword SchemeConceal U conceal cchar=𝑼
+  " syntax keyword SchemeConceal V conceal cchar=𝑽
+  " syntax keyword SchemeConceal W conceal cchar=𝑾
+  " syntax keyword SchemeConceal X conceal cchar=𝑿
+  " syntax keyword SchemeConceal Y conceal cchar=𝒀
+  " syntax keyword SchemeConceal Z conceal cchar=𝒁
+
   " syntax keyword SchemeConceal a conceal cchar=𝑎
   " syntax keyword SchemeConceal b conceal cchar=𝑏
   " syntax keyword SchemeConceal c conceal cchar=𝑐
@@ -54,12 +81,32 @@ if has('conceal')
   " syntax keyword SchemeConceal y conceal cchar=𝑦
   " syntax keyword SchemeConceal z conceal cchar=𝑧
 
-  " syntax keyword SchemeConceal or           conceal cchar=∨
-  " syntax keyword SchemeConceal and          conceal cchar=∧
-  " syntax keyword SchemeConceal not          conceal cchar=¬
-
-  " syntax keyword SchemeConceal intersection conceal cchar=∩
-  " syntax keyword SchemeConceal union        conceal cchar=∪
+  " syntax keyword SchemeConceal a conceal cchar=𝒂
+  " syntax keyword SchemeConceal b conceal cchar=𝒃
+  " syntax keyword SchemeConceal c conceal cchar=𝒄
+  " syntax keyword SchemeConceal d conceal cchar=𝒅
+  " syntax keyword SchemeConceal e conceal cchar=𝒆
+  " syntax keyword SchemeConceal f conceal cchar=𝒇
+  " syntax keyword SchemeConceal g conceal cchar=𝒈
+  " syntax keyword SchemeConceal h conceal cchar=𝒉
+  " syntax keyword SchemeConceal i conceal cchar=𝒊
+  " syntax keyword SchemeConceal j conceal cchar=𝒋
+  " syntax keyword SchemeConceal k conceal cchar=𝒌
+  " syntax keyword SchemeConceal l conceal cchar=𝒍
+  " syntax keyword SchemeConceal m conceal cchar=𝒎
+  " syntax keyword SchemeConceal n conceal cchar=𝒏
+  " syntax keyword SchemeConceal o conceal cchar=𝒐
+  " syntax keyword SchemeConceal p conceal cchar=𝒑
+  " syntax keyword SchemeConceal q conceal cchar=𝒒
+  " syntax keyword SchemeConceal r conceal cchar=𝒓
+  " syntax keyword SchemeConceal s conceal cchar=𝒔
+  " syntax keyword SchemeConceal t conceal cchar=𝒕
+  " syntax keyword SchemeConceal u conceal cchar=𝒖
+  " syntax keyword SchemeConceal v conceal cchar=𝒗
+  " syntax keyword SchemeConceal w conceal cchar=𝒘
+  " syntax keyword SchemeConceal x conceal cchar=𝒙
+  " syntax keyword SchemeConceal y conceal cchar=𝒚
+  " syntax keyword SchemeConceal z conceal cchar=𝒛
 
   " syntax keyword SchemeConceal Alpha   conceal cchar=Α
   " syntax keyword SchemeConceal Beta    conceal cchar=Β
@@ -111,8 +158,20 @@ if has('conceal')
   syntax keyword SchemeConceal psi     conceal cchar=ψ
   syntax keyword SchemeConceal omega   conceal cchar=ω
 
-  " syntax keyword SchemeConceal =>  conceal cchar=⇒
-  syntax keyword SchemeConceal >>> conceal cchar=⋙
+  " syntax keyword SchemeConceal and  conceal cchar=∧
+  " syntax keyword SchemeConceal nand conceal cchar=⊼
+  " syntax keyword SchemeConceal nor  conceal cchar=⊽
+  " syntax keyword SchemeConceal not  conceal cchar=¬
+  " syntax keyword SchemeConceal or   conceal cchar=∨
+  " syntax keyword SchemeConceal xor  conceal cchar=⊻
+
+  " syntax keyword SchemeConceal intersection conceal cchar=∩
+  " syntax keyword SchemeConceal union        conceal cchar=∪
+
+  " syntax keyword SchemeConceal cons conceal cchar=∷
+
+  " syntax match SchemeConceal /)\{2,}/ conceal cchar=~
+  syntax match SchemeConceal /\s\()\+\)\@>$/ oneline conceal cchar=~
 
   syntax keyword SchemeConceal <= conceal cchar=≤
   syntax keyword SchemeConceal >= conceal cchar=≥
@@ -123,9 +182,9 @@ if has('conceal')
 
   syntax keyword SchemeConceal nabra  conceal cchar=∇
 
-  " syntax keyword SchemeConceal + conceal cchar=∑
-  syntax keyword SchemeConceal + conceal cchar=Σ
-  syntax keyword SchemeConceal * conceal cchar=Π
+  " syntax keyword SchemeConceal define conceal cchar=Δ
+  syntax keyword SchemeConceal +      conceal cchar=Σ
+  syntax keyword SchemeConceal *      conceal cchar=Π
 
   " syntax keyword SchemeConceal member conceal cchar=∈
   " syntax keyword SchemeConceal sqrt   conceal cchar=√

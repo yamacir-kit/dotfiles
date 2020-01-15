@@ -117,6 +117,10 @@ nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
 nnoremap / :<c-u>set<space>hlsearch<cr>/
 nnoremap ? :<c-u>set<space>hlsearch<cr>?
 
+nnoremap <leader>c+ :<c-u>set cole=1<cr>
+nnoremap <leader>c- :<c-u>set cole=0<cr>
+nnoremap <leader>cc :<c-u>set <c-r>=&cole ? 'cole=0' : 'cole=1'<cr><cr>
+
 inoremap "" ""<left>
 inoremap $$ $$<left>
 inoremap '' ''<left>
@@ -133,9 +137,9 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-" syntax sync fromstart
+syntax sync fromstart
 
-let &background = 'dark'
+let &background = 'light'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
