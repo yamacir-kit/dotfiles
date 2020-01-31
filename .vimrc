@@ -31,7 +31,7 @@ source ~/.vim/configs/youcompleteme.conf.vim
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
-" let &ambiwidth = 'double'
+let &ambiwidth = 'double'
 
 let &updatetime = 100
 
@@ -137,7 +137,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-" syntax sync fromstart
+syntax sync fromstart
 let &regexpengine = 1
 
 let &background = 'light'
