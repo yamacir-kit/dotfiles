@@ -161,7 +161,7 @@ if has('conceal')
   " syntax keyword SchemeConceal and  conceal cchar=∧
   " syntax keyword SchemeConceal nand conceal cchar=⊼
   " syntax keyword SchemeConceal nor  conceal cchar=⊽
-  " syntax keyword SchemeConceal not  conceal cchar=¬
+  " syntax keyword SchemeConceal not  conceal cchar=∼
   " syntax keyword SchemeConceal or   conceal cchar=∨
   " syntax keyword SchemeConceal xor  conceal cchar=⊻
 
@@ -170,21 +170,43 @@ if has('conceal')
 
   " syntax keyword SchemeConceal cons conceal cchar=∷
 
-  " syntax match SchemeConceal /)\{2,}/ conceal cchar=~
-  syntax match SchemeConcealAsComment /\s\()\+\)\@>$/ oneline conceal cchar=~
+  " syntax match SchemeConcealAsComment /\s)\+$/ oneline display conceal cchar=‥
+  " ‥
+  " ◗
+  " ⦆
+  " ⦈ Z NOTATION RIGHT IMAGE BRACKET
 
   syntax keyword SchemeConceal <= conceal cchar=≤
   syntax keyword SchemeConceal >= conceal cchar=≥
 
-  " NOTE: The symbol of the empty set is different from phi.
-  " syntax match SchemeConceal "'()" conceal cchar=φ
-
-
   syntax keyword SchemeConceal nabra  conceal cchar=∇
 
   " syntax keyword SchemeConceal define conceal cchar=Δ
-  syntax keyword SchemeConceal +      conceal cchar=Σ
-  syntax keyword SchemeConceal *      conceal cchar=Π
+  " ¶
+  " ↦
+  " Δ
+  " ⩴
+  " ⦀
+  " ∃
+  " ⨟
+  " ≜
+  " ≝
+  " ≡
+  " ≣
+
+  " syntax keyword SchemeConceal => conceal cchar=⇒
+
+  " syntax keyword SchemeConceal +      conceal cchar=Σ
+  " syntax keyword SchemeConceal *      conceal cchar=Π
+
+  syntax match   SchemeConceal "'()"  conceal cchar=Ø
+  " 𝟘
+  " 𝟎
+  " 0̸
+  " Ø
+  " ∅
+
+  " ∞
 
   " syntax keyword SchemeConceal member conceal cchar=∈
   " syntax keyword SchemeConceal sqrt   conceal cchar=√

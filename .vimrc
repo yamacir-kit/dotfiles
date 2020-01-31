@@ -31,7 +31,7 @@ source ~/.vim/configs/youcompleteme.conf.vim
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
-" let &ambiwidth = 'double'
+let &ambiwidth = 'double'
 
 let &updatetime = 100
 
@@ -138,6 +138,7 @@ vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
 syntax sync fromstart
+let &regexpengine = 1
 
 let &background = 'light'
 
@@ -161,50 +162,68 @@ autocmd bufread,bufnewfile .tmux.conf  let &filetype = 'tmux'
 autocmd filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
 
-autocmd filetype scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
-" 33 !
-" 35-38 #$%&
-" 42-43 *+
-" 45-58 -./[0-9]:
-" 60-64 <=>?@
-" 94 ^
-" 126 ~
+" autocmd filetype scheme syntax keyword function
+"  \ any
+"  \ equals?
+"  \ equivalent?
+"  \ evaluate
+"  \ every
+"  \ find
+"  \ identifier=?
+"  \ identifier?
+"  \ identity
+"  \ length*
+"  \ procedure-from
+"  \ undefined
+"  \ unspecified
+"
+" autocmd filetype scheme syntax keyword keyword
+"  \ conditional
+"
+" autocmd filetype scheme syntax keyword macro
+"  \ unhygienic-macro-transformer
+"  \            macro-transformer
+"  \ er-macro-transformer explicit-renaming-macro-transformer
+"  \ ir-macro-transformer implicit-renaming-macro-transformer
+"  \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
+"  \  sc-macro-transformer          syntactic-closure-macro-transformer
+"  \ conditionally-expand
+"  \ fork
 
-autocmd filetype scheme syntax keyword function
-  \ any
-  \ equals?
-  \ equivalent?
-  \ evaluate
-  \ every
-  \ find
-  \ identifier=?
-  \ identifier?
-  \ identity
-  \ length*
-  \ procedure-from
-  \ undefined
-  \ unspecified
+aut filetype scheme syntax keyword macro fork
 
-autocmd filetype scheme syntax keyword keyword
-  \ conditional
-
-autocmd filetype scheme syntax keyword macro
-  \ unhygienic-macro-transformer
-  \            macro-transformer
-  \ er-macro-transformer explicit-renaming-macro-transformer
-  \ ir-macro-transformer implicit-renaming-macro-transformer
-  \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
-  \  sc-macro-transformer          syntactic-closure-macro-transformer
-  \ conditionally-expand
-  \ fork
-
-autocmd filetype scheme set lispwords+=define-library
-autocmd filetype scheme set lispwords+=letrec*
-autocmd filetype scheme set lispwords+=macro-transformer
-autocmd filetype scheme set lispwords+=syntax-rules
-autocmd filetype scheme set lispwords-=if
+au filetype scheme let &lispwords = '
+      \ =>,
+      "\ and,
+      \ begin,
+      \ case,
+      \ cond,
+      \ define,
+      \ define-syntax,
+      \ delay,
+      \ do,
+      "\ else,
+      \ fork,
+      "\ if,
+      \ lambda,
+      \ let*,
+      \ let,
+      \ let-syntax,
+      \ letrec,
+      \ letrec-syntax,
+      "\ or,
+      \ quasiquote,
+      \ quote,
+      \ set!,
+      \ syntax-rules,
+      \ unquote,
+      \ unquote-splicing,
+      \'
 
 let g:is_bash = 1
 
 autocmd BufWritePre * :%s/\s\+$//ge
+
+highlight clear texItalStyle
+highlight clear texBoldStyle
 
