@@ -108,30 +108,30 @@ if has('conceal')
   " syntax keyword SchemeConceal y conceal cchar=𝒚
   " syntax keyword SchemeConceal z conceal cchar=𝒛
 
-  " syntax keyword SchemeConceal Alpha   conceal cchar=Α
-  " syntax keyword SchemeConceal Beta    conceal cchar=Β
-  " syntax keyword SchemeConceal Gamma   conceal cchar=Γ
-  " syntax keyword SchemeConceal Delta   conceal cchar=Δ
-  " syntax keyword SchemeConceal Epsilon conceal cchar=Ε
-  " syntax keyword SchemeConceal Zeta    conceal cchar=Ζ
-  " syntax keyword SchemeConceal Eta     conceal cchar=Η
-  " syntax keyword SchemeConceal Theta   conceal cchar=Θ
-  " syntax keyword SchemeConceal Iota    conceal cchar=Ι
-  " syntax keyword SchemeConceal Kappa   conceal cchar=Κ
-  " syntax keyword SchemeConceal Lamda   conceal cchar=Λ
-  " syntax keyword SchemeConceal Mu      conceal cchar=Μ
-  " syntax keyword SchemeConceal Nu      conceal cchar=Ν
-  " syntax keyword SchemeConceal Xi      conceal cchar=Ξ
-  " syntax keyword SchemeConceal Omicron conceal cchar=Ο
-  " syntax keyword SchemeConceal Pi      conceal cchar=Π
-  " syntax keyword SchemeConceal Rho     conceal cchar=Ρ
-  " syntax keyword SchemeConceal Sigma   conceal cchar=Σ
-  " syntax keyword SchemeConceal Tau     conceal cchar=Τ
-  " syntax keyword SchemeConceal Upsilon conceal cchar=Υ
-  " syntax keyword SchemeConceal Phi     conceal cchar=Φ
-  " syntax keyword SchemeConceal Chi     conceal cchar=Χ
-  " syntax keyword SchemeConceal Psi     conceal cchar=Ψ
-  " syntax keyword SchemeConceal Omega   conceal cchar=Ω
+  syntax keyword SchemeConceal Alpha   conceal cchar=Α
+  syntax keyword SchemeConceal Beta    conceal cchar=Β
+  syntax keyword SchemeConceal Gamma   conceal cchar=Γ
+  syntax keyword SchemeConceal Delta   conceal cchar=Δ
+  syntax keyword SchemeConceal Epsilon conceal cchar=Ε
+  syntax keyword SchemeConceal Zeta    conceal cchar=Ζ
+  syntax keyword SchemeConceal Eta     conceal cchar=Η
+  syntax keyword SchemeConceal Theta   conceal cchar=Θ
+  syntax keyword SchemeConceal Iota    conceal cchar=Ι
+  syntax keyword SchemeConceal Kappa   conceal cchar=Κ
+  syntax keyword SchemeConceal Lamda   conceal cchar=Λ
+  syntax keyword SchemeConceal Mu      conceal cchar=Μ
+  syntax keyword SchemeConceal Nu      conceal cchar=Ν
+  syntax keyword SchemeConceal Xi      conceal cchar=Ξ
+  syntax keyword SchemeConceal Omicron conceal cchar=Ο
+  syntax keyword SchemeConceal Pi      conceal cchar=Π
+  syntax keyword SchemeConceal Rho     conceal cchar=Ρ
+  syntax keyword SchemeConceal Sigma   conceal cchar=Σ
+  syntax keyword SchemeConceal Tau     conceal cchar=Τ
+  syntax keyword SchemeConceal Upsilon conceal cchar=Υ
+  syntax keyword SchemeConceal Phi     conceal cchar=Φ
+  syntax keyword SchemeConceal Chi     conceal cchar=Χ
+  syntax keyword SchemeConceal Psi     conceal cchar=Ψ
+  syntax keyword SchemeConceal Omega   conceal cchar=Ω
 
   syntax keyword SchemeConceal alpha   conceal cchar=α
   syntax keyword SchemeConceal beta    conceal cchar=β
@@ -176,10 +176,10 @@ if has('conceal')
   " ⦆
   " ⦈ Z NOTATION RIGHT IMAGE BRACKET
 
-  syntax keyword SchemeConceal <= conceal cchar=≤
-  syntax keyword SchemeConceal >= conceal cchar=≥
+  " syntax keyword SchemeConceal <= conceal cchar=≤
+  " syntax keyword SchemeConceal >= conceal cchar=≥
 
-  syntax keyword SchemeConceal nabra  conceal cchar=∇
+  " syntax keyword SchemeConceal nabra  conceal cchar=∇
 
   " syntax keyword SchemeConceal define conceal cchar=Δ
   " ¶
@@ -199,7 +199,7 @@ if has('conceal')
   " syntax keyword SchemeConceal +      conceal cchar=Σ
   " syntax keyword SchemeConceal *      conceal cchar=Π
 
-  syntax match   SchemeConceal "'()"  conceal cchar=Ø
+  " syntax match   SchemeConceal "'()"  conceal cchar=Ø
   " 𝟘
   " 𝟎
   " 0̸
@@ -211,9 +211,9 @@ if has('conceal')
   " syntax keyword SchemeConceal member conceal cchar=∈
   " syntax keyword SchemeConceal sqrt   conceal cchar=√
 
-  syntax keyword SchemeConceal angle  conceal cchar=∠
+  " syntax keyword SchemeConceal angle  conceal cchar=∠
 
-  syntax keyword SchemeConceal integral conceal cchar=∫
+  " syntax keyword SchemeConceal integral conceal cchar=∫
 
   highlight  link SchemeConcealAsComment Comment
   highlight  link SchemeConceal Operator

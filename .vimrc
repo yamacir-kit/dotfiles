@@ -224,6 +224,8 @@ let g:is_bash = 1
 
 autocmd BufWritePre * :%s/\s\+$//ge
 
-highlight clear texItalStyle
-highlight clear texBoldStyle
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+
+command! DeleteAnsiEscapeSequence %s/\[[0-9;]*m//g$
 
