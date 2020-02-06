@@ -39,16 +39,42 @@ dotfiles="$HOME/dotfiles"
 
 # if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
 
+rosrc_enabled='/var/tmp/rosrc'
+rosrc_version='.rosrc2'
+rosrc_workspace="$HOME/works-/Autoware.Auto"
+
+if test -e $rosrc_enabled
+then
+  source $dotfiles/$rosrc_version
+
+  echo -n "[rosrc *] sourcing $rosrc_workspace/install/setup.bash => "
+  source "$rosrc_workspace/install/setup.bash"
+  echo "complete"
+fi
+
 function rosrc()
 {
-  for opt in "$@"
+  for each in "$@"
   do
     case "$@" in
+      +)
+        echo "[rosrc +] enabling rosrc autoload";
+        touch $rosrc_enabled
+        break;;
+      -)
+        echo "[rosrc -] disabling rosrc autoload";
+        rm $rosrc_enabled
+        break;;
       1)
-        source $dotfiles/.rosrc1
+        rosrc_version='.rosrc1'
+        source $dotfiles/$rosrc_version
         break;;
       2)
-        source $dotfiles/.rosrc2
+        rosrc_version='.rosrc2'
+        source $dotfiles/$rosrc_version
+        break;;
+      *)
+        rosrc_workspace="$each"
         break;;
     esac
   done
