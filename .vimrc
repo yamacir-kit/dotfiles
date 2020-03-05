@@ -31,7 +31,7 @@ source ~/.vim/configs/youcompleteme.conf.vim
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
-let &ambiwidth = 'double'
+" let &ambiwidth = 'double'
 
 let &updatetime = 100
 
