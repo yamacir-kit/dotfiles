@@ -140,7 +140,7 @@ syntax enable
 syntax sync fromstart
 let &regexpengine = 1
 
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -152,14 +152,14 @@ highlight search       ctermfg=1 cterm=underline
 highlight incsearch    ctermfg=1 cterm=underline
 
 " autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
-autocmd bufread,bufnewfile *.cpp.cmake let &filetype = 'cpp'
-autocmd bufread,bufnewfile *.hpp.cmake let &filetype = 'cpp'
-autocmd bufread,bufnewfile *.launch    let &filetype = 'xml'
-autocmd bufread,bufnewfile *.md        let &filetype = 'markdown'
-autocmd bufread,bufnewfile *.plt       let &filetype = 'gnuplot'
-autocmd bufread,bufnewfile .tmux.conf  let &filetype = 'tmux'
+auto bufread,bufnewfile *.cpp.cmake let &filetype = 'cpp'
+auto bufread,bufnewfile *.hpp.cmake let &filetype = 'cpp'
+auto bufread,bufnewfile *.launch    let &filetype = 'xml'
+auto bufread,bufnewfile *.md        let &filetype = 'markdown'
+auto bufread,bufnewfile *.plt       let &filetype = 'gnuplot'
+auto bufread,bufnewfile .tmux.conf  let &filetype = 'tmux'
 
-autocmd filetype cpp syntax match cppSymbol "[.:;,]"
+auto filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
 
 " autocmd filetype scheme syntax keyword function
@@ -190,9 +190,9 @@ highlight cppSymbol ctermfg=13
 "  \ conditionally-expand
 "  \ fork
 
-aut filetype scheme syntax keyword macro fork
+auto filetype scheme syntax keyword macro fork
 
-au filetype scheme let &lispwords = '
+auto filetype scheme let &lispwords = '
       \ =>,
       "\ and,
       \ begin,
@@ -222,7 +222,7 @@ au filetype scheme let &lispwords = '
 
 let g:is_bash = 1
 
-autocmd BufWritePre * :%s/\s\+$//ge
+auto BufWritePre * :%s/\s\+$//ge
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
