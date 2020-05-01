@@ -69,17 +69,17 @@ set nowrap
 
 set regexpengine=1
 
-autocmd filetype scheme setlocal autoindent lisp
-autocmd filetype c,cpp setlocal cindent
+auto filetype scheme setlocal autoindent lisp
+auto filetype c,cpp setlocal cindent
 let &cinoptions = 'Ls,:0,=s,g0,N-s,#N,(0,us,U42,w42,Ws,m42'
 
 let &foldmethod = 'indent'
 let &foldignore = ''
 let &foldlevel = 1
 
-let &sidescroll = 1
-let     &scrolloff = 128
+let &sidescroll    =   1
 let &sidescrolloff =  16
+let     &scrolloff = 128
 
 set showmatch
 let &matchtime = 1
@@ -151,7 +151,7 @@ highlight linenr       ctermbg=none
 highlight search       ctermfg=1 cterm=underline
 highlight incsearch    ctermfg=1 cterm=underline
 
-" autocmd BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
+" auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 auto bufread,bufnewfile *.cpp.cmake let &filetype = 'cpp'
 auto bufread,bufnewfile *.hpp.cmake let &filetype = 'cpp'
 auto bufread,bufnewfile *.launch    let &filetype = 'xml'
