@@ -9,7 +9,6 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bfrg/vim-cpp-modern'
@@ -20,6 +19,7 @@ Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
 Plugin 'tmux-plugins/vim-tmux'
 Plugin 'tyru/caw.vim'
+Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
 
@@ -145,24 +145,28 @@ let &background = 'dark'
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
 
+highlight! link SignColumn LineNr
+
 " highlight matchparen   cterm=underline ctermbg=none
-highlight cursorlinenr cterm=bold
-highlight linenr       ctermbg=none
-highlight search       ctermfg=1 cterm=underline
-highlight incsearch    ctermfg=1 cterm=underline
+highlight CursorLineNr ctermbg=none cterm=bold
+highlight       LineNr ctermbg=none
+highlight Search       ctermfg=1 cterm=underline
+highlight Incsearch    ctermfg=1 cterm=underline
 
 " auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
-auto bufread,bufnewfile *.cpp.cmake let &filetype = 'cpp'
-auto bufread,bufnewfile *.hpp.cmake let &filetype = 'cpp'
-auto bufread,bufnewfile *.launch    let &filetype = 'xml'
-auto bufread,bufnewfile *.md        let &filetype = 'markdown'
-auto bufread,bufnewfile *.plt       let &filetype = 'gnuplot'
-auto bufread,bufnewfile .tmux.conf  let &filetype = 'tmux'
+auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
+auto BufRead,BufNewFile *.hpp.cmake let &filetype = 'cpp'
+auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
+auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
+auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
+auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
+
+auto BufWritePre * :%s/\s\+$//ge
 
 auto filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
 
-" autocmd filetype scheme syntax keyword function
+" auto filetype scheme syntax keyword function
 "  \ any
 "  \ equals?
 "  \ equivalent?
@@ -177,10 +181,10 @@ highlight cppSymbol ctermfg=13
 "  \ undefined
 "  \ unspecified
 "
-" autocmd filetype scheme syntax keyword keyword
+" auto filetype scheme syntax keyword keyword
 "  \ conditional
 "
-" autocmd filetype scheme syntax keyword macro
+" auto filetype scheme syntax keyword macro
 "  \ unhygienic-macro-transformer
 "  \            macro-transformer
 "  \ er-macro-transformer explicit-renaming-macro-transformer
@@ -221,8 +225,6 @@ auto filetype scheme let &lispwords = '
       \'
 
 let g:is_bash = 1
-
-auto BufWritePre * :%s/\s\+$//ge
 
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
