@@ -8,20 +8,23 @@ import ycm_core
 
 # echo | clang -v -E -x c++ - #include <...>
 BASE_FLAGS = [
-    '-Wall', '-Wextra', '-Werror', '-Wno-long-long', '-Wno-variadic-macros',
+    '-Wall',
+    '-Wextra',
+    '-Werror',
+    '-Wno-long-long',
+    '-Wno-variadic-macros',
     '-fexceptions',
     '-ferror-limit=10000',
     '-DNDEBUG',
     '-DUSE_CLANG_COMPLETER',
-    '-std=c++14',
+    '-std=c++17',
     '-xc++',
-    '-isystem', '/opt/ros/dashing/include',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/include/c++/7.4.0',
-    '-isystem', '/usr/include/c++/7.4.0/backward',
+    '-isystem', '/usr/include/c++/7.5.0',
+    '-isystem', '/usr/include/c++/7.5.0/backward',
     '-isystem', '/usr/include/clang/6.0.0/include',
     '-isystem', '/usr/include/x86_64-linux-gnu',
-    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.4.0',
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.5.0',
     '-isystem', '/usr/local/include'
 ]
 
