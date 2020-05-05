@@ -1,7 +1,5 @@
 #!/bin/bash -eux
 
-scripts=$(cd "$(dirname $0)/.."; pwd)
-
 sudo apt-add-repository -y ppa:numix/ppa
 sudo apt update
 
@@ -16,10 +14,9 @@ packages="$packages \
   clang \
   cmake \
   doxygen \
-  g++ \
-  gcc \
   git \
   git-lfs \
+  shellcheck \
   tmux \
 "
 
@@ -31,7 +28,7 @@ packages="$packages \
   libmpfr-dev \
   libx11-dev \
   libxcb-keysyms1-dev \
-  libxcbdev \
+  libxcb1-dev \
   libxext-dev \
   libxft-dev \
 "
@@ -46,7 +43,7 @@ packages="$packages \
   texlive \
   texlive-fonts-extra \
   texlive-fonts-recommended \
-  texlive-lang-cjk \
+  texlive-lang-japanese \
   xdvik-ja \
 "
 
@@ -54,13 +51,13 @@ packages="$packages \
 packages="$packages \
   chrome-gnome-shell \
   gimp \
-  gnome-shell-extension-pixelsaver \
   indicator-cpufreq \
   inkscape \
 "
 
 # gnome
 packages="$packages \
+  gnome-shell-extension-pixelsaver \
   gnome-shell-extensions \
   gnome-tweak-tool \
   gnome-usage \
@@ -70,7 +67,7 @@ packages="$packages \
 "
 
 # fonts
-package="$packages \
+packages="$packages \
   fonts-firacode \
   fonts-noto-cjk \
   fonts-noto-cjk-extra \
@@ -79,9 +76,5 @@ package="$packages \
   ttf-mscorefonts-installer \
 "
 
-sudo apt install -y $packages
-
-# sudo add-apt-repository ppa:vantuz/cool-retro-term
-# sudo apt update
-# sudo apt install cool-retro-term
+sudo apt install -y "$packages"
 
