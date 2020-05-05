@@ -3,6 +3,11 @@
 sudo apt-add-repository -y ppa:numix/ppa
 sudo apt update
 
+sudo snap remove gnome-calculator \
+                 gnome-characters \
+                 gnome-logs \
+                 gnome-system-monitor
+
 # command
 packages="\
   tree \
@@ -49,7 +54,6 @@ packages="$packages \
 
 # miscellaenous
 packages="$packages \
-  chrome-gnome-shell \
   gimp \
   indicator-cpufreq \
   inkscape \
@@ -57,8 +61,12 @@ packages="$packages \
 
 # gnome
 packages="$packages \
+  gnome-calculator \
+  gnome-characters \
+  gnome-logs \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extensions \
+  gnome-system-monitor
   gnome-tweak-tool \
   gnome-usage \
   numix-gtk-theme \
