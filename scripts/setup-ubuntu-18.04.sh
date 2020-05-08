@@ -10,6 +10,7 @@ sudo snap remove gnome-calculator \
 
 # command
 packages="\
+  sloccount \
   tree \
 "
 
@@ -59,16 +60,23 @@ packages="$packages \
   inkscape \
 "
 
+# Codecs
+packages="$packages \
+  ffmpeg \
+  ubuntu-restricted-extras \
+"
+
 # gnome
 packages="$packages \
   gnome-calculator \
   gnome-characters \
   gnome-logs \
+  gnome-mahjongg \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extensions \
+  gnome-sudoku \
   gnome-system-monitor
   gnome-tweak-tool \
-  gnome-usage \
   numix-gtk-theme \
   numix-icon-theme-circle \
   numix-icon-theme-square \
@@ -85,4 +93,10 @@ packages="$packages \
 "
 
 sudo apt install -y "$packages"
+
+# sudo apt-add-repository ppa:noobslab/themes
+# sudo add-apt-repository ppa:noobslab/icons
+#
+# sudo apt update
+# sudo apt install arc-theme arc-icons
 
