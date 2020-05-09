@@ -8,13 +8,7 @@ sudo snap remove gnome-calculator \
                  gnome-logs \
                  gnome-system-monitor
 
-# command
-packages="\
-  sloccount \
-  tree \
-"
-
-# develop
+# Develop
 packages="$packages \
   build-essential \
   clang \
@@ -23,10 +17,13 @@ packages="$packages \
   git \
   git-lfs \
   shellcheck \
+  sloccount \
   tmux \
+  tree \
+  valgrind \
 "
 
-# library
+# Library
 packages="$packages \
   libboost-all-dev \
   libcairo2-dev \
@@ -39,7 +36,7 @@ packages="$packages \
   libxft-dev \
 "
 
-# documentation
+# Documentation
 packages="$packages \
   gnuplot \
   graphviz \
@@ -66,7 +63,7 @@ packages="$packages \
   ubuntu-restricted-extras \
 "
 
-# gnome
+# Gnome
 packages="$packages \
   gnome-calculator \
   gnome-characters \
@@ -82,7 +79,7 @@ packages="$packages \
   numix-icon-theme-square \
 "
 
-# fonts
+# Fonts
 packages="$packages \
   fonts-firacode \
   fonts-noto-cjk \
