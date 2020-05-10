@@ -4,8 +4,8 @@ current_directory=$(dirname "$0")
 
 dotfiles=$(cd "$current_directory/.."; pwd)
 
-sudo apt-add-repository -y ppa:jonathonf/vim
-sudo apt update
+# sudo apt-add-repository -y ppa:jonathonf/vim
+# sudo apt update
 
 sudo apt install -y vim-gnome build-essential cmake python3-dev
 

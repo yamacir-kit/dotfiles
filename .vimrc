@@ -197,8 +197,6 @@ highlight cppSymbol ctermfg=13
 auto filetype scheme syntax keyword macro fork
 
 auto filetype scheme let &lispwords = '
-      \ =>,
-      "\ and,
       \ begin,
       \ case,
       \ cond,
@@ -206,16 +204,13 @@ auto filetype scheme let &lispwords = '
       \ define-syntax,
       \ delay,
       \ do,
-      "\ else,
       \ fork,
-      "\ if,
       \ lambda,
       \ let*,
       \ let,
       \ let-syntax,
       \ letrec,
       \ letrec-syntax,
-      "\ or,
       \ quasiquote,
       \ quote,
       \ set!,
@@ -223,6 +218,12 @@ auto filetype scheme let &lispwords = '
       \ unquote,
       \ unquote-splicing,
       \'
+
+      "\ =>,
+      "\ and,
+      "\ else,
+      "\ if,
+      "\ or,
 
 let g:is_bash = 1
 

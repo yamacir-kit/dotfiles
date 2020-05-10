@@ -55,6 +55,7 @@ packages="$packages \
   gimp \
   indicator-cpufreq \
   inkscape \
+  ppa-purge \
 "
 
 # Codecs
