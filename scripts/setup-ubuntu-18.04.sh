@@ -31,6 +31,7 @@ packages="$packages \
   libmpfr-dev \
   libx11-dev \
   libxcb-keysyms1-dev \
+  libxcb-xtest0 \
   libxcb1-dev \
   libxext-dev \
   libxft-dev \

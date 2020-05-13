@@ -138,7 +138,6 @@ vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
 syntax sync fromstart
-let &regexpengine = 1
 
 let &background = 'dark'
 
@@ -162,6 +161,8 @@ auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
 auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
 
 auto BufWritePre * :%s/\s\+$//ge
+
+auto BufEnter * :syntax sync fromstart
 
 auto filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
