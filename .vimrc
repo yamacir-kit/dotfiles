@@ -137,9 +137,9 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-syntax sync fromstart
+" syntax sync fromstart
 
-let &background = 'dark'
+let &background = 'light'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -151,6 +151,7 @@ highlight CursorLineNr ctermbg=none cterm=bold
 highlight       LineNr ctermbg=none
 highlight Search       ctermfg=1 cterm=underline
 highlight Incsearch    ctermfg=1 cterm=underline
+highlight Comment      cterm=italic
 
 " auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
