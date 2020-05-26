@@ -52,12 +52,14 @@ packages="$packages \
 "
 
 # miscellaenous
+# NOTE: python3-gpg for dropbox
 packages="$packages \
   gimp \
   iftop \
   indicator-cpufreq \
   inkscape \
   ppa-purge \
+  python3-gpg \
 "
 
 # Codecs

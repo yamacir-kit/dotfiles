@@ -139,7 +139,7 @@ vmap <c-v> <plug>(expand_region_shrink)
 syntax enable
 " syntax sync fromstart
 
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
