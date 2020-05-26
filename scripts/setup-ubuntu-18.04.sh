@@ -54,6 +54,7 @@ packages="$packages \
 # miscellaenous
 packages="$packages \
   gimp \
+  iftop \
   indicator-cpufreq \
   inkscape \
   ppa-purge \
