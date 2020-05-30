@@ -136,7 +136,7 @@ function watch-csloc()
   watch -n1 "find -type f | $grep -v 'CMakeFiles' | $grep -E '^*\.[c|h](pp)?$' | xargs wc $@ | sort -rn"
 }
 
-function search-code()
+function watch-grep()
 {
   grep='grep --color=always --exclude-dir=.git'
   watch --color -n1 "$grep -Irn ./ -e $@ | $grep -v 'CMakeFiles'"
