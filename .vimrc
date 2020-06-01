@@ -71,7 +71,8 @@ set regexpengine=1
 
 auto filetype scheme setlocal autoindent lisp
 auto filetype c,cpp setlocal cindent
-let &cinoptions = 'Ls,:0,=s,g0,N-s,#N,(0,us,U42,w42,Ws,m42'
+let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
+set cinkeys-=0#
 
 let &foldmethod = 'indent'
 let &foldignore = ''

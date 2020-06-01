@@ -1,4 +1,4 @@
-let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_min_num_of_chars_for_completion = 2
 let g:ycm_min_num_identifier_candidate_chars = 0
 
 let g:ycm_max_num_identifier_candidates = 10
