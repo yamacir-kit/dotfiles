@@ -125,6 +125,11 @@ function csloc()
   find -type f | grep -v 'CMakeFiles' | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
 }
 
+function watch-cloc()
+{
+  watch -n5 'cloc --exclude-dir=build ./'
+}
+
 function watch-sloc()
 {
   watch -n1 'find -type f | grep -v "CMakeFiles" | grep -v "git" | xargs wc $@ | sort -rn'
