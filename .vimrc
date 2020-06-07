@@ -140,7 +140,7 @@ vmap <c-v> <plug>(expand_region_shrink)
 syntax enable
 " syntax sync fromstart
 
-let &background = 'dark'
+let &background = 'light'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -169,35 +169,35 @@ auto BufEnter * :syntax sync fromstart
 auto filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
 
-" auto filetype scheme syntax keyword function
-"  \ any
-"  \ equals?
-"  \ equivalent?
-"  \ evaluate
-"  \ every
-"  \ find
-"  \ identifier=?
-"  \ identifier?
-"  \ identity
-"  \ length*
-"  \ procedure-from
-"  \ undefined
-"  \ unspecified
-"
-" auto filetype scheme syntax keyword keyword
-"  \ conditional
-"
-" auto filetype scheme syntax keyword macro
-"  \ unhygienic-macro-transformer
-"  \            macro-transformer
-"  \ er-macro-transformer explicit-renaming-macro-transformer
-"  \ ir-macro-transformer implicit-renaming-macro-transformer
-"  \ rsc-macro-transformer reversed-syntactic-closure-macro-transformer
-"  \  sc-macro-transformer          syntactic-closure-macro-transformer
-"  \ conditionally-expand
-"  \ fork
+auto filetype scheme syntax keyword function
+  \ any
+  \ bound-identifier=?
+  \ construct-identifier
+  \ evaluate
+  \ every
+  \ find
+  \ free-identifier=?
+  \ generate-identifier
+  \ identifier->symbol
+  \ identifier?
+  \ identity
+  \ length*
+  \ procedure
+  \ syntactic-closure?
+  \ syntax
+  \ unspecified
+  \ unwrap-syntax
 
-auto filetype scheme syntax keyword macro fork
+auto filetype scheme syntax keyword keyword
+  \ check
+
+auto filetype scheme syntax keyword macro
+  \  er-macro-transformer
+  \  ir-macro-transformer
+  \ rsc-macro-transformer
+  \  sc-macro-transformer
+  \ fork
+  \ syntax-quote
 
 auto filetype scheme let &lispwords = '
       \ begin,
