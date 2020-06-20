@@ -140,7 +140,7 @@ vmap <c-v> <plug>(expand_region_shrink)
 syntax enable
 " syntax sync fromstart
 
-let &background = 'light'
+let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
 colorscheme solarized
@@ -172,17 +172,23 @@ highlight cppSymbol ctermfg=13
 auto filetype scheme syntax keyword function
   \ any
   \ bound-identifier=?
+  \ compare
   \ construct-identifier
+  \ error
   \ evaluate
   \ every
   \ find
   \ free-identifier=?
   \ generate-identifier
   \ identifier->symbol
+  \ identifier=?
   \ identifier?
   \ identity
   \ length*
+  \ make-syntactic-closure
   \ procedure
+  \ rename
+  \ syntactic-closure
   \ syntactic-closure?
   \ syntax
   \ unspecified
@@ -192,11 +198,12 @@ auto filetype scheme syntax keyword keyword
   \ check
 
 auto filetype scheme syntax keyword macro
-  \  er-macro-transformer
-  \  ir-macro-transformer
+  \ er-macro-transformer
+  \ fork-with-current-syntactic-continuation
+  \ fork/csc
+  \ ir-macro-transformer
   \ rsc-macro-transformer
-  \  sc-macro-transformer
-  \ fork
+  \ sc-macro-transformer
   \ syntax-quote
 
 auto filetype scheme let &lispwords = '
