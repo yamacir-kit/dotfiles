@@ -40,8 +40,8 @@ dotfiles="$HOME/dotfiles"
 # if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
 
 rosrc_enabled='/var/tmp/rosrc'
-rosrc_version='.rosrc1'
-rosrc_workspace="$HOME/works/autoware.proj"
+rosrc_version='.rosrc-1'
+rosrc_workspace="$(cat /var/tmp/mark/c)"
 
 if test -e $rosrc_enabled
 then
@@ -69,18 +69,20 @@ function rosrc()
     case "$@" in
       +)
         touch $rosrc_enabled
-        echo "[rosrc +] enabled rosrc autoload";
+        echo "[.bashrc] enabled rosrc auto-source";
         break;;
       -)
         rm $rosrc_enabled
-        echo "[rosrc -] disabed rosrc autoload";
+        echo "[.bashrc] disabed rosrc auto-source";
         break;;
       1)
-        rosrc_version='.rosrc1'
+        rosrc_version='.rosrc-1'
+        echo "[.bashrc] invoke $rosrc_version";
         source $dotfiles/$rosrc_version
         break;;
       2)
-        rosrc_version='.rosrc2'
+        rosrc_version='.rosrc-2'
+        echo "[.bashrc] invoke $rosrc_version";
         source $dotfiles/$rosrc_version
         break;;
       *)
