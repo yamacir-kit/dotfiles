@@ -40,16 +40,26 @@ dotfiles="$HOME/dotfiles"
 # if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
 
 rosrc_enabled='/var/tmp/rosrc'
-rosrc_version='.rosrc2'
-rosrc_workspace="$HOME/works-/Autoware.Auto"
+rosrc_version='.rosrc1'
+rosrc_workspace="$HOME/works/autoware.proj"
 
 if test -e $rosrc_enabled
 then
   source $dotfiles/$rosrc_version
 
-  echo -n "[rosrc *] sourcing $rosrc_workspace/install/setup.bash => "
-  source "$rosrc_workspace/install/setup.bash"
-  echo "complete"
+  echo -n "[$rosrc_version] auto-source $rosrc_workspace/install/setup.bash => "
+
+  if test -e "$rosrc_workspace/install/setup.bash"
+  then
+    if source "$rosrc_workspace/install/setup.bash"
+    then
+      echo "success"
+    else
+      echo "failure"
+    fi
+  else
+    echo "skipped (not exist)"
+  fi
 fi
 
 function rosrc()
@@ -58,12 +68,12 @@ function rosrc()
   do
     case "$@" in
       +)
-        echo "[rosrc +] enabling rosrc autoload";
         touch $rosrc_enabled
+        echo "[rosrc +] enabled rosrc autoload";
         break;;
       -)
-        echo "[rosrc -] disabling rosrc autoload";
         rm $rosrc_enabled
+        echo "[rosrc -] disabed rosrc autoload";
         break;;
       1)
         rosrc_version='.rosrc1'
@@ -93,13 +103,15 @@ alias ks='ls'
 alias vu='vi'
 alias vo='vi'
 
-alias cd-='cd ~/works-'
-alias cda='cd ~/works-/Autoware.Auto'
-alias cdb='cd ~/works-/behaviors'
+alias cdc='cd $(cat /var/tmp/mark/c)'
 alias cdd='cd $dotfiles'
 alias cde='cd ~/Desktop'
+alias cdi='cd ~/works/autoware.proj/src/simulator/scenario_runner'
+alias cdl='cd ~/works/autoware.proj/src/simulator/planning_simulator_launcher'
 alias cdm='cd $(cat /var/tmp/mark/m)'
+alias cdp='cd ~/works/autoware.proj'
 alias cdr='cd ~/Dropbox'
+alias cds='cd $(cat /var/tmp/mark/c)/src'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
 
@@ -203,4 +215,3 @@ export PS1="\n"
 export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
 export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
 export PS1="$PS1>> "
-

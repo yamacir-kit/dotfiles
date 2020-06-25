@@ -26,9 +26,6 @@ then
   rospack profile &> /dev/null
 fi
 
-alias cdc='cd $(cat /var/tmp/mark/c)'
-alias cds='cd $(cat /var/tmp/mark/c)/src'
-
 # make()
 # {
 #   if test -e $(pwd)/Makefile

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -eu
 
 distribution="melodic"
 
@@ -6,28 +6,30 @@ export ROS_DISTRO=$distribution
 
 if test -e /opt/ros/$distribution/setup.bash
 then
-  echo -n "[rosrc1] sourcing /opt/ros/$distribution/setup.bash => "
-  source /opt/ros/$distribution/setup.bash
-  echo "complete"
+  echo -n "[.rosrc1] auto-source /opt/ros/$distribution/setup.bash => "
+
+  if source /opt/ros/$distribution/setup.bash
+  then
+    echo "success"
+  else
+    echo "failure"
+  fi
 fi
 
 if test -e /var/tmp/mark/c
 then
-  if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
-  then
-    source $(cat /var/tmp/mark/c)/devel/setup.bash
-  fi
-
-  # if test -e $(cat /var/tmp/mark/c)/install/setup.bash
+  # if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
   # then
-  #   source $(cat /var/tmp/mark/c)/install/setup.bash
+  #   source $(cat /var/tmp/mark/c)/devel/setup.bash
   # fi
+
+  if test -e $(cat /var/tmp/mark/c)/install/setup.bash
+  then
+    source $(cat /var/tmp/mark/c)/install/setup.bash
+  fi
 
   rospack profile &> /dev/null
 fi
-
-alias cdc='cd $(cat /var/tmp/mark/c)'
-alias cds='cd $(cat /var/tmp/mark/c)/src'
 
 # make()
 # {
@@ -59,19 +61,33 @@ function recursive-wstool-update()
   popd
 }
 
-function catkin-make-autoware()
-{
-  # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
-  CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
+# function catkin-make-autoware()
+# {
+#   # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
+#   CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
+#
+#   export LIBRARY_PATH=/usr/lib/OpenNI2/Drivers:$LIBRARY_PATH
+#   catkin_make $CATKIN_OPTS $@
+# }
+#
+# function colcon-build-autoware()
+# {
+#   COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
+#
+#   colcon build $COLCON_OPTS $@
+# }
 
-  export LIBRARY_PATH=/usr/lib/OpenNI2/Drivers:$LIBRARY_PATH
-  catkin_make $CATKIN_OPTS $@
+function make-autoware()
+{
+  colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release \
+               --catkin-skip-building-tests \
+               --parallel-workers 4 \
+               $@
 }
 
-function colcon-build-autoware()
-{
-  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
+# ==== For Autoware.IV =========================================================
 
-  colcon build $COLCON_OPTS $@
-}
+eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
