@@ -6,7 +6,7 @@ export ROS_DISTRO=$distribution
 
 if test -e /opt/ros/$distribution/setup.bash
 then
-  echo -n "[.rosrc-2] auto-source /opt/ros/$distribution/setup.bash => "
+  echo -n "[.rosrc-1] auto-source /opt/ros/$distribution/setup.bash => "
 
   if source /opt/ros/$distribution/setup.bash
   then
