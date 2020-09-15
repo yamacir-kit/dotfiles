@@ -6,9 +6,14 @@ export ROS_DISTRO=$distribution
 
 if test -e /opt/ros/$distribution/setup.bash
 then
-  echo -n "[rosrc 2] sourcing /opt/ros/$distribution/setup.bash => "
-  source /opt/ros/$distribution/setup.bash
-  echo "complete"
+  echo -n "[.rosrc-2] auto-source /opt/ros/$distribution/setup.bash => "
+
+  if source /opt/ros/$distribution/setup.bash
+  then
+    echo "success"
+  else
+    echo "failure"
+  fi
 fi
 
 if test -e /var/tmp/mark/c
@@ -25,36 +30,6 @@ then
 
   rospack profile &> /dev/null
 fi
-
-# make()
-# {
-#   if test -e $(pwd)/Makefile
-#   then
-#     command make $@
-#   else
-#     pushd $(cat /var/tmp/mark/c) && command catkin_make $@ && source devel/setup.bash
-#     # rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
-#     rospack profile > /dev/null
-#     popd
-#   fi
-# }
-
-function recursive-wstool-update()
-{
-  pushd $(cat /var/tmp/mark/c)
-  wstool init src
-
-  echo "hoge" > /tmp/wstool_outputs
-
-  while test "$(cat /tmp/wstool_outputs)" != "Merge caused no change, no new elements found"
-  do
-    find -regextype posix-basic -regex "\./src/.*/.*\.rosinstall" | xargs -n1 wstool merge --target-workspace=src | uniq | tee /tmp/wstool_outputs
-    wstool update --target-workspace=src
-  done
-
-  rm /tmp/wstool_outputs
-  popd
-}
 
 function catkin-make-autoware()
 {

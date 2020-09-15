@@ -16,34 +16,6 @@ then
   fi
 fi
 
-# if test -e /var/tmp/mark/c
-# then
-#   # if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
-#   # then
-#   #   source $(cat /var/tmp/mark/c)/devel/setup.bash
-#   # fi
-#
-#   if test -e $(cat /var/tmp/mark/c)/install/setup.bash
-#   then
-#     source $(cat /var/tmp/mark/c)/install/setup.bash
-#   fi
-#
-#   rospack profile &> /dev/null
-# fi
-
-# make()
-# {
-#   if test -e $(pwd)/Makefile
-#   then
-#     command make $@
-#   else
-#     pushd $(cat /var/tmp/mark/c) && command catkin_make $@ && source devel/setup.bash
-#     # rospack profile | sed -E "s/(.*)(\s\**\s)(.*)/\3/g" | grep -e "\/.*" | sort
-#     rospack profile > /dev/null
-#     popd
-#   fi
-# }
-
 function recursive-wstool-update()
 {
   pushd $(cat /var/tmp/mark/c)
@@ -60,22 +32,6 @@ function recursive-wstool-update()
   rm /tmp/wstool_outputs
   popd
 }
-
-# function catkin-make-autoware()
-# {
-#   # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
-#   CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
-#
-#   export LIBRARY_PATH=/usr/lib/OpenNI2/Drivers:$LIBRARY_PATH
-#   catkin_make $CATKIN_OPTS $@
-# }
-#
-# function colcon-build-autoware()
-# {
-#   COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
-#
-#   colcon build $COLCON_OPTS $@
-# }
 
 function make-autoware()
 {
