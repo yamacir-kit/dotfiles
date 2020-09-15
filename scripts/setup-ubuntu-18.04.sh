@@ -8,6 +8,8 @@ sudo snap remove gnome-calculator \
                  gnome-logs \
                  gnome-system-monitor
 
+packages=''
+
 # Develop
 packages="$packages \
   build-essential \
@@ -28,7 +30,6 @@ packages="$packages \
   libboost-all-dev \
   libcairo2-dev \
   libgmp-dev \
-  libmpfr-dev \
   libx11-dev \
   libxcb-keysyms1-dev \
   libxcb-xtest0 \
@@ -73,10 +74,8 @@ packages="$packages \
   gnome-calculator \
   gnome-characters \
   gnome-logs \
-  gnome-mahjongg \
   gnome-shell-extension-pixelsaver \
   gnome-shell-extensions \
-  gnome-sudoku \
   gnome-system-monitor
   gnome-tweak-tool \
   numix-gtk-theme \
@@ -84,21 +83,4 @@ packages="$packages \
   numix-icon-theme-square \
 "
 
-# Fonts
-packages="$packages \
-  fonts-firacode \
-  fonts-noto-cjk \
-  fonts-noto-cjk-extra \
-  fonts-noto-color-emoji \
-  fonts-noto-mono \
-  ttf-mscorefonts-installer \
-"
-
 sudo apt install -y "$packages"
-
-# sudo apt-add-repository ppa:noobslab/themes
-# sudo add-apt-repository ppa:noobslab/icons
-#
-# sudo apt update
-# sudo apt install arc-theme arc-icons
-
