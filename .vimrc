@@ -171,31 +171,42 @@ highlight cppSymbol ctermfg=13
 
 auto filetype scheme syntax keyword function
   \ any
+  \ binary-port?
+  \ boolean=?
   \ bound-identifier=?
-  \ compare
   \ construct-identifier
   \ error
   \ evaluate
   \ every
+  \ exact
+  \ exact-complex?
+  \ exact-integer?
   \ find
+  \ finite?
   \ free-identifier=?
   \ generate-identifier
   \ identifier->symbol
   \ identifier=?
   \ identifier?
   \ identity
+  \ inexact
+  \ infinite?
   \ length*
   \ make-syntactic-closure
+  \ print
   \ procedure
-  \ rename
+  \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
   \ syntax
+  \ textual-port?
   \ unspecified
   \ unwrap-syntax
 
 auto filetype scheme syntax keyword keyword
   \ check
+  \ unless
+  \ when
 
 auto filetype scheme syntax keyword macro
   \ er-macro-transformer
