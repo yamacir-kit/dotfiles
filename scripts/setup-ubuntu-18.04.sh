@@ -11,6 +11,7 @@ sudo snap remove gnome-system-monitor
 # Develop
 sudo apt install -y build-essential
 sudo apt install -y clang
+sudo apt install -y cloc
 sudo apt install -y cmake
 sudo apt install -y doxygen
 sudo apt install -y git
