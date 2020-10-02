@@ -40,7 +40,7 @@ dotfiles="$HOME/dotfiles"
 # if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
 
 rosrc_enabled='/var/tmp/rosrc'
-rosrc_version='.rosrc-1'
+rosrc_version='.rosrc-2'
 rosrc_workspace="$(cat /var/tmp/mark/c)"
 
 if test -e $rosrc_enabled

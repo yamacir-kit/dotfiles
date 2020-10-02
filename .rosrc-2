@@ -3,6 +3,7 @@
 distribution="dashing"
 
 export ROS_DISTRO=$distribution
+export ROS_DOMAIN_ID=87
 
 if test -e /opt/ros/$distribution/setup.bash
 then
