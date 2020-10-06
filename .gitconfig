@@ -33,6 +33,9 @@
 [merge]
   ff = false
 
+[pager]
+  branch = cat
+
 [push]
   default = simple
 
