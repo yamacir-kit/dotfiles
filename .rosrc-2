@@ -50,7 +50,5 @@ update-autoware-auto()
 
 colcon-auto()
 {
-  colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release "$@"
-  colcon test
-  colcon test-result --verbose
+  colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release "$@" && colcon test && colcon test-result --verbose
 }
