@@ -19,7 +19,7 @@ fi
 
 if test -e /var/tmp/mark/c
 then
-  if test -e $(cat /var/tmp/mark/c)/devel/setup.bash
+  if test -e "$(cat /var/tmp/mark/c)/devel/setup.bash"
   then
     source $(cat /var/tmp/mark/c)/devel/setup.bash
   fi
@@ -32,23 +32,12 @@ then
   rospack profile &> /dev/null
 fi
 
-function catkin-make-autoware()
+colcon-build-autoware()
 {
-  # CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release -DCMAKE_LIBRARY_PATH=/usr/local/cuda/lib64/stubs install"
-  CATKIN_OPTS="-DCMAKE_BUILD_TYPE=Release install"
-
-  export LIBRARY_PATH=/usr/lib/OpenNI2/Drivers:$LIBRARY_PATH
-  catkin_make $CATKIN_OPTS $@
+  colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release "$@"
 }
 
-function colcon-build-autoware()
-{
-  COLCON_OPTS="--cmake-args -DCMAKE_BUILD_TYPE=Release"
-
-  colcon build $COLCON_OPTS $@
-}
-
-function update-autoware-auto()
+update-autoware-auto()
 {
   git fetch origin
   git rebase origin/master
@@ -59,3 +48,9 @@ function update-autoware-auto()
   colcon-build-autore
 }
 
+colcon-auto()
+{
+  colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release "$@"
+  colcon test
+  colcon test-result --verbose
+}
