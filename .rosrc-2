@@ -17,21 +17,6 @@ then
   fi
 fi
 
-if test -e /var/tmp/mark/c
-then
-  if test -e "$(cat /var/tmp/mark/c)/devel/setup.bash"
-  then
-    source $(cat /var/tmp/mark/c)/devel/setup.bash
-  fi
-
-  # if test -e $(cat /var/tmp/mark/c)/install/setup.bash
-  # then
-  #   source $(cat /var/tmp/mark/c)/install/setup.bash
-  # fi
-
-  rospack profile &> /dev/null
-fi
-
 colcon-build-autoware()
 {
   colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release "$@"
@@ -50,5 +35,6 @@ update-autoware-auto()
 
 colcon-auto()
 {
+  cd "$(cat /var/tmp/mark/c)"
   colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release "$@" && colcon test && colcon test-result --verbose
 }

@@ -30,14 +30,9 @@ export LC_TIME=C
 
 export LESSCHARSET=utf-8
 
-# export CXX='/usr/bin/g++-7'
-# export CC='/usr/bin/gcc-7'
-
 eval `dircolors ~/.dircolors`
 
 dotfiles="$HOME/dotfiles"
-
-# if test -e /opt/ros; then source $dotfiles/.rosrc2; fi
 
 rosrc_enabled='/var/tmp/rosrc'
 rosrc_version='.rosrc-2'
