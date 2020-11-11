@@ -194,7 +194,6 @@ auto filetype scheme syntax keyword function
   \ length*
   \ make-syntactic-closure
   \ print
-  \ procedure
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
@@ -220,7 +219,6 @@ auto filetype scheme syntax keyword macro
 auto filetype scheme let &lispwords = '
       \ begin,
       \ case,
-      \ cond,
       \ define,
       \ define-syntax,
       \ delay,
@@ -232,6 +230,7 @@ auto filetype scheme let &lispwords = '
       \ let-syntax,
       \ letrec,
       \ letrec-syntax,
+      \ make-parameter,
       \ quasiquote,
       \ quote,
       \ set!,
