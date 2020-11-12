@@ -156,7 +156,7 @@ function watch-grep()
   watch --color -n1 "$grep -Irn ./ -e $@ | $grep -v 'CMakeFiles'"
 }
 
-function update()
+update()
 {
   sudo apt update
   sudo apt upgrade
@@ -166,6 +166,15 @@ function update()
   # sudo -H python3 -m pip install --upgrade pip
   # sudo -H python3 -m pip list --outdated /var/tmp/outdated.txt
   # sudo -H python3 -m pip install --upgrade $(/var/tmp/outdated.txt)
+}
+
+update-python()
+{
+  for each in $(sudo -H pip3 list -o | tail -n +3 | sed -E 's/(\w+)\s.*$/\1/' | tr '\n' ' ')
+  do
+    echo "package: $each"
+    sudo -H pip3 install -U "$each"
+  done
 }
 
 function cxx()

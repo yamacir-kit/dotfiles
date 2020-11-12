@@ -36,5 +36,5 @@ update-autoware-auto()
 colcon-auto()
 {
   cd "$(cat /var/tmp/mark/c)"
-  colcon build --symlink-install --cmake-args -DCMAKE_BUILD_TYPE=Release "$@" && colcon test && colcon test-result --verbose
+  colcon build --symlink-install --cmake-args "$@" && colcon test && colcon test-result --verbose
 }
