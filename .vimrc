@@ -94,7 +94,7 @@ set splitbelow splitright
 set wildmenu
 let &wildmode = 'longest:full,full'
 
-" set cursorline
+set cursorline
 if (exists('+colorcolumn'))
   " let &colorcolumn = 80
   let &colorcolumn = join(range(81, 65535), ',')
