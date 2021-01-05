@@ -1,15 +1,14 @@
 #!/bin/bash
 
-distribution="dashing"
+ros_distro="foxy"
 
-export ROS_DISTRO=$distribution
 export ROS_DOMAIN_ID=87
 
-if test -e /opt/ros/$distribution/setup.bash
+if test -e /opt/ros/$ros_distro/setup.bash
 then
-  echo -n "[.rosrc-2] auto-source /opt/ros/$distribution/setup.bash => "
+  echo -n "[.rosrc-2] auto-source /opt/ros/$ros_distro/setup.bash => "
 
-  if source /opt/ros/$distribution/setup.bash
+  if source /opt/ros/$ros_distro/setup.bash
   then
     echo "success"
   else
@@ -28,7 +27,7 @@ update-autoware-auto()
   git rebase origin/master
   git submodule update --init --recursive
 
-  rosdep install --from-paths src --ignore-src --rosdistro "$distribution"
+  rosdep install --from-paths src --ignore-src --rosdistro "$ROS_DISTRO"
 
   colcon-build-autore
 }
