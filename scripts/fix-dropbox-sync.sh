@@ -4,5 +4,5 @@
 # sudo chown -R "$USER" "$HOME/Dropbox"
 # chmod -R u+rw "$HOME/Dropbox"
 
-sudo sysctl fs.inotify.max_user_watches=100000
+sudo sysctl fs.inotify.max_user_watches=2147483647
 sudo sysctl -p
