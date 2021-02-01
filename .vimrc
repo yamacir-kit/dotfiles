@@ -153,6 +153,7 @@ highlight       LineNr ctermbg=none
 highlight Search       ctermfg=1 cterm=underline
 highlight Incsearch    ctermfg=1 cterm=underline
 highlight Comment      cterm=italic
+highlight Todo         cterm=bold,italic
 
 " auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
