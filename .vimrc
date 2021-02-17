@@ -154,6 +154,7 @@ highlight Search       ctermfg=1 cterm=underline
 highlight Incsearch    ctermfg=1 cterm=underline
 highlight Comment      cterm=italic
 highlight Todo         cterm=bold,italic
+highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 " auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
@@ -234,6 +235,7 @@ auto filetype scheme let &lispwords = '
       \ make-parameter,
       \ quasiquote,
       \ quote,
+      \ receive,
       \ set!,
       \ syntax-rules,
       \ unquote,
