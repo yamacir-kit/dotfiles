@@ -76,7 +76,8 @@ set cinkeys-=0#
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-let &foldlevel = 1
+auto filetype c,cpp  let &foldlevel = 1
+auto filetype scheme let &foldlevel = 0
 
 let &sidescroll    =   1
 let &sidescrolloff =  16
@@ -177,6 +178,7 @@ auto filetype scheme syntax keyword function
   \ boolean=?
   \ bound-identifier=?
   \ construct-identifier
+  \ eager
   \ error
   \ evaluate
   \ every
@@ -201,11 +203,13 @@ auto filetype scheme syntax keyword function
   \ syntactic-closure?
   \ syntax
   \ textual-port?
+  \ throw
   \ unspecified
   \ unwrap-syntax
 
 auto filetype scheme syntax keyword keyword
   \ check
+  \ lazy
   \ unless
   \ when
 
@@ -219,34 +223,34 @@ auto filetype scheme syntax keyword macro
   \ syntax-quote
 
 auto filetype scheme let &lispwords = '
-      \ begin,
-      \ case,
-      \ define,
-      \ define-syntax,
-      \ delay,
-      \ do,
-      \ fork,
-      \ lambda,
-      \ let*,
-      \ let,
-      \ let-syntax,
-      \ letrec,
-      \ letrec-syntax,
-      \ make-parameter,
-      \ quasiquote,
-      \ quote,
-      \ receive,
-      \ set!,
-      \ syntax-rules,
-      \ unquote,
-      \ unquote-splicing,
-      \'
+  \ begin,
+  \ case,
+  \ define,
+  \ define-syntax,
+  \ delay,
+  \ do,
+  \ fork,
+  \ lambda,
+  \ let*,
+  \ let,
+  \ let-syntax,
+  \ letrec,
+  \ letrec-syntax,
+  \ make-parameter,
+  \ quasiquote,
+  \ quote,
+  \ receive,
+  \ set!,
+  \ syntax-rules,
+  \ unquote,
+  \ unquote-splicing,
+  \'
 
-      "\ =>,
-      "\ and,
-      "\ else,
-      "\ if,
-      "\ or,
+  "\ =>,
+  "\ and,
+  "\ else,
+  "\ if,
+  "\ or,
 
 let g:is_bash = 1
 

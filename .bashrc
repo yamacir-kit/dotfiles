@@ -104,8 +104,8 @@ alias cd.='cd $dotfiles'
 alias cdc='cd $(cat /var/tmp/mark/c)'
 alias cdd='cd ~/Documents'
 alias cde='cd ~/Desktop'
-alias cdi='cd $(cat /var/tmp/mark/c)/src/scenario_simulator.auto/openscenario/openscenario_interpreter'
-alias cdl='cd $(cat /var/tmp/mark/c)/src/scenario_simulator.auto/test_runner/scenario_test_runner'
+alias cdi='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator.auto/openscenario/openscenario_interpreter'
+alias cdl='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator.auto/test_runner/scenario_test_runner'
 alias cdm='cd $(cat /var/tmp/mark/m)'
 alias cdr='cd ~/Dropbox'
 alias cds='cd $(cat /var/tmp/mark/c)/src'
@@ -221,3 +221,7 @@ export PS1="\n"
 export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
 export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
 export PS1="$PS1>> "
+
+export PATH="/usr/local/cuda/bin:$PATH"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+source /opt/ros/foxy/setup.bash
