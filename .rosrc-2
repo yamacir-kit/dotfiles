@@ -2,6 +2,8 @@
 
 ros_distro="foxy"
 
+export RCUTILS_LOGGING_BUFFERED_STREAM=1
+export RCUTILS_LOGGING_USE_STDOUT=1
 export ROS_DOMAIN_ID=87
 
 if test -e /opt/ros/$ros_distro/setup.bash

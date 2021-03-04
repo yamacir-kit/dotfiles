@@ -1,4 +1,4 @@
-#!/bin/bash -eux
+#!/bin/sh -eu
 
 # Develop
 sudo apt install -y build-essential
