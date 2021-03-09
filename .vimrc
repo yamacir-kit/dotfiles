@@ -201,6 +201,8 @@ auto filetype scheme syntax keyword function
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
+  \ syntactic-continuation?
+  \ syntactic-keyword?
   \ syntax
   \ textual-port?
   \ throw
