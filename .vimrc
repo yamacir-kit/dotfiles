@@ -70,6 +70,9 @@ set nowrap
 " set regexpengine=1
 
 auto filetype scheme setlocal autoindent lisp
+auto FileType scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
+auto FileType scheme set complete+=k~/.meevax_completions
+
 auto filetype c,cpp setlocal cindent
 let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
 set cinkeys-=0#
@@ -180,7 +183,6 @@ auto filetype scheme syntax keyword function
   \ construct-identifier
   \ eager
   \ error
-  \ evaluate
   \ every
   \ exact
   \ exact-complex?
@@ -203,7 +205,6 @@ auto filetype scheme syntax keyword function
   \ syntactic-closure?
   \ syntactic-continuation?
   \ syntactic-keyword?
-  \ syntax
   \ textual-port?
   \ throw
   \ unspecified
@@ -212,6 +213,7 @@ auto filetype scheme syntax keyword function
 auto filetype scheme syntax keyword keyword
   \ check
   \ lazy
+  \ syntax
   \ unless
   \ when
 

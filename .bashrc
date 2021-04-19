@@ -113,6 +113,17 @@ alias ps='ps acux --sort=rss'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
+function ev()
+{
+  export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
+
+  rlwrap -b "(){}[].,;#@|'\`\"" \
+         -c \
+         -m \
+         -q "\"" \
+         meevax -i "$@"
+}
+
 function cd()
 {
   builtin cd "$@" && ls -Fav --color=auto
@@ -171,7 +182,7 @@ update-python()
 
 function cxx()
 {
-  g++-7 $@ -std=c++17 -Wall -Wextra
+  g++ $@ -std=c++17 -Wall -Wextra -Wpedantic
 }
 
 function mark()
