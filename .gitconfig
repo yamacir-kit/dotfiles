@@ -48,3 +48,5 @@
   smudge  = git-lfs smudge -- %f
   required = true
 
+[sendpack]
+  sideband = false

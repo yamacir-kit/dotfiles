@@ -76,7 +76,8 @@ set cinkeys-=0#
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-let &foldlevel = 1
+auto filetype c,cpp  let &foldlevel = 1
+auto filetype scheme let &foldlevel = 0
 
 let &sidescroll    =   1
 let &sidescrolloff =  16
@@ -153,6 +154,8 @@ highlight       LineNr ctermbg=none
 highlight Search       ctermfg=1 cterm=underline
 highlight Incsearch    ctermfg=1 cterm=underline
 highlight Comment      cterm=italic
+highlight Todo         cterm=bold,italic
+highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 " auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
 auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
@@ -175,6 +178,7 @@ auto filetype scheme syntax keyword function
   \ boolean=?
   \ bound-identifier=?
   \ construct-identifier
+  \ eager
   \ error
   \ evaluate
   \ every
@@ -197,13 +201,17 @@ auto filetype scheme syntax keyword function
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
+  \ syntactic-continuation?
+  \ syntactic-keyword?
   \ syntax
   \ textual-port?
+  \ throw
   \ unspecified
   \ unwrap-syntax
 
 auto filetype scheme syntax keyword keyword
   \ check
+  \ lazy
   \ unless
   \ when
 
@@ -217,33 +225,40 @@ auto filetype scheme syntax keyword macro
   \ syntax-quote
 
 auto filetype scheme let &lispwords = '
-      \ begin,
-      \ case,
-      \ define,
-      \ define-syntax,
-      \ delay,
-      \ do,
-      \ fork,
-      \ lambda,
-      \ let*,
-      \ let,
-      \ let-syntax,
-      \ letrec,
-      \ letrec-syntax,
-      \ make-parameter,
-      \ quasiquote,
-      \ quote,
-      \ set!,
-      \ syntax-rules,
-      \ unquote,
-      \ unquote-splicing,
-      \'
+  \ begin,
+  \ case,
+  \ define,
+  \ define-library,
+  \ define-record-type,
+  \ define-syntax,
+  \ delay,
+  \ do,
+  \ fork,
+  \ lambda,
+  \ let*,
+  \ let,
+  \ let-syntax,
+  \ letrec*,
+  \ letrec,
+  \ letrec-syntax,
+  \ make-parameter,
+  \ parameterize,
+  \ quasiquote,
+  \ quote,
+  \ receive,
+  \ set!,
+  \ syntax-rules,
+  \ unless,
+  \ unquote,
+  \ unquote-splicing,
+  \ when,
+  \'
 
-      "\ =>,
-      "\ and,
-      "\ else,
-      "\ if,
-      "\ or,
+  "\ =>,
+  "\ and,
+  "\ else,
+  "\ if,
+  "\ or,
 
 let g:is_bash = 1
 
