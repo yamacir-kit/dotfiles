@@ -12,5 +12,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: ./install.sh
-      - run: sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
+      - run: |
+          sudo apt update
+          sudo apt upgrade
+          sudo apt autoremove
+          sudo apt autoclean
       - run: ./scripts/setup-${{ matrix.os }}.sh
