@@ -6,4 +6,3 @@ $bibtex = 'pbibtex';
 $pdf_mode = 3; # use dvipdf
 $pdf_update_method = 2;
 $pdf_previewer = 'evince';
-
