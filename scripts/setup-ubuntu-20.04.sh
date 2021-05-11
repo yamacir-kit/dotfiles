@@ -2,6 +2,11 @@
 
 sudo add-apt-repository universe
 
+sudo apt update
+sudo apt upgrade
+sudo apt autoclean
+sudo apt autoremove
+
 # Develop
 sudo apt install -y build-essential
 sudo apt install -y clang
