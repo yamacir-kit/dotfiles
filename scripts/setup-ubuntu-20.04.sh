@@ -1,5 +1,7 @@
 #!/bin/sh -eux
 
+sudo add-apt-repository universe
+
 # Develop
 sudo apt install -y build-essential
 sudo apt install -y clang
