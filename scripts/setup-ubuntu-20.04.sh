@@ -1,6 +1,6 @@
 #!/bin/sh -eux
 
-install-develop-libraries()
+install_develop_libraries()
 {
   sudo apt install -y libboost-all-dev
   sudo apt install -y libcairo2-dev
@@ -10,7 +10,7 @@ install-develop-libraries()
   sudo apt install -y libxft-dev
 }
 
-install-develop-tools()
+install_develop_tools()
 {
   sudo apt install -y build-essential
   sudo apt install -y clang
@@ -28,7 +28,7 @@ install-develop-tools()
   sudo snap install scc
 }
 
-install-documentation-tools()
+install_documentation_tools()
 {
   sudo apt install -y gnuplot
   sudo apt install -y graphviz
@@ -42,7 +42,7 @@ install-documentation-tools()
   sudo apt install -y xdvik-ja
 }
 
-install-gnome-utilities()
+install_gnome_utilities()
 {
   sudo apt install -y gnome-calculator
   sudo apt install -y gnome-characters
@@ -53,7 +53,7 @@ install-gnome-utilities()
   sudo apt install -y numix-icon-theme-circle
 }
 
-install-miscellaenous-tools()
+install_miscellaenous_tools()
 {
   sudo apt install -y gimp
   sudo apt install -y iftop
@@ -63,15 +63,15 @@ install-miscellaenous-tools()
   sudo apt install -y python3-gpg # for dropbox
 }
 
-install-multimedia-tools()
+install_multimedia_tools()
 {
   sudo apt install -y ffmpeg
   sudo apt install -y ubuntu-restricted-extras
 }
 
-install-develop-libraries
-install-develop-tools
-install-documentation-tools
-install-gnome-utilities
-install-miscellaenous-tools
-install-multimedia-tools
+install_develop_libraries
+install_develop_tools
+install_documentation_tools
+install_gnome_utilities
+install_miscellaenous_tools
+install_multimedia_tools

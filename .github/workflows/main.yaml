@@ -3,7 +3,7 @@ on:
   schedule:
     - cron: 0 0 * * *
 jobs:
-  Installation:
+  Setup:
     strategy:
       fail-fast: false
       matrix:
