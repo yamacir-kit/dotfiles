@@ -4,4 +4,3 @@ let g:cpp_no_function_highlight = 0
 let g:cpp_simple_highlight = 1
 
 highlight link cppSTLnamespace Statement
-

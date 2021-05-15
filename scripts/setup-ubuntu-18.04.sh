@@ -59,10 +59,6 @@ sudo apt install -y ubuntu-restricted-extras
 sudo apt install -y gnome-calculator
 sudo apt install -y gnome-characters
 sudo apt install -y gnome-logs
-sudo apt install -y gnome-shell-extension-pixelsaver
-sudo apt install -y gnome-shell-extensions
 sudo apt install -y gnome-system-monitor
 sudo apt install -y gnome-tweak-tool
 sudo apt install -y numix-gtk-theme
-sudo apt install -y numix-icon-theme-circle
-sudo apt install -y numix-icon-theme-square
