@@ -8,9 +8,6 @@
 [alias]
   graph = log --graph --all --date=relative --pretty=preset
 
-  # git remote rename [old-origin-name] [new-origin-name]
-  # clone = clone --origin github --recurse-submodules
-
   stage = add
   unstage = reset HEAD
 
@@ -45,8 +42,8 @@
 [filter "lfs"]
   clean   = git-lfs clean -- %f
   process = git-lfs filter-process
-  smudge  = git-lfs smudge -- %f
   required = true
+  smudge  = git-lfs smudge -- %f
 
 [sendpack]
   sideband = false

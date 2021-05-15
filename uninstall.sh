@@ -1,12 +1,10 @@
-#!/bin/sh -e
+#!/bin/sh -eu
 
-dotfiles=$(cd "$(dirname "$0")"; pwd)
+here=$(cd "$(dirname "$0")"; pwd)
 
-cd "$dotfiles"
-
-for f in .??*
+for f in "$here"/.??*
 do
-  test "$f" = ".git" && continue
-  test "$f" = ".gitignore" && continue
+  test "$f" = "$here"/.git && continue
+  test "$f" = "$here"/.gitignore && continue
   unlink "$HOME/$f"
 done
