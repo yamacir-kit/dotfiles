@@ -29,62 +29,9 @@ export LANG=ja_JP.UTF-8
 export LC_TIME=C
 export LESSCHARSET=utf-8
 
-eval `dircolors ~/.dircolors`
+eval "$(dircolors ~/.dircolors)"
 
 dotfiles="$HOME/dotfiles"
-
-rosrc_enabled='/var/tmp/rosrc'
-rosrc_version='.rosrc-2'
-rosrc_workspace="$(cat /var/tmp/mark/c)"
-
-if test -e $rosrc_enabled
-then
-  source $dotfiles/$rosrc_version
-
-  echo -n "[$rosrc_version] auto-source $rosrc_workspace/install/setup.bash => "
-
-  if test -e "$rosrc_workspace/install/setup.bash"
-  then
-    if source "$rosrc_workspace/install/setup.bash"
-    then
-      echo "success"
-    else
-      echo "failure"
-    fi
-  else
-    echo "skipped (not exist)"
-  fi
-fi
-
-function rosrc()
-{
-  for each in "$@"
-  do
-    case "$@" in
-      +)
-        touch $rosrc_enabled
-        echo "[.bashrc] enabled rosrc auto-source";
-        break;;
-      -)
-        rm $rosrc_enabled
-        echo "[.bashrc] disabed rosrc auto-source";
-        break;;
-      1)
-        rosrc_version='.rosrc-1'
-        echo "[.bashrc] invoke $rosrc_version";
-        source $dotfiles/$rosrc_version
-        break;;
-      2)
-        rosrc_version='.rosrc-2'
-        echo "[.bashrc] invoke $rosrc_version";
-        source $dotfiles/$rosrc_version
-        break;;
-      *)
-        rosrc_workspace="$each"
-        break;;
-    esac
-  done
-}
 
 alias ls='ls -avF --color=auto'
 alias la='ls'
@@ -129,20 +76,15 @@ function cd()
   builtin cd "$@" && ls -Fav --color=auto
 }
 
-function sloc()
-{
-  find -type f | xargs wc $@
-}
+# function sloc()
+# {
+#   find -type f | xargs wc $@
+# }
 
-function csloc()
-{
-  find -type f | grep -v 'CMakeFiles' | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
-}
-
-function watch-cloc()
-{
-  watch -n5 'cloc --exclude-dir=build ./'
-}
+# function csloc()
+# {
+#   find -type f | grep -v 'CMakeFiles' | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
+# }
 
 function watch-sloc()
 {
@@ -205,7 +147,6 @@ function gitinfo()
   if git status &> /dev/null
   then
     git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    # echo -e "$git_branch[$(git status -s | grep -v docs | wc -l)/$(git status -s | wc -l)]"
     echo -e "$git_branch[$(git status -s | wc -l)]"
   else
     echo "norepo"
@@ -221,6 +162,59 @@ export PS1="\n"
 export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
 export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
 export PS1="$PS1>> "
+
+rosrc_enabled='/var/tmp/rosrc'
+rosrc_version='.rosrc-2'
+rosrc_workspace="$(cat /var/tmp/mark/c)"
+
+if test -e $rosrc_enabled
+then
+  source $dotfiles/$rosrc_version
+
+  echo -n "[$rosrc_version] auto-source $rosrc_workspace/install/setup.bash => "
+
+  if test -e "$rosrc_workspace/install/setup.bash"
+  then
+    if source "$rosrc_workspace/install/setup.bash"
+    then
+      echo "success"
+    else
+      echo "failure"
+    fi
+  else
+    echo "skipped (not exist)"
+  fi
+fi
+
+function rosrc()
+{
+  for each in "$@"
+  do
+    case "$@" in
+      +)
+        touch $rosrc_enabled
+        echo "[.bashrc] enabled rosrc auto-source";
+        break;;
+      -)
+        rm $rosrc_enabled
+        echo "[.bashrc] disabed rosrc auto-source";
+        break;;
+      1)
+        rosrc_version='.rosrc-1'
+        echo "[.bashrc] invoke $rosrc_version";
+        source $dotfiles/$rosrc_version
+        break;;
+      2)
+        rosrc_version='.rosrc-2'
+        echo "[.bashrc] invoke $rosrc_version";
+        source $dotfiles/$rosrc_version
+        break;;
+      *)
+        rosrc_workspace="$each"
+        break;;
+    esac
+  done
+}
 
 export PATH="/usr/local/cuda/bin:$PATH"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
