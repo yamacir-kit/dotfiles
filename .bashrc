@@ -76,26 +76,28 @@ function cd()
   builtin cd "$@" && ls -Fav --color=auto
 }
 
-# function sloc()
-# {
-#   find -type f | xargs wc $@
-# }
+sloc()
+{
+  find -type f | grep -Fv -e '.git' -e 'CMakeFiles' | xargs wc | sort -rn
+}
 
-# function csloc()
-# {
-#   find -type f | grep -v 'CMakeFiles' | grep -E "^*\.[c|h](pp)?$" | xargs wc $@
-# }
+csloc()
+{
+  sloc | grep -E '^*\.[c|h](pp)?$'
+}
 
 function watch-sloc()
 {
-  watch -n1 'find -type f | grep -v "CMakeFiles" | grep -v "git" | xargs wc $@ | sort -rn'
+  watch "$@" -x bash -c sloc
 }
 
 function watch-csloc()
 {
-  grep='grep --color=always --exclude-dir=.git'
-  watch -n1 "find -type f | $grep -v 'CMakeFiles' | $grep -E '^*\.[c|h](pp)?$' | xargs wc $@ | sort -rn"
+  watch "$@" -x bash -c csloc
 }
+
+export -f sloc
+export -f csloc
 
 function watch-grep()
 {
