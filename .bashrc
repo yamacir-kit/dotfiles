@@ -1,3 +1,5 @@
+#!/bin/bash
+
 [[ $- != *i* ]] && return
 
 shopt -s histappend
@@ -60,7 +62,7 @@ alias ps='ps acux --sort=rss'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-function ev()
+ev()
 {
   export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 
@@ -78,7 +80,7 @@ function cd()
 
 sloc()
 {
-  find -type f | grep -Fv -e '.git' -e 'CMakeFiles' | xargs wc | sort -rn
+  find . -type f | grep -Fv -e '.git' -e 'CMakeFiles' | xargs wc | sort -rn
 }
 
 csloc()
@@ -101,7 +103,7 @@ export -f csloc
 
 watch-grep()
 {
-  watch --color -n1 "grep --color=always --exclude-dir=.git --exclude-dir=build -Irn ./ -e $@"
+  watch --color -n1 "grep --color=always --exclude-dir=.git --exclude-dir=build -Irn ./ -e $*"
 }
 
 update()
@@ -120,9 +122,9 @@ update-python()
   done
 }
 
-function cxx()
+cxx()
 {
-  g++ $@ -std=c++17 -Wall -Wextra -Wpedantic
+  "$CXX" "$@" -std=c++17 -Wall -Wextra -Wpedantic
 }
 
 mark()
@@ -143,18 +145,17 @@ mark()
   echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
 
-function gitinfo()
+gitinfo()
 {
   if git status &> /dev/null
   then
-    git_branch=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')
-    echo -e "$git_branch[$(git status -s | wc -l)]"
+    echo -e "$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1/')[$(git status -s | wc -l)]"
   else
     echo "norepo"
   fi
 }
 
-function bgjobs()
+bgjobs()
 {
   [[ $(jobs) ]] && echo ", jobs[$(jobs | wc -l)]"
 }
@@ -170,7 +171,7 @@ rosrc_workspace="$(cat /var/tmp/mark/c)"
 
 if test -e $rosrc_enabled
 then
-  source $dotfiles/$rosrc_version
+  source "$dotfiles"/$rosrc_version
 
   echo -n "[$rosrc_version] auto-source $rosrc_workspace/install/setup.bash => "
 
@@ -191,7 +192,7 @@ function rosrc()
 {
   for each in "$@"
   do
-    case "$@" in
+    case "$each" in
       +)
         touch $rosrc_enabled
         echo "[.bashrc] enabled rosrc auto-source";
@@ -203,12 +204,12 @@ function rosrc()
       1)
         rosrc_version='.rosrc-1'
         echo "[.bashrc] invoke $rosrc_version";
-        source $dotfiles/$rosrc_version
+        source "$dotfiles/$rosrc_version"
         break;;
       2)
         rosrc_version='.rosrc-2'
         echo "[.bashrc] invoke $rosrc_version";
-        source $dotfiles/$rosrc_version
+        source "$dotfiles/$rosrc_version"
         break;;
       *)
         rosrc_workspace="$each"
