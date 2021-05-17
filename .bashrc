@@ -86,23 +86,22 @@ csloc()
   sloc | grep -E '^*\.[c|h](pp)?$'
 }
 
-function watch-sloc()
+watch-sloc()
 {
-  watch "$@" -x bash -c sloc
+  watch -n1 "$@" -x bash -c sloc
 }
 
-function watch-csloc()
+watch-csloc()
 {
-  watch "$@" -x bash -c csloc
+  watch -n1 "$@" -x bash -c csloc
 }
 
 export -f sloc
 export -f csloc
 
-function watch-grep()
+watch-grep()
 {
-  grep='grep --color=always --exclude-dir=.git'
-  watch --color -n1 "$grep -Irn ./ -e $@ | $grep -v 'CMakeFiles'"
+  watch --color -n1 "grep --color=always --exclude-dir=.git --exclude-dir=build -Irn ./ -e $@"
 }
 
 update()
@@ -126,15 +125,15 @@ function cxx()
   g++ $@ -std=c++17 -Wall -Wextra -Wpedantic
 }
 
-function mark()
+mark()
 {
   file="m"
 
   mkdir -p /var/tmp/mark || exit 1
 
-  for opt in "$@"
+  for each in "$@"
   do
-    case "$@" in
+    case "$each" in
       "-c" | "--catkin" )
         file="c"
         break;;
