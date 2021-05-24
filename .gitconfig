@@ -25,6 +25,7 @@
   quotepath = false
 
 [color]
+  status = always
   ui = auto
 
 [merge]
