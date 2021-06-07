@@ -1,8 +1,4 @@
-#!/bin/bash -eux
-
-current_directory=$(dirname "$0")
-
-dotfiles=$(cd "$current_directory/.."; pwd)
+#!/bin/bash -eu
 
 sudo apt-add-repository -y ppa:jonathonf/vim
 sudo apt update
@@ -12,7 +8,7 @@ sudo apt install -y cmake
 sudo apt install -y python3-dev
 sudo apt install -y vim-gnome
 
-bundle=$dotfiles/.vim/bundle
+bundle=$(dirname "$0")/../.vim/bundle
 
 mkdir -p "$bundle"
 
