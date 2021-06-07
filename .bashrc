@@ -127,6 +127,11 @@ cxx()
   "$CXX" "$@" -std=c++17 -Wall -Wextra -Wpedantic
 }
 
+memcheck()
+{
+  valgrind --error-exitcode=1 --leak-check=full --quiet --show-leak-kinds=all "$@"
+}
+
 mark()
 {
   file="m"
