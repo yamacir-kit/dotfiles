@@ -1,8 +1,8 @@
-#!/bin/bash -eu
+#!/bin/sh -eu
 
 sudo apt-add-repository -y ppa:jonathonf/vim
 sudo apt update
-sudo apt install -y build-essential cmake python3-dev vim-gnome
+sudo apt install -y build-essential cmake python3 python3-dev vim-gnome
 
 bundle=$(dirname "$0")/../.vim/bundle
 
