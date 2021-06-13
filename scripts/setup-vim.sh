@@ -2,7 +2,7 @@
 
 sudo apt-add-repository -y ppa:jonathonf/vim
 sudo apt update
-sudo apt install -y build-essential cmake python3 python3-dev vim-gnome
+sudo apt install -y build-essential cmake gcc-9 python3-dev vim-gnome
 
 bundle=$(dirname "$0")/../.vim/bundle
 
@@ -17,6 +17,8 @@ fi
 vi -c PluginInstall -c qa
 
 cd $bundle/YouCompleteMe
+
+export CXX='g++-9'
 
 python3 ./install.py --clangd-completer
 
