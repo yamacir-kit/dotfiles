@@ -90,7 +90,7 @@ let &matchtime = 1
 
 let &virtualedit = 'block'
 
-set incsearch ignorecase smartcase wrapscan
+set incsearch smartcase wrapscan
 
 set splitbelow splitright
 
