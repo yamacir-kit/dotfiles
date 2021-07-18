@@ -108,17 +108,18 @@ watch-grep()
 
 update()
 {
-  sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
-}
-
-update-python()
-{
-  sudo -H pip3 install --upgrade pip
-
-  for each in $(sudo -H pip3 list -o | tail -n +3 | sed -E 's/(\w+)\s.*$/\1/' | tr '\n' ' ')
+  for each in "$@"
   do
-    echo "package: $each"
-    sudo -H pip3 install --upgrade "$each"
+    case "$each" in
+      -a | --apt )
+        sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
+        break;;
+
+      -p | --python )
+        sudo -H pip3 install -U pip
+        sudo -H pip3 list -o --format=freeze | grep -v '^\-e' | cut -d'=' -f1 | xargs -n1 sudo -H pip3 install -U
+        break;;
+    esac
   done
 }
 
