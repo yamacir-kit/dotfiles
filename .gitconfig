@@ -1,23 +1,19 @@
 [user]
-  name  = yamacir-kit
+  name = yamacir-kit
   email = httperror@404-notfound.jp
 
 [pretty]
   preset = format:%C(yellow reverse) %h %C(green reverse) %an %C(reset)%C(cyan) %ar%C(red)%d%n> %C(bold)%w(0, 0, 2)%B%n
 
 [alias]
-  graph = log --graph --all --date=relative --pretty=preset
-
-  stage = add
-  unstage = reset HEAD
-
-  commit = commit -v
-  uncommit = reset --soft HEAD^
-
-  revert = reset --hard HEAD^
-
-  diff = diff --no-index
   apply = --git-dir= apply
+  commit = commit -v
+  diff = diff --no-index
+  graph = log --graph --date=relative --pretty=preset
+  revert = reset --hard HEAD^
+  stage = add
+  uncommit = reset --soft HEAD^
+  unstage = reset HEAD
 
 [core]
   editor = vi
