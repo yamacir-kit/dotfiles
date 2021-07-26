@@ -29,6 +29,7 @@
 
 [pager]
   branch = cat
+  tag = cat
 
 [push]
   default = simple
@@ -37,10 +38,10 @@
   rebase = true
 
 [filter "lfs"]
-  clean   = git-lfs clean -- %f
+  clean = git-lfs clean -- %f
   process = git-lfs filter-process
   required = true
-  smudge  = git-lfs smudge -- %f
+  smudge = git-lfs smudge -- %f
 
 [sendpack]
   sideband = false
