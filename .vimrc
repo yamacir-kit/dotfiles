@@ -8,7 +8,6 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'bfrg/vim-cpp-modern'
@@ -91,7 +90,7 @@ let &matchtime = 1
 
 let &virtualedit = 'block'
 
-set incsearch ignorecase smartcase wrapscan
+set incsearch smartcase wrapscan
 
 set splitbelow splitright
 
@@ -268,4 +267,3 @@ let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 
 command! DeleteAnsiEscapeSequence %s/\[[0-9;]*m//g$
-

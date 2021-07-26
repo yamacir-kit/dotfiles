@@ -24,8 +24,6 @@ install_develop_tools()
   sudo apt install -y tmux
   sudo apt install -y tree
   sudo apt install -y valgrind
-
-  sudo snap install scc
 }
 
 install_documentation_tools()

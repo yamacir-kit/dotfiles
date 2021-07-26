@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ros_distro="foxy"
+ros_distro="galactic"
 
 export RCUTILS_LOGGING_BUFFERED_STREAM=1
 export RCUTILS_LOGGING_USE_STDOUT=1
