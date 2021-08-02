@@ -112,8 +112,7 @@ update()
   do
     case "$each" in
       -a | --apt )
-        # sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
-        sudo apt update && sudo apt upgrade
+        sudo apt update && sudo apt upgrade && sudo apt autoremove && sudo apt autoclean
         break;;
 
       -p | --python )

@@ -180,6 +180,7 @@ auto filetype scheme syntax keyword function
   \ boolean=?
   \ bound-identifier=?
   \ construct-identifier
+  \ default-exception-handler
   \ eager
   \ error
   \ every
@@ -205,7 +206,6 @@ auto filetype scheme syntax keyword function
   \ syntactic-continuation?
   \ syntactic-keyword?
   \ textual-port?
-  \ throw
   \ unspecified
   \ unwrap-syntax
 
