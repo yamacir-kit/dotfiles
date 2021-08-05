@@ -1,5 +1,8 @@
 #!/bin/sh -eu
 
+sudo apt update
+sudo apt install software-properties-common # for apt-add-repository
+
 sudo apt-add-repository -y ppa:jonathonf/vim
 sudo apt update
 sudo apt install -y build-essential cmake gcc-9 python3-dev vim-gnome
