@@ -9,3 +9,5 @@ do
   test "$f" = "$here"/.gitignore && continue
   ln -sf "$f" "$HOME"
 done
+
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
