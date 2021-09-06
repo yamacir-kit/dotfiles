@@ -1,3 +1,6 @@
+[advice]
+  detachedHead = false
+
 [user]
   name = yamacir-kit
   email = httperror@404-notfound.jp
