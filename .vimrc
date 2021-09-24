@@ -148,17 +148,17 @@ highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 highlight! link SignColumn LineNr
 
+let g:cpp_attributes_highlight = 1
+let g:cpp_function_highlight = 1
+let g:cpp_member_highlight = 1
+let g:cpp_simple_highlight = 1
+
 function! s:when_cpp() abort
   set cindent
   set cinkeys-=0#
 
   let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
   let &foldlevel = 1
-
-  let g:cpp_attributes_highlight = 1
-  let g:cpp_function_highlight = 1
-  let g:cpp_member_highlight = 1
-  let g:cpp_simple_highlight = 1
 
   syntax match cppSymbol "[.:,]"
 
