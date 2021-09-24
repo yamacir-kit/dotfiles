@@ -76,7 +76,7 @@ set cinkeys-=0#
 let &foldmethod = 'indent'
 let &foldignore = ''
 auto filetype c,cpp  let &foldlevel = 1
-auto filetype scheme let &foldlevel = 0
+auto filetype cpp syntax match cppSymbol "[.:;,]"
 
 let &sidescroll    =   1
 let &sidescrolloff =  16
@@ -96,8 +96,8 @@ let &wildmode = 'longest:full,full'
 
 set cursorline
 if (exists('+colorcolumn'))
-  " let &colorcolumn = 80
-  let &colorcolumn = join(range(81, 65535), ',')
+  let &colorcolumn = 80
+  " let &colorcolumn = join(range(81, 65535), ',')
 endif
 
 nnoremap ; :
@@ -161,98 +161,7 @@ auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
 
 auto BufWritePre * :%s/\s\+$//ge
 
-auto BufEnter * :syntax sync fromstart
-
-auto filetype cpp syntax match cppSymbol "[.:;,]"
 highlight cppSymbol ctermfg=13
-
-auto filetype scheme syntax keyword function
-  \ any
-  \ binary-port?
-  \ boolean=?
-  \ bound-identifier=?
-  \ construct-identifier
-  \ default-exception-handler
-  \ eager
-  \ error
-  \ every
-  \ exact
-  \ exact-complex?
-  \ exact-integer?
-  \ find
-  \ finite?
-  \ free-identifier=?
-  \ generate-identifier
-  \ identifier->symbol
-  \ identifier=?
-  \ identifier?
-  \ identity
-  \ inexact
-  \ infinite?
-  \ length*
-  \ make-syntactic-closure
-  \ print
-  \ r6rs:identifier?
-  \ symbol=?
-  \ syntactic-closure
-  \ syntactic-closure?
-  \ syntactic-continuation?
-  \ textual-port?
-  \ unspecified
-  \ unwrap-syntax
-
-auto filetype scheme syntax keyword keyword
-  \ ...
-  \ check
-  \ lazy
-  \ syntax
-  \ unless
-  \ when
-
-auto filetype scheme syntax keyword macro
-  \ er-macro-transformer
-  \ fork-with-current-syntactic-continuation
-  \ fork/csc
-  \ ir-macro-transformer
-  \ rsc-macro-transformer
-  \ sc-macro-transformer
-  \ syntax-quote
-
-auto filetype scheme let &lispwords = '
-  \ begin,
-  \ case,
-  \ define,
-  \ define-library,
-  \ define-record-type,
-  \ define-syntax,
-  \ delay,
-  \ do,
-  \ fork,
-  \ lambda,
-  \ let*,
-  \ let,
-  \ let-syntax,
-  \ letrec*,
-  \ letrec,
-  \ letrec-syntax,
-  \ make-parameter,
-  \ parameterize,
-  \ quasiquote,
-  \ quote,
-  \ receive,
-  \ set!,
-  \ syntax-rules,
-  \ unless,
-  \ unquote,
-  \ unquote-splicing,
-  \ when,
-  \'
-
-  "\ =>,
-  "\ and,
-  "\ else,
-  "\ if,
-  "\ or,
 
 let g:is_bash = 1
 

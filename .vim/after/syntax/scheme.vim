@@ -1,5 +1,94 @@
-if has('conceal')
+let &foldlevel = 0
 
+syntax keyword keyword
+  \ ...
+  \ check
+  \ lazy
+  \ syntax
+  \ unless
+  \ when
+
+syntax keyword macro
+  \ er-macro-transformer
+  \ fork-with-current-syntactic-continuation
+  \ fork/csc
+  \ ir-macro-transformer
+  \ rsc-macro-transformer
+  \ sc-macro-transformer
+  \ syntax-quote
+
+syntax keyword function
+  \ any
+  \ binary-port?
+  \ boolean=?
+  \ bound-identifier=?
+  \ construct-identifier
+  \ default-exception-handler
+  \ eager
+  \ error
+  \ every
+  \ exact
+  \ exact-complex?
+  \ exact-integer?
+  \ find
+  \ finite?
+  \ free-identifier=?
+  \ generate-identifier
+  \ identifier->symbol
+  \ identifier=?
+  \ identifier?
+  \ identity
+  \ inexact
+  \ infinite?
+  \ length*
+  \ make-syntactic-closure
+  \ print
+  \ r6rs:identifier?
+  \ symbol=?
+  \ syntactic-closure
+  \ syntactic-closure?
+  \ syntactic-continuation?
+  \ textual-port?
+  \ unspecified
+  \ unwrap-syntax
+
+auto filetype scheme let &lispwords = '
+  \ begin,
+  \ case,
+  \ define,
+  \ define-library,
+  \ define-record-type,
+  \ define-syntax,
+  \ delay,
+  \ do,
+  \ fork,
+  \ lambda,
+  \ let*,
+  \ let,
+  \ let-syntax,
+  \ letrec*,
+  \ letrec,
+  \ letrec-syntax,
+  \ make-parameter,
+  \ parameterize,
+  \ quasiquote,
+  \ quote,
+  \ receive,
+  \ set!,
+  \ syntax-rules,
+  \ unless,
+  \ unquote,
+  \ unquote-splicing,
+  \ when,
+  \'
+
+  "\ =>,
+  "\ and,
+  "\ else,
+  "\ if,
+  "\ or,
+
+if has('conceal')
   " syntax keyword Operator Alpha   conceal cchar=Α
   " syntax keyword Operator Beta    conceal cchar=Β
   " syntax keyword Operator Gamma   conceal cchar=Γ
@@ -104,4 +193,3 @@ if has('conceal')
 
   setlocal conceallevel=1
 endif
-

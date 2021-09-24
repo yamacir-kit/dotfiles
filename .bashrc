@@ -62,17 +62,6 @@ alias ps='ps acux --sort=rss'
 alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-ev()
-{
-  export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
-
-  rlwrap -b "(){}[].,;#@|'\`\"" \
-         -c \
-         -m \
-         -q "\"" \
-         meevax -i "$@"
-}
-
 function cd()
 {
   builtin cd "$@" && ls -Fav --color=auto
