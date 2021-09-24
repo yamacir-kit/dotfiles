@@ -200,16 +200,17 @@ auto filetype scheme syntax keyword function
   \ length*
   \ make-syntactic-closure
   \ print
+  \ r6rs:identifier?
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
   \ syntactic-continuation?
-  \ syntactic-keyword?
   \ textual-port?
   \ unspecified
   \ unwrap-syntax
 
 auto filetype scheme syntax keyword keyword
+  \ ...
   \ check
   \ lazy
   \ syntax
