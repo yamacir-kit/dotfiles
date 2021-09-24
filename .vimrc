@@ -25,8 +25,12 @@ call vundle#end()
 filetype plugin indent on
 
 source ~/.vim/configs/quickrun.conf.vim
-source ~/.vim/configs/vim-cpp-modern.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
+
+let g:is_bash = 1
+
+let &t_ZH = "\e[3m"
+let &t_ZR = "\e[23m"
 
 let                 &encoding = 'utf-8'
 let &fileencoding = &encoding
@@ -70,12 +74,6 @@ set cinkeys-=0#
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-auto filetype cpp syntax match cppSymbol "[.:;,]"
-
-function! s:when_filetype_cpp() abort
-  let &foldlevel = 1
-endfunction
-auto FileType c,cpp call s:when_filetype_cpp()
 
 let &sidescroll    =   1
 let &sidescrolloff =  16
@@ -141,16 +139,32 @@ syntax enable
 let &background = 'dark'
 
 source ~/.vim/configs/solarized.conf.vim
+
 colorscheme solarized
+
+function! s:when_filetype_cpp() abort
+  let &foldlevel = 1
+
+  let g:cpp_attributes_highlight = 1
+  let g:cpp_function_highlight = 1
+  let g:cpp_member_highlight = 1
+  let g:cpp_simple_highlight = 1
+
+  syntax match cppSymbol "[.:,]"
+
+  highlight link cppSTLnamespace cppStatement
+  highlight link cppSymbol cppOperator
+endfunction
+auto FileType c,cpp call s:when_filetype_cpp()
 
 highlight! link SignColumn LineNr
 
-highlight CursorLineNr ctermbg=none cterm=bold
-highlight       LineNr ctermbg=none
-highlight Search       ctermfg=1 cterm=underline
-highlight Incsearch    ctermfg=1 cterm=underline
-highlight Comment      cterm=italic
-highlight Todo         cterm=bold,italic
+highlight CursorLineNr            ctermbg=none cterm=bold
+highlight       LineNr            ctermbg=none
+highlight Search       ctermfg=1               cterm=underline
+highlight Incsearch    ctermfg=1               cterm=underline
+highlight Comment                              cterm=italic
+highlight Todo                                 cterm=bold,italic
 highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
@@ -159,12 +173,5 @@ auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
 auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
 
 auto BufWritePre * :%s/\s\+$//ge
-
-highlight cppSymbol ctermfg=13
-
-let g:is_bash = 1
-
-let &t_ZH = "\e[3m"
-let &t_ZR = "\e[23m"
 
 command! DeleteAnsiEscapeSequence %s/\[[0-9;]*m//g$
