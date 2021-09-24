@@ -148,7 +148,7 @@ highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 highlight! link SignColumn LineNr
 
-function! s:when_filetype_cpp() abort
+function! s:when_cpp() abort
   set cindent
   set cinkeys-=0#
 
@@ -165,7 +165,7 @@ function! s:when_filetype_cpp() abort
   highlight link cppSTLnamespace cppStatement
   highlight link cppSymbol cppOperator
 endfunction
-auto FileType c,cpp call s:when_filetype_cpp()
+auto FileType c,cpp call s:when_cpp()
 
 auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
 auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
