@@ -70,8 +70,12 @@ set cinkeys-=0#
 
 let &foldmethod = 'indent'
 let &foldignore = ''
-auto filetype c,cpp  let &foldlevel = 1
 auto filetype cpp syntax match cppSymbol "[.:;,]"
+
+function! s:when_filetype_cpp() abort
+  let &foldlevel = 1
+endfunction
+auto FileType c,cpp call s:when_filetype_cpp()
 
 let &sidescroll    =   1
 let &sidescrolloff =  16
