@@ -1,3 +1,9 @@
+set autoindent
+set complete+=k~/.meevax_completions
+set lisp
+
+let &iskeyword = '@,33,35-38,42-43,45-58,60-64,94,_,126'
+
 let &foldlevel = 0
 
 syntax keyword keyword
@@ -81,12 +87,6 @@ auto filetype scheme let &lispwords = '
   \ unquote-splicing,
   \ when,
   \'
-
-  "\ =>,
-  "\ and,
-  "\ else,
-  "\ if,
-  "\ or,
 
 if has('conceal')
   " syntax keyword Operator Alpha   conceal cchar=Α

@@ -3,6 +3,7 @@ if &compatible
 endif
 
 filetype off
+
 set runtimepath+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -45,8 +46,6 @@ let &fileformat = 'unix'
 set ttyfast
 let &clipboard = 'unnamedplus'
 
-" set number
-" set relativenumber
 let &laststatus = 0
 
 set showmode
@@ -64,10 +63,6 @@ let &shiftwidth = &tabstop
 set expandtab smarttab
 
 set nowrap
-
-auto filetype scheme setlocal autoindent lisp
-auto FileType scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
-auto FileType scheme set complete+=k~/.meevax_completions
 
 auto filetype c,cpp setlocal cindent
 let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
@@ -165,7 +160,7 @@ highlight cppSymbol ctermfg=13
 
 let g:is_bash = 1
 
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
+let &t_ZH = "\e[3m"
+let &t_ZR = "\e[23m"
 
 command! DeleteAnsiEscapeSequence %s/\[[0-9;]*m//g$
