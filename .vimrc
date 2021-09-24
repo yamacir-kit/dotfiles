@@ -68,10 +68,6 @@ set expandtab smarttab
 
 set nowrap
 
-auto filetype c,cpp setlocal cindent
-let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
-set cinkeys-=0#
-
 let &foldmethod = 'indent'
 let &foldignore = ''
 
@@ -142,7 +138,21 @@ source ~/.vim/configs/solarized.conf.vim
 
 colorscheme solarized
 
+highlight CursorLineNr            ctermbg=none cterm=bold
+highlight       LineNr            ctermbg=none
+highlight Search       ctermfg=1               cterm=underline
+highlight Incsearch    ctermfg=1               cterm=underline
+highlight Comment                              cterm=italic
+highlight Todo                                 cterm=bold,italic
+highlight Folded       ctermfg=11 ctermbg=none cterm=italic
+
+highlight link SignColumn LineNr
+
 function! s:when_filetype_cpp() abort
+  set cindent
+  set cinkeys-=0#
+
+  let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
   let &foldlevel = 1
 
   let g:cpp_attributes_highlight = 1
@@ -156,16 +166,6 @@ function! s:when_filetype_cpp() abort
   highlight link cppSymbol cppOperator
 endfunction
 auto FileType c,cpp call s:when_filetype_cpp()
-
-highlight! link SignColumn LineNr
-
-highlight CursorLineNr            ctermbg=none cterm=bold
-highlight       LineNr            ctermbg=none
-highlight Search       ctermfg=1               cterm=underline
-highlight Incsearch    ctermfg=1               cterm=underline
-highlight Comment                              cterm=italic
-highlight Todo                                 cterm=bold,italic
-highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
 auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
 auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
