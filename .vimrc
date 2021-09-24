@@ -10,13 +10,12 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bfrg/vim-cpp-modern'
+Plugin 'bfrg/vim-cpp-modern' " syntax highlighting for C++
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nickhutchinson/vim-cmake-syntax'
-Plugin 'rhysd/clever-f.vim'
+Plugin 'nickhutchinson/vim-cmake-syntax' " syntax highlighting for CMakeLists.txt
 Plugin 'terryma/vim-expand-region'
 Plugin 'thinca/vim-quickrun'
-Plugin 'tmux-plugins/vim-tmux'
+Plugin 'tmux-plugins/vim-tmux' " syntax highlighting for .tmux.conf
 Plugin 'tyru/caw.vim'
 Plugin 'ycm-core/YouCompleteMe'
 
@@ -65,8 +64,6 @@ let &shiftwidth = &tabstop
 set expandtab smarttab
 
 set nowrap
-
-" set regexpengine=1
 
 auto filetype scheme setlocal autoindent lisp
 auto FileType scheme setlocal iskeyword=@,33,35-38,42-43,45-58,60-64,94,_,126
@@ -141,7 +138,6 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
-" syntax sync fromstart
 
 let &background = 'dark'
 
@@ -150,7 +146,6 @@ colorscheme solarized
 
 highlight! link SignColumn LineNr
 
-" highlight matchparen   cterm=underline ctermbg=none
 highlight CursorLineNr ctermbg=none cterm=bold
 highlight       LineNr ctermbg=none
 highlight Search       ctermfg=1 cterm=underline
@@ -159,9 +154,6 @@ highlight Comment      cterm=italic
 highlight Todo         cterm=bold,italic
 highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
-" auto BufRead,BufNewFile *.cmake    let &filetype = 'cmake'
-auto BufRead,BufNewFile *.cpp.cmake let &filetype = 'cpp'
-auto BufRead,BufNewFile *.hpp.cmake let &filetype = 'cpp'
 auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
 auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
 auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
