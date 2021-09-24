@@ -20,12 +20,12 @@ BASE_FLAGS = [
     '-std=c++17',
     '-xc++',
     '-isystem', '/usr/include',
-    '-isystem', '/usr/include/c++/7.5.0',
-    '-isystem', '/usr/include/c++/7.5.0/backward',
-    '-isystem', '/usr/include/clang/6.0.0/include',
+    '-isystem', '/usr/include/c++/9',
+    '-isystem', '/usr/include/c++/9/backward',
     '-isystem', '/usr/include/x86_64-linux-gnu',
-    '-isystem', '/usr/include/x86_64-linux-gnu/c++/7.5.0',
-    '-isystem', '/usr/local/include'
+    '-isystem', '/usr/include/x86_64-linux-gnu/c++/9',
+    '-isystem', '/usr/lib/llvm-10/lib/clang/10.0.0/include',
+    '-isystem', '/usr/local/include',
 ]
 
 SOURCE_EXTENSIONS = ['.c', '.cpp', '.cxx', '.cc']
