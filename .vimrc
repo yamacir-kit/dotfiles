@@ -146,7 +146,7 @@ highlight Comment                              cterm=italic
 highlight Todo                                 cterm=bold,italic
 highlight Folded       ctermfg=11 ctermbg=none cterm=italic
 
-highlight link SignColumn LineNr
+highlight! link SignColumn LineNr
 
 function! s:when_filetype_cpp() abort
   set cindent
