@@ -35,7 +35,6 @@ syntax keyword function
   \ error
   \ every
   \ exact
-  \ exact-complex?
   \ exact-integer?
   \ find
   \ finite?
