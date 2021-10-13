@@ -8,6 +8,7 @@ let &foldlevel = 0
 
 syntax keyword keyword
   \ ...
+  \ call-with-current-continuation!
   \ check
   \ lazy
   \ syntax
@@ -34,7 +35,6 @@ syntax keyword function
   \ error
   \ every
   \ exact
-  \ exact-complex?
   \ exact-integer?
   \ find
   \ finite?
