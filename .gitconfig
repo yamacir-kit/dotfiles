@@ -45,6 +45,9 @@
 [sendpack]
   sideband = false
 
+[url "git@github.com:"]
+  insteadOf = https://github.com/
+
 [user]
   email = httperror@404-notfound.jp
   name = yamacir-kit

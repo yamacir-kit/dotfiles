@@ -217,6 +217,7 @@ function rosrc()
 
 export CYCLONEDDS_URI=file:///opt/autoware/cyclonedds_config.xml
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export RCUTILS_COLORIZED_OUTPUT=1
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
