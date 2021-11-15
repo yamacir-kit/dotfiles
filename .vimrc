@@ -164,6 +164,7 @@ auto FileType c,cpp call s:when_cpp()
 auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
 auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
 auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
+auto BufRead,BufNewFile *.repos     let &filetype = 'yaml'
 auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
 
 auto BufWritePre * :%s/\s\+$//ge
