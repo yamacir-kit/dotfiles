@@ -50,6 +50,7 @@ alias cde='cd ~/Desktop'
 alias cdi='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator/openscenario/openscenario_interpreter'
 alias cdl='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator/test_runner/scenario_test_runner'
 alias cdm='cd $(cat /var/tmp/mark/m)'
+alias cdo='cd ~/Downloads'
 alias cdr='cd ~/Dropbox'
 alias cds='cd $(cat /var/tmp/mark/c)/src'
 alias cdt='cd ~/works/toybox'
@@ -217,6 +218,7 @@ function rosrc()
 
 export CYCLONEDDS_URI=file:///opt/autoware/cyclonedds_config.xml
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export RCUTILS_COLORIZED_OUTPUT=1
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
