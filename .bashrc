@@ -222,6 +222,3 @@ export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
 export PATH="/usr/local/cuda/bin:$PATH"
 export RCUTILS_COLORIZED_OUTPUT=1
 export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-
-# export VEHICLE_ID=logiee_s-tc_01
-# export VEHICLE_ID=eva_m0-004
