@@ -97,7 +97,7 @@ watch-grep()
                           --exclude-dir=.git \
                           --exclude-dir=build \
                           -Irn ./ \
-                          -e $*
+                          -e $* \
                    | grep -v -e CHANGELOG"
 }
 
