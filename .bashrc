@@ -93,7 +93,12 @@ export -f csloc
 
 watch-grep()
 {
-  watch --color -n1 "grep --color=always --exclude-dir=.git --exclude-dir=build -Irn ./ -e $*"
+  watch --color -n1 "grep --color=always \
+                          --exclude-dir=.git \
+                          --exclude-dir=build \
+                          -Irn ./ \
+                          -e $*
+                   | grep -v -e CHANGELOG"
 }
 
 update()
