@@ -16,12 +16,8 @@ syntax keyword keyword
   \ when
 
 syntax keyword macro
-  \ er-macro-transformer
   \ fork-with-current-syntactic-continuation
   \ fork/csc
-  \ ir-macro-transformer
-  \ rsc-macro-transformer
-  \ sc-macro-transformer
   \ syntax-quote
 
 syntax keyword function
@@ -32,6 +28,7 @@ syntax keyword function
   \ construct-identifier
   \ default-exception-handler
   \ eager
+  \ er-macro-transformer
   \ error
   \ every
   \ exact
@@ -46,10 +43,13 @@ syntax keyword function
   \ identity
   \ inexact
   \ infinite?
+  \ ir-macro-transformer
   \ length*
   \ make-syntactic-closure
   \ print
   \ r6rs:identifier?
+  \ rsc-macro-transformer
+  \ sc-macro-transformer
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
