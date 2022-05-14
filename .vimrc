@@ -68,6 +68,8 @@ set expandtab smarttab
 
 set nowrap
 
+set nojoinspaces
+
 let &foldmethod = 'indent'
 let &foldignore = ''
 

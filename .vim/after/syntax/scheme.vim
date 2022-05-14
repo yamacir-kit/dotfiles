@@ -16,8 +16,6 @@ syntax keyword keyword
   \ when
 
 syntax keyword macro
-  \ fork-with-current-syntactic-continuation
-  \ fork/csc
   \ syntax-quote
 
 syntax keyword function
@@ -45,6 +43,7 @@ syntax keyword function
   \ infinite?
   \ ir-macro-transformer
   \ length*
+  \ lisp-transformer
   \ make-syntactic-closure
   \ print
   \ r6rs:identifier?
@@ -55,6 +54,7 @@ syntax keyword function
   \ syntactic-closure?
   \ syntactic-continuation?
   \ textual-port?
+  \ transformer?
   \ unspecified
   \ unwrap-syntax
 
