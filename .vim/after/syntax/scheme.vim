@@ -19,7 +19,6 @@ syntax keyword macro
   \ syntax-quote
 
 syntax keyword function
-  \ any
   \ binary-port?
   \ boolean=?
   \ bound-identifier=?
@@ -28,10 +27,8 @@ syntax keyword function
   \ eager
   \ er-macro-transformer
   \ error
-  \ every
   \ exact
   \ exact-integer?
-  \ find
   \ finite?
   \ free-identifier=?
   \ generate-identifier
