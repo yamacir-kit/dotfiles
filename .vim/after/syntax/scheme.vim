@@ -55,35 +55,8 @@ syntax keyword function
   \ unspecified
   \ unwrap-syntax
 
-auto filetype scheme let &lispwords = '
-  \ begin,
-  \ case,
-  \ define,
-  \ define-library,
-  \ define-record-type,
-  \ define-syntax,
-  \ delay,
-  \ do,
-  \ fork,
-  \ lambda,
-  \ let*,
-  \ let,
-  \ let-syntax,
-  \ letrec*,
-  \ letrec,
-  \ letrec-syntax,
-  \ make-parameter,
-  \ parameterize,
-  \ quasiquote,
-  \ quote,
-  \ receive,
-  \ set!,
-  \ syntax-rules,
-  \ unless,
-  \ unquote,
-  \ unquote-splicing,
-  \ when,
-  \'
+set lispwords+=define-library
+set lispwords-=if
 
 if has('conceal')
   " syntax keyword Operator Alpha   conceal cchar=Α
