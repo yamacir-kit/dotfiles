@@ -56,6 +56,8 @@ syntax keyword function
   \ unwrap-syntax
 
 set lispwords+=define-library
+set lispwords+=define-values
+set lispwords+=syntax-rules
 set lispwords-=if
 
 if has('conceal')
