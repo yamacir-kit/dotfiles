@@ -68,6 +68,8 @@ set expandtab smarttab
 
 set nowrap
 
+set nojoinspaces
+
 let &foldmethod = 'indent'
 let &foldignore = ''
 
@@ -87,6 +89,8 @@ set splitbelow splitright
 set wildmenu
 let &wildmode = 'longest:full,full'
 
+set regexpengine=1
+
 set cursorline
 if (exists('+colorcolumn'))
   let &colorcolumn = 80
@@ -102,7 +106,7 @@ nnoremap - <c-x>
 
 nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
 
-nnoremap <leader>gc :!git<space>commit<space>--verbose<cr>
+nnoremap <leader>gc :!git<space>commit<space>--signoff<space>--verbose<cr>
 nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
 nnoremap <leader>gp :<c-u>GitGutterPrevHunk<cr>
 nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
@@ -156,7 +160,7 @@ let g:cpp_simple_highlight = 0
 function! s:when_cpp() abort
   set cindent
   set cinkeys-=0#
-  let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0'
+  let &cinoptions = '>s,Ls,:0,=s,l1,g0,hs,N0,E0,ps,t0,is,+s,c3,/0,(0,us,U1,w1,Ws,m0,#0,j1'
   let &foldlevel = 1
 endfunction
 auto FileType c,cpp call s:when_cpp()

@@ -16,27 +16,19 @@ syntax keyword keyword
   \ when
 
 syntax keyword macro
-  \ er-macro-transformer
-  \ fork-with-current-syntactic-continuation
-  \ fork/csc
-  \ ir-macro-transformer
-  \ rsc-macro-transformer
-  \ sc-macro-transformer
   \ syntax-quote
 
 syntax keyword function
-  \ any
   \ binary-port?
   \ boolean=?
   \ bound-identifier=?
   \ construct-identifier
   \ default-exception-handler
   \ eager
+  \ er-macro-transformer
   \ error
-  \ every
   \ exact
   \ exact-integer?
-  \ find
   \ finite?
   \ free-identifier=?
   \ generate-identifier
@@ -46,47 +38,28 @@ syntax keyword function
   \ identity
   \ inexact
   \ infinite?
+  \ ir-macro-transformer
   \ length*
+  \ lisp-transformer
   \ make-syntactic-closure
   \ print
   \ r6rs:identifier?
+  \ rsc-macro-transformer
+  \ sc-macro-transformer
   \ symbol=?
   \ syntactic-closure
   \ syntactic-closure?
   \ syntactic-continuation?
   \ textual-port?
+  \ transformer?
   \ unspecified
   \ unwrap-syntax
 
-auto filetype scheme let &lispwords = '
-  \ begin,
-  \ case,
-  \ define,
-  \ define-library,
-  \ define-record-type,
-  \ define-syntax,
-  \ delay,
-  \ do,
-  \ fork,
-  \ lambda,
-  \ let*,
-  \ let,
-  \ let-syntax,
-  \ letrec*,
-  \ letrec,
-  \ letrec-syntax,
-  \ make-parameter,
-  \ parameterize,
-  \ quasiquote,
-  \ quote,
-  \ receive,
-  \ set!,
-  \ syntax-rules,
-  \ unless,
-  \ unquote,
-  \ unquote-splicing,
-  \ when,
-  \'
+set lispwords+=define-library
+set lispwords+=define-values
+set lispwords+=parameterize
+set lispwords+=syntax-rules
+set lispwords-=if
 
 if has('conceal')
   " syntax keyword Operator Alpha   conceal cchar=Α
@@ -114,30 +87,30 @@ if has('conceal')
   " syntax keyword Operator Psi     conceal cchar=Ψ
   " syntax keyword Operator Omega   conceal cchar=Ω
 
-  " syntax keyword Operator alpha   conceal cchar=α
-  " syntax keyword Operator beta    conceal cchar=β
-  " syntax keyword Operator gamma   conceal cchar=γ
-  " syntax keyword Operator delta   conceal cchar=δ
-  " syntax keyword Operator epsilon conceal cchar=ε
-  " syntax keyword Operator zeta    conceal cchar=ζ
-  " syntax keyword Operator eta     conceal cchar=η
-  " syntax keyword Operator theta   conceal cchar=θ
-  " syntax keyword Operator iota    conceal cchar=ι
-  " syntax keyword Operator kappa   conceal cchar=κ
-  " syntax keyword Operator lambda  conceal cchar=λ
-  " syntax keyword Operator mu      conceal cchar=μ
-  " syntax keyword Operator nu      conceal cchar=ν
-  " syntax keyword Operator xi      conceal cchar=ξ
-  " syntax keyword Operator omicron conceal cchar=ο
-  " syntax keyword Operator pi      conceal cchar=π
-  " syntax keyword Operator rho     conceal cchar=ρ
-  " syntax keyword Operator sigma   conceal cchar=σ
-  " syntax keyword Operator tau     conceal cchar=τ
-  " syntax keyword Operator upsilon conceal cchar=υ
-  " syntax keyword Operator phi     conceal cchar=φ
-  " syntax keyword Operator chi     conceal cchar=χ
-  " syntax keyword Operator psi     conceal cchar=ψ
-  " syntax keyword Operator omega   conceal cchar=ω
+  syntax keyword Operator alpha   conceal cchar=α
+  syntax keyword Operator beta    conceal cchar=β
+  syntax keyword Operator gamma   conceal cchar=γ
+  syntax keyword Operator delta   conceal cchar=δ
+  syntax keyword Operator epsilon conceal cchar=ε
+  syntax keyword Operator zeta    conceal cchar=ζ
+  syntax keyword Operator eta     conceal cchar=η
+  syntax keyword Operator theta   conceal cchar=θ
+  syntax keyword Operator iota    conceal cchar=ι
+  syntax keyword Operator kappa   conceal cchar=κ
+  syntax keyword Operator lambda  conceal cchar=λ
+  syntax keyword Operator mu      conceal cchar=μ
+  syntax keyword Operator nu      conceal cchar=ν
+  syntax keyword Operator xi      conceal cchar=ξ
+  syntax keyword Operator omicron conceal cchar=ο
+  syntax keyword Operator pi      conceal cchar=π
+  syntax keyword Operator rho     conceal cchar=ρ
+  syntax keyword Operator sigma   conceal cchar=σ
+  syntax keyword Operator tau     conceal cchar=τ
+  syntax keyword Operator upsilon conceal cchar=υ
+  syntax keyword Operator phi     conceal cchar=φ
+  syntax keyword Operator chi     conceal cchar=χ
+  syntax keyword Operator psi     conceal cchar=ψ
+  syntax keyword Operator omega   conceal cchar=ω
 
   " syntax keyword SchemeConceal and  conceal cchar=∧
   " syntax keyword SchemeConceal nand conceal cchar=⊼
@@ -153,8 +126,8 @@ if has('conceal')
 
   " syntax match Operator /\s)\+$/ oneline display conceal cchar=~
 
-  " syntax keyword SchemeConceal <= conceal cchar=≤
-  " syntax keyword SchemeConceal >= conceal cchar=≥
+  syntax keyword SchemeConceal <= conceal cchar=≤
+  syntax keyword SchemeConceal >= conceal cchar=≥
 
   " syntax keyword SchemeConceal nabra  conceal cchar=∇
 
