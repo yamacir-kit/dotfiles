@@ -1,5 +1,7 @@
 #!/bin/sh -eux
 
+sudo apt update
+
 install_develop_libraries()
 {
   sudo apt install -y libboost-all-dev
