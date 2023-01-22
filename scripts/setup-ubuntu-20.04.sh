@@ -1,75 +1,80 @@
 #!/bin/sh -eux
 
-install_develop_libraries()
+sudo apt update
+
+default()
 {
-  sudo apt install -y libboost-all-dev
-  sudo apt install -y libcairo2-dev
-  sudo apt install -y libgmp-dev
-  sudo apt install -y libx11-dev
-  sudo apt install -y libxext-dev
-  sudo apt install -y libxft-dev
+  # develop libraries
+  echo libboost-all-dev
+  echo libcairo2-dev
+  echo libgmp-dev
+  echo libx11-dev
+  echo libxext-dev
+  echo libxft-dev
+
+  # develop tools
+  echo build-essential
+  echo clang
+  echo cloc
+  echo cmake
+  echo doxygen
+  echo git
+  echo git-lfs
+  echo shellcheck
+  echo sloccount
+  echo tmux
+  echo tree
+  echo valgrind
+
+  # documentation tools
+  echo gnuplot
+  echo graphviz
+  echo gv
+  echo latexmk
+  echo pstoedit
+  echo texlive
+  echo texlive-fonts-extra
+  echo texlive-fonts-recommended
+  echo texlive-lang-japanese
+  echo xdvik-ja
+
+  # gnome utilities
+  echo gnome-calculator
+  echo gnome-characters
+  echo gnome-logs
+  echo gnome-system-monitor
+  echo gnome-tweak-tool
+  echo numix-gtk-theme
+  echo numix-icon-theme-circle
+
+  # miscellaneous
+  echo gimp
+  echo iftop
+  echo indicator-cpufreq
+  echo inkscape
+  echo ppa-purge
+  echo python3-gpg # for dropbox
+
+  # multimedia
+  echo ffmpeg
+  echo ubuntu-restricted-extras
 }
 
-install_develop_tools()
+optional()
 {
-  sudo apt install -y build-essential
-  sudo apt install -y clang
-  sudo apt install -y cloc
-  sudo apt install -y cmake
-  sudo apt install -y doxygen
-  sudo apt install -y git
-  sudo apt install -y git-lfs
-  sudo apt install -y shellcheck
-  sudo apt install -y sloccount
-  sudo apt install -y tmux
-  sudo apt install -y tree
-  sudo apt install -y valgrind
+  echo libboost-all-dev
 }
 
-install_documentation_tools()
-{
-  sudo apt install -y gnuplot
-  sudo apt install -y graphviz
-  sudo apt install -y gv
-  sudo apt install -y latexmk
-  sudo apt install -y pstoedit
-  sudo apt install -y texlive
-  sudo apt install -y texlive-fonts-extra
-  sudo apt install -y texlive-fonts-recommended
-  sudo apt install -y texlive-lang-japanese
-  sudo apt install -y xdvik-ja
-}
-
-install_gnome_utilities()
-{
-  sudo apt install -y gnome-calculator
-  sudo apt install -y gnome-characters
-  sudo apt install -y gnome-logs
-  sudo apt install -y gnome-system-monitor
-  sudo apt install -y gnome-tweak-tool
-  sudo apt install -y numix-gtk-theme
-  sudo apt install -y numix-icon-theme-circle
-}
-
-install_miscellaenous_tools()
-{
-  sudo apt install -y gimp
-  sudo apt install -y iftop
-  sudo apt install -y indicator-cpufreq
-  sudo apt install -y inkscape
-  sudo apt install -y ppa-purge
-  sudo apt install -y python3-gpg # for dropbox
-}
-
-install_multimedia_tools()
-{
-  sudo apt install -y ffmpeg
-  sudo apt install -y ubuntu-restricted-extras
-}
-
-install_develop_libraries
-install_develop_tools
-install_documentation_tools
-install_gnome_utilities
-install_miscellaenous_tools
-install_multimedia_tools
+if test "$#" -eq 0
+then
+  default | xargs sudo apt install
+else
+  for each in "$@"
+  do
+    case "$each" in
+      -a | --all      ) ( default && optional ) | xargs sudo apt install --yes ;;
+      -d | --default  ) ( default             ) | xargs sudo apt install --yes ;;
+      -o | --optional ) (            optional ) | xargs sudo apt install --yes ;;
+    esac
+  done
+fi
