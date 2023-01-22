@@ -4,8 +4,8 @@ sudo apt update
 
 default()
 {
-  echo build-essential
   echo clang
+  echo cmake
   echo git
   echo shellcheck
   echo tmux

@@ -1,11 +1,16 @@
 #!/bin/sh -eu
 
 sudo apt update
+
 sudo apt install software-properties-common # for apt-add-repository
 
 sudo apt-add-repository -y ppa:jonathonf/vim
+
 sudo apt update
-sudo apt install -y build-essential cmake gcc-9 python3-dev vim-gtk3
+
+sudo apt install -y build-essential cmake python3-dev vim-gtk3
+
+sudo apt remove -y vim-tiny
 
 bundle=$(dirname "$0")/../.vim/bundle
 
@@ -21,8 +26,4 @@ vi -c PluginInstall -c qa
 
 cd $bundle/YouCompleteMe
 
-export CXX='g++-9'
-
 python3 ./install.py --clangd-completer
-
-sudo apt remove -y vim-tiny
