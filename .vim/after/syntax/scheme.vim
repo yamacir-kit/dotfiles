@@ -57,6 +57,8 @@ syntax keyword function
 
 set lispwords+=define-library
 set lispwords+=define-values
+set lispwords+=let*-values
+set lispwords+=let-values
 set lispwords+=parameterize
 set lispwords+=syntax-rules
 set lispwords-=if
