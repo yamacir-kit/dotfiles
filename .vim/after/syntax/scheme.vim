@@ -1,59 +1,74 @@
+" https://vim-jp.org/vimdoc-ja/syntax.html#scheme.vim
+
 set autoindent
 set complete+=k~/.meevax_completions
 set lisp
 
+" https://lemniscus.hatenablog.com/entry/20120409/1333942456#iskeyword
 let &iskeyword = '@,33,35-38,42-43,45-58,60-64,94,_,126'
 
 let &foldlevel = 0
 
-syntax keyword keyword
-  \ ...
-  \ call-with-current-continuation!
-  \ check
-  \ lazy
-  \ syntax
-  \ unless
-  \ when
+" (scheme r4rs appendix)
+syntax keyword function bound-identifier=?
+syntax keyword function construct-identifier
+syntax keyword function free-identifier=?
+syntax keyword function generate-identifier
+syntax keyword function identifier->symbol
+syntax keyword function identifier?
+syntax keyword function unwrap-syntax
 
-syntax keyword macro
-  \ syntax-quote
-
+" (srfi 1)
 syntax keyword function
-  \ binary-port?
-  \ boolean=?
-  \ bound-identifier=?
-  \ construct-identifier
-  \ default-exception-handler
-  \ eager
-  \ er-macro-transformer
-  \ error
-  \ exact
-  \ exact-integer?
-  \ finite?
-  \ free-identifier=?
-  \ generate-identifier
-  \ identifier->symbol
-  \ identifier=?
-  \ identifier?
-  \ identity
-  \ inexact
-  \ infinite?
-  \ ir-macro-transformer
-  \ length*
-  \ lisp-transformer
-  \ make-syntactic-closure
-  \ print
-  \ r6rs:identifier?
-  \ rsc-macro-transformer
-  \ sc-macro-transformer
-  \ symbol=?
-  \ syntactic-closure
-  \ syntactic-closure?
-  \ syntactic-continuation?
-  \ textual-port?
-  \ transformer?
-  \ unspecified
-  \ unwrap-syntax
+  \ alist-cons alist-copy alist-delete alist-delete! any append! append-map
+  \ append-map! append-reverse append-reverse! break break! car+cdr
+  \ circular-list circular-list? concatenate concatenate! cons* count delete
+  \ delete! delete-duplicates delete-duplicates! dotted-list? drop drop-right
+  \ drop-right! drop-while eighth every fifth filter filter! filter-map find
+  \ find-tail first fold fold-right fourth iota last last-pair length+
+  \ list-index list-tabulate list= lset-adjoin lset-diff+intersection
+  \ lset-diff+intersection! lset-difference lset-difference! lset-intersection
+  \ lset-intersection! lset-union lset-union! lset-xor lset-xor! lset<= lset=
+  \ map! map-in-order ninth not-pair? null-list? pair-fold pair-fold-right
+  \ pair-for-each partition partition! proper-list? reduce reduce-right remove
+  \ remove! reverse! second seventh sixth span span! split-at split-at! take
+  \ take! take-right take-while take-while! tenth third unfold unfold-right
+  \ unzip1 unzip2 unzip3 unzip4 unzip5 xcons zip
+
+" (srfi 8)
+syntax keyword keyword receive
+
+" (srfi 38)
+syntax keyword function read-with-shared-structure
+syntax keyword function read/ss
+syntax keyword function write-with-shared-structure
+syntax keyword function write/ss
+
+" (srfi 45)
+syntax keyword function eager
+syntax keyword keyword lazy
+
+" (srfi 78)
+syntax keyword function check-passed?
+syntax keyword function check-report
+syntax keyword function check-reset!
+syntax keyword function check-set-mode!
+syntax keyword keyword check
+syntax keyword keyword check-ec
+
+" (srfi 211)
+syntax keyword function er-macro-transformer
+syntax keyword function identifier?
+syntax keyword function make-syntactic-closure
+syntax keyword function rsc-macro-transformer
+syntax keyword function sc-macro-transformer
+
+" (meevax ...)
+syntax keyword function kernel-exception-handler-set!
+syntax keyword keyword call-with-current-continuation!
+syntax keyword keyword current
+syntax keyword keyword install
+syntax keyword macro quote-syntax
 
 set lispwords+=define-library
 set lispwords+=define-values
