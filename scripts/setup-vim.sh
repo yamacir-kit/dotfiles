@@ -10,8 +10,6 @@ sudo apt update
 
 sudo apt install -y build-essential cmake python3-dev vim-gtk3
 
-sudo apt remove -y vim-tiny
-
 bundle=$(dirname "$0")/../.vim/bundle
 
 mkdir -p "$bundle"
