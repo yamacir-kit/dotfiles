@@ -137,8 +137,9 @@ syntax keyword function check-set-mode!
 syntax keyword keyword check
 syntax keyword keyword check-ec
 
-" (srfi 211)
+" (meevax macro-transformer)
 syntax keyword function er-macro-transformer
+syntax keyword function identifier=?
 syntax keyword function identifier?
 syntax keyword function make-syntactic-closure
 syntax keyword function rsc-macro-transformer
