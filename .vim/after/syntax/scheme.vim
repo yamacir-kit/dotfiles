@@ -161,4 +161,6 @@ set lispwords+=let-values
 set lispwords+=parameterize
 set lispwords+=receive " (srfi 8)
 set lispwords+=syntax-rules
+set lispwords+=with-input-from-file
+set lispwords+=with-output-to-file
 set lispwords-=if
