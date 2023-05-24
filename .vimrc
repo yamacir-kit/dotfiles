@@ -89,8 +89,6 @@ set splitbelow splitright
 set wildmenu
 let &wildmode = 'longest:full,full'
 
-set regexpengine=1
-
 set cursorline
 if (exists('+colorcolumn'))
   let &colorcolumn = '72,80'
@@ -134,6 +132,7 @@ vmap v     <plug>(expand_region_expand)
 vmap <c-v> <plug>(expand_region_shrink)
 
 syntax enable
+syntax sync fromstart
 
 let &background = 'dark'
 
@@ -162,7 +161,7 @@ function! s:when_cpp() abort
   let &cinoptions = '#0,(0,+s,/0,:0,=s,>s,E0,Ls,N0,U1,Ws,c3,g0,hs,is,j1,l1,m0,ps,t0,us,w1'
   let &comments = 's:/*,m:  ,e-3:*/,://'
   let &foldlevel = 1
-  let &formatoptions = 'acjnoqr'
+  let &formatoptions = 'cjnoqr'
 endfunction
 
 auto FileType c,cpp call s:when_cpp()
