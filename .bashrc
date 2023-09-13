@@ -27,7 +27,7 @@ then
   fi
 fi
 
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 export LC_TIME=C
 export LESSCHARSET=utf-8
 
@@ -201,11 +201,6 @@ function rosrc()
       -)
         rm $rosrc_enabled
         echo "[.bashrc] disabed rosrc auto-source";
-        break;;
-      1)
-        rosrc_version='.rosrc-1'
-        echo "[.bashrc] invoke $rosrc_version";
-        source "$dotfiles/$rosrc_version"
         break;;
       2)
         rosrc_version='.rosrc-2'
