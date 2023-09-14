@@ -1,168 +1,166 @@
+" https://vim-jp.org/vimdoc-ja/syntax.html#scheme.vim
+
 set autoindent
 set complete+=k~/.meevax_completions
+set foldlevel =0
+set iskeyword =@,33,35-38,42-43,45-58,60-64,94,_,126 " https://lemniscus.hatenablog.com/entry/20120409/1333942456#iskeyword
 set lisp
 
-let &iskeyword = '@,33,35-38,42-43,45-58,60-64,94,_,126'
+" (scheme r4rs appendix)
+syntax keyword function bound-identifier=?
+syntax keyword function construct-identifier
+syntax keyword function free-identifier=?
+syntax keyword function generate-identifier
+syntax keyword function identifier->symbol
+syntax keyword function identifier?
+syntax keyword function unwrap-syntax
 
-let &foldlevel = 0
+" (srfi 1)
+syntax keyword function alist-cons
+syntax keyword function alist-copy
+syntax keyword function alist-delete
+syntax keyword function alist-delete!
+syntax keyword function any
+syntax keyword function append!
+syntax keyword function append-map
+syntax keyword function append-map!
+syntax keyword function append-reverse
+syntax keyword function append-reverse!
+syntax keyword function break
+syntax keyword function break!
+syntax keyword function car+cdr
+syntax keyword function circular-list
+syntax keyword function circular-list?
+syntax keyword function concatenate
+syntax keyword function concatenate!
+syntax keyword function cons*
+syntax keyword function count
+syntax keyword function delete
+syntax keyword function delete!
+syntax keyword function delete-duplicates
+syntax keyword function delete-duplicates!
+syntax keyword function dotted-list?
+syntax keyword function drop
+syntax keyword function drop-right
+syntax keyword function drop-right!
+syntax keyword function drop-while
+syntax keyword function eighth
+syntax keyword function every
+syntax keyword function fifth
+syntax keyword function filter
+syntax keyword function filter!
+syntax keyword function filter-map
+syntax keyword function find
+syntax keyword function find-tail
+syntax keyword function first
+syntax keyword function fold
+syntax keyword function fold-right
+syntax keyword function fourth
+syntax keyword function iota
+syntax keyword function last
+syntax keyword function last-pair
+syntax keyword function length+
+syntax keyword function list-index
+syntax keyword function list-tabulate
+syntax keyword function list=
+syntax keyword function lset-adjoin
+syntax keyword function lset-diff+intersection
+syntax keyword function lset-diff+intersection!
+syntax keyword function lset-difference
+syntax keyword function lset-difference!
+syntax keyword function lset-intersection
+syntax keyword function lset-intersection!
+syntax keyword function lset-union
+syntax keyword function lset-union!
+syntax keyword function lset-xor
+syntax keyword function lset-xor!
+syntax keyword function lset<=
+syntax keyword function lset=
+syntax keyword function map!
+syntax keyword function map-in-order
+syntax keyword function ninth
+syntax keyword function not-pair?
+syntax keyword function null-list?
+syntax keyword function pair-fold
+syntax keyword function pair-fold-right
+syntax keyword function pair-for-each
+syntax keyword function partition
+syntax keyword function partition!
+syntax keyword function proper-list?
+syntax keyword function reduce
+syntax keyword function reduce-right
+syntax keyword function remove
+syntax keyword function remove!
+syntax keyword function reverse!
+syntax keyword function second
+syntax keyword function seventh
+syntax keyword function sixth
+syntax keyword function span
+syntax keyword function span!
+syntax keyword function split-at
+syntax keyword function split-at!
+syntax keyword function take
+syntax keyword function take!
+syntax keyword function take-right
+syntax keyword function take-while
+syntax keyword function take-while!
+syntax keyword function tenth
+syntax keyword function third
+syntax keyword function unfold
+syntax keyword function unfold-right
+syntax keyword function unzip1
+syntax keyword function unzip2
+syntax keyword function unzip3
+syntax keyword function unzip4
+syntax keyword function unzip5
+syntax keyword function xcons
+syntax keyword function zip
 
-syntax keyword keyword
-  \ ...
-  \ call-with-current-continuation!
-  \ check
-  \ lazy
-  \ syntax
-  \ unless
-  \ when
+" (srfi 8)
+syntax keyword keyword receive
 
-syntax keyword macro
-  \ syntax-quote
+" (srfi 38)
+syntax keyword function read-with-shared-structure
+syntax keyword function read/ss
+syntax keyword function write-with-shared-structure
+syntax keyword function write/ss
 
-syntax keyword function
-  \ binary-port?
-  \ boolean=?
-  \ bound-identifier=?
-  \ construct-identifier
-  \ default-exception-handler
-  \ eager
-  \ er-macro-transformer
-  \ error
-  \ exact
-  \ exact-integer?
-  \ finite?
-  \ free-identifier=?
-  \ generate-identifier
-  \ identifier->symbol
-  \ identifier=?
-  \ identifier?
-  \ identity
-  \ inexact
-  \ infinite?
-  \ ir-macro-transformer
-  \ length*
-  \ lisp-transformer
-  \ make-syntactic-closure
-  \ print
-  \ r6rs:identifier?
-  \ rsc-macro-transformer
-  \ sc-macro-transformer
-  \ symbol=?
-  \ syntactic-closure
-  \ syntactic-closure?
-  \ syntactic-continuation?
-  \ textual-port?
-  \ transformer?
-  \ unspecified
-  \ unwrap-syntax
+" (srfi 45)
+syntax keyword function eager
+syntax keyword keyword lazy
 
+" (srfi 78)
+syntax keyword function check-passed?
+syntax keyword function check-report
+syntax keyword function check-reset!
+syntax keyword function check-set-mode!
+syntax keyword keyword check
+syntax keyword keyword check-ec
+
+" (meevax macro-transformer)
+syntax keyword function er-macro-transformer
+syntax keyword function identifier=?
+syntax keyword function identifier?
+syntax keyword function make-syntactic-closure
+syntax keyword function rsc-macro-transformer
+syntax keyword function sc-macro-transformer
+
+" (meevax ...)
+syntax keyword function kernel-exception-handler-set!
+syntax keyword keyword call-with-current-continuation!
+syntax keyword keyword current
+syntax keyword keyword install
+syntax keyword macro quote-syntax
+
+set lispwords+=check " (srfi 78)
 set lispwords+=define-library
+set lispwords+=define-record-type
 set lispwords+=define-values
+set lispwords+=let*-values
+set lispwords+=let-values
 set lispwords+=parameterize
+set lispwords+=receive " (srfi 8)
 set lispwords+=syntax-rules
+set lispwords+=with-input-from-file
+set lispwords+=with-output-to-file
 set lispwords-=if
-
-" if has('conceal')
-"   " syntax keyword Operator Alpha   conceal cchar=Α
-"   " syntax keyword Operator Beta    conceal cchar=Β
-"   " syntax keyword Operator Gamma   conceal cchar=Γ
-"   " syntax keyword Operator Delta   conceal cchar=Δ
-"   " syntax keyword Operator Epsilon conceal cchar=Ε
-"   " syntax keyword Operator Zeta    conceal cchar=Ζ
-"   " syntax keyword Operator Eta     conceal cchar=Η
-"   " syntax keyword Operator Theta   conceal cchar=Θ
-"   " syntax keyword Operator Iota    conceal cchar=Ι
-"   " syntax keyword Operator Kappa   conceal cchar=Κ
-"   " syntax keyword Operator Lamda   conceal cchar=Λ
-"   " syntax keyword Operator Mu      conceal cchar=Μ
-"   " syntax keyword Operator Nu      conceal cchar=Ν
-"   " syntax keyword Operator Xi      conceal cchar=Ξ
-"   " syntax keyword Operator Omicron conceal cchar=Ο
-"   " syntax keyword Operator Pi      conceal cchar=Π
-"   " syntax keyword Operator Rho     conceal cchar=Ρ
-"   " syntax keyword Operator Sigma   conceal cchar=Σ
-"   " syntax keyword Operator Tau     conceal cchar=Τ
-"   " syntax keyword Operator Upsilon conceal cchar=Υ
-"   " syntax keyword Operator Phi     conceal cchar=Φ
-"   " syntax keyword Operator Chi     conceal cchar=Χ
-"   " syntax keyword Operator Psi     conceal cchar=Ψ
-"   " syntax keyword Operator Omega   conceal cchar=Ω
-"
-"   " syntax keyword Operator alpha   conceal cchar=α
-"   " syntax keyword Operator beta    conceal cchar=β
-"   " syntax keyword Operator gamma   conceal cchar=γ
-"   " syntax keyword Operator delta   conceal cchar=δ
-"   " syntax keyword Operator epsilon conceal cchar=ε
-"   " syntax keyword Operator zeta    conceal cchar=ζ
-"   " syntax keyword Operator eta     conceal cchar=η
-"   " syntax keyword Operator theta   conceal cchar=θ
-"   " syntax keyword Operator iota    conceal cchar=ι
-"   " syntax keyword Operator kappa   conceal cchar=κ
-"   " syntax keyword Operator lambda  conceal cchar=λ
-"   " syntax keyword Operator mu      conceal cchar=μ
-"   " syntax keyword Operator nu      conceal cchar=ν
-"   " syntax keyword Operator xi      conceal cchar=ξ
-"   " syntax keyword Operator omicron conceal cchar=ο
-"   " syntax keyword Operator pi      conceal cchar=π
-"   " syntax keyword Operator rho     conceal cchar=ρ
-"   " syntax keyword Operator sigma   conceal cchar=σ
-"   " syntax keyword Operator tau     conceal cchar=τ
-"   " syntax keyword Operator upsilon conceal cchar=υ
-"   " syntax keyword Operator phi     conceal cchar=φ
-"   " syntax keyword Operator chi     conceal cchar=χ
-"   " syntax keyword Operator psi     conceal cchar=ψ
-"   " syntax keyword Operator omega   conceal cchar=ω
-"
-"   " syntax keyword SchemeConceal and  conceal cchar=∧
-"   " syntax keyword SchemeConceal nand conceal cchar=⊼
-"   " syntax keyword SchemeConceal nor  conceal cchar=⊽
-"   " syntax keyword SchemeConceal not  conceal cchar=∼
-"   " syntax keyword SchemeConceal or   conceal cchar=∨
-"   " syntax keyword SchemeConceal xor  conceal cchar=⊻
-"
-"   " syntax keyword SchemeConceal intersection conceal cchar=∩
-"   " syntax keyword SchemeConceal union        conceal cchar=∪
-"
-"   " syntax keyword SchemeConceal cons conceal cchar=∷
-"
-"   " syntax match Operator /\s)\+$/ oneline display conceal cchar=~
-"
-"   " syntax keyword SchemeConceal <= conceal cchar=≤
-"   " syntax keyword SchemeConceal >= conceal cchar=≥
-"
-"   " syntax keyword SchemeConceal nabra  conceal cchar=∇
-"
-"   " syntax keyword SchemeConceal define conceal cchar=Δ
-"   " ¶
-"   " ↦
-"   " Δ
-"   " ⩴
-"   " ⦀
-"   " ∃
-"   " ⨟
-"   " ≜
-"   " ≝
-"   " ≡
-"   " ≣
-"
-"   " syntax keyword SchemeConceal => conceal cchar=⇒
-"
-"   " syntax keyword SchemeConceal +      conceal cchar=Σ
-"   " syntax keyword SchemeConceal *      conceal cchar=Π
-"
-"   " syntax match   SchemeConceal "'()"  conceal cchar=∅
-"   " syntax match   SchemeConceal "'()"  conceal cchar=𝟘
-"   " syntax match   SchemeConceal "'()"  conceal cchar=𝟎
-"   " syntax match   SchemeConceal "'()"  conceal cchar=0̸
-"   " syntax match   SchemeConceal "'()"  conceal cchar=Ø
-"
-"   " syntax keyword SchemeConceal member conceal cchar=∈
-"   " syntax keyword SchemeConceal sqrt   conceal cchar=√
-"
-"   " syntax keyword SchemeConceal angle  conceal cchar=∠
-"
-"   " syntax keyword SchemeConceal integral conceal cchar=∫
-"
-"   highlight! link Conceal Operator
-"
-"   setlocal conceallevel=1
-" endif

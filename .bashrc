@@ -27,7 +27,7 @@ then
   fi
 fi
 
-export LANG=ja_JP.UTF-8
+export LANG=en_US.UTF-8
 export LC_TIME=C
 export LESSCHARSET=utf-8
 
@@ -35,16 +35,8 @@ eval "$(dircolors ~/.dircolors)"
 
 dotfiles="$HOME/dotfiles"
 
-alias ls='ls -avF --color=auto'
-alias la='ls'
-alias sl='ls'
-alias ks='ls'
-
-alias vu='vi'
-alias vo='vi'
-
-alias cd.='cd $dotfiles'
 alias cdc='cd $(cat /var/tmp/mark/c)'
+alias cd.='cd $dotfiles'
 alias cdd='cd ~/Documents'
 alias cde='cd ~/Desktop'
 alias cdi='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator/openscenario/openscenario_interpreter'
@@ -55,41 +47,15 @@ alias cdr='cd ~/Dropbox'
 alias cds='cd $(cat /var/tmp/mark/c)/src'
 alias cdt='cd ~/works/toybox'
 alias cdw='cd ~/works'
-
-alias alpha='for each in $(echo {a..z}); do echo $each; done'
-
 alias grep='grep --color=always --exclude-dir=.git'
+alias ls='ls -avF --color=auto'
 alias ps='ps acux --sort=rss'
-alias rank='sort | uniq -c | sort -nr'
 alias tmux='tmux -2u'
 
-function cd()
+cd()
 {
   builtin cd "$@" && ls -Fav --color=auto
 }
-
-sloc()
-{
-  find . -type f | grep -Fv -e '.git' -e 'CMakeFiles' | xargs wc | sort -rn
-}
-
-csloc()
-{
-  sloc | grep -E '^*\.[c|h](pp)?$'
-}
-
-watch-sloc()
-{
-  watch -n1 "$@" -x bash -c sloc
-}
-
-watch-csloc()
-{
-  watch -n1 "$@" -x bash -c csloc
-}
-
-export -f sloc
-export -f csloc
 
 watch-grep()
 {
@@ -118,16 +84,6 @@ update()
   done
 }
 
-cxx()
-{
-  "$CXX" "$@" -std=c++17 -Wall -Wextra -Wpedantic
-}
-
-memcheck()
-{
-  valgrind --error-exitcode=1 --leak-check=full --quiet --show-leak-kinds=all "$@"
-}
-
 mark()
 {
   file="m"
@@ -137,13 +93,46 @@ mark()
   for each in "$@"
   do
     case "$each" in
-      "-c" | "--catkin" )
+      "-c" | "--colcon" )
         file="c"
         break;;
     esac
   done
 
   echo "mark: $(pwd | tee /var/tmp/mark/$file)";
+}
+
+develop()
+{
+  session_name='develop'
+
+  if tmux has-session -t $session_name
+  then
+    tmux -2u attach-session -d -t $session_name
+  else
+    tmux new-session -c "$HOME/.meevax" -d -s $session_name
+
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+
+    tmux select-layout even-horizontal
+
+    tmux split-window -c "$HOME/.meevax" -v
+    tmux split-window -c "$HOME/.meevax" -v
+
+    tmux select-pane -t 0
+    tmux send "./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
+
+    tmux select-pane -t 5
+    tmux send "watch -cn1 git diff --stat --color --cached" ENTER
+
+    tmux select-pane -t 6
+    tmux send "watch -cn1 git diff --stat --color" ENTER
+
+    tmux -2u attach-session -d -t $session_name
+  fi
 }
 
 gitinfo()
@@ -166,64 +155,24 @@ export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\]
 export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
 export PS1="$PS1>> "
 
-rosrc_enabled='/var/tmp/rosrc'
-rosrc_version='.rosrc-2'
-rosrc_workspace="$(cat /var/tmp/mark/c)"
+colcon_workspace="$(cat /var/tmp/mark/c)"
 
-if test -e $rosrc_enabled
+if test -e "/opt/ros/humble/setup.bash"
 then
-  source "$dotfiles"/$rosrc_version
+  source "/opt/ros/humble/setup.bash"
 
-  echo -n "[$rosrc_version] auto-source $rosrc_workspace/install/setup.bash => "
-
-  if test -e "$rosrc_workspace/install/setup.bash"
+  if test -e "$colcon_workspace/install/setup.bash"
   then
-    if source "$rosrc_workspace/install/setup.bash"
-    then
-      echo "success"
-    else
-      echo "failure"
-    fi
-  else
-    echo "skipped (not exist)"
+    source "$colcon_workspace/install/setup.bash"
   fi
+
+  export CYCLONEDDS_URI=file:///opt/autoware/cyclonedds_config.xml
+  export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
+  export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
+  export PATH="/usr/local/cuda/bin:$PATH"
+  export RCUTILS_COLORIZED_OUTPUT=1
+  export RCUTILS_LOGGING_BUFFERED_STREAM=1
+  export RCUTILS_LOGGING_USE_STDOUT=1
+  export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
+  export ROS_DOMAIN_ID=87
 fi
-
-function rosrc()
-{
-  for each in "$@"
-  do
-    case "$each" in
-      +)
-        touch $rosrc_enabled
-        echo "[.bashrc] enabled rosrc auto-source";
-        break;;
-      -)
-        rm $rosrc_enabled
-        echo "[.bashrc] disabed rosrc auto-source";
-        break;;
-      1)
-        rosrc_version='.rosrc-1'
-        echo "[.bashrc] invoke $rosrc_version";
-        source "$dotfiles/$rosrc_version"
-        break;;
-      2)
-        rosrc_version='.rosrc-2'
-        echo "[.bashrc] invoke $rosrc_version";
-        source "$dotfiles/$rosrc_version"
-        break;;
-      *)
-        rosrc_workspace="$each"
-        break;;
-    esac
-  done
-}
-
-# ---- Autoware ----------------------------------------------------------------
-
-export CYCLONEDDS_URI=file:///opt/autoware/cyclonedds_config.xml
-export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
-export PATH="/usr/local/cuda/bin:$PATH"
-export RCUTILS_COLORIZED_OUTPUT=1
-export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
