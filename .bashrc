@@ -110,7 +110,7 @@ develop()
   then
     tmux -2u attach-session -d -t $session_name
   else
-    tmux new-session -c "$HOME/.meevax" -d -n meevax -s $session_name
+    tmux new-session -c "$HOME/.meevax" -d -s $session_name
 
     tmux split-window -c "$HOME/.meevax" -h
     tmux split-window -c "$HOME/.meevax" -h
