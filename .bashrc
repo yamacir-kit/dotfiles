@@ -102,6 +102,39 @@ mark()
   echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
 
+develop()
+{
+  session_name='develop'
+
+  if tmux has-session -t $session_name
+  then
+    tmux -2u attach-session -d -t $session_name
+  else
+    tmux new-session -c "$HOME/.meevax" -d -n meevax -s $session_name
+
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+    tmux split-window -c "$HOME/.meevax" -h
+
+    tmux select-layout even-horizontal
+
+    tmux split-window -c "$HOME/.meevax" -v
+    tmux split-window -c "$HOME/.meevax" -v
+
+    tmux select-pane -t 0
+    tmux send "./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
+
+    tmux select-pane -t 5
+    tmux send "watch -cn1 git diff --stat --color --cached" ENTER
+
+    tmux select-pane -t 6
+    tmux send "watch -cn1 git diff --stat --color" ENTER
+
+    tmux -2u attach-session -d -t $session_name
+  fi
+}
+
 gitinfo()
 {
   if git status &> /dev/null
