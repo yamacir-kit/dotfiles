@@ -11,12 +11,11 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'bfrg/vim-cpp-modern' " syntax highlighting for C++
+Plugin 'bfrg/vim-cpp-modern' " Syntax highlighting for C++
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nickhutchinson/vim-cmake-syntax' " syntax highlighting for CMakeLists.txt
-Plugin 'terryma/vim-expand-region'
-Plugin 'tmux-plugins/vim-tmux' " syntax highlighting for .tmux.conf
-Plugin 'tyru/caw.vim'
+Plugin 'nickhutchinson/vim-cmake-syntax' " Syntax highlighting for CMakeLists.txt
+Plugin 'tmux-plugins/vim-tmux' " Syntax highlighting for .tmux.conf
+Plugin 'tyru/caw.vim' " Comment plugin
 Plugin 'ycm-core/YouCompleteMe'
 
 call vundle#end()
@@ -134,9 +133,6 @@ inoremap () ()<left>
 inoremap <> <><left>
 inoremap [] []<left>
 inoremap {} {}<left>
-
-vmap v <plug>(expand_region_expand)
-vmap <c-v> <plug>(expand_region_shrink)
 
 vnoremap ; :s/
 vnoremap > >gv
