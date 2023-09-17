@@ -24,97 +24,80 @@ call vundle#end()
 
 filetype plugin indent on
 
-source ~/.vim/configs/quickrun.conf.vim
-source ~/.vim/configs/youcompleteme.conf.vim
+set autoread
+set background=dark
+set clipboard=unnamedplus
+set confirm
+set cursorline
+set encoding=utf-8
+set expandtab
+set fileencoding=utf-8
+set fileformat=unix
+set foldignore=""
+set foldmethod=indent
+set incsearch
+set laststatus=0
+set list
+set listchars=tab:>\ ,trail:_
+set matchtime=1
+set nobackup
+set nojoinspaces
+set noswapfile
+set nowrap
+set scrolloff=128
+set shiftwidth=2
+set showcmd
+set showmatch
+set showmode
+set sidescroll=1
+set sidescrolloff=16
+set smartcase
+set smarttab
+set splitbelow
+set splitright
+set tabstop=2
+set timeout
+set timeoutlen=1000
+set ttimeoutlen=100
+set ttyfast
+set updatetime=100
+set virtualedit=block
+set wildmenu
+set wildmode=longest:full,full
+set wrapscan
 
-let g:is_bash = 1
+if (exists('+colorcolumn'))
+  set colorcolumn=72,80
+endif
 
 let &t_ZH = "\e[3m"
 let &t_ZR = "\e[23m"
 
-let                 &encoding = 'utf-8'
-let &fileencoding = &encoding
-" let &ambiwidth = 'double'
+let g:is_bash = 1
 
-let &updatetime = 100
+source ~/.vim/configs/quickrun.conf.vim
+source ~/.vim/configs/solarized.conf.vim
+source ~/.vim/configs/youcompleteme.conf.vim
 
-set confirm
+let g:cpp_attributes_highlight = 1
+let g:cpp_function_highlight = 1
+let g:cpp_member_highlight = 1
+let g:cpp_simple_highlight = 0
 
-set autoread
-
-set noswapfile
-set nobackup
-
-let &fileformat = 'unix'
-
-set ttyfast
-let &clipboard = 'unnamedplus'
-
-let &laststatus = 0
-
-set showmode
-set showcmd
-
-set list
-let &listchars = 'tab:> ,trail:_'
-
-set timeout
-let  &timeoutlen = 1000
-let &ttimeoutlen = 100
-
-let               &tabstop = 2
-let &shiftwidth = &tabstop
-set expandtab smarttab
-
-set nowrap
-
-set nojoinspaces
-
-let &foldmethod = 'indent'
-let &foldignore = ''
-
-let &sidescroll    =   1
-let &sidescrolloff =  16
-let     &scrolloff = 128
-
-set showmatch
-let &matchtime = 1
-
-let &virtualedit = 'block'
-
-set incsearch smartcase wrapscan
-
-set splitbelow splitright
-
-set wildmenu
-let &wildmode = 'longest:full,full'
-
-set cursorline
-if (exists('+colorcolumn'))
-  let &colorcolumn = '72,80'
-endif
-
-nnoremap ; :
 nnoremap : ;
-nnoremap Y y$
-nnoremap x "_x
+nnoremap ; :
 nnoremap + <c-a>
+nnoremap / :<c-u>set<space>hlsearch<cr>/
+nnoremap ? :<c-u>set<space>hlsearch<cr>?
 nnoremap - <c-x>
-
 nnoremap <leader>def :YcmCompleter<space>GoTo<cr>
-
-nnoremap <leader>gc :!git<space>commit<space>--signoff<space>--verbose<cr>
+nnoremap <leader>gc :!git<space>commit<space>-sv<cr>
 nnoremap <leader>gn :<c-u>GitGutterNextHunk<cr>
 nnoremap <leader>gp :<c-u>GitGutterPrevHunk<cr>
 nnoremap <leader>gr :<c-u>GitGutterUndoHunk<cr>
 nnoremap <leader>gs :<c-u>GitGutterStageHunk<cr>
-
-nnoremap / :<c-u>set<space>hlsearch<cr>/
-nnoremap ? :<c-u>set<space>hlsearch<cr>?
-
-nnoremap <leader>c+ :<c-u>set cole=1<cr>
-nnoremap <leader>c- :<c-u>set cole=0<cr>
-nnoremap <leader>cc :<c-u>set <c-r>=&cole ? 'cole=0' : 'cole=1'<cr><cr>
+nnoremap x "_x
+nnoremap Y y$
 
 inoremap "" ""<left>
 inoremap $$ $$<left>
@@ -124,54 +107,40 @@ inoremap <> <><left>
 inoremap [] []<left>
 inoremap {} {}<left>
 
+vmap v <plug>(expand_region_expand)
+vmap <c-v> <plug>(expand_region_shrink)
+
 vnoremap ; :s/
 vnoremap > >gv
 vnoremap < <gv
 
-vmap v     <plug>(expand_region_expand)
-vmap <c-v> <plug>(expand_region_shrink)
-
 syntax enable
 syntax sync fromstart
 
-let &background = 'dark'
-
-source ~/.vim/configs/solarized.conf.vim
-
 colorscheme solarized
 
-highlight CursorLineNr            ctermbg=none cterm=bold
-highlight       LineNr            ctermbg=none
-highlight Search       ctermfg=1               cterm=underline
-highlight Incsearch    ctermfg=1               cterm=underline
-highlight Comment                              cterm=italic
-highlight Todo                                 cterm=bold,italic
-highlight Folded       ctermfg=11 ctermbg=none cterm=italic
+highlight Comment                            cterm=italic
+highlight Folded     ctermfg=11 ctermbg=none cterm=italic
+highlight Incsearch  ctermfg=1               cterm=underline
+highlight Search     ctermfg=1               cterm=underline
+highlight SignColumn            ctermbg=none
+highlight Todo                               cterm=bold,italic
 
-highlight! link SignColumn LineNr
-
-let g:cpp_attributes_highlight = 1
-let g:cpp_function_highlight = 1
-let g:cpp_member_highlight = 1
-let g:cpp_simple_highlight = 0
-
-function! s:when_cpp() abort
+function! s:when_c_or_cpp() abort
   set cindent
   set cinkeys-=0#
-  let &cinoptions = '#0,(0,+s,/0,:0,=s,>s,E0,Ls,N0,U1,Ws,c3,g0,hs,is,j1,l1,m0,ps,t0,us,w1'
-  let &comments = 's:/*,m:  ,e-3:*/,://'
-  let &foldlevel = 1
-  let &formatoptions = 'cjnoqr'
+  set cinoptions="#0,(0,+s,/0,:0,=s,>s,E0,Ls,N0,U1,Ws,c3,g0,hs,is,j1,l1,m0,ps,t0,us,w1"
+  set comments="s:/*,m:  ,e-3:*/,://"
+  set foldlevel=1
+  set formatoptions="cjnoqr"
 endfunction
 
-auto FileType c,cpp call s:when_cpp()
-
-auto BufRead,BufNewFile *.launch    let &filetype = 'xml'
-auto BufRead,BufNewFile *.md        let &filetype = 'markdown'
-auto BufRead,BufNewFile *.plt       let &filetype = 'gnuplot'
-auto BufRead,BufNewFile *.repos     let &filetype = 'yaml'
-auto BufRead,BufNewFile .tmux.conf  let &filetype = 'tmux'
+auto BufRead,BufNewFile *.launch    set filetype=xml
+auto BufRead,BufNewFile *.md        set filetype=markdown
+auto BufRead,BufNewFile *.plt       set filetype=gnuplot
+auto BufRead,BufNewFile *.repos     set filetype=yaml
+auto BufRead,BufNewFile *.tmux.conf set filetype=tmux
 
 auto BufWritePre * :%s/\s\+$//ge
 
-command! DeleteAnsiEscapeSequence %s/\[[0-9;]*m//g$
+auto FileType c,cpp call s:when_c_or_cpp()
