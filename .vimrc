@@ -15,7 +15,6 @@ Plugin 'bfrg/vim-cpp-modern' " syntax highlighting for C++
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'nickhutchinson/vim-cmake-syntax' " syntax highlighting for CMakeLists.txt
 Plugin 'terryma/vim-expand-region'
-Plugin 'thinca/vim-quickrun'
 Plugin 'tmux-plugins/vim-tmux' " syntax highlighting for .tmux.conf
 Plugin 'tyru/caw.vim'
 Plugin 'ycm-core/YouCompleteMe'
@@ -75,7 +74,6 @@ let &t_ZR = "\e[23m"
 
 let g:is_bash = 1
 
-source ~/.vim/configs/quickrun.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
 
 let g:cpp_attributes_highlight = 1
