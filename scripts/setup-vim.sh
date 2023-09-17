@@ -16,7 +16,6 @@ mkdir -p "$bundle"
 
 if test ! -e "$bundle/Vundle.vim"
 then
-  git clone https://github.com/altercation/vim-colors-solarized "$bundle/vim-colors-solarized" # HACK: To fix error "Cannot find color scheme 'solarized'".
   git clone https://github.com/VundleVim/Vundle.vim "$bundle/Vundle.vim"
 fi
 

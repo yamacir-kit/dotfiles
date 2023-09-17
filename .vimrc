@@ -61,9 +61,6 @@ call vundle#end()
 
 filetype plugin indent on " Required by Vundle.vim
 
-let &t_ZH = "\e[3m"
-let &t_ZR = "\e[23m"
-
 let g:is_bash = 1
 
 let g:cpp_attributes_highlight = 1
@@ -103,6 +100,9 @@ let g:ycm_seed_identifiers_with_syntax = 1
 let g:ycm_show_diagnostic_ui = 0
 let g:ycm_use_clangd = 1
 let g:ycm_use_ultisnips_completer = 0
+
+let &t_ZH = "\e[3m"
+let &t_ZR = "\e[23m"
 
 nnoremap : ;
 nnoremap ; :
