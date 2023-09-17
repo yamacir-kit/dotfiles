@@ -1,30 +1,7 @@
-if &compatible
-  set nocompatible
-endif
-
-filetype off
-
-set runtimepath+=~/.vim/bundle/Vundle.vim
-
-call vundle#begin()
-
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'bfrg/vim-cpp-modern' " Syntax highlighting for C++
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'nickhutchinson/vim-cmake-syntax' " Syntax highlighting for CMakeLists.txt
-Plugin 'tmux-plugins/vim-tmux' " Syntax highlighting for .tmux.conf
-Plugin 'tyru/caw.vim' " Comment plugin
-Plugin 'ycm-core/YouCompleteMe'
-
-call vundle#end()
-
-filetype plugin indent on
-
 set autoread
 set background=dark
 set clipboard=unnamedplus
+set colorcolumn=72,80
 set confirm
 set cursorline
 set encoding=utf-8
@@ -39,9 +16,11 @@ set list
 set listchars=tab:>\ ,trail:_
 set matchtime=1
 set nobackup
+set nocompatible " Required by Vundle.vim
 set nojoinspaces
 set noswapfile
 set nowrap
+set runtimepath+=~/.vim/bundle/Vundle.vim
 set scrolloff=128
 set shiftwidth=2
 set showcmd
@@ -64,9 +43,23 @@ set wildmenu
 set wildmode=longest:full,full
 set wrapscan
 
-if (exists('+colorcolumn'))
-  set colorcolumn=72,80
-endif
+filetype off " Required by Vundle.vim
+
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'bfrg/vim-cpp-modern' " Syntax highlighting for C++
+Plugin 'christoomey/vim-tmux-navigator'
+Plugin 'nickhutchinson/vim-cmake-syntax' " Syntax highlighting for CMakeLists.txt
+Plugin 'tmux-plugins/vim-tmux' " Syntax highlighting for .tmux.conf
+Plugin 'tyru/caw.vim' " Comment plugin
+Plugin 'ycm-core/YouCompleteMe'
+
+call vundle#end()
+
+filetype plugin indent on " Required by Vundle.vim
 
 let &t_ZH = "\e[3m"
 let &t_ZR = "\e[23m"
@@ -141,14 +134,16 @@ vnoremap < <gv
 syntax enable
 syntax sync fromstart
 
-colorscheme solarized
+if isdirectory(expand("$HOME/.vim/bundle/vim-colors-solarized"))
+  colorscheme solarized
 
-highlight Comment                            cterm=italic
-highlight Folded     ctermfg=11 ctermbg=none cterm=italic
-highlight Incsearch  ctermfg=1               cterm=underline
-highlight Search     ctermfg=1               cterm=underline
-highlight SignColumn            ctermbg=none
-highlight Todo                               cterm=bold,italic
+  highlight Comment                            cterm=italic
+  highlight Folded     ctermfg=11 ctermbg=none cterm=italic
+  highlight Incsearch  ctermfg=1               cterm=underline
+  highlight Search     ctermfg=1               cterm=underline
+  highlight SignColumn            ctermbg=none
+  highlight Todo                               cterm=bold,italic
+endif
 
 function! s:when_c_or_cpp() abort
   set cindent
