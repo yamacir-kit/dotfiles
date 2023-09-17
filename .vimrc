@@ -76,13 +76,21 @@ let &t_ZR = "\e[23m"
 let g:is_bash = 1
 
 source ~/.vim/configs/quickrun.conf.vim
-source ~/.vim/configs/solarized.conf.vim
 source ~/.vim/configs/youcompleteme.conf.vim
 
 let g:cpp_attributes_highlight = 1
 let g:cpp_function_highlight = 1
 let g:cpp_member_highlight = 1
 let g:cpp_simple_highlight = 0
+
+let g:solarized_bold = 1
+let g:solarized_contrast = 'high'
+let g:solarized_degrade = 0
+let g:solarized_italic = 1
+let g:solarized_termcolors = 16
+let g:solarized_termtrans = 1
+let g:solarized_underline = 1
+let g:solarized_visibility = 'normal'
 
 nnoremap : ;
 nnoremap ; :

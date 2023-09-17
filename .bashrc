@@ -150,7 +150,7 @@ develop()
     tmux send "ls -l ./build/bin/meevax" ENTER
 
     tmux select-pane -t 1
-    tmux send "ls -l ./build/lib/libmeevax.0.4.*" ENTER
+    tmux send "ls -l ./build/lib/libmeevax.so.0.4.*" ENTER
 
     tmux select-window -t 0
     tmux select-pane -t 0
