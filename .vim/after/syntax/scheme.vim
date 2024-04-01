@@ -156,11 +156,15 @@ set lispwords+=check " (srfi 78)
 set lispwords+=define-library
 set lispwords+=define-record-type
 set lispwords+=define-values
+set lispwords+=except
 set lispwords+=let*-values
 set lispwords+=let-values
+set lispwords+=only
 set lispwords+=parameterize
 set lispwords+=receive " (srfi 8)
 set lispwords+=syntax-rules
 set lispwords+=with-input-from-file
 set lispwords+=with-output-to-file
+
+set lispwords-=abort
 set lispwords-=if
