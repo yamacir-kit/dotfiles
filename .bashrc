@@ -57,14 +57,39 @@ cd()
   builtin cd "$@" && ls -Fav --color=auto
 }
 
-watch-grep()
+colcon_build()
 {
-  watch --color -n1 "grep --color=always \
-                          --exclude-dir=.git \
-                          --exclude-dir=build \
-                          -Irn ./ \
-                          -e $* \
-                   | grep -v -e CHANGELOG"
+  MAKEFLAGS=-j4
+
+  colcon build --allow-overriding lanelet2_extension \
+               --parallel-workers=8 \
+               --symlink-install \
+               --cmake-args -DCMAKE_BUILD_TYPE=Release
+}
+
+colcon_build_up_to()
+{
+  MAKEFLAGS=-j4
+
+  colcon build --allow-overriding lanelet2_extension \
+               --parallel-workers=8 \
+               --symlink-install \
+               --packages-up-to $@ \
+               --cmake-args -DCMAKE_BUILD_TYPE=Release
+}
+
+watch_grep()
+{
+  watch --color \
+        --interval 1 \
+        --exec grep --binary-files=without-match \
+                    --color=always \
+                    --exclude=CHANGELOG.* \
+                    --exclude-dir=build \
+                    --exclude-dir=.git \
+                    --line-number \
+                    --recursive \
+                    "$*" ./
 }
 
 update()
