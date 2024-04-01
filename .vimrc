@@ -148,7 +148,7 @@ endif
 function! s:when_c_or_cpp() abort
   set cindent
   set cinkeys-=0#
-  set cinoptions="#0,(0,+s,/0,:0,=s,>s,E0,Ls,N0,U1,Ws,c3,g0,hs,is,j1,l1,m0,ps,t0,us,w1"
+  set cinoptions=#0,(0,+s,/0,:0,=s,>s,E0,Ls,N0,U1,Ws,c3,g0,hs,is,j1,l1,m0,ps,t0,us,w1
   set comments="s:/*,m:  ,e-3:*/,://"
   set foldlevel=1
   set formatoptions="cjnoqr"
