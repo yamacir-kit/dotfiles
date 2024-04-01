@@ -148,7 +148,7 @@ develop()
     tmux split-window -c "$HOME/.meevax" -v
 
     tmux select-pane -t 0
-    tmux send "./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
+    tmux send "clear && ./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
 
     tmux select-pane -t 4
     tmux send "watch -cn1 git status" ENTER
@@ -172,10 +172,10 @@ develop()
     tmux split-window -c "$HOME/.meevax" -v
 
     tmux select-pane -t 0
-    tmux send "ls -l ./build/bin/meevax" ENTER
+    tmux send "du -b ./build/bin/meevax" ENTER
 
     tmux select-pane -t 1
-    tmux send "ls -l ./build/lib/libmeevax.so.0.4.*" ENTER
+    tmux send "du -b ./build/lib/*" ENTER
 
     tmux select-window -t 0
     tmux select-pane -t 0
