@@ -1,0 +1,128 @@
+diff --git a/Makefile b/Makefile
+index 15db421..49459af 100644
+--- a/Makefile
++++ b/Makefile
+@@ -38,6 +38,8 @@ install: st
+ 	mkdir -p $(DESTDIR)$(PREFIX)/bin
+ 	cp -f st $(DESTDIR)$(PREFIX)/bin
+ 	chmod 755 $(DESTDIR)$(PREFIX)/bin/st
++	mkdir -p $(DESTDIR)$(PREFIX)/share/applications
++	cp -f st.desktop $(DESTDIR)$(PREFIX)/share/applications
+ 	mkdir -p $(DESTDIR)$(MANPREFIX)/man1
+ 	sed "s/VERSION/$(VERSION)/g" < st.1 > $(DESTDIR)$(MANPREFIX)/man1/st.1
+ 	chmod 644 $(DESTDIR)$(MANPREFIX)/man1/st.1
+@@ -46,6 +48,7 @@ install: st
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/bin/st
++	rm -f $(DESTDIR)$(PREFIX)/share/applications/st.desktop
+ 	rm -f $(DESTDIR)$(MANPREFIX)/man1/st.1
+ 
+ .PHONY: all clean dist install uninstall
+diff --git a/config.def.h b/config.def.h
+index 2cd740a..4e566e1 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -5,8 +5,8 @@
+  *
+  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
+  */
+-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+-static int borderpx = 2;
++static char *font = "Triplicate A:size=14:antialias=true:autohint=true";
++static int borderpx = 0;
+ 
+ /*
+  * What program is execed by st depends of these precedence rules:
+@@ -26,7 +26,7 @@ char *stty_args = "stty raw pass8 nl -echo -iexten -cstopb 38400";
+ char *vtiden = "\033[?6c";
+ 
+ /* Kerning / character bounding-box multipliers */
+-static float cwscale = 1.0;
++static float cwscale = 0.5;
+ static float chscale = 1.0;
+ 
+ /*
+@@ -95,33 +95,23 @@ unsigned int tabspaces = 8;
+ 
+ /* Terminal colors (16 first used in escape sequence) */
+ static const char *colorname[] = {
+-	/* 8 normal colors */
+-	"black",
+-	"red3",
+-	"green3",
+-	"yellow3",
+-	"blue2",
+-	"magenta3",
+-	"cyan3",
+-	"gray90",
+-
+-	/* 8 bright colors */
+-	"gray50",
+-	"red",
+-	"green",
+-	"yellow",
+-	"#5c5cff",
+-	"magenta",
+-	"cyan",
+-	"white",
+-
+-	[255] = 0,
+-
+-	/* more colors can be added after 255 to use with DefaultXX */
+-	"#cccccc",
+-	"#555555",
+-	"gray90", /* default foreground colour */
+-	"black", /* default background colour */
++	/* solarized dark */
++	"#073642",  /*  0: black    */
++	"#dc322f",  /*  1: red      */
++	"#859900",  /*  2: green    */
++	"#b58900",  /*  3: yellow   */
++	"#268bd2",  /*  4: blue     */
++	"#d33682",  /*  5: magenta  */
++	"#2aa198",  /*  6: cyan     */
++	"#eee8d5",  /*  7: white    */
++	"#002b36",  /*  8: brblack  */
++	"#cb4b16",  /*  9: brred    */
++	"#586e75",  /* 10: brgreen  */
++	"#657b83",  /* 11: bryellow */
++	"#839496",  /* 12: brblue   */
++	"#6c71c4",  /* 13: brmagenta*/
++	"#93a1a1",  /* 14: brcyan   */
++	"#fdf6e3",  /* 15: brwhite  */
+ };
+ 
+ 
+@@ -129,10 +119,10 @@ static const char *colorname[] = {
+  * Default colors (colorname index)
+  * foreground, background, cursor, reverse cursor
+  */
+-unsigned int defaultfg = 258;
+-unsigned int defaultbg = 259;
+-unsigned int defaultcs = 256;
+-static unsigned int defaultrcs = 257;
++unsigned int defaultfg = 12;
++unsigned int defaultbg = 8;
++unsigned int defaultcs = 14;
++static unsigned int defaultrcs = 15;
+ 
+ /*
+  * Default shape of cursor
+diff --git a/st.desktop b/st.desktop
+new file mode 100644
+index 0000000..352a5d4
+--- /dev/null
++++ b/st.desktop
+@@ -0,0 +1,11 @@
++[Desktop Entry]
++Categories=System;TerminalEmulator;
++Comment=st is a simple terminal implementation for X
++Exec=st
++GenericName=Terminal
++Icon=terminal
++Name=st
++StartupWMClass=st-256color
++Terminal=false
++TryExec=st
++Type=Application
