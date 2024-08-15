@@ -57,14 +57,39 @@ cd()
   builtin cd "$@" && ls -Fav --color=auto
 }
 
-watch-grep()
+colcon_build()
 {
-  watch --color -n1 "grep --color=always \
-                          --exclude-dir=.git \
-                          --exclude-dir=build \
-                          -Irn ./ \
-                          -e $* \
-                   | grep -v -e CHANGELOG"
+  MAKEFLAGS=-j4
+
+  colcon build --allow-overriding lanelet2_extension \
+               --parallel-workers=8 \
+               --symlink-install \
+               --cmake-args -DCMAKE_BUILD_TYPE=Release
+}
+
+colcon_build_up_to()
+{
+  MAKEFLAGS=-j4
+
+  colcon build --allow-overriding lanelet2_extension \
+               --parallel-workers=8 \
+               --symlink-install \
+               --packages-up-to $@ \
+               --cmake-args -DCMAKE_BUILD_TYPE=Release
+}
+
+watch_grep()
+{
+  watch --color \
+        --interval 1 \
+        --exec grep --binary-files=without-match \
+                    --color=always \
+                    --exclude=CHANGELOG.* \
+                    --exclude-dir=build \
+                    --exclude-dir=.git \
+                    --line-number \
+                    --recursive \
+                    "$*" ./
 }
 
 update()
@@ -123,7 +148,7 @@ develop()
     tmux split-window -c "$HOME/.meevax" -v
 
     tmux select-pane -t 0
-    tmux send "./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
+    tmux send "clear && ./script/update.sh -DCMAKE_BUILD_TYPE=Release -DCMAKE_CXX_COMPILER=g++" ENTER
 
     tmux select-pane -t 4
     tmux send "watch -cn1 git status" ENTER
@@ -147,10 +172,10 @@ develop()
     tmux split-window -c "$HOME/.meevax" -v
 
     tmux select-pane -t 0
-    tmux send "ls -l ./build/bin/meevax" ENTER
+    tmux send "du -b ./build/bin/meevax" ENTER
 
     tmux select-pane -t 1
-    tmux send "ls -l ./build/lib/libmeevax.so.0.4.*" ENTER
+    tmux send "du -b ./build/lib/*" ENTER
 
     tmux select-window -t 0
     tmux select-pane -t 0
