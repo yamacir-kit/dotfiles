@@ -14,5 +14,5 @@ jobs:
       - run: ./install.sh
       - run: ./scripts/setup-${{ matrix.os }}.sh
       - run: ./scripts/setup-${{ matrix.os }}-st.sh
-      - run: ./scripts/setup-vim.sh
+      - run: ./scripts/setup-${{ matrix.os }}-vim.sh
       - run: ./uninstall.sh
