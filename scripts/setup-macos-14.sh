@@ -12,6 +12,8 @@ default()
 
 optional()
 {
+  echo gmp
+  echo shellcheck
 }
 
 if test "$#" -eq 0
@@ -21,9 +23,9 @@ else
   for each in "$@"
   do
     case "$each" in
-      -a | --all      ) ( default && optional ) | xargs sudo brew install ;;
-      -d | --default  ) ( default             ) | xargs sudo brew install ;;
-      -o | --optional ) (            optional ) | xargs sudo brew install ;;
+      -a | --all      ) ( default && optional ) | xargs brew install ;;
+      -d | --default  ) ( default             ) | xargs brew install ;;
+      -o | --optional ) (            optional ) | xargs brew install ;;
     esac
   done
 fi
