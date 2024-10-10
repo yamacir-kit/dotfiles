@@ -1,14 +1,8 @@
-#!/bin/sh -eu
+#!/bin/sh
 
-sudo apt update
+brew update
 
-sudo apt install software-properties-common # for apt-add-repository
-
-sudo apt-add-repository -y ppa:jonathonf/vim
-
-sudo apt update
-
-sudo apt install -y build-essential cmake python3-dev vim-gtk3
+brew install cmake python vim
 
 bundle=$(dirname "$0")/../.vim/bundle
 
