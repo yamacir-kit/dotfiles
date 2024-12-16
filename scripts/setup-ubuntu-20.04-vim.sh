@@ -1,1 +1,0 @@
-setup-ubuntu-22.04-vim.sh
