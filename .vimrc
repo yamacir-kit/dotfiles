@@ -1,5 +1,6 @@
 set autoread
 set background=dark
+set backspace=indent,eol,start
 set clipboard=unnamedplus
 set colorcolumn=72,80
 set confirm

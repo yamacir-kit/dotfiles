@@ -28,6 +28,7 @@ then
 fi
 
 export LANG=en_US.UTF-8
+export LC_COLLATE=C
 export LC_TIME=C
 export LESSCHARSET=utf-8
 
@@ -35,18 +36,33 @@ eval "$(dircolors ~/.dircolors)"
 
 dotfiles="$HOME/dotfiles"
 
+alias cda='cd $(cat /var/tmp/mark/a)'
+alias cdb='cd $(cat /var/tmp/mark/b)'
 alias cdc='cd $(cat /var/tmp/mark/c)'
-alias cd.='cd $dotfiles'
-alias cdd='cd ~/Documents'
-alias cde='cd ~/Desktop'
-alias cdi='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator/openscenario/openscenario_interpreter'
-alias cdl='cd $(cat /var/tmp/mark/c)/src/simulator/scenario_simulator/test_runner/scenario_test_runner'
+alias cdd='cd $(cat /var/tmp/mark/d)'
+alias cde='cd $(cat /var/tmp/mark/e)'
+alias cdf='cd $(cat /var/tmp/mark/f)'
+alias cdg='cd $(cat /var/tmp/mark/g)'
+alias cdh='cd $(cat /var/tmp/mark/h)'
+alias cdi='cd $(cat /var/tmp/mark/i)'
+alias cdj='cd $(cat /var/tmp/mark/j)'
+alias cdk='cd $(cat /var/tmp/mark/k)'
+alias cdl='cd $(cat /var/tmp/mark/l)'
 alias cdm='cd $(cat /var/tmp/mark/m)'
-alias cdo='cd ~/Downloads'
-alias cdr='cd ~/Dropbox'
-alias cds='cd $(cat /var/tmp/mark/c)/src'
-alias cdt='cd ~/works/toybox'
-alias cdw='cd ~/works'
+alias cdn='cd $(cat /var/tmp/mark/n)'
+alias cdo='cd $(cat /var/tmp/mark/o)'
+alias cdp='cd $(cat /var/tmp/mark/p)'
+alias cdq='cd $(cat /var/tmp/mark/q)'
+alias cdr='cd $(cat /var/tmp/mark/r)'
+alias cds='cd $(cat /var/tmp/mark/s)'
+alias cdt='cd $(cat /var/tmp/mark/t)'
+alias cdu='cd $(cat /var/tmp/mark/u)'
+alias cdv='cd $(cat /var/tmp/mark/v)'
+alias cdw='cd $(cat /var/tmp/mark/w)'
+alias cdx='cd $(cat /var/tmp/mark/x)'
+alias cdy='cd $(cat /var/tmp/mark/y)'
+alias cdz='cd $(cat /var/tmp/mark/z)'
+
 alias grep='grep --color=always --exclude-dir=.git'
 alias ls='ls -avF --color=auto'
 alias ps='ps acux --sort=rss'
@@ -55,27 +71,6 @@ alias tmux='tmux -2u'
 cd()
 {
   builtin cd "$@" && ls -Fav --color=auto
-}
-
-colcon_build()
-{
-  MAKEFLAGS=-j4
-
-  colcon build --allow-overriding lanelet2_extension \
-               --parallel-workers=8 \
-               --symlink-install \
-               --cmake-args -DCMAKE_BUILD_TYPE=Release
-}
-
-colcon_build_up_to()
-{
-  MAKEFLAGS=-j4
-
-  colcon build --allow-overriding lanelet2_extension \
-               --parallel-workers=8 \
-               --symlink-install \
-               --packages-up-to $@ \
-               --cmake-args -DCMAKE_BUILD_TYPE=Release
 }
 
 watch_grep()
@@ -111,20 +106,22 @@ update()
 
 mark()
 {
-  file="m"
-
-  mkdir -p /var/tmp/mark || exit 1
-
   for each in "$@"
   do
-    case "$each" in
-      "-c" | "--colcon" )
-        file="c"
-        break;;
-    esac
+    if test ${#each} -eq 1
+    then
+      mkdir -p /var/tmp/mark || exit 1
+      echo "marked $(pwd | tee /var/tmp/mark/$each) as '$each'";
+    else
+      case "$each" in
+        "-l" | "--list" )
+          for each in /var/tmp/mark/*
+          do
+            echo -e "$(basename $each)\t$(cat $each)"
+          done
+      esac
+    fi
   done
-
-  echo "mark: $(pwd | tee /var/tmp/mark/$file)";
 }
 
 develop()
@@ -203,25 +200,3 @@ export PS1="\n"
 export PS1="$PS1\[\e[0;36m\]( ^q^) < \[\e[0m\]\$(gitinfo)\$(bgjobs) \[\e[0;36m\])\n"
 export PS1="$PS1${debian_chroot:+($debian_chroot)}\[\e[0;32m\]\u@\H: \[\e[0;33m\]\w\[\e[0m\]\n"
 export PS1="$PS1>> "
-
-colcon_workspace="$(cat /var/tmp/mark/c)"
-
-if test -e "/opt/ros/humble/setup.bash"
-then
-  source "/opt/ros/humble/setup.bash"
-
-  if test -e "$colcon_workspace/install/setup.bash"
-  then
-    source "$colcon_workspace/install/setup.bash"
-  fi
-
-  export CYCLONEDDS_URI=file:///opt/autoware/cyclonedds_config.xml
-  export LD_LIBRARY_PATH="/usr/local/cuda/lib64:$LD_LIBRARY_PATH"
-  export LD_LIBRARY_PATH="/usr/local/libtorch/lib:$LD_LIBRARY_PATH"
-  export PATH="/usr/local/cuda/bin:$PATH"
-  export RCUTILS_COLORIZED_OUTPUT=1
-  export RCUTILS_LOGGING_BUFFERED_STREAM=1
-  export RCUTILS_LOGGING_USE_STDOUT=1
-  export RMW_IMPLEMENTATION=rmw_cyclonedds_cpp
-  export ROS_DOMAIN_ID=87
-fi
