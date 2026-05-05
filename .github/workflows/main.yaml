@@ -12,5 +12,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: ./install.sh
-      - run: ./scripts/setup-${{ matrix.os }}.sh
+      - run: ./script/setup-${{ matrix.os }}.sh
       - run: ./uninstall.sh
