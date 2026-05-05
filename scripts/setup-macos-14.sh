@@ -2,31 +2,22 @@
 
 brew update
 
-brew install tmux google-chrome
+brew install cmake
+brew install google-chrome
+brew install python
+brew install shellcheck
+brew install tmux
+brew install vim
 
-default()
-{
-  echo google-chrome
-  echo tmux
-}
+mkdir -p ~/.vim/bundle
 
-optional()
-{
-  echo gmp
-  echo shellcheck
-}
-
-if test "$#" -eq 0
+if test ! -e ~/.vim/bundle/Vundle.vim
 then
-  default | xargs brew install
-else
-  for each in "$@"
-  do
-    case "$each" in
-      -a | --all      ) ( default && optional ) | xargs brew install ;;
-      -d | --default  ) ( default             ) | xargs brew install ;;
-      -o | --optional ) (            optional ) | xargs brew install ;;
-    esac
-  done
+  git clone https://github.com/VundleVim/Vundle.vim ~/.vim/bundle/Vundle.vim
 fi
 
+vi -c PluginInstall -c qa
+
+cd ~/.vim/bundle/YouCompleteMe
+
+python3 ./install.py --clangd-completer
